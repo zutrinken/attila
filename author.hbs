@@ -1,0 +1,62 @@
+{{!< default}}
+
+{{#author}}
+
+<header id="blog-header"{{#if cover}} class="has-cover"{{else}}{{#if @blog.cover}} class="has-cover"{{/if}}{{/if}}>
+	<div class="inner">
+		<nav id="navigation">
+			<span id="home-link">
+				<a href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+			</span>
+			<span id="rss-link">
+				<a href="{{@blog.url}}/author/{{name}}/rss/" title="{{name}} Feed"><i class="ic ic-rss"></i> {{name}}</a>
+			</span>
+		</nav>
+		{{#if cover}}
+		<div class="blog-cover cover" style="background-image: url('{{cover}}');"></div>
+		{{else}}
+		{{#if @blog.cover}}
+		<div class="blog-cover cover" style="background-image: url('{{@blog.cover}}');"></div>
+		{{/if}}
+		{{/if}}
+	</div>
+</header>
+
+<section id="blog-author"{{#if cover}} class="has-cover"{{else}}{{#if @blog.cover}} class="has-cover"{{/if}}{{/if}}>
+	<div class="inner">
+
+		<aside class="post-author">
+			{{#if image}}
+				<figure class="post-author-avatar">
+					<img src="{{image}}" alt="{{name}}" />
+				</figure>
+			{{/if}}
+			<div class="post-author-bio">
+				<h2 class="post-author-name">{{name}}</h2>
+				{{#if bio}}
+					<p class="post-author-about">{{{bio}}}</p>
+				{{/if}}
+				{{#if location}}
+					<span class="post-author-location"><i class="ic ic-location"></i> {{location}}</span>
+				{{/if}}
+				{{#if website}}
+					<span class="post-author-website"><a href="{{website}}"><i class="ic ic-link"></i> Website</a></span>
+				{{/if}}
+				<span class="post-author-stats"><i class="ic ic-posts"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+			</div>
+			<div class="clear"></div>
+		</aside>
+	</div>
+</section>
+
+{{/author}}
+
+<div id="index" class="container">
+
+	<main class="content" role="main">
+	
+		{{> "loop"}}
+	
+	</main>
+
+</div>

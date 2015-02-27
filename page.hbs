@@ -1,0 +1,32 @@
+{{!< default}}
+
+{{#post}}
+
+<header id="post-header"{{#if image}} class="has-cover" {{/if}}>
+	<div class="inner">
+		<nav id="navigation">
+			<span id="home-link">
+				<a href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+			</span>
+			<span id="rss-link">
+				<a href="{{@blog.url}}/rss/" title="Feed"><i class="ic ic-rss"></i> Feed</a>
+			</span>
+		</nav>
+		<h1 class="post-title">{{{title}}}</h1>
+		{{#if image}}<div class="post-cover cover" style="background-image: url('{{image}}');"></div>{{/if}}
+	</div>
+</header>
+
+<main class="content" role="main">
+	<article class="{{post_class}}">
+		<div class="inner">
+		
+			<section class="post-content">
+				{{content}}
+			</section>
+
+		</div>
+	</article>
+</main>
+
+{{/post}}

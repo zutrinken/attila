@@ -1,0 +1,90 @@
+{{!< default}}
+
+{{#post}}
+
+<div class="progress-container">
+	<span class="progress-bar"></span>
+</div>
+
+<header id="post-header"{{#if image}} class="has-cover" {{/if}}>
+	<div class="inner">
+		<nav id="navigation">
+			<span id="home-link">
+				<a href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+			</span>
+			<span id="rss-link">
+				<a href="{{@blog.url}}/rss/" title="Feed"><i class="ic ic-rss"></i> Feed</a>
+			</span>
+		</nav>
+		<h1 class="post-title">{{{title}}}</h1>
+		<span class="post-meta">{{author}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+		{{#if image}}<div class="post-cover cover" style="background-image: url('{{image}}');"></div>{{/if}}
+	</div>
+</header>
+
+<main class="content" role="main">
+	<article class="{{post_class}}">
+		<div class="inner">
+		
+			<section class="post-content">
+				{{content}}
+			</section>
+			
+			<section class="post-info">
+				
+				<div class="post-share">
+					<a class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+						<i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+					</a>
+					<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+						<i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+					</a>
+					<a class="googleplus" href="https://plus.google.com/share?url={{url absolute="true"}}" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+						<i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+					</a>
+					<div class="clear"></div>
+				</div>
+				
+				<aside class="post-tags">
+					{{tags separator=" "}}
+				</aside>
+				
+				<div class="clear"></div>
+				
+				{{#author}}
+				<aside class="post-author">
+					{{#if image}}
+						<figure class="post-author-avatar">
+							<img src="{{image}}" alt="{{name}}" />
+						</figure>
+					{{/if}}
+					<div class="post-author-bio">
+						<h4 class="post-author-name"><a href="{{url}}">{{name}}</a></h4>
+						{{#if bio}}
+							<p class="post-author-about">{{{bio}}}</p>
+						{{/if}}
+						{{#if location}}
+							<span class="post-author-location"><i class="ic ic-location"></i> {{location}}</span>
+						{{/if}}
+						{{#if website}}
+							<span class="post-author-website"><a href="{{website}}"><i class="ic ic-link"></i> Website</a></span>
+						{{/if}}
+					</div>
+					<div class="clear"></div>
+				</aside>
+				{{/author}}
+
+			</section>
+			
+
+			<section class="post-comments">
+				<a id="show-disqus" class="post-comments-activate">Show Comments</a>
+			    <div id="disqus_thread"></div>
+
+			</section>
+
+		</div>
+	</article>
+</main>
+
+{{/post}}
