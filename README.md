@@ -1,6 +1,6 @@
 # Attila
 
-[Attila](http://ghost-dev0.zutrinken.com/) is a simple AJAX driven theme for [Ghost](http://github.com/tryghost/ghost/) by [Peter Amende](http://zutrinken.com/).
+[Attila](http://ghost-dev0.zutrinken.com/) is a theme for [Ghost](http://github.com/tryghost/ghost/) by [Peter Amende](http://zutrinken.com/).
 
 ## Copyright & License
 
