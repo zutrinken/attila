@@ -1,6 +1,6 @@
 # Attila
 
-A content focused responsive theme for [Ghost](http://github.com/tryghost/ghost/) by [Peter Amende](http://zutrinken.com/).
+A content focused responsive theme for [Ghost](http://github.com/tryghost/ghost/).
 
 ## Demo
 
