@@ -2,13 +2,13 @@
 
 A content focused responsive theme for [Ghost](http://github.com/tryghost/ghost/) by [Peter Amende](http://zutrinken.com/).
 
-# Demo
+## Demo
 
 * [Blog](http://ghost-dev0.zutrinken.com/)
 * [Post](http://ghost-dev0.zutrinken.com/post-demo/)
 * [Archive](http://ghost-dev0.zutrinken.com/author/zutrinken/page/2/)
 
-# Features
+## Features
 
 * Responsive layout
 * Paralax cover images for posts, author archives and blog
