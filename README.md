@@ -1,6 +1,23 @@
 # Attila
 
-[Attila](http://ghost-dev0.zutrinken.com/) is a theme for [Ghost](http://github.com/tryghost/ghost/) by [Peter Amende](http://zutrinken.com/).
+A content focused responsive theme for [Ghost](http://github.com/tryghost/ghost/) by [Peter Amende](http://zutrinken.com/).
+
+# Demo
+
+* [Blog](http://ghost-dev0.zutrinken.com/)
+* [Post](http://ghost-dev0.zutrinken.com/post-demo/)
+* [Archive](http://ghost-dev0.zutrinken.com/author/zutrinken/page/2/)
+
+# Features
+
+* Responsive layout
+* Paralax cover images for posts, author archives and blog
+* Author informations for posts and author archives
+* Global-, tag- and author-rss buttons
+* Reading progress for posts
+* Autmoatic code syntax highlight and line numbers
+* Disqus support
+* Sharing buttons
 
 ## Copyright & License
 
