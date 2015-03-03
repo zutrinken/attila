@@ -3,12 +3,20 @@
 <header id="blog-header"{{#if @blog.cover}} class="has-cover"{{/if}}>
 	<div class="inner">
 		<nav id="navigation">
-			<span id="home-link">
-				<a href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+			{{#if @blog.logo}}
+			<span class="blog-logo">
+				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>
 			</span>
-			<span id="rss-link">
-				<a href="{{@blog.url}}/tag/{{tag.slug}}/rss/" title="{{tag.name}} Feed"><i class="ic ic-rss"></i> {{tag.name}}</a>
+			{{else}}
+			<span id="home-button" class="nav-button">
+				<a class="home-button" href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
 			</span>
+			{{/if}}
+			{{#if @blog.navigation}}
+			<span id="menu-button" class="nav-button">
+				<a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+			</span>
+			{{/if}}
 		</nav>
 		<h1 class="blog-name">{{tag.name}}</h1>
 		<span class="blog-description">

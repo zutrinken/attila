@@ -401,15 +401,16 @@ img {
 	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
 }
 .blog-logo {
-	position: relative;
-	z-index: 10;
+	position: fixed;
+	max-width: 2em;
+	left: 0;
+	top: 0;
+	margin: 1em;
+	z-index: 200;
 }
 .blog-logo img {
 	display: block;
 	margin: 0 auto;
-	padding: 1em;
-	max-width: 20em;
-	max-height: 4em;
 }
 .blog-name {
 	position: relative;
@@ -465,22 +466,19 @@ img {
    ========================================================================== */
 
 #navigation {}
-
-#home-link {
+.nav-button {
 	position: fixed;
+	top: 0;
+	margin: 1em;
+	z-index: 200;
+}	
+.nav-button#home-button {
 	left: 0;
-	top: 0;
-	margin: 1em;
-	z-index: 200;
 }
-#rss-link {
-	position: fixed;
+.nav-button#menu-button {
 	right: 0;
-	top: 0;
-	margin: 1em;
-	z-index: 200;
 }
-#navigation a {
+.nav-button a {
 	display: block;
 	height: 1.5em;
 	margin-bottom: 1em;
@@ -498,32 +496,158 @@ img {
 	-webkit-border-radius: 2em;
 	border-radius: 2em;
 }
-#navigation a:hover,
-#navigation a:focus {
+.nav-button a:hover,
+.nav-button a:focus {
 	color: #f26a3d;
 	border-color: #f26a3d;
 }
-.cover-active #navigation a {
+.cover-active .nav-button a {
 	color: #fff;
 	border-color: rgba(255,255,255,0.5);
 	background: transparent;
 }
-.cover-active #navigation a:hover,
-.cover-active #navigation a:focus {
+.cover-active .nav-button a:hover,
+.cover-active .nav-button a:focus {
 	color: #fff;
 	border-color: #fff;
 }
-#navigation a i {
+.nav-button a i {
 	display: inline-block;
 	color: inherit;
 }
-#navigation a i:before {
+.nav-button a i:before {
 	position: relative;
 	width: auto;
 	top: -2px;
 	margin: auto;
 	font-size: 0.625em;
 	line-height: 1.6em;
+}
+
+/* ==========================================================================
+   Menu
+   ========================================================================== */
+
+#menu {
+	position: fixed;
+	width: 100%;
+	height: 0;
+	top: 0;
+	right: 0;
+	background: #f26a3d;
+	background: rgba(242,97,48,.95);
+	z-index: 400;
+	overflow: hidden;
+	opacity: 0;
+	font-family: 'Fira Sans', sans-serif;
+	-webkit-transition: opacity ease .4s;
+	transition: opacity ease .4s;
+}
+.menu-active #menu {
+	height: 100%;
+	opacity: 1;
+}
+#menu .close-button {
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	top: 0;
+	right: 0;
+	margin: 1em;
+	border: 1px solid #fff;
+	color: transparent;
+	cursor: pointer;
+	-webkit-transition: all ease 0.3s;
+	transition: all ease 0.3s;
+	-webkit-border-radius: 2em;
+	border-radius: 2em;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#menu .close-button:hover,
+#menu .close-button:focus {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+#menu .close-button:after,
+#menu .close-button:before {
+	position: absolute;
+	width: 1em;
+	height: 1px;
+	left: 50%;
+	top: 50%;
+	margin-left: -0.5em;
+	content: '';
+	background: #fff;
+}
+#menu .close-button:after {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+#menu .close-button:before {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+#menu ul {
+	position: relative;
+	width: 50%;
+	top: 50%;
+	margin: auto;
+	padding: 0;
+	text-align: center;
+	-webkit-transform: translateY(-100%) rotateX(-45deg);
+	transform: translateY(-100%) rotateX(-45deg);
+	-webkit-transition: all ease .8s;
+	transition: all ease .8s;
+}
+.menu-active #menu ul {
+	-webkit-transform: translateY(-50%) rotateX(0);
+	transform: translateY(-50%) rotateX(0);
+}
+#menu li {
+	position: relative;
+	font-size: 1.5em;
+	line-height: 0.666em;
+}
+#menu li:before {
+	position: absolute;
+	width: 50%;
+	height: 1px;
+	left: 25%;
+	bottom: 0;
+	margin: auto;
+	content: '';
+	background: rgba(255,255,255,0.5);
+}
+#menu li:last-child:before {
+	display: none;
+}
+#menu li.active {}
+#menu li a {
+	display: inline-block;
+	padding: 0.5em 1em;
+	color: #fff;
+	color: rgba(255,255,255,0.75);
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-weight: 400;
+}
+#menu li a:hover,
+#menu li a:focus {
+	color: #fff;
+}
+.menu-active #menu li a {
+	padding: 1em;
+}
+#menu li a i {
+	position: relative;
+	top: -0.25em;
+	font-size: 0.5em;
+	color: inherit;
+}
+#menu li.active a {
+	color: #fff;
+	font-weight: 500;
 }
 
 /* ==========================================================================
@@ -1061,8 +1185,8 @@ img {
    ========================================================================== */
 
 @media only screen and (max-width: 960px) {
-	#home-link,
-	#rss-link {
+	.blog-logo,
+	.nav-button {
 		position: absolute;
 	}
 	#blog-author {
@@ -1104,6 +1228,9 @@ img {
 	}
 	#main-nav a {
 		margin: 16px;
+	}
+	#menu ul {
+		width: 75%;
 	}
 	.post-author-avatar {
 		margin: -0.25em 0 0 0.5em;

@@ -1,0 +1,9 @@
+<div id="menu">
+	<a class="close-button">Close</a>
+	<ul>
+		{{#foreach navigation}}
+		<li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+		{{/foreach}}
+		<li class="nav-rss"><a href="{{@blog.url}}/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+	</ul>
+</div>

@@ -9,12 +9,20 @@
 <header id="post-header"{{#if image}} class="has-cover" {{/if}}>
 	<div class="inner">
 		<nav id="navigation">
-			<span id="home-link">
-				<a href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+			{{#if @blog.logo}}
+			<span class="blog-logo">
+				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>
 			</span>
-			<span id="rss-link">
-				<a href="{{@blog.url}}/rss/" title="Feed"><i class="ic ic-rss"></i> Feed</a>
+			{{else}}
+			<span id="home-button" class="nav-button">
+				<a class="home-button" href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
 			</span>
+			{{/if}}
+			{{#if @blog.navigation}}
+			<span id="menu-button" class="nav-button">
+				<a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+			</span>
+			{{/if}}
 		</nav>
 		<h1 class="post-title">{{{title}}}</h1>
 		<span class="post-meta">{{author}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>

@@ -5,12 +5,20 @@
 <header id="blog-header"{{#if cover}} class="has-cover"{{else}}{{#if @blog.cover}} class="has-cover"{{/if}}{{/if}}>
 	<div class="inner">
 		<nav id="navigation">
-			<span id="home-link">
-				<a href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+			{{#if @blog.logo}}
+			<span class="blog-logo">
+				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>
 			</span>
-			<span id="rss-link">
-				<a href="{{@blog.url}}/author/{{name}}/rss/" title="{{name}} Feed"><i class="ic ic-rss"></i> {{name}}</a>
+			{{else}}
+			<span id="home-button" class="nav-button">
+				<a class="home-button" href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
 			</span>
+			{{/if}}
+			{{#if @blog.navigation}}
+			<span id="menu-button" class="nav-button">
+				<a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+			</span>
+			{{/if}}
 		</nav>
 		{{#if cover}}
 		<div class="blog-cover cover" style="background-image: url('{{cover}}');"></div>
