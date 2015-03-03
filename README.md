@@ -14,9 +14,10 @@ A content focused responsive theme for [Ghost](http://github.com/tryghost/ghost/
 * Navigation support
 * Paralax cover images for posts, author archives and blog
 * Author informations for posts and author archives
+* Featured posts
 * Global-, tag- and author-rss buttons
 * Reading progress for posts
-* Autmoatic code syntax highlight and line numbers
+* Automatic code syntax highlight and line numbers
 * Disqus support
 * Sharing buttons
 
