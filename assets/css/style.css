@@ -1058,15 +1058,32 @@ img {
    ========================================================================== */
 
 .post-comments {
-	margin: 2em 0;
+	position: relative;
+	padding: 2em 0;
 	text-align: center;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
+.post-comments:after {
+	position: absolute;
+	width: 32em;
+	height: 1px;
+	left: 50%;
+	bottom: 0;
+	margin-left: -16em;
+	content: '';
+	background: #e5e4e1;
+}
 .post-comments.activated {
+	margin: -1px 0 0;
 	padding: 1em;
-	background: #f7f9fa;
-	border: 1px solid #d8dfe5;
+	background: #f2f2f2;
+	border: 1px solid #e5e4e1;
+	border-bottom: 0;
+	border-top: 0;
+}
+.post-comments.activated:after {
+	display: none;
 }
 .post-comments-activate {
 	display: inline-block;
