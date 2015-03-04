@@ -21,6 +21,10 @@ A content focused responsive theme for [Ghost](http://github.com/tryghost/ghost/
 * Disqus support
 * Sharing buttons
 
+## Setup
+
+Search for `var disqusShortname = "no-disqus"` in `assets/js/index.js` and replace `no-disqus` with your disqus short name.
+
 ## Copyright & License
 
 Copyright (C) 2015 Peter Amende - Released under the MIT License.
