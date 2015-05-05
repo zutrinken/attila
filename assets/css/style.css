@@ -1109,6 +1109,60 @@ img {
 }
 
 /* ==========================================================================
+   Post Comments
+   ========================================================================== */
+
+.post-nav {
+	position: relative;
+	border-bottom: 1px solid #e5e4e1;
+}
+.post-nav:after {
+	position: absolute;
+	content: '';
+	width: 1px;
+	height: 100%;
+	left: 50%;
+	top: 0;
+	background: #e5e4e1;
+	z-index: 2;
+}
+.post-nav-next,
+.post-nav-prev {
+	display: block;
+	float: left;
+	width: 50%;
+	-webkit-transition: all ease 0.3s;
+	transition: all ease 0.3s;
+}
+.post-nav a:hover,
+.post-nav a:focus {
+	color: #f26a3d;
+}
+.post-nav-teaser {
+	position: relative;
+	padding: 1em 0;
+	z-index: 3;
+}
+.post-nav-next .post-nav-teaser {
+	padding-right: 1em;
+}
+.post-nav-prev .post-nav-teaser {
+	padding-left: 1em;
+}
+.post-nav-title {
+	margin: 0 0 0.5em;
+	padding: 0;
+	font-size: 1em;
+	line-height: 1em;
+	color: inherit;
+}
+.post-nav-excerpt {
+	margin: 0;
+	font-size: 0.75em;
+	line-height: 1.333em;
+}
+
+/* ==========================================================================
    Pagination
    ========================================================================== */
 
