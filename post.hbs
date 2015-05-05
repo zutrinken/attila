@@ -92,23 +92,25 @@
 			</section>
 
 			<aside class="post-nav">
-			    {{#next_post}}
-			    <a class="post-nav-next {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-			        <section class="post-nav-teaser">
-			            <h2 class="post-nav-title">{{title}}</h2>
-			            <p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
-			        </section>
-			    </a>
-			    {{/next_post}}
-			    {{#prev_post}}
-			    <a class="post-nav-prev {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
-			        <section class="post-nav-teaser">
-			            <h2 class="post-nav-title">{{title}}</h2>
-			            <p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
-			        </section>
-			    </a>
-			    {{/prev_post}}
-			    <div class="clear"></div>
+				{{#next_post}}
+					<a class="post-nav-next" href="{{url}}">
+						<section class="post-nav-teaser">
+							<i class="ic ic-arrow-left"></i>
+							<h2 class="post-nav-title">{{title}}</h2>
+							<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
+						</section>
+					</a>
+				{{/next_post}}
+				{{#prev_post}}
+					<a class="post-nav-prev" href="{{url}}">
+						<section class="post-nav-teaser">
+							<i class="ic ic-arrow-right"></i>
+							<h2 class="post-nav-title">{{title}}</h2>
+							<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
+						</section>
+					</a>
+				{{/prev_post}}
+				<div class="clear"></div>
 			</aside>
 
 
