@@ -124,7 +124,7 @@ jQuery(function($) {
 		$('#show-disqus').on('click', function() {
 			$.ajax({
 				type: "GET",
-				url: "http://" + disqusShortname + ".disqus.com/embed.js",
+				url: "//" + disqusShortname + ".disqus.com/embed.js",
 				dataType: "script",
 				cache: true
 			});
