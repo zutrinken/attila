@@ -113,10 +113,8 @@ jQuery(function($) {
 	/* ==========================================================================
 	   Initialize and load Disqus
 	   ========================================================================== */
-
-	var disqusShortname = 'no-disqus'; //replace with your disqus shortname
 	
-	if (disqusShortname == 'no-disqus') {
+	if (typeof disqus === 'undefined') {
 		$('.post-comments').css({
 			'display' : 'none'
 		});
@@ -124,7 +122,7 @@ jQuery(function($) {
 		$('#show-disqus').on('click', function() {
 			$.ajax({
 				type: "GET",
-				url: "//" + disqusShortname + ".disqus.com/embed.js",
+				url: "//" + disqus + ".disqus.com/embed.js",
 				dataType: "script",
 				cache: true
 			});

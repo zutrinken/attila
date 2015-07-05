@@ -22,7 +22,7 @@ A content focused responsive theme for [Ghost](http://github.com/tryghost/ghost/
 
 ## Setup
 
-Search for `var disqusShortname = "no-disqus"` in `assets/js/index.js` and replace `no-disqus` with your disqus short name.
+To enable [Disqus](https://disqus.com/) comments go to your blogs code injection settings and add `<script>var disqus = „YOUR_DISQUS_SHORTNAME“;</script>` to your blog header.
 
 ## Copyright & License
 
