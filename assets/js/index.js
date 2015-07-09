@@ -42,7 +42,8 @@ jQuery(function($) {
 			var windowPosition = viewport.scrollTop();
 			(windowPosition > 0) ? coverPosition = Math.floor(windowPosition * 0.25) : coverPosition = 0;
 			cover.css({
-				'transform' : 'translate(0, ' + coverPosition + 'px)'
+				'-webkit-transform' : 'translate3d(0, ' + coverPosition + 'px, 0)',
+				'transform' : 'translate3d(0, ' + coverPosition + 'px, 0)'
 			});
 			(viewport.scrollTop() < cover.height()) ? body.addClass('cover-active') : body.removeClass('cover-active');
 		}
