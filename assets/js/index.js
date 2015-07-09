@@ -1,6 +1,7 @@
 jQuery(function($) {
 
 	var body = $('body');
+	var html = $('html');
 	var viewport = $(window);
 
 	/* ==========================================================================
@@ -8,7 +9,7 @@ jQuery(function($) {
 	   ========================================================================== */
 
 	function menu() {
-		body.toggleClass('menu-active');
+		html.toggleClass('menu-active');
 	};
 	
 	$('#menu').on({
@@ -18,6 +19,12 @@ jQuery(function($) {
 	});
 	
 	$('.menu-button').on({
+		'click': function() {
+			menu();
+		}
+	});
+	
+	$('.hidden-close').on({
 		'click': function() {
 			menu();
 		}
