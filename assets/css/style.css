@@ -516,8 +516,8 @@ img {
 	color: #8a9199;
 	cursor: pointer;
 	background: #fff;
-	-webkit-transition: color,border-color border ease 0.3s;
-	transition: color,border-color border ease 0.3s;
+	-webkit-transition: color,border-color ease 0.3s;
+	transition: color,border-color ease 0.3s;
 	-webkit-border-radius: 2em;
 	border-radius: 2em;
 }
