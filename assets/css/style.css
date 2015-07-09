@@ -460,6 +460,8 @@ img {
 	position: relative;
 	padding-right: 0;
 	right: 0;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
 	
 	-webkit-transition: all ease-out 0.25s;
 	transition: all ease-out 0.25s;
@@ -559,18 +561,20 @@ img {
 	width: 16em;
 	height: 100%;
 	top: 0;
-	right: -16em;
+	right: 0;
 	background: #f2f2f0;
 	border-left: 1px solid #e5e4e1;
 	z-index: 400;
 	overflow: hidden;
 	font-family: 'Fira Sans', sans-serif;
-	
+	-webkit-transform: translate3d(16em,0,0);
+	transform: translate3d(16em,0,0);
 	-webkit-transition: all ease-out 0.25s;
 	transition: all ease-out 0.25s;
 }
 .menu-active #menu {
-	right: 0;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
 }
 #menu .close-button {
 	position: absolute;
@@ -1329,7 +1333,8 @@ img {
 @media only screen and (max-width: 960px) {
 	.menu-active #wrapper {
 		padding-right: 0;
-		right: 16em;
+		-webkit-transform: translate3d(-16em,0,0);
+		transform: translate3d(-16em,0,0);
 	}
 	.blog-logo,
 	.nav-button {
