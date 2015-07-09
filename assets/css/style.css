@@ -459,9 +459,6 @@ img {
 #wrapper {
 	position: relative;
 	padding-right: 0;
-	right: 0;
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
 	
 	-webkit-transition: all ease-out 0.25s;
 	transition: all ease-out 0.25s;
@@ -1331,6 +1328,10 @@ img {
    ========================================================================== */
 
 @media only screen and (max-width: 960px) {
+	#wrapper {
+		-webkit-transform: translate3d(0,0,0);
+		transform: translate3d(0,0,0);
+	}
 	.menu-active #wrapper {
 		padding-right: 0;
 		-webkit-transform: translate3d(-16em,0,0);
