@@ -1285,6 +1285,14 @@ img {
 	html {
 	  font-size: 50%;
 	}
+	body {
+		font: 400 2.335em / 1.667em 'Cardo', serif;
+	}
+	.post-meta {
+		margin-bottom: 1em;
+		font-size: 1em;
+		line-height: 1em;
+	}
 	.post-share,
 	.post-tags {
 		max-width: none;
