@@ -19,6 +19,7 @@ A content focused responsive theme for [Ghost](http://github.com/tryghost/ghost/
 * Automatic code syntax highlight and line numbers
 * Disqus support
 * Sharing buttons
+* PageSpeed percentage above 90%
 
 ## Setup
 
