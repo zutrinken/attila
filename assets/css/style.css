@@ -1,22 +1,14 @@
-/* ==========================================================================
-   Includes
-   ========================================================================== */
-
-@import url('//fonts.googleapis.com/css?family=Fira+Sans:400,500,700|Cardo:400,400italic,700');
-@import url('normalize.css');
-@import url('icons.css');
-@import url('highlight.css');
 
 /* ==========================================================================
    Basics
    ========================================================================== */
 
 @supports (flex-wrap: wrap) {
-    body {
-    	display: flex;
+  body {
+		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
-    }
+  }
 	#wrapper {
 		flex: 1;
 	}
@@ -42,9 +34,9 @@ body {
 }
 
 ::-moz-selection, ::selection {
-    color: #222;
-    background: #D6EDFF;
-    text-shadow: none;
+  color: #222;
+  background: #D6EDFF;
+  text-shadow: none;
 }
 a {
 	color: #212226;
@@ -95,7 +87,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 p, ul, ol {
-    margin: 2em auto;
+  margin: 2em auto;
 }
 
 ul {
@@ -135,24 +127,24 @@ ol ol, ul ul, ul ol, ol ul {
 }
 
 hr {
-    display: block;
-    height: 1px;
-    margin: 2em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  margin: 2em 0;
+  padding: 0;
 	background: #e5e4e1;
-    border: 0;
+  border: 0;
 }
 
 blockquote {
-    margin: 2em auto;
-    padding: 1em;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    border-left: 0.25em solid #e5e4e1;
-    font-style: italic;
-    font-weight: 400;
-    color: #807e79;
-    background: #faf9f7;
+  margin: 2em auto;
+  padding: 1em;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-left: 0.25em solid #e5e4e1;
+  font-style: italic;
+  font-weight: 400;
+  color: #807e79;
+  background: #faf9f7;
 }
 blockquote p {
 	margin: 1em auto;
@@ -173,32 +165,32 @@ strong, b {
 }
 
 small {
-    font-size: 0.9em;
-    color: #45484d;
+  font-size: 0.9em;
+  color: #45484d;
 }
 
 
 dl {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 dl dt {
-    float: left;
-    width: 180px;
-    overflow: hidden;
-    clear: left;
-    text-align: right;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: bold;
-    margin-bottom: 10px;
+  float: left;
+  width: 180px;
+  overflow: hidden;
+  clear: left;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 dl dd {
-    margin-left: 200px;
-    margin-bottom: 12px;
+  margin-left: 200px;
+  margin-bottom: 12px;
 }
 
 mark {
-    background-color: #ffc336;
+  background-color: #ffc336;
 }
 code, tt {
 	position: relative;
@@ -208,7 +200,7 @@ code, tt {
 	font-size: 0.75em;
 	white-space: pre;
 	background: #faf9f7;
-    border: 1px solid #ebe9e6;
+  border: 1px solid #ebe9e6;
 	top: -2px;
 }
 
@@ -220,7 +212,7 @@ pre {
 	font-family: 'Inconsolata', monospace, sans-serif;
 	white-space: pre;
 	background: #faf9f7;
-    border: 1px solid #ebe9e6;
+  border: 1px solid #ebe9e6;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
@@ -241,8 +233,8 @@ pre .lines {
 }
 pre .lines .line {
 	display: block;
-	padding-right: 0.333em;
-    color: #807e79;
+	padding-right: 0.333em;  
+  color: #807e79;
 }
 
 pre code, pre tt {
@@ -260,17 +252,17 @@ pre code, pre tt {
 }
 
 kbd {
-    display: inline-block;
-    margin-bottom: 0.5em;
-    padding: 1px 8px;
-    border: #ccc 1px solid;
-    color: #666;
-    text-shadow: #fff 0 1px 0;
-    font-size: 0.9em;
-    font-weight: bold;
-    background: #f4f4f4;
-    border-radius: 4px;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;
+  display: inline-block;
+  margin-bottom: 0.5em;
+  padding: 1px 8px;
+  border: #ccc 1px solid;
+  color: #666;
+  text-shadow: #fff 0 1px 0;
+  font-size: 0.9em;
+  font-weight: bold;
+  background: #f4f4f4;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;
 }
 
 table {
@@ -283,11 +275,11 @@ table {
 
 table th,
 table td {
-    position: relative;
-    padding: 0.5em;
-    line-height: 0.95em;
-    text-align: left;
-    border: 1px solid #ebe9e6;
+  position: relative;
+  padding: 0.5em;
+  line-height: 0.95em;
+  text-align: left;
+  border: 1px solid #ebe9e6;
 }
 table th {
 	font-family: 'Fira Sans', sans-serif;
@@ -309,7 +301,6 @@ table td:after {
 	background: #faf9f7;
 }
 
-
 img {
 	display: block;
 	max-width: 100%;
@@ -325,10 +316,9 @@ img {
 }
 
 
-
 @-webkit-keyframes fadein {
 	0% {
-	    opacity: .2;
+	  opacity: .2;
 	}
 	100% {
 		opacity: .9;
@@ -336,7 +326,7 @@ img {
 }
 @keyframes fadein {
 	0% {
-	    opacity: .2;
+	  opacity: .2;
 	}
 	100% {
 		opacity: .9;
@@ -808,7 +798,6 @@ img {
 	margin-top: 1.333em;
 }
 
-
 .container {
 	position: relative;
 }
@@ -959,7 +948,6 @@ img {
 	margin-left: -5%;
 }
 
-
 /* ==========================================================================
    Post Info
    ========================================================================== */
@@ -1070,15 +1058,15 @@ img {
 .post-author-bio {
 	padding-left: 25%;
 	font-family: 'Fira Sans', sans-serif;
-    font-size: 0.75em;
-    line-height: 1.333em;
+  font-size: 0.75em;
+  line-height: 1.333em;
 }
 .post-author-name {
 	margin: 0;
 	padding: 0;
-    font-size: 1.333em;
-    line-height: 1em;
-    text-indent: inherit;
+  font-size: 1.333em;
+  line-height: 1em;
+  text-indent: inherit;
 }
 .post-author-about {
 	margin: 0.666em 0;
@@ -1237,7 +1225,6 @@ img {
    Pagination
    ========================================================================== */
 
-
 .pagination {
 	position: relative;
 	height: 2em;
@@ -1353,7 +1340,15 @@ img {
 
 @media only screen and (max-width: 640px) {
 	html {
-	    font-size: 50%;
+	  font-size: 50%;
+	}
+	body {
+		font: 400 2.335em / 1.667em 'Cardo', serif;
+	}
+	.post-meta {
+		margin-bottom: 1em;
+		font-size: 1em;
+		line-height: 1em;
 	}
 	.post-share,
 	.post-tags {
@@ -1373,7 +1368,6 @@ img {
 /* ==========================================================================
    Media Queries - Smaller than 480px
    ========================================================================== */
-
 
 @media only screen and (max-width: 480px) {
 	.inner {
@@ -1440,7 +1434,6 @@ img {
 /* ==========================================================================
    Media Queries - Smaller than 320px
    ========================================================================== */
-
 
 @media only screen and (max-width: 320px) {
 	.pagination .pagination-label {
