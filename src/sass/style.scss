@@ -42,16 +42,10 @@ body {
 	overflow-x: hidden;
 }
 
-::-moz-selection, ::selection {
-    color: #222;
-    background: #D6EDFF;
-    text-shadow: none;
-}
 a {
 	color: $color-blue-15;
 	text-decoration: none;
 	font-weight: 400;
-	-webkit-transition: all ease-out 0.2s;
 	transition: all ease-out 0.2s;
 }
 a:hover,
@@ -222,7 +216,6 @@ pre {
 	white-space: pre;
 	background: $color-gray-98;
     border: 1px solid $color-gray-90;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 pre .lines {
@@ -236,7 +229,6 @@ pre .lines {
 	font-size: 0.75em;
 	line-height: 2em;
 	text-align: right;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	background: rgba(255,255,255,0.5);
 }
@@ -325,16 +317,6 @@ img {
 	display: none;
 }
 
-
-
-@-webkit-keyframes fadein {
-	0% {
-	    opacity: .2;
-	}
-	100% {
-		opacity: .9;
-	}
-}
 @keyframes fadein {
 	0% {
 	    opacity: .2;
@@ -389,7 +371,6 @@ img {
 	top: 0;
 	z-index: 5;
 	background: no-repeat scroll center center / cover $color-black;
-	-webkit-animation: 0.5s ease-in forwards fadein;
 	animation: 0.5s ease-in forwards fadein;
 }
 .blog-cover:after {
@@ -400,7 +381,6 @@ img {
 	bottom: 0;
 	z-index: 8;
 	content: '';
-	background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
 	background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.5) 100%);
 }
 .blog-logo {
@@ -457,8 +437,6 @@ img {
 #wrapper {
 	position: relative;
 	padding-right: 0;
-	
-	-webkit-transition: all ease-out 0.25s;
 	transition: all ease-out 0.25s;
 }
 #wrapper .hidden-close {
@@ -514,9 +492,7 @@ img {
 	color: $color-blue-60;
 	cursor: pointer;
 	background: $color-white;
-	-webkit-transition: color,border-color ease 0.3s;
 	transition: color,border-color ease 0.3s;
-	-webkit-border-radius: 2em;
 	border-radius: 2em;
 }
 .nav-button a:hover,
@@ -562,15 +538,11 @@ img {
 	z-index: 400;
 	overflow: hidden;
 	font-family: 'Fira Sans', sans-serif;
-	-webkit-box-shadow: inset -2px 0 7px rgba(0,0,0,0.1);
 	box-shadow: inset -2px 0 7px rgba(0,0,0,0.1);
-	-webkit-transform: translate3d(16em,0,0);
 	transform: translate3d(16em,0,0);
-	-webkit-transition: all ease-out 0.25s;
 	transition: all ease-out 0.25s;
 }
 .menu-active #menu {
-	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 }
 #menu .close-button {
@@ -583,17 +555,13 @@ img {
 	border: 1px solid $color-blue-80;
 	color: transparent;
 	cursor: pointer;
-	-webkit-transition: all ease 0.3s;
 	transition: all ease 0.3s;
-	-webkit-border-radius: 2em;
 	border-radius: 2em;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	z-index: 500;
 }
 #menu .close-button:hover,
 #menu .close-button:focus {
-	-webkit-transform: rotate(180deg);
 	transform: rotate(180deg);
 	border-color: $color-red-95;
 }
@@ -607,7 +575,6 @@ img {
 	margin-left: -0.5em;
 	content: '';
 	background: $color-blue-60;
-	-webkit-transition: all ease 0.3s;
 	transition: all ease 0.3s;
 }
 #menu .close-button:hover:after,
@@ -617,11 +584,9 @@ img {
 	background: $color-red-95;
 }
 #menu .close-button:after {
-	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
 #menu .close-button:before {
-	-webkit-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
 #menu .nav-wrapper {
@@ -630,7 +595,6 @@ img {
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 #menu .nav-label {
@@ -709,7 +673,6 @@ img {
 	top: 0;
 	z-index: 1000;
 	background: transparent;
-	-webkit-transition: opacity ease-out 1s;
 	transition: opacity ease-out 1s;
 }
 .progress-container.ready {
@@ -784,7 +747,6 @@ img {
 	margin: 0 2.5%;
 }
 #blog-author.has-cover .post-author-avatar {
-	-webkit-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 #blog-author.has-cover .post-author-avatar img {
@@ -881,7 +843,6 @@ img {
 	top: 0;
 	z-index: 5;
 	background: no-repeat scroll center center / cover $color-black;
-	-webkit-animation: 0.5s ease-in forwards fadein;
 	animation: 0.5s ease-in forwards fadein;
 }
 .post-cover:after {
@@ -988,9 +949,7 @@ img {
 	text-align: center;
 	text-decoration: none;
 	color: $color-white;
-	-webkit-border-radius: 2px;
 	border-radius: 2px;
-	-webkit-transition: all ease 0.3s;
 	transition: all ease 0.3s;
 }
 .post-share a:hover,
@@ -1030,11 +989,8 @@ img {
 	text-align: center;
 	text-decoration: none;
 	color: $color-red-95;
-	-webkit-border-radius: 2em;
 	border-radius: 2em;
-	-webkit-transition: all ease 0.3s;
 	transition: all ease 0.3s;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 .post-tags a:hover,
@@ -1058,17 +1014,13 @@ img {
 	margin: -0.5em 0 0 5%;
 	overflow: hidden;
 	background: $color-white;
-	-webkit-border-radius: 10em;
 	border-radius: 10em;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 .post-author-avatar img {
 	width: 100%;
 	margin: auto;
-	-webkit-border-radius: 10em;
 	border-radius: 10em;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 .post-author-bio {
@@ -1113,7 +1065,6 @@ img {
 	position: relative;
 	padding: 2em 0;
 	text-align: center;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 .post-comments:after {
@@ -1146,9 +1097,7 @@ img {
 	color: $color-blue-60;
 	text-align: center;
 	cursor: pointer;
-	-webkit-transition: all ease 0.3s;
 	transition: all ease 0.3s;
-	-webkit-border-radius: 2em;
 	border-radius: 2em;
 }
 .post-comments-activate:hover,
@@ -1208,7 +1157,6 @@ img {
 	font-size: 2em;
 	line-height: 2em;
 	text-align: center;
-	-webkit-transition: all ease-out 0.3s;
 	transition: all ease-out 0.3s;
 	color: $color-gray-90;
 }
@@ -1273,9 +1221,7 @@ img {
 	text-decoration: none;
 	color: $color-blue-60;
 	transition: all ease 0.3s;
-	-webkit-transition: all ease 0.3s;
 	border-radius: 2em;
-	-webkit-border-radius: 2em;
 }
 .pagination .pagination-prev {
 	float: right;
@@ -1334,12 +1280,10 @@ img {
 
 @media only screen and (max-width: 960px) {
 	#wrapper {
-		-webkit-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
 	}
 	.menu-active #wrapper {
 		padding-right: 0;
-		-webkit-transform: translate3d(-16em,0,0);
 		transform: translate3d(-16em,0,0);
 	}
 	.blog-logo,
