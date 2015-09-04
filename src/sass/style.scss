@@ -1065,26 +1065,14 @@ img {
 	position: relative;
 	padding: 2em 0;
 	text-align: center;
+	border-bottom: 1px solid $color-gray-90;
 	box-sizing: border-box;
-}
-.post-comments:after {
-	position: absolute;
-	width: 32em;
-	height: 1px;
-	left: 50%;
-	bottom: 0;
-	margin-left: -16em;
-	content: '';
-	background: $color-gray-90;
 }
 .post-comments.activated {
 	margin: -1px 0 0;
 	padding: 1em;
 	background: $color-gray-98;
 	border: 1px solid $color-gray-90;
-}
-.post-comments.activated:after {
-	display: none;
 }
 .post-comments-activate {
 	display: inline-block;
