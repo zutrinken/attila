@@ -61,7 +61,10 @@ module.exports = function(grunt) {
                     require('autoprefixer-core')({ browsers: ['last 2 versions'] })
                 ]
             },
-            'dev': {
+            dev: {
+                src: 'assets/<%=  config.cssTargetDir %>/*.css'
+            },
+            dist: {
                 src: 'assets/<%=  config.cssTargetDir %>/*.css'
             }
         },
@@ -75,19 +78,20 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: '<%=  config.cssSrcDir %>/**/*.scss',
-                tasks: ['sass:dev','copy:dev']
+                tasks: ['sass:dev','copy:dev','postcss:dev']
             }
         }
     });
 
     grunt.registerTask('build', [
         'sass:dist',
-        'postcss',
+        'postcss:dist',
         'copy:dist',
         'uglify'
     ]);
     grunt.registerTask('dev', [
         'sass:dev',
+        'postcss:dev',
         'copy:dev',
         'uglify'
     ]);
