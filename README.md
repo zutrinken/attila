@@ -4,9 +4,10 @@ A content focused responsive theme for [Ghost](http://github.com/tryghost/ghost/
 
 ## Demo
 
-* [Blog](http://ghost-dev0.zutrinken.com/)
-* [Post](http://ghost-dev0.zutrinken.com/post-demo/)
-* [Archive](http://ghost-dev0.zutrinken.com/author/zutrinken/page/2/)
+* [Blog](http://attila.zutrinken.com/)
+* [Post](http://attila.zutrinken.com/demo/)
+* [Tag Archive](http://attila.zutrinken.com/tag/general/)
+* [Author Archive](http://attila.zutrinken.com/author/zutrinken/)
 
 ## Features
 
