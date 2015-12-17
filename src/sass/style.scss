@@ -358,7 +358,7 @@ img {
 
 .paged #blog-header.has-cover,
 .tag-template #blog-header {
-	padding: 4em 0;	
+	padding: 4em 0;
 }
 .author-template #blog-header.has-cover {
 	padding: 6em 0;
@@ -472,7 +472,7 @@ img {
 	top: 0;
 	margin: 1em;
 	z-index: 200;
-}	
+}
 .nav-button#home-button {
 	left: 0;
 }
@@ -497,8 +497,8 @@ img {
 }
 .nav-button a:hover,
 .nav-button a:focus {
-	color: $color-red-95;
-	border-color: $color-red-95;
+	color: $primary-color;
+	border-color: $primary-color;
 }
 .cover-active .nav-button a {
 	color: $color-white;
@@ -563,7 +563,7 @@ img {
 #menu .close-button:hover,
 #menu .close-button:focus {
 	transform: rotate(180deg);
-	border-color: $color-red-95;
+	border-color: $primary-color;
 }
 #menu .close-button:after,
 #menu .close-button:before {
@@ -581,7 +581,7 @@ img {
 #menu .close-button:hover:before,
 #menu .close-button:focus:after,
 #menu .close-button:focus:before {
-	background: $color-red-95;
+	background: $primary-color;
 }
 #menu .close-button:after {
 	transform: rotate(45deg);
@@ -635,7 +635,7 @@ img {
 	height: 100%;
 	left: 0;
 	top: 0;
-	background: $color-red-95;
+	background: $primary-color;
 }
 #menu li a {
 	display: block;
@@ -682,8 +682,8 @@ img {
 	display: block;
 	width: 0;
 	height: 1px;
-	background: $color-red-95;
-	box-shadow: 0 0 1px $color-red-95, 0 0 3px $color-red-95;
+	background: $primary-color;
+	box-shadow: 0 0 1px $primary-color, 0 0 3px $primary-color;
 }
 
 /* ==========================================================================
@@ -806,7 +806,7 @@ img {
 /* ==========================================================================
    Post
    ========================================================================== */
-   
+
 .post.page {
 	padding-bottom: 4em;
 }
@@ -911,11 +911,11 @@ img {
 	margin: 0;
 }
 .post-content a {
-	border-bottom: 1px solid $color-red-95;
+	border-bottom: 1px solid $primary-color;
 }
 .post-content a:hover,
 .post-content a:focus {
-	color: $color-red-95;
+	color: $primary-color;
 }
 .post-content img,
 .post-content .fluid-width-video-wrapper {
@@ -982,20 +982,20 @@ img {
 	margin: 0 0.333em 0.666em 0;
 	padding: 0.575em 1em;
 	background: $color-white;
-	border: 1px solid $color-red-95;
+	border: 1px solid $primary-color;
 	font-size: 0.75em;
 	font-weight: 500;
 	line-height: 1.333em;
 	text-align: center;
 	text-decoration: none;
-	color: $color-red-95;
+	color: $primary-color;
 	border-radius: 2em;
 	transition: all ease 0.3s;
 	box-sizing: border-box;
 }
 .post-tags a:hover,
 .post-tags a:focus {
-	background: $color-red-95;
+	background: $primary-color;
 	color: $color-white;
 }
 .post-author {
@@ -1090,8 +1090,8 @@ img {
 }
 .post-comments-activate:hover,
 .post-comments-activate:focus {
-	color: $color-red-95;
-	border-color: $color-red-95;
+	color: $primary-color;
+	border-color: $primary-color;
 }
 .activated .post-comments-activate {
 	display: none;
@@ -1158,7 +1158,7 @@ img {
 }
 .post-nav a:hover i,
 .post-nav a:focus i {
-	color: $color-red-95;
+	color: $primary-color;
 }
 .post-nav-title {
 	margin: 0 0 0.5em;
@@ -1221,8 +1221,8 @@ img {
 }
 .pagination a:hover,
 .pagination a:focus {
-	color: $color-red-95;
-	border-color: $color-red-95;
+	color: $primary-color;
+	border-color: $primary-color;
 }
 .pagination .pagination-label {
 	position: relative;

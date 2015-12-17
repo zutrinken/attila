@@ -89,7 +89,7 @@ module.exports = function(grunt) {
         'copy:dist',
         'uglify'
     ]);
-    grunt.registerTask('dev', [
+    grunt.registerTask('default', [
         'sass:dev',
         'postcss:dev',
         'copy:dev',
