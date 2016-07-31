@@ -1,6 +1,6 @@
 {{!< default}}
 
-<header id="blog-header"{{#if @blog.cover}} class="has-cover"{{/if}}>
+<header id="blog-header"{{#if tag.image}} class="has-cover"{{else}}{{#if @blog.cover}} class="has-cover"{{/if}}{{/if}}>
 	<div class="inner">
 		<nav id="navigation">
 			{{#if @blog.logo}}
@@ -26,8 +26,12 @@
 			Posts: {{pagination.total}}
 		{{/if}}
 		</span>
+		{{#if tag.image}}
+		<div class="blog-cover cover" style="background-image: url('{{tag.image}}');"></div>
+		{{else}}
 		{{#if @blog.cover}}
 		<div class="blog-cover cover" style="background-image: url('{{@blog.cover}}');"></div>
+		{{/if}}
 		{{/if}}
 	</div>
 </header>
