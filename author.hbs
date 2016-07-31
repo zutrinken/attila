@@ -50,7 +50,13 @@
 				{{#if website}}
 					<span class="post-author-website"><a href="{{website}}"><i class="ic ic-link"></i> Website</a></span>
 				{{/if}}
-				<span class="post-author-stats"><i class="ic ic-posts"></i> {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</span>
+				{{#if twitter}}
+					<span class="post-author-twitter"><a target="_blank" href="https://twitter.com/{{twitter}}"><i class="ic ic-twitter"></i> Twitter</a></span>
+				{{/if}}
+				{{#if facebook}}
+					<span class="post-author-facebook"><a target="_blank" href="https://facebook.com/{{facebook}}"><i class="ic ic-facebook"></i> Facebook</a></span>
+				{{/if}}
+				<span class="post-author-stats"><i class="ic ic-posts"></i> {{plural ../pagination.total empty='No Posts' singular='% Post' plural='% Posts'}}</span>
 			</div>
 			<div class="clear"></div>
 		</aside>
