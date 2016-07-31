@@ -1,6 +1,6 @@
 {
   "name": "Attila",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
