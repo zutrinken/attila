@@ -6,7 +6,11 @@
 			{{#foreach navigation}}
 			<li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
 			{{/foreach}}
-			<li class="nav-rss"><a href="{{@blog.url}}/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+			{{#if @labs.subscribers}}
+	        <li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a class="subscribe-button" href="{{@blog.url}}/subscribe/">Subscribe</a></li>
+	    {{else}}
+	        <li class="nav-rss"><a href="{{@blog.url}}/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+	    {{/if}}
 		</ul>
 	</div>
 </nav>
