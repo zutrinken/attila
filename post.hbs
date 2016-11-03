@@ -2,6 +2,16 @@
 
 {{#post}}
 
+<div id="fb-root"></div>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=923367564384230";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="progress-container">
 	<span class="progress-bar"></span>
 </div>
@@ -33,13 +43,13 @@
 <main class="content" role="main">
 	<article class="{{post_class}}">
 		<div class="inner">
-		
+
 			<section class="post-content">
 				{{content}}
 			</section>
-			
+
 			<section class="post-info">
-				
+
 				<div class="post-share">
 					<a class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
 						<i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
@@ -52,13 +62,13 @@
 					</a>
 					<div class="clear"></div>
 				</div>
-				
+
 				<aside class="post-tags">
 					{{tags separator=" "}}
 				</aside>
-				
+
 				<div class="clear"></div>
-				
+
 				{{#author}}
 				<aside class="post-author">
 					{{#if image}}
@@ -89,13 +99,53 @@
 				{{/author}}
 
 			</section>
-			
 
-			<section class="post-comments">
-				<a id="show-disqus" class="post-comments-activate">Show Comments</a>
-			    <div id="disqus_thread"></div>
 
-			</section>
+			{{!-- Email subscribe form at the bottom of the page --}}
+		 {{#if @labs.subscribers}}
+		   <section class="gh-subscribe">
+		     <h3 class="gh-subscribe-title">Subscribe to {{@blog.title}}</h3>
+		     <p>Get the latest posts delivered right to your inbox.</p>
+		     {{subscribe_form placeholder="Your email address"}}
+		     <span class="gh-subscribe-rss">or subscribe <a href="http://cloud.feedly.com/#subscription/feed/{{@blog.url}}/rss/">via RSS</a> with Feedly!</span>
+		   </section>
+			{{/if}}
+
+			<section class="post-comments activated">
+				<!-- <a id="show-disqus" class="post-comments-activate">Show Comments</a> -->
+
+          <h3>Facbook Comments</h3>
+          <br>
+
+					<div class="fb-comments" data-href="http://theboxesoflife.com/" data-numposts="5"></div>
+
+          <h3>Disqus Comments</h3>
+          <br>
+          <br>
+
+					<div id="disqus_thread"></div>
+					<script>
+
+					/**
+					*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+					*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+					var disqus_config = function () {
+					this.page.url = '{{url absolute="true"}}';  // Replace PAGE_URL with your page's canonical URL variable
+					this.page.identifier = '{{post.id}}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+					};
+
+					(function() { // DON'T EDIT BELOW THIS LINE
+					var d = document, s = d.createElement('script');
+					s.src = '//the-boxes-of-life.disqus.com/embed.js';
+					s.setAttribute('data-timestamp', +new Date());
+					(d.head || d.body).appendChild(s);
+					})();
+					</script>
+					<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+				</section>
+
 
 			<aside class="post-nav">
 				{{#next_post}}
