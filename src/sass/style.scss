@@ -1054,6 +1054,10 @@ img {
 	font-weight: inherit;
 	border-bottom: 1px solid transparent;
 }
+.post-author-bio a:hover,
+.post-author-bio a:focus {
+	text-decoration: underline;
+}
 
 /* ==========================================================================
    Post Comments
