@@ -517,10 +517,7 @@ img {
 .nav-button a i:before {
 	position: relative;
 	width: auto;
-	top: -2px;
 	margin: auto;
-	font-size: 0.625em;
-	line-height: 1.6em;
 }
 
 /* ==========================================================================
@@ -652,8 +649,8 @@ img {
 }
 #menu li a i {
 	position: relative;
-	top: -0.25em;
-	font-size: 0.5em;
+	top: -1px;
+	font-size: 0.8em;
 	color: inherit;
 }
 #menu li.active a {
@@ -1227,18 +1224,18 @@ img {
 }
 .pagination .pagination-label {
 	position: relative;
+	top: -0.167em;
 	display: inline-block;
-	height: 1em;
-	line-height: 1em;
+	height: 1.334em;
+	line-height: 1.334em;
 }
 .pagination a i {
 	position: relative;
 	width: auto;
-	top: -1px;
 	margin: auto;
 	color: inherit;
-	font-size: 0.75em;
-	line-height: 1.334em;
+	font-size: 1.334em;
+	line-height: 0.75em;
 }
 .pagination .pagination-info {
 	position: absolute;
