@@ -75,8 +75,8 @@ h2 {
 
 h3 {
 	font-size: 1.5em;
-	line-height: 1.333em;
-	margin: 2em 0 -0.666em;
+	line-height: 1.334em;
+	margin: 2em 0 -0.667em;
 }
 
 h4 {
@@ -197,8 +197,8 @@ mark {
 }
 code, tt {
 	position: relative;
-	margin: 0 0.333em;
-	padding: 0.333em 0.666em;
+	margin: 0 0.334em;
+	padding: 0.334em 0.667em;
 	font-family: 'Inconsolata', monospace, sans-serif;
 	font-size: 0.75em;
 	white-space: pre;
@@ -220,11 +220,11 @@ pre {
 }
 pre .lines {
 	position: absolute;
-	width: 2.666em;
+	width: 2.667em;
 	height: 100%;
 	left: 0;
 	top: 0;
-	padding: 1.333em 0;
+	padding: 1.334em 0;
 	border-right: 1px solid $color-gray-90;
 	font-size: 0.75em;
 	line-height: 2em;
@@ -234,15 +234,15 @@ pre .lines {
 }
 pre .lines .line {
 	display: block;
-	padding-right: 0.333em;
+	padding-right: 0.334em;
     color: $color-blue-30;
 }
 
 pre code, pre tt {
 	position: static;
 	top: auto;
-	margin: -1.333em -1.333em -1.333em 1.333em;
-	padding: 1.333em;
+	margin: -1.334em -1.334em -1.334em 1.334em;
+	padding: 1.334em;
 	overflow: scroll;
 	font-size: 0.75em;
 	line-height: 2em;
@@ -287,7 +287,7 @@ table th {
 	font-weight: 500;
 	font-size: 0.75em;
 	line-height: 1.25em;
-	padding: 0.666em;
+	padding: 0.667em;
 	color: $color-black;
 }
 table td:after {
@@ -487,7 +487,7 @@ img {
 	border: 1px solid $color-blue-80;
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 0.75em;
-	line-height: 1.666em;
+	line-height: 1.667em;
 	text-shadow: none;
 	color: $color-blue-60;
 	cursor: pointer;
@@ -599,7 +599,7 @@ img {
 }
 #menu .nav-label {
 	display: block;
-	padding: 1.666em 2em;
+	padding: 1.667em 2em;
 	margin: 0;
 	opacity: 0.5;
 	font-size: 0.75em;
@@ -754,19 +754,19 @@ img {
 }
 #blog-author.has-cover .post-author-bio {}
 #blog-author .post-author-name {
-	padding: 0.333em 0 0;
+	padding: 0.334em 0 0;
 	font-size: 2em;
 	line-height: 1em;
 }
 #blog-author.has-cover .post-author-name {
-	padding: 0.333em 0;
+	padding: 0.334em 0;
 	font-weight: 500;
 	letter-spacing: 0.025em;
-	line-height: 1.333em;
+	line-height: 1.334em;
 	color: $color-white;
 }
 #blog-author.has-cover .post-author-about {
-	margin-top: 1.333em;
+	margin-top: 1.334em;
 }
 
 
@@ -883,11 +883,11 @@ img {
 	position: relative;
 	z-index: 10;
 	display: block;
-	margin-bottom: 1.333em;
+	margin-bottom: 1.334em;
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 0.75em;
 	font-weight: 400;
-	line-height: 1.333em;
+	line-height: 1.334em;
 	opacity: 0.5;
 }
 .has-cover .post-meta {
@@ -941,7 +941,7 @@ img {
 	display: block;
 	width: 2em;
 	height: 2em;
-	margin: 0.333em 0 0.333em 0.666em;
+	margin: 0.334em 0 0.334em 0.667em;
 	padding: 0;
 	float: left;
 	font-size: 0.75em;
@@ -979,13 +979,13 @@ img {
 }
 .post-tags a {
 	display: inline-block;
-	margin: 0 0.333em 0.666em 0;
+	margin: 0 0.334em 0.667em 0;
 	padding: 0.575em 1em;
 	background: $color-white;
 	border: 1px solid $primary-color;
 	font-size: 0.75em;
 	font-weight: 500;
-	line-height: 1.333em;
+	line-height: 1.334em;
 	text-align: center;
 	text-decoration: none;
 	color: $primary-color;
@@ -1027,17 +1027,17 @@ img {
 	padding-left: 25%;
 	font-family: 'Fira Sans', sans-serif;
     font-size: 0.75em;
-    line-height: 1.333em;
+    line-height: 1.334em;
 }
 .post-author-name {
 	margin: 0;
 	padding: 0;
-    font-size: 1.333em;
+    font-size: 1.334em;
     line-height: 1em;
     text-indent: inherit;
 }
 .post-author-about {
-	margin: 0.666em 0;
+	margin: 0.667em 0 0.334em;
 }
 .post-author-bio span {
 	position: relative;
@@ -1046,7 +1046,7 @@ img {
 	margin-top: 1.25em;
 	margin-right: 1.25em;
 	font-weight: 400;
-	opacity: 0.5;
+	opacity: 0.75;
 }
 .post-author-bio i {
 	color: inherit;
@@ -1082,7 +1082,7 @@ img {
 	border: 1px solid $color-blue-80;
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 0.75em;
-	line-height: 1.333em;
+	line-height: 1.334em;
 	color: $color-blue-60;
 	text-align: center;
 	cursor: pointer;
@@ -1171,7 +1171,7 @@ img {
 .post-nav-excerpt {
 	margin: 0;
 	font-size: 0.75em;
-	line-height: 1.333em;
+	line-height: 1.334em;
 }
 
 /* ==========================================================================
@@ -1199,9 +1199,9 @@ img {
 .pagination a {
 	position: relative;
 	display: block;
-	height: 1.333em;
+	height: 1.334em;
 	margin: -1px 0;
-	padding: 0.666em 1em;
+	padding: 0.667em 1em;
 	z-index: 100;
 	border: 1px solid $color-blue-80;
 	font-size: 0.75em;
@@ -1214,11 +1214,11 @@ img {
 }
 .pagination .pagination-prev {
 	float: right;
-	padding-left: 1.333em;
+	padding-left: 1.334em;
 }
 .pagination .pagination-next {
 	float: left;
-	padding-right: 1.333em;
+	padding-right: 1.334em;
 }
 .pagination a:hover,
 .pagination a:focus {
@@ -1238,17 +1238,17 @@ img {
 	margin: auto;
 	color: inherit;
 	font-size: 0.75em;
-	line-height: 1.333em;
+	line-height: 1.334em;
 }
 .pagination .pagination-info {
 	position: absolute;
 	width: 100%;
-	height: 2.666em;
+	height: 2.667em;
 	left: 0;
 	z-index: 50;
 	display: block;
 	font-size: 0.75em;
-	line-height: 2.666em;
+	line-height: 2.667em;
 	text-align: center;
 }
 
@@ -1300,7 +1300,7 @@ img {
 	}
 	.post-share a {
 		margin-left: 0;
-		margin-right: 0.666em;
+		margin-right: 0.667em;
 	}
 	.post-nav i {
 		font-size: 1.5em;
