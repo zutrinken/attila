@@ -94,8 +94,14 @@
 			<section class="post-comments">
 				<a id="show-disqus" class="post-comments-activate">Show Comments</a>
 			    <div id="disqus_thread"></div>
-
 			</section>
+			
+            {{#if @labs.subscribers}}
+            <section class="post-subscribe">
+                {{subscribe_form placeholder="Your email address" form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
+                <p>Get the latest posts delivered right to your inbox.</p>
+            </section>
+            {{/if}}
 
 			<aside class="post-nav">
 				{{#next_post}}

@@ -41,6 +41,13 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
 }
+input,
+button,
+select,
+textarea {
+	font-family: 'Fira Sans', sans-serif;
+	transition: all ease-out 0.2s;
+}
 
 a {
 	color: $color-blue-15;
@@ -1100,6 +1107,67 @@ img {
 }
 .activated .post-comments-activate {
 	display: none;
+}
+
+/* ==========================================================================
+   Post Subscribe
+   ========================================================================== */
+
+.post-subscribe {
+	position: relative;
+	padding: 2em 0;
+	text-align: center;
+	border-bottom: 1px solid $color-gray-90;
+	box-sizing: border-box;
+	
+	p {
+		margin: 1.25em 0 0;
+		font-size: 0.8em;
+		line-height: 1.25em;
+	}
+	
+	.post-subscribe-form {
+		display: flex;
+		justify-content: center;
+
+		.post-subscribe-input {
+			width: 100%;
+			font-size: 0.8em;
+			height: 2.5em;
+			padding: 0.25em 1em;
+			border: 1px solid $color-blue-80;
+			border-right: none;
+			appearance: none;
+			outline: none;
+			box-shadow: none;
+			box-sizing: border-box;
+			border-radius: 4em 0 0 4em;
+			
+			&:hover {
+				border-color: $color-blue-60;
+			}
+			
+			&:focus {
+				border-color: $color-red-95;
+			}
+		}
+
+		.post-subscribe-button {
+			display: inline-block;
+			font-size: 0.8em;
+			height: 2.5em;
+			padding: 0 1em;
+			font-weight: 500; 
+			color: $color-white;
+			background: $color-red-95;
+			border: 0;
+			appearance: none;
+			outline: none;
+			box-shadow: none;
+			box-sizing: border-box;
+			border-radius: 0 4em 4em 0;
+		}
+	}
 }
 
 /* ==========================================================================
