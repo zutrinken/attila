@@ -861,13 +861,12 @@ img {
 }
 .post {
 	position: relative;
-	padding-top: 2em;
 	z-index: 10;
 }
 .post-title {
 	position: relative;
 	z-index: 10;
-	margin: 0 0 0.5em;
+	margin: 0 0 0.25em;
 	font-size: 2em;
 	line-height: 1em;
 	font-weight: 700;
@@ -911,7 +910,7 @@ img {
 	border-color: rgba(255,255,255,0.5);
 }
 .post-excerpt p {
-	margin: 0;
+	margin: 0.5em 0 0;
 }
 .post-content a {
 	border-bottom: 1px solid $primary-color;
