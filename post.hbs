@@ -25,7 +25,7 @@
 			{{/if}}
 		</nav>
 		<h1 class="post-title">{{{title}}}</h1>
-		<span class="post-meta">{{author}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+		<span class="post-meta">{{author}} | <time datetime="{{date format='YYYY-MM-DD'}}" class="post-date">{{date format="DD MMM YYYY"}}</time></span>
 		{{#if image}}<div class="post-cover cover" style="background-image: url('{{image}}');"></div>{{/if}}
 	</div>
 </header>
