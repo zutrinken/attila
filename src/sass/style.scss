@@ -655,7 +655,7 @@ img {
 #menu li a:hover,
 #menu li a:focus {
 	color: $color-black;
-	background: rgba(0,0,0,0.05);
+	background: $color-highlight-blue;
 }
 #menu li a i {
 	position: relative;
@@ -666,6 +666,7 @@ img {
 #menu li.active a {
 	color: $color-black;
 	font-weight: 500;
+	background: $color-menu-active-blue;
 }
 
 /* ==========================================================================
@@ -918,6 +919,9 @@ img {
 .post-content a:hover,
 .post-content a:focus {
 	color: $primary-color;
+}
+.post-content img {
+	box-shadow: 0 0 1px 0 rgba(0,0,0,.16);
 }
 .post-content img,
 .post-content .fluid-width-video-wrapper {
