@@ -1,39 +1,6 @@
 # Attila
 
-A content focused responsive theme for [Ghost](http://github.com/tryghost/ghost/).
-
-## Demo
-
-* [Blog](http://attila.zutrinken.com/)
-* [Post](http://attila.zutrinken.com/demo/)
-* [Tag Archive](http://attila.zutrinken.com/tag/general/)
-* [Author Archive](http://attila.zutrinken.com/author/zutrinken/)
-
-## Screenshots
-
-<table>
-<tr>
-<td valign="top">
-<img src="https://raw.githubusercontent.com/zutrinken/attila/master/src/screenshot-desktop.jpg" />
-</td>
-<td valign="top">
-<img src="https://raw.githubusercontent.com/zutrinken/attila/master/src/screenshot-mobile.jpg" />
-</td>
-</tr>
-</table>
-
-## Features
-
-* Responsive layout
-* Navigation support
-* Paralax cover images for posts, author archives and blog
-* Author informations for posts and author archives
-* Featured posts
-* Reading progress for posts
-* Automatic code syntax highlight and line numbers
-* Disqus support
-* Subscribers support
-* Sharing buttons
+Theme used for Replicated blog
 
 ## Setup
 
