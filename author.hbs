@@ -20,7 +20,7 @@
 			{{/if}}
 		</nav>
 		{{#if cover_image}}
-		<div class="blog-cover cover" style="background-image: url('{{cover_image}}');"></div>
+		<div class="blog-cover cover" style="background-image: url('{{img_url cover_image}}');"></div>
 		{{else}}
 		{{#if @blog.cover_image}}
 		<div class="blog-cover cover" style="background-image: url('{{img_url @blog.cover}}');"></div>
