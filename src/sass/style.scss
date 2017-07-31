@@ -810,7 +810,7 @@ img {
    Post
    ========================================================================== */
 
-.post.page {
+.post.page-template {
 	padding-bottom: 4em;
 }
 .page-template #footer:after {
@@ -1342,7 +1342,7 @@ img {
 	top: auto;
 	bottom: 0;
 }
-.archive-template .extra-pagination {
+.paged .extra-pagination {
 	display: block;
 }
 
