@@ -4,7 +4,7 @@
 	"demo": "http://attila.zutrinken.com",
 	"version": "1.4.0",
 	"engines": {
-		"ghost": ">=0.9.0 <1.0.0"
+		"ghost": ">=1.0.0"
 	},
 	"license": "MIT",
 	"screenshots": {
@@ -13,6 +13,7 @@
 	},
 	"author": {
 		"name": "Peter Amende",
+		"email": "xoxo@zutrinken.com",
 		"url": "http://zutrinken.com"
 	},
 	"gpm": {
@@ -40,5 +41,8 @@
 		"grunt-postcss": "^0.5.5",
 		"grunt-sass": "^1.0.0",
 		"load-grunt-tasks": "^3.2.0"
-	}
+	},
+    "config": {
+        "posts_per_page": 10
+    }
 }
