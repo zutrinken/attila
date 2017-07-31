@@ -1,8 +1,7 @@
 {{!< default}}
 
 {{#author}}
-
-<header id="blog-header"{{#if cover}} class="has-cover"{{else}}{{#if @blog.cover}} class="has-cover"{{/if}}{{/if}}>
+<header id="blog-header"{{#if cover_image}} class="has-cover"{{else}}{{#if @blog.cover_image}} class="has-cover"{{/if}}{{/if}}>
 	<div class="inner">
 		<nav id="navigation">
 			{{#if @blog.logo}}
@@ -20,23 +19,23 @@
 			</span>
 			{{/if}}
 		</nav>
-		{{#if cover}}
-		<div class="blog-cover cover" style="background-image: url('{{cover}}');"></div>
+		{{#if cover_image}}
+		<div class="blog-cover cover" style="background-image: url('{{cover_image}}');"></div>
 		{{else}}
-		{{#if @blog.cover}}
-		<div class="blog-cover cover" style="background-image: url('{{@blog.cover}}');"></div>
+		{{#if @blog.cover_image}}
+		<div class="blog-cover cover" style="background-image: url('{{img_url @blog.cover}}');"></div>
 		{{/if}}
 		{{/if}}
 	</div>
 </header>
 
-<section id="blog-author"{{#if cover}} class="has-cover"{{else}}{{#if @blog.cover}} class="has-cover"{{/if}}{{/if}}>
+<section id="blog-author"{{#if cover_image}} class="has-cover"{{else}}{{#if @blog.cover_image}} class="has-cover"{{/if}}{{/if}}>
 	<div class="inner">
 
 		<aside class="post-author">
-			{{#if image}}
+			{{#if profile_image}}
 				<figure class="post-author-avatar">
-					<img src="{{image}}" alt="{{name}}" />
+					<img src="{{profile_image}}" alt="{{name}}" />
 				</figure>
 			{{/if}}
 			<div class="post-author-bio">

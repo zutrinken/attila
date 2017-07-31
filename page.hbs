@@ -2,7 +2,7 @@
 
 {{#post}}
 
-<header id="post-header"{{#if image}} class="has-cover" {{/if}}>
+<header id="post-header"{{#if cover_image}} class="has-cover" {{/if}}>
 	<div class="inner">
 		<nav id="navigation">
 			{{#if @blog.logo}}
@@ -21,7 +21,7 @@
 			{{/if}}
 		</nav>
 		<h1 class="post-title">{{{title}}}</h1>
-		{{#if image}}<div class="post-cover cover" style="background-image: url('{{image}}');"></div>{{/if}}
+		{{#if cover_image}}<div class="post-cover cover" style="background-image: url('{{img_url cover_image}}');"></div>{{/if}}
 	</div>
 </header>
 

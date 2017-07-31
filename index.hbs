@@ -1,6 +1,5 @@
 {{!< default}}
-
-<header id="blog-header"{{#if @blog.cover}} class="has-cover"{{/if}}>
+<header id="blog-header"{{#if @blog.cover_image}} class="has-cover"{{/if}}>
 	<div class="inner">
 		<nav id="navigation">
 			{{#if @blog.logo}}
@@ -18,8 +17,8 @@
 		{{#if @blog.description}}
 		<span class="blog-description">{{@blog.description}}</span>
 		{{/if}}
-		{{#if @blog.cover}}
-		<div class="blog-cover cover" style="background-image: url('{{@blog.cover}}');"></div>
+		{{#if @blog.cover_image}}
+		<div class="blog-cover cover" style="background-image: url('{{img_url @blog.cover_image}}');"></div>
 		{{/if}}
 	</div>
 </header>
