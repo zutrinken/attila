@@ -33,13 +33,13 @@
 <main class="content" role="main">
 	<article class="{{post_class}}">
 		<div class="inner">
-		
+
 			<section class="post-content">
 				{{content}}
 			</section>
-			
+
 			<section class="post-info">
-				
+
 				<div class="post-share">
 					<a class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
 						<i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
@@ -52,20 +52,20 @@
 					</a>
 					<div class="clear"></div>
 				</div>
-				
+
 				<aside class="post-tags">
 					{{tags separator=" "}}
 				</aside>
-				
+
 				<div class="clear"></div>
-				
+
 				{{#author}}
 				<aside class="post-author">
-					{{#if profile_image}}
-						<figure class="post-author-avatar">
+					<figure class="post-author-avatar avatar">
+						{{#if profile_image}}
 							<img src="{{profile_image}}" alt="{{name}}" />
-						</figure>
-					{{/if}}
+						{{/if}}
+					</figure>
 					<div class="post-author-bio">
 						<h4 class="post-author-name"><a href="{{url}}">{{name}}</a></h4>
 						{{#if bio}}
@@ -89,13 +89,13 @@
 				{{/author}}
 
 			</section>
-			
+
 
 			<section class="post-comments">
 				<a id="show-disqus" class="post-comments-activate">Show Comments</a>
 			    <div id="disqus_thread"></div>
 			</section>
-			
+
             {{#if @labs.subscribers}}
             <section class="post-subscribe">
                 {{subscribe_form placeholder="Your email address" form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}

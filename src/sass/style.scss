@@ -336,6 +336,40 @@ img {
 	}
 }
 
+.avatar {
+	position: relative;
+	overflow: hidden;
+	background: $color-gray-95;
+	margin: 0;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		width: 50%;
+		height: 50%;
+		bottom: 35%;
+		left: 25%;
+		border-radius: 100%;
+		background: $color-gray-90;
+	}
+
+	&:after {
+		width: 100%;
+		bottom: -25%;
+		left: 0;
+	}
+
+	img {
+		position: relative;
+		z-index: 2;
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}
+
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -1020,7 +1054,6 @@ img {
 	height: 5em;
 	margin: -0.5em 0 0 1.5em;
 	overflow: hidden;
-	background: $color-white;
 	border-radius: 10em;
 	box-sizing: border-box;
 

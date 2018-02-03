@@ -33,11 +33,11 @@
 	<div class="inner">
 
 		<aside class="post-author">
-			{{#if profile_image}}
-				<figure class="post-author-avatar">
+			<figure class="post-author-avatar avatar">
+				{{#if profile_image}}
 					<img src="{{profile_image}}" alt="{{name}}" />
-				</figure>
-			{{/if}}
+				{{/if}}
+			</figure>
 			<div class="post-author-bio">
 				<h2 class="post-author-name">{{name}}</h2>
 				{{#if bio}}
@@ -67,9 +67,9 @@
 <div id="index" class="container">
 
 	<main class="content" role="main">
-	
+
 		{{> "loop"}}
-	
+
 	</main>
 
 </div>
