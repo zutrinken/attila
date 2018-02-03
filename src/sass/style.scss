@@ -190,16 +190,21 @@ dl {
     padding-left: 30px;
 }
 dl dt {
+    font-family: 'Fira Sans', sans-serif;
+  	font-weight: 500;
+  	font-size: 0.75em;
+  	line-height: 1.25em;
     font-weight: 700;
     color: $color-black;
+    margin-bottom: 0.334em;
 }
 dl dt:before {
     content: '';
     position: absolute;
-    width: 0.667em;
+    width: 1em;
     height: 1px;
     margin-left: -30px;
-    margin-top: 0.667em;
+    margin-top: 0.5em;
     background: $color-blue-80;
 }
 dl dd {
