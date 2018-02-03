@@ -96,8 +96,13 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 	font-weight: inherit;
 }
 
-p, ul, ol {
+p {
     margin: 2em 0;
+}
+
+ul, ol {
+    margin: 2em 0;
+    padding-left: 30px;
 }
 
 ul {
@@ -182,21 +187,24 @@ small {
 
 dl {
     margin: 2em 0;
+    padding-left: 30px;
 }
 dl dt {
-    float: left;
-    width: 180px;
-    overflow: hidden;
-    clear: left;
-    text-align: right;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-weight: 700;
+    color: $color-black;
+}
+dl dt:before {
+    content: '';
+    position: absolute;
+    width: 0.667em;
+    height: 1px;
+    margin-left: -30px;
+    margin-top: 0.667em;
+    background: $color-blue-80;
 }
 dl dd {
-    margin-left: 200px;
-    margin-bottom: 12px;
+    margin-left: 0;
+    margin-bottom: 1em;
 }
 
 mark {
