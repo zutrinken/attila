@@ -1,48 +1,48 @@
 {
-	"name": "attila",
-	"description": "Ghost Theme",
-	"demo": "http://attila.zutrinken.com",
-	"version": "1.4.1",
-	"engines": {
-		"ghost": ">=1.0.0"
-	},
-	"license": "MIT",
-	"screenshots": {
-		"desktop": "src/screenshot-desktop.jpg",
-		"mobile": "src/screenshot-mobile.jpg"
-	},
-	"author": {
-		"name": "Peter Amende",
-		"email": "xoxo@zutrinken.com",
-		"url": "http://zutrinken.com"
-	},
-	"gpm": {
-		"type": "theme",
-		"categories": [
-			"Minimal",
-			"Personal Blogs"
-		]
-	},
-	"keywords": [
-		"ghost",
-		"theme"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/zutrinken/attila.git"
-	},
-	"devDependencies": {
-		"autoprefixer-core": "^5.2.1",
-		"grunt": "^0.4.5",
-		"grunt-contrib-clean": "^0.6.0",
-		"grunt-contrib-copy": "^0.8.0",
-		"grunt-contrib-uglify": "^0.9.1",
-		"grunt-contrib-watch": "^0.6.1",
-		"grunt-postcss": "^0.5.5",
-		"grunt-sass": "^1.0.0",
-		"load-grunt-tasks": "^3.2.0"
-	},
-    "config": {
-        "posts_per_page": 10
-    }
+  "name": "attila",
+  "description": "Ghost Theme",
+  "demo": "http://attila.zutrinken.com",
+  "version": "1.4.1",
+  "engines": {
+    "ghost": ">=1.0.0"
+  },
+  "license": "MIT",
+  "screenshots": {
+    "desktop": "src/screenshot-desktop.jpg",
+    "mobile": "src/screenshot-mobile.jpg"
+  },
+  "author": {
+    "name": "Peter Amende",
+    "email": "xoxo@zutrinken.com",
+    "url": "http://zutrinken.com"
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Personal Blogs"
+    ]
+  },
+  "keywords": [
+    "ghost",
+    "theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zutrinken/attila.git"
+  },
+  "devDependencies": {
+    "autoprefixer-core": "^6.0.1",
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-sass": "^2.1.0",
+    "load-grunt-tasks": "^3.5.2"
+  },
+  "config": {
+    "posts_per_page": 10
+  }
 }
