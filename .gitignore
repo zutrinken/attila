@@ -1,5 +1,3 @@
-.DS_store
-.vscode
 node_modules
 package-lock.json
 assets
