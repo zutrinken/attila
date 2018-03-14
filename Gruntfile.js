@@ -58,7 +58,7 @@ module.exports = function(grunt) {
             options: {
                 map: true,
                 processors: [
-                    require('autoprefixer-core')({ browsers: ['last 2 versions'] })
+                    require('autoprefixer')({ browsers: ['last 2 versions'] })
                 ]
             },
             dev: {
@@ -80,14 +80,28 @@ module.exports = function(grunt) {
                 files: '<%=  config.cssSrcDir %>/**/*.scss',
                 tasks: ['sass:dev','copy:dev','postcss:dev']
             }
-        }
+        },
+        compress: {
+            package: {
+              options: {
+                archive: 'attila.zip'
+              },
+              files: [{
+                expand: true,
+                dot: true,
+                cwd: './',
+                src: ['./package.json', './*.hbs', './partials/*.hbs', './assets/**/*'],
+              }]
+            }
+          }
     });
 
     grunt.registerTask('build', [
         'sass:dist',
         'postcss:dist',
         'copy:dist',
-        'uglify'
+        'uglify',
+        'compress:package'
     ]);
     grunt.registerTask('default', [
         'sass:dev',
