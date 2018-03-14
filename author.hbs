@@ -43,12 +43,12 @@
 				{{#if bio}}
 					<p class="post-author-about">{{{bio}}}</p>
 				{{/if}}
-				<span class="post-author-stats"><i class="ic ic-pencil"></i> {{plural ../pagination.total empty='No Posts' singular='% Post' plural='% Posts'}}</span>
+				<span class="post-author-stats"><i class="ic ic-pencil"></i> {{plural ../pagination.total empty=(t "No Posts") singular=(t "% Post") plural=(t "% Posts")}}</span>
 				{{#if location}}
 					<span class="post-author-location"><i class="ic ic-location"></i> {{location}}</span>
 				{{/if}}
 				{{#if website}}
-					<span class="post-author-website"><i class="ic ic-link"></i> <a href="{{website}}">Website</a></span>
+					<span class="post-author-website"><i class="ic ic-link"></i> <a href="{{website}}">{{t "Website"}}</a></span>
 				{{/if}}
 				{{#if twitter}}
 					<span class="post-author-twitter"><i class="ic ic-twitter"></i> <a target="_blank" href="https://twitter.com/{{twitter}}">Twitter</a></span>

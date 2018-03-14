@@ -90,7 +90,13 @@ module.exports = function(grunt) {
                 expand: true,
                 dot: true,
                 cwd: './',
-                src: ['./package.json', './*.hbs', './partials/*.hbs', './assets/**/*'],
+                src: [
+                    './package.json',
+                    './*.hbs',
+                    './partials/*.hbs',
+                    './locales/*.json',
+                    './assets/**/*'
+                ]
               }]
             }
           }
