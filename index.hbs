@@ -4,12 +4,12 @@
 		<nav id="navigation">
 			{{#if @blog.logo}}
 			<span class="blog-logo">
-				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>
+				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{t "Blog Logo"}}" /></a>
 			</span>
 			{{/if}}
 			{{#if @blog.navigation}}
 			<span id="menu-button" class="nav-button">
-				<a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+				<a class="menu-button"><i class="ic ic-menu"></i> {{t "Menu"}}</a>
 			</span>
 			{{/if}}
 		</nav>
@@ -26,9 +26,9 @@
 <div id="index" class="container">
 
 	<main class="content" role="main">
-	
+
 		{{> "loop"}}
-	
+
 	</main>
 
 </div>

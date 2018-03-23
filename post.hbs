@@ -11,16 +11,16 @@
 		<nav id="navigation">
 			{{#if @blog.logo}}
 			<span class="blog-logo">
-				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>
+				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{t "Blog Logo"}}" /></a>
 			</span>
 			{{else}}
 			<span id="home-button" class="nav-button">
-				<a class="home-button" href="{{@blog.url}}" title="Home"><i class="ic ic-arrow-left"></i> Home</a>
+				<a class="home-button" href="{{@blog.url}}" title="{{t "Home"}}"><i class="ic ic-arrow-left"></i> {{t "Home"}}</a>
 			</span>
 			{{/if}}
 			{{#if @blog.navigation}}
 			<span id="menu-button" class="nav-button">
-				<a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
+				<a class="menu-button"><i class="ic ic-menu"></i> {{t "Menu"}}</a>
 			</span>
 			{{/if}}
 		</nav>
@@ -75,7 +75,7 @@
 							<span class="post-author-location"><i class="ic ic-location"></i> {{location}}</span>
 						{{/if}}
 						{{#if website}}
-							<span class="post-author-website"><i class="ic ic-link"></i> <a href="{{website}}">Website</a></span>
+							<span class="post-author-website"><i class="ic ic-link"></i> <a href="{{website}}">{{t "Website"}}</a></span>
 						{{/if}}
 						{{#if twitter}}
 							<span class="post-author-twitter"><i class="ic ic-twitter"></i> <a target="_blank" href="https://twitter.com/{{twitter}}">Twitter</a></span>
@@ -92,14 +92,14 @@
 
 
 			<section class="post-comments">
-				<a id="show-disqus" class="post-comments-activate">Show Comments</a>
+				<a id="show-disqus" class="post-comments-activate">{{t "Show Comments"}}</a>
 			    <div id="disqus_thread"></div>
 			</section>
 
             {{#if @labs.subscribers}}
             <section class="post-subscribe">
-                {{subscribe_form placeholder="Your email address" form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
-                <p>Get the latest posts delivered right to your inbox.</p>
+                {{subscribe_form placeholder=(t "Your email address") form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
+                <p>{{t "Get the latest posts delivered right to your inbox."}}</p>
             </section>
             {{/if}}
 

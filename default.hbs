@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{lang}}">
 <head>
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -15,19 +15,19 @@
 </head>
 
 <body class="{{body_class}}">
-	
+
 	{{navigation}}
-	
+
 	<section id="wrapper">
 		<a class="hidden-close"></a>
 		{{{body}}}
 		<div id="body-class" style="display: none;" class="{{body_class}}"></div>
-	
+
 		<footer id="footer">
 			<div class="inner">
 				<section class="credits">
-					<span class="credits-theme">Theme <a href="https://github.com/zutrinken/attila">Attila</a> by <a href="http://zutrinken.com" rel="nofollow">zutrinken</a></span>
-					<span class="credits-software">Published with <a href="http://ghost.org">Ghost</a></span>
+					<span class="credits-theme">{{t "Theme" }} <a href="https://github.com/zutrinken/attila">Attila</a> {{t "by"}} <a href="http://zutrinken.com" rel="nofollow">zutrinken</a></span>
+					<span class="credits-software">{{t "Published with"}} <a href="http://ghost.org">Ghost</a></span>
 				</section>
 			</div>
 		</footer>

@@ -1,7 +1,7 @@
 <nav id="menu">
-	<a class="close-button">Close</a>
+	<a class="close-button">{{t "Close"}}</a>
 	<div class="nav-wrapper">
-		<p class="nav-label">Menu</p>
+		<p class="nav-label">{{t "Menu"}}</p>
 		<ul>
 			{{#foreach navigation}}
 			<li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
@@ -13,9 +13,9 @@
 			<li class="nav-facebook"><a href="{{facebook_url}}" title="{{@blog.facebook}}"><i class="ic ic-facebook"></i> Facebook</a></li>
 			{{/if}}
 			{{#if @labs.subscribers}}
-			<li class="nav-subscribe"><a href="{{@blog.url}}/subscribe/"><i class="ic ic-mail"></i> Subscribe</a></li>
+			<li class="nav-subscribe"><a href="{{@blog.url}}/subscribe/"><i class="ic ic-mail"></i> {{t "Subscribe"}}</a></li>
 			{{else}}
-			<li class="nav-rss"><a href="{{@blog.url}}/rss/"><i class="ic ic-rss"></i> Subscribe</a></li>
+			<li class="nav-rss"><a href="{{@blog.url}}/rss/"><i class="ic ic-rss"></i> {{t "Subscribe"}}</a></li>
 			{{/if}}
 		</ul>
 	</div>
