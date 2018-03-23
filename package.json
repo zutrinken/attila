@@ -1,11 +1,10 @@
 {
-  "name": "genghis",
+  "name": "attila",
   "description": "Ghost Theme",
-  "demo": "http://genghis.avgar.de",
-  "homepage": "http://genghis.avgar.de",
-  "version": "1.0.0",
+  "demo": "http://attila.zutrinken.com",
+  "version": "1.5.0",
   "engines": {
-    "ghost": ">=1.0.0"
+    "ghost": ">=1.2.0"
   },
   "license": "MIT",
   "screenshots": {
@@ -13,11 +12,6 @@
     "mobile": "src/screenshot-mobile.jpg"
   },
   "author": {
-    "name": "Arthur Schei Nørve",
-    "email": "arthur@avgar.de",
-    "url": "https://avgar.de"
-  },
-  "contributors": {
     "name": "Peter Amende",
     "email": "xoxo@zutrinken.com",
     "url": "http://zutrinken.com"
@@ -31,12 +25,11 @@
   },
   "keywords": [
     "ghost",
-    "theme",
-    "languages"
+    "theme"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/arthurnoerve/genghis.git"
+    "url": "https://github.com/zutrinken/attila.git"
   },
   "devDependencies": {
     "autoprefixer-core": "^6.0.1",
