@@ -1059,6 +1059,7 @@ img {
 	border-top: 1px solid $color-gray-90;
 	border-bottom: 1px solid $color-gray-90;
 	clear: both;
+  font-family: 'Fira Sans', sans-serif;
 }
 .post-author-avatar {
 	position: relative;
@@ -1084,7 +1085,6 @@ img {
 }
 .post-author-bio {
 	padding-left: 10em;
-	font-family: 'Fira Sans', sans-serif;
   font-size: 0.75em;
   line-height: 1.334em;
 
@@ -1138,15 +1138,16 @@ img {
 	border-bottom: 1px solid $color-gray-90;
 	clear: both;
   text-align: center;
+  font-family: 'Fira Sans', sans-serif;
 }
 .post-authors-info {
-  margin: 0 0 1em;
+  margin: 0 0 0.334em;
+  font-size: 0.75em;
+  line-height: 1.334em;
 }
 .post-authors-authors {
   margin: 0;
 	padding: 0;
-  font-size: 1.334em;
-  line-height: 1em;
   text-indent: inherit;
 }
 
