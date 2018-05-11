@@ -25,7 +25,7 @@
 			{{/if}}
 		</nav>
 		<h1 class="post-title">{{{title}}}</h1>
-		<span class="post-meta">{{author}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+		<span class="post-meta">{{authors separator=", "}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
 		{{#if feature_image}}<div class="post-cover cover" style="background-image: url('{{feature_image}}');"></div>{{/if}}
 	</div>
 </header>
@@ -59,34 +59,41 @@
 
 				<div class="clear"></div>
 
-				{{#author}}
-				<aside class="post-author">
-					<figure class="post-author-avatar avatar">
-						{{#if profile_image}}
-							<img src="{{profile_image}}" alt="{{name}}" />
-						{{/if}}
-					</figure>
-					<div class="post-author-bio">
-						<h4 class="post-author-name"><a href="{{url}}">{{name}}</a></h4>
-						{{#if bio}}
-							<p class="post-author-about">{{{bio}}}</p>
-						{{/if}}
-						{{#if location}}
-							<span class="post-author-location"><i class="ic ic-location"></i> {{location}}</span>
-						{{/if}}
-						{{#if website}}
-							<span class="post-author-website"><i class="ic ic-link"></i> <a href="{{website}}">{{t "Website"}}</a></span>
-						{{/if}}
-						{{#if twitter}}
-							<span class="post-author-twitter"><i class="ic ic-twitter"></i> <a target="_blank" href="https://twitter.com/{{twitter}}">Twitter</a></span>
-						{{/if}}
-						{{#if facebook}}
-							<span class="post-author-facebook"><i class="ic ic-facebook"></i> <a target="_blank" href="https://facebook.com/{{facebook}}">Facebook</a></span>
-						{{/if}}
-					</div>
-					<div class="clear"></div>
-				</aside>
-				{{/author}}
+				{{#has author="count:>1"}}
+					<aside class="post-authors">
+						<p class="post-authors-info">{{t "This post was a collaboration between:"}}</p>
+						<p class="post-authors-authors">{{authors separator=", "}}</p>
+					</aside>
+        {{else}}
+					{{#author}}
+						<aside class="post-author">
+							<figure class="post-author-avatar avatar">
+								{{#if profile_image}}
+									<img src="{{profile_image}}" alt="{{name}}" />
+								{{/if}}
+							</figure>
+							<div class="post-author-bio">
+								<h4 class="post-author-name"><a href="{{url}}">{{name}}</a></h4>
+								{{#if bio}}
+									<p class="post-author-about">{{{bio}}}</p>
+								{{/if}}
+								{{#if location}}
+									<span class="post-author-location"><i class="ic ic-location"></i> {{location}}</span>
+								{{/if}}
+								{{#if website}}
+									<span class="post-author-website"><i class="ic ic-link"></i> <a href="{{website}}">{{t "Website"}}</a></span>
+								{{/if}}
+								{{#if twitter}}
+									<span class="post-author-twitter"><i class="ic ic-twitter"></i> <a target="_blank" href="https://twitter.com/{{twitter}}">Twitter</a></span>
+								{{/if}}
+								{{#if facebook}}
+									<span class="post-author-facebook"><i class="ic ic-facebook"></i> <a target="_blank" href="https://facebook.com/{{facebook}}">Facebook</a></span>
+								{{/if}}
+							</div>
+							<div class="clear"></div>
+						</aside>
+					{{/author}}
+        {{/has}}
 
 			</section>
 
