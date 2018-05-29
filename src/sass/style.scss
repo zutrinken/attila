@@ -383,6 +383,16 @@ img {
 	}
 }
 
+.kg-card-markdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kg-card-markdown > * {
+    min-width: 100%;
+}
+
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -971,7 +981,10 @@ img {
 	width: 110%;
 	margin-left: -5%;
 }
-
+.post-content img[src$="#full"] {
+  width: 100vw;
+  margin-left: 0;
+}
 
 /* ==========================================================================
    Post Info
