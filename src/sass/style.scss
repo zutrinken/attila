@@ -219,7 +219,7 @@ code, tt {
 	position: relative;
 	margin: 0 0.334em;
 	padding: 0.334em 0.667em;
-	font-family: 'Inconsolata', monospace, sans-serif;
+	font-family: monospace, sans-serif;
 	font-size: 0.75em;
 	white-space: pre;
 	background: $color-gray-98;
@@ -232,7 +232,7 @@ pre {
 	margin: 2em auto;
 	padding: 1em;
 	overflow: hidden;
-	font-family: 'Inconsolata', monospace, sans-serif;
+	font-family: monospace, sans-serif;
 	white-space: pre;
 	background: $color-gray-98;
   border: 1px solid $color-gray-90;
