@@ -343,6 +343,41 @@ img[src$="#full"] {
   margin: 3em 0;
 }
 
+.kg-image-card {
+  margin: 0 0 2em;
+
+  .kg-image {
+    margin: 0;
+
+    &.kg-image-wide {
+      max-width: 48em;
+      min-width: 100%;
+      width: 75vw;
+    }
+
+    &.kg-image-full {
+      max-width: none;
+      width: 100vw;
+      margin-top: 2em;
+    }
+  }
+
+  figcaption {
+    font-family: 'Fira Sans', sans-serif;
+    color: $color-blue-60;
+    text-align: center;
+    max-width: 32em;
+    margin: auto;
+  	font-size: 0.75em;
+  	line-height: 1.25em;
+  	padding: 0.667em 0;
+  }
+
+  .kg-image-full + figcaption {
+    margin-bottom: 1.334em;
+  }
+}
+
 .fluid-width-video-wrapper {
 	margin: 0 0 2em;
 }
@@ -1000,7 +1035,7 @@ img[src$="#full"] {
    ========================================================================== */
 
 .post-info {
-	margin-top: 6em;
+	margin-top: 2em;
 	overflow: hidden;
 }
 .post-share {
