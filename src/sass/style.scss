@@ -223,7 +223,7 @@ code, tt {
 	font-size: 0.75em;
 	white-space: pre;
 	background: $color-gray-98;
-    border: 1px solid $color-gray-90;
+  border: 1px solid $color-gray-90;
 	top: -2px;
 }
 
@@ -235,7 +235,7 @@ pre {
 	font-family: 'Inconsolata', monospace, sans-serif;
 	white-space: pre;
 	background: $color-gray-98;
-    border: 1px solid $color-gray-90;
+  border: 1px solid $color-gray-90;
 	box-sizing: border-box;
 }
 pre .lines {
@@ -259,6 +259,7 @@ pre .lines .line {
 }
 
 pre code, pre tt {
+  display: block;
 	position: static;
 	top: auto;
 	margin: -1.334em -1.334em -1.334em 1.334em;
@@ -270,6 +271,11 @@ pre code, pre tt {
 	background: transparent;
 	border: none;
 	vertical-align: inherit;
+}
+pre code.language-text {
+  overflow: hidden;
+  white-space: normal;
+  margin-left: -1.334em;
 }
 
 kbd {
