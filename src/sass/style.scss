@@ -70,26 +70,26 @@ h1 {
 	font-size: 2em;
 	line-height: 1em;
 	text-indent: -1px;
-	margin: 2em 0 -0.5em;
+	margin: 1em 0 1em;
 }
 
 h2 {
 	font-size: 1.75em;
 	line-height: 1.111em;
 	text-indent: -1px;
-	margin: 2.286em 0 -0.571em;
+	margin: 1.143em 0 1.143em;
 }
 
 h3 {
 	font-size: 1.5em;
 	line-height: 1.334em;
-	margin: 2em 0 -0.667em;
+	margin: 1em 0 1em;
 }
 
 h4 {
 	font-size: 1.25em;
 	line-height: 1.2em;
-	margin: 2.4em 0 -0.8em;
+	margin: 1.2em 0 1.2em;
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -97,12 +97,13 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 p {
-    margin: 2em 0;
+    margin: 0 0 2em;
 }
 
 ul, ol {
-    margin: 2em 0;
-    padding-left: 30px;
+    margin: 0 0 2em;
+    padding-left: 2em;
+    box-sizing: border-box;
 }
 
 ul {
@@ -144,14 +145,14 @@ ol ol, ul ul, ul ol, ol ul {
 hr {
     display: block;
     height: 1px;
-    margin: 2em 0;
+    margin: 0 0 2em;
     padding: 0;
-	background: $color-gray-90;
+	  background: $color-gray-90;
     border: 0;
 }
 
 blockquote {
-    margin: 2em auto;
+    margin: 0 0 2em;
     padding: 1em;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -162,7 +163,7 @@ blockquote {
     background: $color-gray-98;
 }
 blockquote p {
-	margin: 1em auto;
+	margin: 0 0 1em;
 }
 blockquote p:first-child {
 	margin-top: 0;
@@ -186,7 +187,7 @@ small {
 
 
 dl {
-    margin: 2em 0;
+    margin: 0 0 2em;
     padding-left: 30px;
 }
 dl dt {
@@ -229,7 +230,7 @@ code, tt {
 
 pre {
 	position: relative;
-	margin: 2em auto;
+	margin: 0 0 2em;
 	padding: 1em;
 	overflow: hidden;
 	font-family: monospace, sans-serif;
@@ -295,7 +296,7 @@ kbd {
 table {
 	width: 100%;
 	max-width: 100%;
-	margin: 2em 0;
+	margin: 0 0 2em;
 	background-color: transparent;
 	border: 1px solid $color-gray-90;
 }
@@ -333,10 +334,17 @@ img {
 	display: block;
 	max-width: 100%;
 	height: auto;
-	margin: 2.5em auto;
+	margin: 0 0 2em;
 }
+
+img[src$="#full"] {
+  max-width: none;
+  width: 100vw;
+  margin: 3em 0;
+}
+
 .fluid-width-video-wrapper {
-	margin: 2.5em auto;
+	margin: 0 0 2em;
 }
 
 .clear {
@@ -389,13 +397,15 @@ img {
 	}
 }
 
-.kg-card-markdown {
+.kg-card-markdown,
+.kg-post {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.kg-card-markdown > * {
+.kg-card-markdown > *,
+.kg-post > * {
     min-width: 100%;
 }
 
@@ -974,22 +984,15 @@ img {
 .post-excerpt p {
 	margin: 0.5em 0 0;
 }
+.post-content {
+  padding: 2em 0;
+}
 .post-content a {
 	border-bottom: 1px solid $primary-color;
 }
 .post-content a:hover,
 .post-content a:focus {
 	color: $primary-color;
-}
-.post-content img,
-.post-content .fluid-width-video-wrapper {
-	max-width: none;
-	width: 110%;
-	margin-left: -5%;
-}
-.post-content img[src$="#full"] {
-  width: 100vw;
-  margin-left: 0;
 }
 
 /* ==========================================================================
