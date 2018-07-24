@@ -345,6 +345,7 @@ img[src$="#full"] {
 
 .kg-image-card {
   margin: 0 0 2em;
+  max-width: none !important;
 
   .kg-image {
     margin: 0;
@@ -442,6 +443,7 @@ img[src$="#full"] {
 .kg-card-markdown > *,
 .kg-post > * {
     min-width: 100%;
+    max-width: 100%;
 }
 
 /* ==========================================================================
