@@ -2,9 +2,9 @@
   "name": "attila",
   "description": "Ghost Theme",
   "demo": "http://attila.zutrinken.com",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "engines": {
-    "ghost": ">=1.2.1"
+    "ghost": ">=1.2.0"
   },
   "license": "MIT",
   "screenshots": {
