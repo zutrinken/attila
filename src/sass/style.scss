@@ -379,6 +379,15 @@ img[src$="#full"] {
   }
 }
 
+.kg-embed-card {
+  margin: 0 0 2em;
+
+  > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .fluid-width-video-wrapper {
 	margin: 0 0 2em;
 }
@@ -1014,9 +1023,10 @@ img[src$="#full"] {
   flex-direction: column;
   align-items: center;
 }
-.post-content * {
+.post-content > * {
     min-width: 100%;
     max-width: 100%;
+    box-sizing: border-box;
 }
 .post-content a {
 	border-bottom: 1px solid $primary-color;
