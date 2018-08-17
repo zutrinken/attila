@@ -99,8 +99,6 @@ jQuery(function($) {
 		$('pre code').each(function(i, e) {
 			hljs.highlightBlock(e);
 
-			console.log($(this));
-
 			if(!$(this).hasClass('language-text')) {
 				var code = $(this);
 				var lines = code.html().split(/\n/).length;
