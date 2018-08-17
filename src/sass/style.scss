@@ -1027,6 +1027,14 @@ img[src$="#full"] {
     min-width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
 }
 .post-content a {
 	border-bottom: 1px solid $primary-color;
