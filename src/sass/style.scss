@@ -1024,9 +1024,9 @@ img[src$="#full"] {
   align-items: center;
 }
 .post-content > * {
-    min-width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+  min-width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 
 	&:last-child {
 		margin-bottom: 0;
