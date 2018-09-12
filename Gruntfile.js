@@ -58,7 +58,9 @@ module.exports = function(grunt) {
       options: {
         map: true,
         processors: [
-          require('autoprefixer-core')({ browsers: ['last 2 versions'] })
+          require('autoprefixer-core')({
+            browsers: ['last 2 versions']
+          })
         ]
       },
       dev: {
@@ -78,7 +80,13 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: '<%=  config.cssSrcDir %>/**/*.scss',
-        tasks: ['sass:dev','copy:dev','postcss:dev']
+        tasks: ['sass:dev', 'copy:dev', 'postcss:dev']
+      }
+    },
+    zip: {
+      dist: {
+        src: ['**','!node_modules', '!node_modules/**', '!src', '!src/**', '!.git', '!.git/**', '!.gitignore', '!dist', '!dist/**'],
+        dest: `dist/${require('./package.json').name}.zip`
       }
     }
   });

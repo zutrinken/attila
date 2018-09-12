@@ -53,6 +53,10 @@ Build Grunt project:
 
 	grunt build
 
+The zip Grunt task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
+
+	grunt zip
+
 ## Copyright & License
 
 Copyright (C) 2015-2018 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).
