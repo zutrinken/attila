@@ -33,7 +33,7 @@
     "url": "https://github.com/zutrinken/attila.git"
   },
   "devDependencies": {
-    "autoprefixer-core": "^6.0.1",
+    "autoprefixer": "^9.1.5",
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.1.0",
     "grunt-contrib-copy": "^1.0.0",
