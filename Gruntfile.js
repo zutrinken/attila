@@ -85,7 +85,7 @@ module.exports = function(grunt) {
     },
     zip: {
       dist: {
-        src: ['**','!node_modules', '!node_modules/**', '!src', '!src/**', '!.git', '!.git/**', '!.gitignore', '!dist', '!dist/**'],
+        src: ['**','!node_modules', '!node_modules/**', '!src', '!src/**', '!dist', '!dist/**'],
         dest: `dist/${require('./package.json').name}.zip`
       }
     }
