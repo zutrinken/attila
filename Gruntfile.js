@@ -27,8 +27,8 @@ module.exports = function(grunt) {
 	                src: '*',
                     cwd: 'src/font/',
                     expand: true
-                }]		        
-	        } 
+                }]
+	        }
         },
         clean: {
             dev: ['dev'],
@@ -47,7 +47,9 @@ module.exports = function(grunt) {
             },
             dist: {
                 options: {
-                    outputStyle: 'compressed'
+                    outputStyle: 'compressed',
+                    sourceMap: false,
+                    sourceMapEmbed: false
                 },
                 files: {
                     'assets/<%=  config.cssTargetDir %>/style.css': '<%=  config.cssSrcDir %>/style.scss'
@@ -55,16 +57,22 @@ module.exports = function(grunt) {
             }
         },
         postcss: {
-            options: {
-                map: true,
-                processors: [
-                    require('autoprefixer-core')({ browsers: ['last 2 versions'] })
-                ]
-            },
             dev: {
+                options: {
+                    map: true,
+                    processors: [
+                        require('autoprefixer-core')({ browsers: ['last 2 versions'] })
+                    ]
+                },
                 src: 'assets/<%=  config.cssTargetDir %>/*.css'
             },
             dist: {
+              options: {
+                  map: false,
+                  processors: [
+                      require('autoprefixer-core')({ browsers: ['last 2 versions'] })
+                  ]
+              },
                 src: 'assets/<%=  config.cssTargetDir %>/*.css'
             }
         },
