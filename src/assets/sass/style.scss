@@ -3,10 +3,11 @@
    ========================================================================== */
 
 @import "normalize";
+
 @import "colors";
+@import "code";
 @import "icons";
 @import "fonts";
-@import "highlight";
 
 /* ==========================================================================
    Basics
@@ -215,68 +216,6 @@ dl dd {
 
 mark {
     background-color: $color-yellow-100;
-}
-code, tt {
-	position: relative;
-	margin: 0 0.334em;
-	padding: 0.334em 0.667em;
-	font-family: monospace, sans-serif;
-	font-size: 0.75em;
-	white-space: pre;
-	background: $color-gray-98;
-  border: 1px solid $color-gray-90;
-	top: -2px;
-}
-
-pre {
-	position: relative;
-	margin: 0 0 2em;
-	padding: 1em;
-	overflow: hidden;
-	font-family: monospace, sans-serif;
-	white-space: pre;
-	background: $color-gray-98;
-  border: 1px solid $color-gray-90;
-	box-sizing: border-box;
-}
-pre .lines {
-	position: absolute;
-	width: 2.667em;
-	height: 100%;
-	left: 0;
-	top: 0;
-	padding: 1.334em 0;
-	border-right: 1px solid $color-gray-90;
-	font-size: 0.75em;
-	line-height: 2em;
-	text-align: right;
-	box-sizing: border-box;
-	background: rgba(255,255,255,0.5);
-}
-pre .lines .line {
-	display: block;
-	padding-right: 0.334em;
-    color: $color-blue-30;
-}
-
-pre code, pre tt {
-  display: block;
-	position: static;
-	top: auto;
-	margin: -1.334em -1.334em -1.334em 1.334em;
-	padding: 1.334em;
-  overflow-x: auto;
-	font-size: 0.75em;
-	line-height: 2em;
-	white-space: pre;
-	background: transparent;
-	border: none;
-	vertical-align: inherit;
-}
-pre code.language-text {
-  overflow: hidden;
-  white-space: normal;
-  margin-left: -1.334em;
 }
 
 kbd {
@@ -626,7 +565,6 @@ img[src$="#full"] {
    Navigation
    ========================================================================== */
 
-#navigation {}
 .nav-button {
 	position: fixed;
 	top: 0;
@@ -784,7 +722,6 @@ img[src$="#full"] {
 #menu li:last-child:before {
 	display: none;
 }
-#menu li.active {}
 #menu li.active:after {
 	position: absolute;
 	content: '';

@@ -37,7 +37,62 @@ A content focused responsive theme for [Ghost](http://github.com/tryghost/ghost/
 
 ## Setup
 
-To enable [Disqus](https://disqus.com/) comments go to your blogs code injection settings and add `<script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>` to your blog header.
+### Disqus Comments
+
+To enable [Disqus](https://disqus.com/) comments go to your blogs code injection
+settings and add `<script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>` to
+your blog header.
+
+### Syntax Highlighting
+
+Syntax highlighting is included out of the box with Prism.js! By default we
+support these languages:
+
+* Apacheconf
+* Bash
+* C
+* C++
+* C#
+* CSS
+* Diffs
+* Handlebars
+* HTTP
+* Ini
+* Java
+* Javascript
+* JSON
+* JSX
+* LESS
+* Makefiles
+* Markdown
+* Markup
+* Nginx
+* Objective C
+* PHP
+* Perl
+* Properties
+* Python
+* Ruby
+* SASS & SCSS
+* SQL
+
+More languages can be added by including them in your blogs code injection
+settings and adding them to your footer:
+
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-coffeescript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-erlang.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-jolie.min.js"></script>
+```
+
+We also include a default theme. This can be overridden by including custom
+styles in your header:
+
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism-okaidia.min.css" />
+```
+
+Note that additional styling may be necessary when including a custom theme.
 
 ## Local Development
 

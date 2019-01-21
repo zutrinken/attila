@@ -1,170 +1,150 @@
-import jQuery from 'jquery';
-import hljs from 'highlight.js/lib/highlight';
+import Prism from 'prismjs';
 import reframe from 'reframe.js';
 
 // bootstrap styles
 import '../sass/style.scss';
 
-// boostrap languages
-import './languages';
+let body = document.querySelector('body');
+let html = document.querySelector('html');
 
+/* ==========================================================================
+	 Menu
+	 ========================================================================== */
 
-jQuery(function($) {
+function menu() {
+	let menuElements = document.querySelectorAll('#menu, .menu-button, .hidden-close');
 
-	var body = $('body');
-	var html = $('html');
-	var viewport = $(window);
-
-	/* ==========================================================================
-	   Menu
-	   ========================================================================== */
-
-	function menu() {
-		html.toggleClass('menu-active');
-	};
-
-	$('#menu').on({
-		'click': function() {
-			menu();
-		}
+	menuElements.forEach(function(menuElement) {
+		menuElement.addEventListener('click', () => {
+			html.classList.toggle('menu-active')
+		});
 	});
+}
+menu();
 
-	$('.menu-button').on({
-		'click': function() {
-			menu();
-		}
-	});
+/* ==========================================================================
+	 Parallax cover
+	 ========================================================================== */
 
-	$('.hidden-close').on({
-		'click': function() {
-			menu();
-		}
-	});
+let cover = document.querySelector('.cover');
+let coverPosition = 0;
 
-	/* ==========================================================================
-	   Parallax cover
-	   ========================================================================== */
-
-	var cover = $('.cover');
-	var coverPosition = 0;
-
+if (cover) {
 	function prlx() {
-		if(cover.length >= 1) {
-			var windowPosition = viewport.scrollTop();
-			(windowPosition > 0) ? coverPosition = Math.floor(windowPosition * 0.25) : coverPosition = 0;
-			cover.css({
-				'-webkit-transform' : 'translate3d(0, ' + coverPosition + 'px, 0)',
-				'transform' : 'translate3d(0, ' + coverPosition + 'px, 0)'
-			});
-			(viewport.scrollTop() < cover.height()) ? html.addClass('cover-active') : html.removeClass('cover-active');
+		let windowPosition = html.scrollTop;
+		coverPosition = windowPosition > 0 ? Math.floor(windowPosition * 0.25) : 0;
+
+		cover.style['-webkit-transform'] = 'translate3d(0, ' + coverPosition + 'px, 0)';
+		cover.style['transform'] = 'translate3d(0, ' + coverPosition + 'px, 0)'
+
+		if (html.scrollTop < cover.offsetHeight) {
+			html.classList.add('cover-active');
+		} else {
+			html.classList.remove('cover-active');
 		}
 	}
 	prlx();
 
-	viewport.on({
-		'scroll': function() {
-			prlx();
-		},
-		'resize': function() {
-			prlx();
-		},
-		'orientationchange': function() {
-			prlx();
-		}
-	});
+	window.addEventListener('scroll', prlx);
+	window.addEventListener('resize', prlx);
+	window.addEventListener('orientationChange', prlx);
+}
 
-	/* ==========================================================================
-	   Reading Progress
-	   ========================================================================== */
+/* ==========================================================================
+	 Reading Progress
+	 ========================================================================== */
 
-	var post = $('.post-content');
+let post = document.querySelector('.post-content');
+let progressBar = document.querySelector('.progress-bar');
+let progressContainer = document.querySelector('.progress-container');
 
+
+if (progressBar) {
 	function readingProgress() {
-		if(post.length >= 1) {
-			var postBottom = post.offset().top + post.height();
-			var windowBottom = viewport.scrollTop() + viewport.height();
-			var progress = 100 - (((postBottom - windowBottom) / (postBottom - viewport.height())) * 100);
-			$('.progress-bar').css('width', progress + '%');
-			(progress > 100) ? $('.progress-container').addClass('ready') : $('.progress-container').removeClass('ready');
+		let viewportHeight = document.documentElement.clientHeight;
+		let postBottom = html.scrollTop + post.getBoundingClientRect().bottom;
+		let windowBottom = html.scrollTop + viewportHeight;
+		let progress = 100 - ((postBottom - windowBottom) / (postBottom - viewportHeight) * 100);
+
+		progressBar.style['width'] = progress + '%';
+
+		if (progress > 100) {
+			progressContainer.classList.add('ready');
+		} else {
+			progressContainer.classList.remove('ready');
 		}
 	}
 	readingProgress();
 
-	viewport.on({
-		'scroll': function() {
-			readingProgress();
-		},
-		'resize': function() {
-			readingProgress();
-		},
-		'orientationchange': function() {
-			readingProgress();
-		}
+	window.addEventListener('scroll', readingProgress);
+	window.addEventListener('resize', readingProgress);
+	window.addEventListener('orientationChange', readingProgress);
+}
+
+/* ==========================================================================
+	 Gallery
+	 ========================================================================== */
+
+function gallery() {
+	let images = document.querySelectorAll('.kg-gallery-image img');
+	images.forEach(function (image) {
+		let container = image.closest('.kg-gallery-image');
+		let width = image.attributes.width.value;
+		let height = image.attributes.height.value;
+		let ratio = width / height;
+		container.style.flex = ratio + ' 1 0%';
 	});
+}
+gallery();
 
-	/* ==========================================================================
-	   Gallery
-	   ========================================================================== */
+/* ==========================================================================
+	 Prism Plugins
+	 ========================================================================== */
 
-	function gallery() {
-		var images = document.querySelectorAll('.kg-gallery-image img');
-		images.forEach(function (image) {
-			var container = image.closest('.kg-gallery-image');
-			var width = image.attributes.width.value;
-			var height = image.attributes.height.value;
-			var ratio = width / height;
-			container.style.flex = ratio + ' 1 0%';
-		});
-	}
-	gallery();
+// Takes the line-numbers element added by the line-numbers plugin and moves it
+// from the `code` to the `pre. This allows us to style it such that the line
+// numbers are positioned absolutely, and do not move if the user scrolls to the
+// right.
+Prism.hooks.add('complete', function (env) {
+	let lineNumbers = env.element.querySelector('.line-numbers-rows');
 
-	/* ==========================================================================
-	   Style code blocks with highlight and numbered lines
-	   ========================================================================== */
-
-	function codestyling() {
-		$('pre code').each(function(i, e) {
-			hljs.highlightBlock(e);
-
-			if(!$(this).hasClass('language-text')) {
-				var code = $(this);
-				var lines = code.html().split(/\n/).length;
-				var numbers = [];
-				for (i = 1; i < lines; i++) {
-					numbers += '<span class="line">' + i + '</span>';
-				}
-				code.parent().append('<div class="lines">' + numbers + '</div>');
-			}
-		});
-	}
-	codestyling();
-
-	/* ==========================================================================
-	   Responsive Videos with Reframe
-	   ========================================================================== */
-
-	function video() {
-		reframe('iframe');
-	}
-	video();
-
-	/* ==========================================================================
-	   Initialize and load Disqus
-	   ========================================================================== */
-
-	if (typeof disqus === 'undefined') {
-		$('.post-comments').css({
-			'display' : 'none'
-		});
-	} else {
-		$('#show-disqus').on('click', function() {
-			$.ajax({
-				type: "GET",
-				url: "//" + disqus + ".disqus.com/embed.js",
-				dataType: "script",
-				cache: true
-			});
-			$(this).parent().addClass('activated');
-		});
+	if (lineNumbers) {
+		env.element.parentNode.appendChild(lineNumbers);
 	}
 });
+
+
+/* ==========================================================================
+	 Responsive Videos with Fitvids
+	 ========================================================================== */
+
+function video() {
+	reframe('iframe')
+}
+video();
+
+/* ==========================================================================
+	 Initialize and load Disqus
+	 ========================================================================== */
+
+if (typeof window.disqus === 'undefined') {
+	let postComments = document.querySelector('.post-comments');
+
+	if (postComments) {
+		postComments.style['display'] = 'none';
+	}
+} else {
+	let disqusButton = document.querySelector('#show-disqus');
+
+	if (disqusButton) {
+		disqusButton.addEventListener('click', function() {
+			// create and append a script tag to load the disqus embed script
+			let script = document.createElement('script');
+			script.async = true;
+			script.src = '//' + disqus + '.disqus.com/embed.js';
+			document.body.appendChild(script);
+
+			disqusButton.style['display'] = 'none';
+		});
+	}
+}

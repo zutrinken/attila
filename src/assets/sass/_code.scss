@@ -1,0 +1,164 @@
+/**
+ * Github-like theme for Prism.js
+ * @author Luke Askew http://github.com/lukeaskew
+ */
+
+// color vars
+$code-colors: (
+	blue: #183691,
+	teal: #0086b3,
+	black: #333,
+	purple: #a71d5d,
+	maroon: #a71d5d,
+	green: #63a35c,
+	light-gray: $color-gray-98,
+	medium-gray: $color-gray-90,
+	dark-gray: #969896
+);
+
+code {
+	font-size: 0.75em;
+  padding: 0.334em 0.667em;
+}
+
+pre {
+	margin: 0 0 2em;
+}
+
+code,
+code[class*='language-'],
+pre[class*='language-'] {
+  background: map-get($code-colors, light-gray);
+	color: map-get($code-colors, black);
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	tab-size: 4;
+	hyphens: none;
+	direction: ltr;
+	cursor: text;
+}
+
+pre[class*='language-'] {
+	overflow: auto;
+  border: 1px solid map-get($code-colors, medium-gray);
+}
+
+pre code,
+pre code[class*='language-'] {
+  display: block;
+	font-family: monospace, sans-serif;
+  white-space: pre;
+  background: map-get($code-colors, light-gray);
+  padding: 1.2em;
+  overflow-x: auto;
+}
+
+// inline code
+:not(pre) > code {
+  border: 1px solid map-get($code-colors, medium-gray);
+  margin: 0 0.334em;
+	padding: 0.334em 0.667em;
+  position: relative;
+  top: -2px;
+}
+
+
+// token colors
+.token {
+
+	&.comment,
+	&.prolog,
+	&.doctype,
+	&.cdata {
+		color: map-get($code-colors, dark-gray);
+	}
+
+	&.punctuation,
+	&.string,
+	&.atrule,
+	&.attr-value {
+		color: map-get($code-colors, blue);
+	}
+
+	&.property,
+	&.tag {
+		color: map-get($code-colors, green);
+	}
+
+	&.boolean,
+	&.number {
+		color: map-get($code-colors, teal);
+	}
+
+	&.selector,
+	&.attr-name,
+	&.attr-value .punctuation:first-child,
+	&.keyword,
+	&.regex,
+	&.important {
+		color: map-get($code-colors, maroon);
+	}
+
+
+	&.operator,
+	&.entity,
+	&.url,
+	.language-css &.string {
+		color: map-get($code-colors, purple);
+	}
+
+	&.entity {
+		cursor: help;
+	}
+
+}
+
+.namespace {
+	opacity: 0.7;
+}
+
+
+/*
+  Prism Line Numbers CSS
+*/
+pre[class*="language-"].line-numbers {
+	position: relative;
+	padding-left: 2.25em;
+	counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+	position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+	font-size: 0.75em;
+	position: absolute;
+	pointer-events: none;
+  top: 0;
+	left: 0;
+  padding: 1.2em 0;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+  border-right: 1px solid map-get($code-colors, medium-gray);
+  background: rgba(255,255,255,0.5);
+
+	user-select: none;
+
+}
+
+.line-numbers-rows > span {
+  pointer-events: none;
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber) '\00000a';
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
