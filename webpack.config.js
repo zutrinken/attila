@@ -1,13 +1,18 @@
 const path = require('path');
-const TerserPlugin = require('terser-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+const ZipPlugin = require('zip-webpack-plugin');
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  entry: './src/js/script.js',
+  mode: 'development',
+  entry: './src/assets/js/script.js',
   output: {
-    path: path.resolve(__dirname, 'assets'),
-    filename: 'js/script.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'assets/js/script.js'
   },
   module: {
     rules: [
@@ -25,10 +30,10 @@ module.exports = {
             loader: 'file-loader',
             options: {
                 name: '[name].[ext]',
-                outputPath: 'font/'
+                outputPath: '/assets/font/'
             }
         }]
-    }
+      }
     ]
   },
   optimization: {
@@ -39,7 +44,40 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/style.css'
-    })
+      filename: 'assets/css/style.css'
+    }),
+    new CopyWebpackPlugin([{
+      from: 'src/**/*.+(hbs|json)',
+      transformPath(path) {
+        return path.replace('src/', '');
+      }
+    }])
   ]
 };
+
+// Add zip for production builds
+if (process.env.WEBPACK_MODE === 'production') {
+  module.exports.plugins.push(
+    new ZipPlugin({
+      path: '..',
+      pathPrefix: '.',
+      filename: 'attila.zip',
+      exclude: [
+        /^node_modules\//,
+        /^\.git\//,
+        /^screenshot-/,
+        'package.json',
+        'README.md',
+        'yarn.lock',
+        '.gitignore'
+      ]
+    })
+  );
+}
+
+// Add bundle analyzer if enabled
+if (process.env.ANALYZE_BUNDLE) {
+  module.exports.plugins.push(
+    new BundleAnalyzerPlugin()
+  );
+}

@@ -1,2 +1,4 @@
 .DS_store
 node_modules
+/dist
+/attila.zip

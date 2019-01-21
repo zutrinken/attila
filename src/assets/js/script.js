@@ -1,11 +1,13 @@
 import jQuery from 'jquery';
-import hljs from 'highlightjs';
-
-// bootstrap plugins
-import 'fitvids';
+import hljs from 'highlight.js/lib/highlight';
+import reframe from 'reframe.js';
 
 // bootstrap styles
 import '../sass/style.scss';
+
+// boostrap languages
+import './languages';
+
 
 jQuery(function($) {
 
@@ -138,11 +140,11 @@ jQuery(function($) {
 	codestyling();
 
 	/* ==========================================================================
-	   Responsive Videos with Fitvids
+	   Responsive Videos with Reframe
 	   ========================================================================== */
 
 	function video() {
-		$('#wrapper').fitVids();
+		reframe('iframe');
 	}
 	video();
 
