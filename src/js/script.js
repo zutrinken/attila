@@ -1,3 +1,12 @@
+import jQuery from 'jquery';
+import hljs from 'highlightjs';
+
+// bootstrap plugins
+import 'fitvids';
+
+// bootstrap styles
+import '../sass/style.scss';
+
 jQuery(function($) {
 
 	var body = $('body');
