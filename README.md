@@ -94,6 +94,27 @@ styles in your header:
 
 Note that additional styling may be necessary when including a custom theme.
 
+#### Language & Line Numbers
+
+You can use Markdown cards to specify the language for code snippets:
+
+    ```js
+    function foo() {
+
+    }
+    ```
+
+
+You can append a number of modifier classes to the language as a comma
+delimited list, and they will all be applied to the element. To add line numbers
+to a snippet, add the `line-numbers` class:
+
+    ```js,line-numbers
+    function foo() {
+
+    }
+    ```
+
 ## Local Development
 
 1. Install [Ghost locally](https://docs.ghost.org/install/local/).
