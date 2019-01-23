@@ -1,14 +1,12 @@
 {
-    "% Post": "% innlegg",
-    "% Posts": "% innlegg",
     "Blog Logo": "Blogg logo",
     "Close": "Lukk",
     "Get the latest posts delivered right to your inbox.": "Få de siste innleggene rett i innboksen",
     "Home": "Hjem",
     "Menu": "Meny",
     "Newer Posts": "Nyere",
-    "No Posts": "Ingen innlegg",
     "Older Posts": "Gamlere",
+    "Page {page} of {pages}": "Side {page} av {pages}",
     "Posts": "Innlegg",
     "Published with": "Publisert med",
     "Show Comments": "Vis kommentarer",
@@ -17,5 +15,9 @@
     "Website": "Nettside",
     "Your email address": "Din e-post adresse",
     "by": "av",
-    "on ": "i "
+    "on ": "i ",
+    "No Posts": "Ingen innlegg",
+    "% Post": "% innlegg",
+    "% Posts": "% innlegg",
+    "This post was a collaboration between:": "Dette innlegget var et samarbeid mellom:"
 }

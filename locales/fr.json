@@ -1,13 +1,10 @@
 {
-    "% Post": "% Article",
-    "% Posts": "% Articless",
     "Blog Logo": "Logo du blog",
     "Close": "Fermer",
     "Get the latest posts delivered right to your inbox.": "Recevez les derniers articles directement dans votre boite de réception.",
     "Home": "Accueil",
     "Menu": "Menu",
     "Newer Posts": "Articles plus récents",
-    "No Posts": "Pas d'article",
     "Older Posts": "Articles plus ancients",
     "Page {page} of {pages}": "Page {page} sur {pages}",
     "Posts": "Articles",
@@ -19,5 +16,8 @@
     "Your email address": "Votre adresse email",
     "by": "par",
     "on ": "sur ",
-    "This post was a collaboration between:": "Cet article a été une collaboration entre :"
+    "No Posts": "Pas d'article",
+    "% Post": "% Article",
+    "% Posts": "% Articless",
+    "This post was a collaboration between:": "Cet article a été une collaboration entre:"
 }
