@@ -109,6 +109,13 @@ module.exports = function(grunt) {
     'copy:dist',
     'uglify'
   ]);
+  grunt.registerTask('dist', [
+    'sass:dist',
+    'postcss:dist',
+    'copy:dist',
+    'uglify',
+    'zip'
+  ]);
   grunt.registerTask('default', [
     'sass:dev',
     'postcss:dev',

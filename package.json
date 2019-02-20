@@ -32,6 +32,9 @@
     "type": "git",
     "url": "https://github.com/zutrinken/attila.git"
   },
+  "scripts": {
+    "dist": "grunt dist"
+  },
   "devDependencies": {
     "autoprefixer": "^9.1.5",
     "grunt": "^1.0.1",
