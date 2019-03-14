@@ -97,11 +97,28 @@
 
 			</section>
 
-
+<!--
 			<section class="post-comments">
-				<a id="show-disqus" class="post-comments-activate">{{t "Show Comments"}}</a>
+				<a id="show-disqus" class="post-comments-activate">Show Comments</a>
 			    <div id="disqus_thread"></div>
-			</section>
+			 </section>
+			 -->
+
+<div id="disqus_thread"></div>
+<script>
+
+var disqus_config = function () {
+this.page.url = "http://albertodebortoli.ghost.io{{url}}";
+this.page.identifier = "http://albertodebortoli.ghost.io{{url}}";
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://albertodebortoli.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
             {{#if @labs.subscribers}}
             <section class="post-subscribe">
