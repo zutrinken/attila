@@ -1,19 +1,19 @@
 {{!< default}}
 
 {{#author}}
-<header id="blog-header"{{#if cover_image}} class="has-cover"{{else}}{{#if @blog.cover_image}} class="has-cover"{{/if}}{{/if}}>
+<header id="blog-header"{{#if cover_image}} class="has-cover"{{else}}{{#if @site.cover_image}} class="has-cover"{{/if}}{{/if}}>
 	<div class="inner">
 		<nav id="navigation">
-			{{#if @blog.logo}}
+			{{#if @site.logo}}
 			<span class="blog-logo">
-				<a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{t "Blog Logo"}}" /></a>
+				<a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
 			</span>
 			{{else}}
 			<span id="home-button" class="nav-button">
-				<a class="home-button" href="{{@blog.url}}" title="{{t "Home"}}"><i class="ic ic-arrow-left"></i> {{t "Home"}}</a>
+				<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}"><i class="ic ic-arrow-left"></i> {{t "Home"}}</a>
 			</span>
 			{{/if}}
-			{{#if @blog.navigation}}
+			{{#if @site.navigation}}
 			<span id="menu-button" class="nav-button">
 				<a class="menu-button"><i class="ic ic-menu"></i> {{t "Menu"}}</a>
 			</span>
@@ -22,14 +22,14 @@
 		{{#if cover_image}}
 		<div class="blog-cover cover" style="background-image: url('{{img_url cover_image}}');"></div>
 		{{else}}
-		{{#if @blog.cover_image}}
-		<div class="blog-cover cover" style="background-image: url('{{img_url @blog.cover}}');"></div>
+		{{#if @site.cover_image}}
+		<div class="blog-cover cover" style="background-image: url('{{img_url @site.cover}}');"></div>
 		{{/if}}
 		{{/if}}
 	</div>
 </header>
 
-<section id="blog-author"{{#if cover_image}} class="has-cover"{{else}}{{#if @blog.cover_image}} class="has-cover"{{/if}}{{/if}}>
+<section id="blog-author"{{#if cover_image}} class="has-cover"{{else}}{{#if @site.cover_image}} class="has-cover"{{/if}}{{/if}}>
 	<div class="inner">
 
 		<aside class="post-author">
