@@ -1,10 +1,11 @@
 {
   "name": "attila",
   "description": "Ghost Theme",
-  "demo": "http://attila.zutrinken.com",
-  "version": "1.7.6",
+  "demo": "https://attila.zutrinken.com",
+  "version": "1.7.7",
   "engines": {
-    "ghost": ">=2.1.0"
+    "ghost": ">=2.1.0",
+    "ghost-api": "v2"
   },
   "license": "MIT",
   "screenshots": {
@@ -14,7 +15,7 @@
   "author": {
     "name": "Peter Amende",
     "email": "xoxo@zutrinken.com",
-    "url": "http://zutrinken.com"
+    "url": "https://zutrinken.com"
   },
   "gpm": {
     "type": "theme",
