@@ -432,6 +432,15 @@ img[src$="#full"] {
   }
 }
 
+.kg-code-card {
+  min-width: 100%;
+  margin: 0 0 2em;
+}
+
+.kg-code-card pre {
+  margin: 0;
+}
+
 .fluid-width-video-wrapper {
 	margin: 0 0 2em;
 }
