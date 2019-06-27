@@ -38,6 +38,7 @@ A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost
 * __Italian__ by [fmaida](https://github.com/fmaida)
 * __Norwegian__ by [arthurnoerve](https://github.com/arthurnoerve)
 * __Chinese__ by [hao-lee](https://github.com/hao-lee)
+* __Indonesian__ by [simplyeazy](https://github.com/simplyeazy)
 
 ## Setup
 
