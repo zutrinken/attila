@@ -20,10 +20,26 @@
 			{{/if}}
 		</nav>
 		{{#if cover_image}}
-		<div class="blog-cover cover" style="background-image: url('{{img_url cover_image}}');"></div>
+		<div class="blog-cover cover">
+			<img
+			srcset="{{img_url cover_image size="s"}} 320w,
+              {{img_url cover_image size="m"}} 640w,
+              {{img_url cover_image size="l"}} 960w,
+              {{img_url cover_image size="xl"}} 1920w"
+      src="{{img_url cover_image size="xl"}}"
+			alt="{{@site.title}}" />
+		</div>
 		{{else}}
 		{{#if @site.cover_image}}
-		<div class="blog-cover cover" style="background-image: url('{{img_url @site.cover}}');"></div>
+		<div class="blog-cover cover">
+			<img
+			srcset="{{img_url @site.cover_image size="s"}} 320w,
+              {{img_url @site.cover_image size="m"}} 640w,
+              {{img_url @site.cover_image size="l"}} 960w,
+              {{img_url @site.cover_image size="xl"}} 1920w"
+      src="{{img_url @site.cover_image size="xl"}}"
+			alt="{{@site.title}}" />
+		</div>
 		{{/if}}
 		{{/if}}
 	</div>

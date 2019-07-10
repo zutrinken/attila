@@ -536,6 +536,18 @@ img {
 	z-index: 5;
 	background: no-repeat scroll center center / cover $color-black;
 	animation: 0.5s ease-in forwards fadein;
+  display: flex;
+  align-items: center;
+
+  img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    z-index: 6;
+    object-fit: cover;
+  }
 }
 .blog-cover:after {
 	position: absolute;
@@ -702,6 +714,7 @@ img {
 	box-shadow: inset -2px 0 7px rgba(0,0,0,0.1);
 	transform: translate3d(16em,0,0);
 	transition: all ease-out 0.25s;
+  box-sizing: border-box;
 }
 .menu-active #menu {
 	transform: translate3d(0,0,0);
@@ -1000,6 +1013,18 @@ img {
 	z-index: 5;
 	background: no-repeat scroll center center / cover $color-black;
 	animation: 0.5s ease-in forwards fadein;
+  display: flex;
+  align-items: center;
+
+  img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    z-index: 6;
+    object-fit: cover;
+  }
 }
 .post-cover:after {
 	position: absolute;
