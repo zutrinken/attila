@@ -83,7 +83,7 @@ h2 {
 
 h3 {
 	font-size: 1.5em;
-	line-height: 1.334em;
+	line-height: 1.33333em;
 	margin: 1em 0 1em;
 }
 
@@ -198,7 +198,7 @@ dl dt {
   	line-height: 1.25em;
     font-weight: 700;
     color: $color-black;
-    margin-bottom: 0.334em;
+    margin-bottom: 0.33333em;
 }
 dl dt:before {
     content: '';
@@ -219,8 +219,8 @@ mark {
 }
 code, tt {
 	position: relative;
-	margin: 0 0.334em;
-	padding: 0.334em 0.667em;
+	margin: 0 0.33333em;
+	padding: 0.33333em 0.66666em;
 	font-family: monospace, sans-serif;
 	font-size: 0.75em;
 	white-space: pre;
@@ -242,11 +242,11 @@ pre {
 }
 pre .lines {
 	position: absolute;
-	width: 2.667em;
+	width: 2.66666em;
 	height: 100%;
 	left: 0;
 	top: 0;
-	padding: 1.334em 0;
+	padding: 1.33333em 0;
 	border-right: 1px solid $color-gray-90;
 	font-size: 0.75em;
 	line-height: 2em;
@@ -256,7 +256,7 @@ pre .lines {
 }
 pre .lines .line {
 	display: block;
-	padding-right: 0.334em;
+	padding-right: 0.33333em;
     color: $color-blue-30;
 }
 
@@ -264,8 +264,8 @@ pre code, pre tt {
   display: block;
 	position: static;
 	top: auto;
-	margin: -1.334em -1.334em -1.334em 1.334em;
-	padding: 1.334em;
+	margin: -1.33333em -1.33333em -1.33333em 1.33333em;
+	padding: 1.33333em;
   overflow-x: auto;
 	font-size: 0.75em;
 	line-height: 2em;
@@ -277,7 +277,7 @@ pre code, pre tt {
 pre code.language-text {
   overflow: hidden;
   white-space: normal;
-  margin-left: -1.334em;
+  margin-left: -1.33333em;
 }
 
 kbd {
@@ -315,7 +315,7 @@ table th {
 	font-weight: 500;
 	font-size: 0.75em;
 	line-height: 1.25em;
-	padding: 0.667em;
+	padding: 0.66666em;
 	color: $color-black;
 }
 table td:after {
@@ -372,11 +372,11 @@ img[src$="#full"] {
     margin: auto;
   	font-size: 0.75em;
   	line-height: 1.25em;
-  	padding: 0.667em 0;
+  	padding: 0.66666em 0;
   }
 
   .kg-image-full + figcaption {
-    margin-bottom: 1.334em;
+    margin-bottom: 1.33333em;
   }
 }
 
@@ -394,7 +394,7 @@ img[src$="#full"] {
     margin: auto;
   	font-size: 0.75em;
   	line-height: 1.25em;
-  	padding: 0.667em 0;
+  	padding: 0.66666em 0;
   }
 }
 
@@ -657,7 +657,7 @@ img[src$="#full"] {
 	border: 1px solid $color-blue-80;
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 0.75em;
-	line-height: 1.667em;
+	line-height: 1.66666em;
 	text-shadow: none;
 	color: $color-blue-60;
 	cursor: pointer;
@@ -766,7 +766,7 @@ img[src$="#full"] {
 }
 #menu .nav-label {
 	display: block;
-	padding: 1.667em 2em;
+	padding: 1.66666em 2em;
 	margin: 0;
 	opacity: 0.5;
 	font-size: 0.75em;
@@ -917,19 +917,19 @@ img[src$="#full"] {
 	border: 0.125em solid $color-white;
 }
 #blog-author .post-author-name {
-	padding: 0.334em 0 0;
+	padding: 0.33333em 0 0;
 	font-size: 2em;
 	line-height: 1em;
 }
 #blog-author.has-cover .post-author-name {
-	padding: 0.667em 0;
+	padding: 0.66666em 0;
 	font-weight: 500;
 	letter-spacing: 0.025em;
-	line-height: 1.334em;
+	line-height: 1.33333em;
 	color: $color-white;
 }
 #blog-author.has-cover .post-author-about {
-	margin-top: -0.667em;
+	margin-top: -0.66666em;
 }
 
 
@@ -1044,11 +1044,11 @@ img[src$="#full"] {
 	position: relative;
 	z-index: 10;
 	display: block;
-	margin-bottom: 1.334em;
+	margin-bottom: 1.33333em;
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 0.75em;
 	font-weight: 400;
-	line-height: 1.334em;
+	line-height: 1.33333em;
   color: $color-blue-60;
 }
 .has-cover .post-meta {
@@ -1221,7 +1221,7 @@ img[src$="#full"] {
 .post-author-bio {
 	padding-left: 10em;
   font-size: 0.75em;
-  line-height: 1.334em;
+  line-height: 1.33333em;
 
   @media only screen and (max-width: 480px) {
     padding-left: 0;
@@ -1230,12 +1230,12 @@ img[src$="#full"] {
 .post-author-name {
 	margin: 0;
 	padding: 0;
-  font-size: 1.334em;
+  font-size: 1.33333em;
   line-height: 1em;
   text-indent: inherit;
 }
 .post-author-about {
-	margin: 0.667em 0 0.334em;
+	margin: 0.66666em 0 0.33333em;
 }
 .post-author-bio span {
 	position: relative;
@@ -1276,9 +1276,9 @@ img[src$="#full"] {
   font-family: 'Fira Sans', sans-serif;
 }
 .post-authors-info {
-  margin: 0 0 0.334em;
+  margin: 0 0 0.33333em;
   font-size: 0.75em;
-  line-height: 1.334em;
+  line-height: 1.33333em;
 }
 .post-authors-authors {
   margin: 0;
@@ -1310,7 +1310,7 @@ img[src$="#full"] {
 	border: 1px solid $color-blue-80;
 	font-family: 'Fira Sans', sans-serif;
 	font-size: 0.75em;
-	line-height: 1.334em;
+	line-height: 1.33333em;
 	color: $color-blue-60;
 	text-align: center;
 	cursor: pointer;
@@ -1460,7 +1460,7 @@ img[src$="#full"] {
 .post-nav-excerpt {
 	margin: 0;
 	font-size: 0.75em;
-	line-height: 1.334em;
+	line-height: 1.33333em;
 }
 
 /* ==========================================================================
@@ -1488,9 +1488,9 @@ img[src$="#full"] {
 .pagination a {
 	position: relative;
 	display: block;
-	height: 1.334em;
+	height: 1.33333em;
 	margin: -1px 0;
-	padding: 0.667em 1em;
+	padding: 0.66666em 1em;
 	z-index: 100;
 	border: 1px solid $color-blue-80;
 	font-size: 0.75em;
@@ -1503,11 +1503,11 @@ img[src$="#full"] {
 }
 .pagination .pagination-prev {
 	float: right;
-	padding-left: 1.334em;
+	padding-left: 1.33333em;
 }
 .pagination .pagination-next {
 	float: left;
-	padding-right: 1.334em;
+	padding-right: 1.33333em;
 }
 .pagination a:hover,
 .pagination a:focus {
@@ -1518,26 +1518,26 @@ img[src$="#full"] {
 	position: relative;
 	top: -0.167em;
 	display: inline-block;
-	height: 1.334em;
-	line-height: 1.334em;
+	height: 1.33333em;
+	line-height: 1.33333em;
 }
 .pagination a i {
 	position: relative;
 	width: auto;
 	margin: auto;
 	color: inherit;
-	font-size: 1.334em;
+	font-size: 1.33333em;
 	line-height: 0.75em;
 }
 .pagination .pagination-info {
 	position: absolute;
 	width: 100%;
-	height: 2.667em;
+	height: 2.66666em;
 	left: 0;
 	z-index: 50;
 	display: block;
 	font-size: 0.75em;
-	line-height: 2.667em;
+	line-height: 2.66666em;
 	text-align: center;
 }
 
@@ -1589,7 +1589,7 @@ img[src$="#full"] {
 	}
 	.post-share a {
 		margin-left: 0;
-		margin-right: 0.667em;
+		margin-right: 0.66666em;
 	}
 	.post-nav i {
 		font-size: 1.5em;
