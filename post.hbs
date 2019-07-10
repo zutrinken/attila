@@ -41,18 +41,21 @@
 			<section class="post-info">
 
 				<div class="post-share">
+					<span class="post-info-label">{{t "Share:"}}</span>
 					<a class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
 						<i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
 					</a>
 					<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
 						<i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
 					</a>
-					<div class="clear"></div>
 				</div>
 
+				{{#if tags}}
 				<aside class="post-tags">
+					<span class="post-info-label">{{t "Tags:"}}</span>
 					{{tags separator=" "}}
 				</aside>
+				{{/if}}
 
 				<div class="clear"></div>
 

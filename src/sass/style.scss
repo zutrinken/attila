@@ -1103,27 +1103,37 @@ img[src$="#full"] {
    ========================================================================== */
 
 .post-info {
+  font-family: 'Fira Sans', sans-serif;
 	margin-top: 2em;
-	overflow: hidden;
+}
+.post-info-label {
+  margin-right: 0.75em;
+  font-size: 0.8em;
+  line-height: 2.5em;
+  font-weight: 400;
+  color: $color-blue-60;
 }
 .post-share {
+  position: relative;
 	max-width: 25%;
 	float: right;
+  display: flex;
 }
 .post-share a {
 	display: block;
-	width: 2em;
-	height: 2em;
-	margin: 0.334em 0 0.334em 0.667em;
+  width: 2.5em;
+	margin-right: 0.5em;
 	padding: 0;
-	float: left;
-	font-size: 0.75em;
-	line-height: 2em;
+	font-size: 0.8em;
+	line-height: 2.5em;
 	text-align: center;
 	text-decoration: none;
 	color: $color-white;
-	border-radius: 2px;
+	border-radius: 2em;
 	transition: all ease 0.3s;
+}
+.post-share a:last-child {
+  margin-right: 0;
 }
 .post-share a:hover,
 .post-share a:focus {
@@ -1142,33 +1152,33 @@ img[src$="#full"] {
 .post-share .facebook {
 	background-color: $color-social-facebook;
 }
-.post-share .googleplus {
-	background-color: $color-social-googleplus;
-}
 .post-tags {
+  position: relative;
 	max-width: 75%;
 	float: left;
-	font-family: 'Fira Sans', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
 }
 .post-tags a {
 	display: inline-block;
-	margin: 0 0.334em 0.667em 0;
-	padding: 0.575em 1em;
-	background: $color-white;
-	border: 1px solid $primary-color;
-	font-size: 0.75em;
+	margin-right: 0.5em;
+  margin-bottom: 0.5em;
+	padding: 0 1em;
+	background: $primary-color;
+	font-size: 0.8em;
 	font-weight: 500;
-	line-height: 1.334em;
+	line-height: 2.5em;
 	text-align: center;
 	text-decoration: none;
-	color: $primary-color;
+	color: $color-white;
 	border-radius: 2em;
 	transition: all ease 0.3s;
 	box-sizing: border-box;
+  white-space: nowrap;
 }
 .post-tags a:hover,
 .post-tags a:focus {
-	background: $primary-color;
+	background: $color-blue-15;
 	color: $color-white;
 }
 
