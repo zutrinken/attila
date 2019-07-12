@@ -660,9 +660,8 @@ img {
 	display: block;
 	margin-bottom: 1em;
 	padding: 0.5em 1.25em;
-	border: 1.5px solid $color-blue-80;
+	border: 1px solid $color-blue-80;
 	font-family: 'Fira Sans', sans-serif;
-  font-weight: 500;
 	font-size: 0.75em;
 	line-height: 1.66666em;
 	text-shadow: none;
@@ -694,7 +693,7 @@ img {
   font-size: 1.33333em;
   line-height: 0.75em;
   position: relative;
-  bottom: -1px;
+  bottom: -2px;
 }
 .nav-button a i:before {
 	position: relative;
@@ -732,7 +731,7 @@ img {
 	top: 0;
 	right: 0;
 	margin: 1em;
-	border: 1.5px solid $color-blue-80;
+	border: 1px solid $color-blue-80;
 	color: transparent;
 	cursor: pointer;
 	transition: all ease 0.3s;
@@ -1520,10 +1519,9 @@ img {
 	margin: -1px 0;
 	padding: 0.66666em 1em;
 	z-index: 100;
-	border: 1.5px solid $color-blue-80;
+	border: 1px solid $color-blue-80;
 	font-size: 0.75em;
 	line-height: 1.5em;
-  font-weight: 500;
 	text-align: center;
 	text-decoration: none;
 	color: $color-blue-60;
@@ -1545,13 +1543,14 @@ img {
 }
 .pagination .pagination-label {
 	position: relative;
-	top: -0.167em;
+	top: -1px;
 	display: inline-block;
 	height: 1.33333em;
 	line-height: 1.33333em;
 }
 .pagination a i {
 	position: relative;
+  top: 1px;
 	width: auto;
 	margin: auto 4px;
 	color: inherit;
