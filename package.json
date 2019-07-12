@@ -2,7 +2,7 @@
   "name": "attila",
   "description": "Ghost Theme",
   "demo": "https://attila.zutrinken.com",
-  "version": "1.11.0",
+  "version": "1.11.2",
   "engines": {
     "ghost": ">=2.1.0",
     "ghost-api": "v2"
@@ -48,18 +48,18 @@
   "config": {
     "posts_per_page": 10,
     "image_sizes": {
-        "s": {
-            "width": 320
-        },
-        "m": {
-            "width": 640
-        },
-        "l": {
-            "width": 960
-        },
-        "xl": {
-            "width": 1920
-        }
+      "s": {
+        "width": 320
+      },
+      "m": {
+        "width": 640
+      },
+      "l": {
+        "width": 960
+      },
+      "xl": {
+        "width": 1920
+      }
     }
   }
 }
