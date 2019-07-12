@@ -658,18 +658,18 @@ img {
 }
 .nav-button a {
 	display: block;
-	height: 1.5em;
 	margin-bottom: 1em;
 	padding: 0.5em 1.25em;
-	border: 1px solid $color-blue-80;
+	border: 1.5px solid $color-blue-80;
 	font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
 	font-size: 0.75em;
 	line-height: 1.66666em;
 	text-shadow: none;
 	color: $color-blue-60;
 	cursor: pointer;
 	background: $color-white;
-	transition: color,border-color ease 0.3s;
+	transition: all ease 0.3s;
 	border-radius: 2em;
 }
 .nav-button a:hover,
@@ -688,8 +688,13 @@ img {
 	border-color: $color-white;
 }
 .nav-button a i {
-	display: inline-block;
-	color: inherit;
+  display: inline-block;
+  color: inherit;
+  margin-right: 2px;
+  font-size: 1.33333em;
+  line-height: 0.75em;
+  position: relative;
+  bottom: -1px;
 }
 .nav-button a i:before {
 	position: relative;
@@ -727,7 +732,7 @@ img {
 	top: 0;
 	right: 0;
 	margin: 1em;
-	border: 1px solid $color-blue-80;
+	border: 1.5px solid $color-blue-80;
 	color: transparent;
 	cursor: pointer;
 	transition: all ease 0.3s;
@@ -744,9 +749,10 @@ img {
 #menu .close-button:before {
 	position: absolute;
 	width: 1em;
-	height: 1px;
+	height: 1.5px;
 	left: 50%;
 	top: 50%;
+  margin-top: -0.5px;
 	margin-left: -0.5em;
 	content: '';
 	background: $color-blue-60;
@@ -779,6 +785,7 @@ img {
 	opacity: 0.5;
 	font-size: 0.75em;
 	line-height: 2em;
+  font-weight: 500;
 }
 #menu ul {
 	position: relative;
@@ -1400,7 +1407,7 @@ img {
 
       &:hover,
       &:focus {
-				background: $color-red-95;
+				background: $primary-color;
 			}
 		}
 	}
