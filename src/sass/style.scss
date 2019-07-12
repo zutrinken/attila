@@ -459,7 +459,7 @@ img {
 .avatar {
 	position: relative;
 	overflow: hidden;
-	background: $color-gray-95;
+	background: $color-gray-90;
 	margin: 0;
 
 	&:before,
@@ -469,16 +469,17 @@ img {
 		z-index: 1;
 		width: 50%;
 		height: 50%;
-		bottom: 35%;
+		bottom: 32.5%;
 		left: 25%;
 		border-radius: 100%;
-		background: $color-gray-90;
+		background: $color-gray-95;
+    box-sizing: border-box;
 	}
 
 	&:after {
-		width: 100%;
+		width: 80%;
 		bottom: -25%;
-		left: 0;
+		left: 10%;
 	}
 
 	img {
@@ -917,11 +918,8 @@ img {
 	border: 0;
 }
 #blog-author.has-cover .post-author-avatar {
-	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+	box-shadow: 0 0 0 2px $color-white;
 	margin-top: 0.5em;
-}
-#blog-author.has-cover .post-author-avatar img {
-	border: 0.125em solid $color-white;
 }
 #blog-author .post-author-name {
 	padding: 0.33333em 0 0;
