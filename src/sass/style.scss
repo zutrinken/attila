@@ -1350,14 +1350,18 @@ img {
 .post-subscribe {
 	position: relative;
 	padding: 2em 0;
+  margin: 1em 0;
 	text-align: center;
-	border-bottom: 1px solid $color-gray-90;
+	background: $color-blue-30;
+  color: $color-blue-80;
 	box-sizing: border-box;
+  border-radius: 2px;
 
 	p {
-		margin: 1.25em 0 0;
-		font-size: 0.8em;
-		line-height: 1.25em;
+    max-width: 13.33333em;
+		margin: 0 auto 1.33333em;
+		font-size: 1.2em;
+		line-height: 1.33333em;
 	}
 
 	.post-subscribe-form {
@@ -1368,38 +1372,36 @@ img {
 			width: 100%;
 			font-size: 0.8em;
 			height: 2.5em;
-			padding: 0.25em 1em;
-			border: 1px solid $color-blue-80;
+			padding: 0 0.25em 0 1.25em;
+			border: 0;
 			border-right: none;
 			appearance: none;
 			outline: none;
 			box-shadow: none;
 			box-sizing: border-box;
 			border-radius: 4em 0 0 4em;
-
-			&:hover {
-				border-color: $color-blue-60;
-			}
-
-			&:focus {
-				border-color: $color-red-95;
-			}
+      color: $color-blue-30;
 		}
 
 		.post-subscribe-button {
 			display: inline-block;
 			font-size: 0.8em;
 			height: 2.5em;
-			padding: 0 1em;
+			padding: 0 1.25em 0 1em;
 			font-weight: 500;
 			color: $color-white;
-			background: $color-red-95;
+			background: $color-blue-60;
 			border: 0;
 			appearance: none;
 			outline: none;
 			box-shadow: none;
 			box-sizing: border-box;
 			border-radius: 0 4em 4em 0;
+
+      &:hover,
+      &:focus {
+				background: $color-red-95;
+			}
 		}
 	}
 }
@@ -1410,6 +1412,8 @@ img {
 
 .post-nav {
 	position: relative;
+  margin-top: -1px;
+  border-top: 1px solid $color-gray-90;
 	border-bottom: 1px solid $color-gray-90;
 }
 .post-nav:after {
