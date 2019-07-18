@@ -29,6 +29,7 @@ Demo: [attila.zutrinken.com](https://attila.zutrinken.com/)
 
 * __English__
 * __German__
+* __Spanish__
 * __French__ by [robink](https://github.com/robink)
 * __Italian__ by [fmaida](https://github.com/fmaida)
 * __Norwegian__ by [arthurnoerve](https://github.com/arthurnoerve)
