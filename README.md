@@ -35,6 +35,7 @@ Demo: [attila.zutrinken.com](https://attila.zutrinken.com/)
 * __Norwegian__ by [arthurnoerve](https://github.com/arthurnoerve)
 * __Chinese__ by [hao-lee](https://github.com/hao-lee)
 * __Indonesian__ by [simplyeazy](https://github.com/simplyeazy)
+* __Romanian__ by [cdorin93](https://github.com/cdorin93)
 
 ## Setup
 
