@@ -223,10 +223,10 @@ code, tt {
 	padding: 0.33333em 0.66666em;
 	font-family: monospace, sans-serif;
 	font-size: 0.75em;
-	white-space: pre;
 	background: $color-gray-98;
   border: 1px solid $color-gray-90;
 	top: -2px;
+  white-space: pre-wrap;
 }
 
 pre {
@@ -465,7 +465,6 @@ img {
   min-height: 8em;
   background: $color-gray-98;
   border: 1px solid $color-gray-90 !important;
-  border-radius: 3px;
   overflow: hidden;
 }
 
@@ -505,7 +504,6 @@ img {
   position: relative;
   min-width: 33%;
   max-height: 100%;
-  margin: -1px;
 }
 
 .kg-bookmark-thumbnail img {
