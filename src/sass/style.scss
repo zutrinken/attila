@@ -539,6 +539,10 @@ img {
   margin: 0 0.33333em;
 }
 
+.kg-bookmark-publisher {
+    color: $primary-color;
+}
+
 @media (max-width: 640px) {
   .kg-bookmark-container {
     flex-direction: column;
