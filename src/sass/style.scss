@@ -346,6 +346,17 @@ img {
    KG Cards
    ========================================================================== */
 
+figure figcaption {
+    font-family: 'Fira Sans', sans-serif;
+    color: $color-blue-60;
+    text-align: center;
+    max-width: 32em;
+    margin: auto;
+    font-size: 0.75em;
+    line-height: 1.25em;
+    padding: 0.66666em 0;
+}
+
 // KG Image
 
 .kg-image-card {
@@ -368,17 +379,6 @@ img {
     margin: 0 auto;
   }
 
-  figcaption {
-    font-family: 'Fira Sans', sans-serif;
-    color: $color-blue-60;
-    text-align: center;
-    max-width: 32em;
-    margin: auto;
-  	font-size: 0.75em;
-  	line-height: 1.25em;
-  	padding: 0.66666em 0;
-  }
-
   .kg-image-full + figcaption {
     margin-bottom: 1.33333em;
   }
@@ -391,17 +391,6 @@ img {
   max-width: 48em !important;
   min-width: 100%;
   width: 75vw;
-
-  figcaption {
-    font-family: 'Fira Sans', sans-serif;
-    color: $color-blue-60;
-    text-align: center;
-    max-width: 32em;
-    margin: auto;
-  	font-size: 0.75em;
-  	line-height: 1.25em;
-  	padding: 0.66666em 0;
-  }
 }
 
 .kg-gallery-container {
