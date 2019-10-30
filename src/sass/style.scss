@@ -154,22 +154,23 @@ hr {
 
 blockquote {
     margin: 0 0 2em;
-    padding: 1em;
+    padding: 0.25em 1em;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border-left: 0.25em solid $color-gray-90;
+    border-left: 0.25em solid $primary-color;
     font-style: italic;
     font-weight: 400;
     color: $color-blue-30;
-    background: $color-gray-98;
 }
-blockquote p {
+blockquote * {
 	margin: 0 0 1em;
+    font-family: inherit;
+    color: inherit;
 }
-blockquote p:first-child {
+blockquote *:first-child {
 	margin-top: 0;
 }
-blockquote p:last-child {
+blockquote *:last-child {
 	margin-bottom: 0;
 }
 em, i {
