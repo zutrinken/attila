@@ -25,6 +25,12 @@ Demo: [attila.zutrinken.com](https://attila.zutrinken.com/)
 * Automatic code syntax highlight and line numbers
 * Disqus support
 
+## Members
+
+1. Unzip the theme archive on your computer and locate the file called `routes.yaml`
+2. Inside Ghost admin, go to the `Labs` settings area and scroll down until you see the `Custom Routes` section
+3. Upload the `routes.yaml` from this theme
+
 ## Localization
 
 * __English__

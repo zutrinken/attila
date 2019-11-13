@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{@site.lang}}">
 <head>
+
+	{{!-- Document Settings --}}
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
+	{{!-- Base Meta --}}
 	<title>{{meta_title}}</title>
-
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+	{{!-- Styles'n'Scripts --}}
 	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
 
+	{{!-- This tag outputs SEO meta+structured data and other important settings --}}
 	{{ghost_head}}
 </head>
 
@@ -20,6 +24,7 @@
 
 	<section id="wrapper">
 		<a class="hidden-close"></a>
+		{{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
 		{{{body}}}
 		<div id="body-class" style="display: none;" class="{{body_class}}"></div>
 
@@ -33,8 +38,63 @@
 		</footer>
 	</section>
 
+	{{> "notifications"}}
+
 	<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
 
+	{{!-- Scripts for Members subscription --}}
+	<script>
+			// Parse the URL parameter
+			function getParameterByName(name, url) {
+					if (!url) url = window.location.href;
+					name = name.replace(/[\[\]]/g, "\\$&");
+					var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+							results = regex.exec(url);
+					if (!results) return null;
+					if (!results[2]) return '';
+					return decodeURIComponent(results[2].replace(/\+/g, " "));
+			}
+			// Give the parameter a variable name
+			var action = getParameterByName('action');
+			var stripe = getParameterByName('stripe');
+			$(document).ready(function () {
+					if (action == 'subscribe') {
+							$('body').addClass("subscribe-success");
+					}
+					if (action == 'signup') {
+							window.location = '{{@site.url}}/signup/?action=checkout';
+					}
+					if (action == 'checkout') {
+							$('body').addClass("signup-success");
+					}
+					if (action == 'signin') {
+							$('body').addClass("signin-success");
+					}
+					if (stripe == 'success') {
+							$('body').addClass("checkout-success");
+					}
+					$('.notification-close').click(function () {
+							$(this).parent().addClass('closed');
+							var uri = window.location.toString();
+							if (uri.indexOf("?") > 0) {
+									var clean_uri = uri.substring(0, uri.indexOf("?"));
+									window.history.replaceState({}, document.title, clean_uri);
+							}
+					});
+					// Reset form on opening subscrion overlay
+					$('.subscribe-button').click(function() {
+							$('.subscribe-overlay form').removeClass();
+							$('.subscribe-email').val('');
+					});
+			});
+	</script>
+
+
+
+	{{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+	{{block "scripts"}}
+
+	{{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
 	{{ghost_foot}}
 
 </body>

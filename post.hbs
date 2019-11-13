@@ -45,7 +45,33 @@
 		<div class="inner">
 
 			<section class="post-content">
-				{{content}}
+				{{#if access}}
+				{{!-- if the user has access to this post, show it to them --}}
+
+					{{content}}
+
+				{{else}}
+        {{!-- if the user does not have access, show them an upgrade CTA --}}
+
+					<div class="post-preview">
+						{{excerpt}}
+					</div>
+
+					<aside class="post-upgrade">
+						<div class="post-upgrade-info">
+							{{#if @member}}
+								<p>{{t "This post is for paying subscribers only."}}</p>
+							{{else}}
+								<p>{{t "This post is for subscribers only."}}</p>
+							{{/if}}
+							<p>{{t "Already have an account?"}} <a href="/signin/">{{t "Sign in"}}</a></p>
+						</div>
+						<p><a class="post-upgrade-cta" href="/signup/">{{t "Subscribe now"}}</a></p>
+
+					</aside>
+
+				{{/if}}
+
 			</section>
 
 			<section class="post-info">

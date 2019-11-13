@@ -1609,6 +1609,508 @@ figure figcaption {
 }
 
 /* ==========================================================================
+   Notifications
+   ========================================================================== */
+
+.notification {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9000;
+    padding: 20px 60px;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1.3em;
+    font-weight: 500;
+    text-align: center;
+    background: color(var(--green) l(-5%));
+    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    transform: translateY(-175%);
+    visibility: hidden;
+}
+
+.subscribe-success .notification-subscribe {
+    visibility: visible;
+    transform: translateY(0);
+}
+.signup-success .notification-signup {
+    visibility: visible;
+    transform: translateY(0);
+}
+.signin-success .notification-signin {
+    visibility: visible;
+    transform: translateY(0);
+}
+.checkout-success .notification-checkout {
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.notification.closed {
+    visibility: hidden;
+    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+    transform: translateY(-175%);
+}
+
+.notification-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+}
+
+.notification-close:before {
+    content: "";
+    position: absolute;
+    top: 29px;
+    right: 25px;
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+
+.notification-close:after {
+    content: "";
+    position: absolute;
+    top: 29px;
+    right: 25px;
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+}
+
+/* ==========================================================================
+   Members
+   ========================================================================== */
+
+.checkout-form,
+.signup-form,
+.signin-form {
+ padding: 4em 2em 3vw;
+ max-width: 48em !important;
+ min-width: 100%;
+ width: 75vw;
+ border-radius: 8px;
+ border: 1px solid $color-gray-90;
+ background: $color-gray-98;
+ text-align: center;
+}
+
+.checkout-box,
+.signup-box,
+.signin-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 32em;
+  margin: auto;
+
+  @media only screen and (max-width: 640px) {
+    flex-direction: column;
+  }
+}
+
+.checkout-box {
+  max-width: none;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
+}
+
+.signup-email,
+.signin-email {
+  height: 50px;
+  background: #fff;
+  border-radius: 2em 0 0 2em;
+  border: none;
+  border: solid 1px $color-gray-90;
+  color: inherit;
+  display: block;
+  outline: 0;
+  padding: 0 1em;
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover,
+  &:focus {
+    border-color: $color-blue-80;
+  }
+
+  @media only screen and (max-width: 640px) {
+    width: 100%;
+    border-radius: 2em;
+    margin-bottom: 1em;
+  }
+}
+
+.checkout-button,
+.signup-button,
+.signin-button {
+  font-family: 'Fira Sans', sans-serif;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 1.66666em 0 1.33333em;
+  border: 0 !important;
+  border-radius: 0 2em 2em 0;
+  cursor: pointer;
+  font-size: 0.75em;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  appearance: none;
+  transition: 0.2s ease;
+  color: $color-white;
+  background: $primary-color;
+  box-shadow: none;
+  box-sizing: border-box;
+
+  &:hover,
+  &:focus {
+    color: $color-white !important;
+    background: $color-blue-15;
+  }
+
+  @media only screen and (max-width: 640px) {
+    width: 100%;
+    border-radius: 2em;
+    font-size: 1em;
+  }
+}
+
+.checkout-button {
+  border-radius: 2em;
+}
+
+.checkout-title,
+.signup-title,
+.signin-title {
+    font-size: 2em;
+    line-height: 1em;
+    text-indent: -1px;
+    margin: 0 0 0.2em;
+}
+
+.signup-form p,
+.signin-form p {
+    font-size: 1.33333em;
+}
+
+.signup-form p small,
+.signin-form p small {
+    display: inline-block;
+    margin: 1em 0 0 0;
+    font-size: 0.66666em;
+}
+
+/* Checkout */
+
+
+.checkout-box {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.checkout-plan {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    text-align: left;
+    border-radius: 8px;
+    background: $color-white;
+    box-shadow:  0 2px 12px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.checkout-plan + .checkout-plan {
+  margin-left: 2em;
+
+  @media (max-width: 960px) {
+    margin: 2em 0 1em 0;
+  }
+}
+
+.checkout-plan-header {
+    position: relative;
+    padding: 0 0 3em;
+    color: $color-blue-15;
+    text-align: center;
+}
+
+.checkout-plan-header:after {
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    bottom: 1.5em;
+    left: 30%;
+    right: 30%;
+    background: $color-gray-90;
+}
+
+.checkout-plan-header h3 {
+    margin: 0 0 2em 0;
+    color: $primary-color;
+    font-size: 0.75em;
+    line-height: 1.33333em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.checkout-plan-header span {
+    font-size: 2.6rem;
+}
+
+.checkout-plan-header strong {
+    color: $color-black;
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+
+.checkout-plan-content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.checkout-plan-content ul {
+
+}
+
+.checkout-plan-content li {
+  margin-bottom: 0.5em;
+}
+
+.checkout-plan-content li:before {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: $primary-color;
+    content: "✓";
+}
+
+.checkout-plan-content .button {
+    margin: 1em 0 0 0;
+}
+
+
+
+form[data-members-form] .button-loader,
+form[data-members-form] .message-success,
+form[data-members-form] .message-error {
+    display: none;
+}
+
+.message-success svg,
+.message-error svg {
+    position: relative;
+    top: -1px;
+    margin-right: 5px;
+    height: 15px;
+    width: 15px;
+}
+.message-success svg {
+    fill: #fff;
+}
+.message-error svg {
+    fill:  red;
+}
+
+form[data-members-form].success .message-success,
+form[data-members-form].error .message-error {
+    position: fixed;
+    top: 84px;
+    left: 20px;
+    right: 20px;
+    z-index: 9999;
+    margin: 0 auto;
+    padding: 10px 0;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1.5em;
+    font-weight: 500;
+    text-align: center;
+    background:  red;
+    border-radius: 5px;
+}
+form[data-members-form].success .message-success {
+    background:  green;
+}
+form[data-members-form].error .message-error {
+    color:  red;
+    background: #fff;
+    box-shadow:  red 0 0 0 1px;
+}
+
+form[data-members-form] .button {
+    position: relative;
+}
+
+/*-- Loading --*/
+
+/* Hide button text */
+form[data-members-form].loading .button-content {
+    visibility: hidden;
+}
+
+/* Show loading spinner */
+form[data-members-form].loading .button-loader {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    height: 31px;
+    margin-left: -19px;
+    transform: scale(0.7);
+}
+
+.button-loader svg path,
+.button-loader svg rect{
+  fill: #fff;
+}
+
+/*-- Show success message on success --*/
+form[data-members-form].success .message-success {
+    display: block;
+}
+
+/*-- Show error message on error --*/
+form[data-members-form].error .message-error {
+    display: block;
+}
+
+.site-account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vw;
+}
+
+.account-box {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.account-box-title {
+    font-size: 3rem;
+}
+
+.header-cta {
+    margin-left: 15px;
+}
+
+.post-card-header-tags {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0.2em;
+}
+
+.post-visibility {
+    display: inline-block;
+    margin: 0 8px 1px 0;
+    padding: 1px 5px;
+    font-size: 1.2rem;
+    line-height: 1.4em;
+    border: red 1px solid;
+    color:  red;
+    border-radius: 4px;
+}
+
+.post-visibility-members,
+.post-visibility-paid {
+    display: none;
+}
+
+
+// Post Upgrad
+
+.post-preview {
+  position: relative;
+  margin: 0 0 2em;
+}
+
+.post-preview:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+}
+
+.post-upgrade {
+  padding: 4em 2em 3vw;
+  max-width: 48em !important;
+  min-width: 100%;
+  width: 75vw;
+  border-radius: 0.33333em;
+  border: 1px solid $color-gray-90;
+  background: $color-gray-98;
+  text-align: center;
+}
+
+.post-upgrade-info {
+  margin-bottom: 2em;
+}
+
+.post-upgrade-info p:first-child {
+  font-size: 1.33333em;
+  margin: 0 0 0.33333em;
+  color: $color-blue-15;
+}
+
+.post-upgrade-info p:last-child {
+  font-size: 0.8em;
+  margin-bottom: 0;
+}
+
+.post-upgrade-cta {
+  font-family: 'Fira Sans', sans-serif;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 1.66666em 0 1.33333em;
+  border: 0 !important;
+  border-radius: 2em;
+  cursor: pointer;
+  font-size: 0.75em;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  appearance: none;
+  transition: 0.2s ease;
+  color: $color-white;
+  background: $primary-color;
+  box-shadow: none;
+  box-sizing: border-box;
+
+  &:hover,
+  &:focus {
+    color: $color-white !important;
+    background: $color-blue-15;
+    text-decoration: none;
+  }
+}
+
+
+
+/* ==========================================================================
    Pagination
    ========================================================================== */
 

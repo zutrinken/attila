@@ -1,0 +1,64 @@
+{{!< ../default}}
+
+<header id="post-header"{{#if cover_image}} class="has-cover" {{/if}}>
+	<div class="inner">
+		<nav id="navigation">
+			{{#if @site.logo}}
+			<span class="blog-logo">
+				<a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
+			</span>
+			{{else}}
+			<span id="home-button" class="nav-button">
+				<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}"><i class="ic ic-arrow-left"></i> {{t "Home"}}</a>
+			</span>
+			{{/if}}
+			{{#if @site.navigation}}
+			<span id="menu-button" class="nav-button">
+				<a class="menu-button"><i class="ic ic-menu"></i> {{t "Menu"}}</a>
+			</span>
+			{{/if}}
+		</nav>
+		<h1 class="post-title">{{{title}}}</h1>
+		{{#if cover_image}}<div class="post-cover cover" style="background-image: url('{{img_url cover_image}}');"></div>{{/if}}
+	</div>
+</header>
+
+<main class="content" role="main">
+	<article class="{{post_class}}">
+		<div class="inner">
+
+			<section class="post-content">
+
+        {{#if @member.paid}}
+
+            {{!-- Logged in, paying member: Show account info --}}
+            <div class="account-box">
+                <h2 class="account-box-title">Nice, you're a subscriber!</h2>
+                <p>Hey! <strong>{{@member.email}}</strong> has an active {{@site.title}} account with access to all areas. You're all set, but if you need any help, get in touch with us and we'd be happy to help.</p>
+            </div>
+
+        {{else if @member}}
+
+            {{!-- Logged in, not paying: Link to checkout --}}
+            <div class="account-box">
+                <h1 class="account-box-title">Currently, you're not a subscriber</h1>
+                <p>Hey there! <strong>{{@member.email}}</strong> is subscribed to free updates from {{@site.title}}, but doesn't have a paid subscription to unlock full access.</p>
+                <div class="authbox-signup">
+                    <a class="button primary" href="/signup/">
+                        <span class="button-content">Subscribe now</span>
+                    </a>
+                </div>
+            </div>
+
+        {{else}}
+
+            {{!-- Not logged in: Redirect to signin --}}
+            <script>window.location = '{{@site.url}}/signin/';</script>
+
+        {{/if}}
+
+			</section>
+
+		</div>
+	</article>
+</main>
