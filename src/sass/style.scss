@@ -1181,6 +1181,17 @@ figure figcaption {
 	color: inherit;
 	font-weight: inherit;
 }
+.post-excerpt {
+  position: relative;
+	z-index: 10;
+	text-decoration: none;
+	color: inherit;
+	font-weight: inherit;
+  margin: -0.25em 0 1em;
+}
+.has-cover .post-excerpt {
+	color: $color-white;
+}
 .post-meta {
 	position: relative;
 	z-index: 10;
@@ -1209,7 +1220,7 @@ figure figcaption {
 .has-cover .post-meta a:focus {
 	border-color: rgba(255,255,255,0.5);
 }
-.post-excerpt p {
+.post-preview p {
 	margin: 0.5em 0 0;
 }
 .post-content {

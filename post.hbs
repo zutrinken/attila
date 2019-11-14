@@ -1,5 +1,6 @@
 {{!< default}}
 
+{{!-- Everything inside the #post tags pulls data from the post --}}
 {{#post}}
 
 <div class="progress-container">
@@ -25,6 +26,11 @@
 			{{/if}}
 		</nav>
 		<h1 class="post-title">{{{title}}}</h1>
+		{{#if custom_excerpt}}
+		<div class="post-excerpt">
+			{{custom_excerpt}}
+		</div>
+		{{/if}}
 		<span class="post-meta">{{authors separator=", "}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> | {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
 		{{#if feature_image}}
 		<div class="post-cover cover">
@@ -45,6 +51,7 @@
 		<div class="inner">
 
 			<section class="post-content">
+
 				{{#if access}}
 				{{!-- if the user has access to this post, show it to them --}}
 
@@ -53,9 +60,7 @@
 				{{else}}
         {{!-- if the user does not have access, show them an upgrade CTA --}}
 
-					<div class="post-preview">
-						{{excerpt}}
-					</div>
+					<p>You don't have access to this post on <strong>{{@site.title}}</strong> at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive! Subscribing only takes a few seconds and will give you immediate access.</p>
 
 					<aside class="post-upgrade">
 						<div class="post-upgrade-info">
@@ -67,7 +72,6 @@
 							<p>{{t "Already have an account?"}} <a href="/signin/">{{t "Sign in"}}</a></p>
 						</div>
 						<p><a class="post-upgrade-cta" href="/signup/">{{t "Subscribe now"}}</a></p>
-
 					</aside>
 
 				{{/if}}
@@ -146,7 +150,10 @@
       </section>
       {{/if}}
 
+			{{!-- Links to Previous/Next posts --}}
 			<aside class="post-nav">
+
+				{{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
 				{{#next_post}}
 					<a class="post-nav-next" href="{{url}}">
 						<section class="post-nav-teaser">
@@ -156,6 +163,8 @@
 						</section>
 					</a>
 				{{/next_post}}
+
+				{{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
 				{{#prev_post}}
 					<a class="post-nav-prev" href="{{url}}">
 						<section class="post-nav-teaser">
@@ -167,7 +176,6 @@
 				{{/prev_post}}
 				<div class="clear"></div>
 			</aside>
-
 
 		</div>
 	</article>
