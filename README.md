@@ -57,9 +57,9 @@ Build Grunt project:
 
 	grunt build
 
-The zip Grunt task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
+The compress Grunt task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
 
-	grunt zip
+	grunt compress
 
 ## Copyright & License
 
