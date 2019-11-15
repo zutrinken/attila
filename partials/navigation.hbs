@@ -17,6 +17,14 @@
 			{{else}}
 			<li class="nav-rss"><a href="{{@site.url}}/rss/"><i class="ic ic-rss"></i> {{t "Subscribe"}}</a></li>
 			{{/if}}
+
+			{{#if @member}}
+					<li><a class="account-link" href="/account/">Account</a></li>
+					<li><a class="signout-link " href="#signout" data-members-signout>Log out</a></li>
+			{{else}}
+					<li><a class="signin-link" href="/signin/">Log in</a></li>
+					<li><a class="signup-link" href="/signup/">Subscribe</a></li>
+			{{/if}}
 		</ul>
 	</div>
 </nav>

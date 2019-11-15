@@ -38,7 +38,7 @@
 
             {{!-- Logged in, not paying: Check out --}}
             <div class="checkout-form">
-                <h1 class="checkout-title">Choose your subscription</h1>
+                <h1 class="checkout-title">{{ t "Choose your subscription"}}</h1>
                 <p>Unlock full access to {{@site.title}} and see the entire library of members-only content & updates</p>
                 <div class="checkout-box">
                     <div class="checkout-plan">
@@ -53,12 +53,12 @@
                                 <li>Support independent publishing</li>
                                 <li>Simple, secure card payment</li>
                             </ul>
-                            <a class="checkout-button" href="javascript:void(0)" data-members-plan="Monthly">{{t "Choose this plan"}}</a>
+                            <a class="checkout-button button" href="javascript:void(0)" data-members-plan="Monthly">{{t "Choose this plan"}}</a>
                         </div>
                     </div>
                     <div class="checkout-plan">
                         <header class="checkout-plan-header">
-                            <h3>{{t "yearly"}}</h3>
+                            <h3>{{t "Yearly"}}</h3>
                             <span>$</span><strong>{{@price.yearly}}</strong> / {{t "year"}}
                         </header>
                         <div class="checkout-plan-content">
@@ -69,7 +69,7 @@
                                 <li>Simple, secure card payment</li>
                                 <li>One easy payment instead of 12!</li>
                             </ul>
-                            <a class="checkout-button" href="javascript:void(0)" data-members-plan="Yearly">{{t "Choose this plan"}}</a>
+                            <a class="checkout-button button" href="javascript:void(0)" data-members-plan="Yearly">{{t "Choose this plan"}}</a>
                         </div>
                     </div>
                 </div>
@@ -82,10 +82,10 @@
                 <h1 class="signup-title">{{t "Signup to"}} {{@site.title}}</h1>
                 <p>{{@site.description}}</p>
                 <div class="signup-box">
-                    <input class="signup-email" data-members-email type="email" placeholder="Type your email..." required="true" autocomplete="false" />
-                    <button class="signup-button" type="submit">
+                    <input class="signup-email input" data-members-email type="email" placeholder="{{t "Type your email..."}}" required="true" autocomplete="false" />
+                    <button class="signup-button button" type="submit">
                         <span class="button-content">{{t "Continue"}}</span>
-                        <span class="button-loader">x</span>
+                        <span class="button-loader"></span>
                     </button>
                 </div>
                 <p><small>{{t "Already have an account?"}} <a href="/signin/">{{t "Sign in"}}</a></small></p>

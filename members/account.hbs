@@ -33,19 +33,19 @@
 
             {{!-- Logged in, paying member: Show account info --}}
             <div class="account-box">
-                <h2 class="account-box-title">Nice, you're a subscriber!</h2>
-                <p>Hey! <strong>{{@member.email}}</strong> has an active {{@site.title}} account with access to all areas. You're all set, but if you need any help, get in touch with us and we'd be happy to help.</p>
+                <h2 class="account-box-title">{{ t "Nice, you're a subscriber!"}}</h2>
+                <p><strong>{{@member.email}}</strong> {{ t "has an active account with access to all areas. You're all set, but if you need any help, get in touch with us and we'd be happy to help."}}</p>
             </div>
 
         {{else if @member}}
 
             {{!-- Logged in, not paying: Link to checkout --}}
             <div class="account-box">
-                <h1 class="account-box-title">Currently, you're not a subscriber</h1>
-                <p>Hey there! <strong>{{@member.email}}</strong> is subscribed to free updates from {{@site.title}}, but doesn't have a paid subscription to unlock full access.</p>
+                <h1 class="account-box-title">{{ t "Currently, you're not a subscriber"}}</h1>
+                <p><strong>{{@member.email}}</strong> {{ t "is subscribed to free updates, but doesn't have a paid subscription to unlock full access."}}</p>
                 <div class="authbox-signup">
-                    <a class="button primary" href="/signup/">
-                        <span class="button-content">Subscribe now</span>
+                    <a class="button" href="/signup/">
+                        <span class="button-content">{{ t "Subscribe now"}}</span>
                     </a>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 	{{pagination}}
 </div>
 
-{{#foreach posts}}
+{{#foreach posts visibility="all"}}
 
 <article class="{{post_class}}">
 	<div class="inner">
@@ -12,7 +12,7 @@
 			<div class="clear"></div>
 		</header>
 
-		<section class="post-preview">
+		<section class="post-excerpt">
 			<p>{{excerpt}}&hellip;</p>
 		</section>
 	</div>

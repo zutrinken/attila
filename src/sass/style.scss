@@ -609,6 +609,62 @@ figure figcaption {
 	}
 }
 
+.input {
+  height: 50px;
+  background: $color-white;
+  border-radius: 2em;
+  border: none;
+  border: solid 1px $color-gray-90;
+  color: inherit;
+  display: block;
+  outline: 0;
+  padding: 0 1em;
+  text-decoration: none;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:hover,
+  &:focus {
+    border-color: $color-blue-80;
+  }
+
+  @media only screen and (max-width: 640px) {
+    width: 100%;
+    border-radius: 2em;
+    margin-bottom: 1em;
+  }
+}
+
+.button {
+  font-family: 'Fira Sans', sans-serif;
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 1.66666em 0 1.33333em;
+  border: 0 !important;
+  border-radius: 2em;
+  cursor: pointer;
+  font-size: 0.75em;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  appearance: none;
+  transition: 0.2s ease;
+  color: $color-white;
+  background: $primary-color;
+  box-shadow: none;
+  box-sizing: border-box;
+
+  &:hover,
+  &:focus {
+    color: $color-white !important;
+    background: $color-blue-15;
+  }
+}
+
+
+
 /* ==========================================================================
    Header
    ========================================================================== */
@@ -1630,12 +1686,12 @@ figure figcaption {
     left: 0;
     z-index: 9000;
     padding: 20px 60px;
-    color: #fff;
+    color: $color-white;
     font-size: 1.6rem;
     line-height: 1.3em;
     font-weight: 500;
     text-align: center;
-    background: color(var(--green) l(-5%));
+    background: $color-blue-15;
     transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
     transform: translateY(-175%);
     visibility: hidden;
@@ -1740,23 +1796,7 @@ figure figcaption {
 
 .signup-email,
 .signin-email {
-  height: 50px;
-  background: #fff;
   border-radius: 2em 0 0 2em;
-  border: none;
-  border: solid 1px $color-gray-90;
-  color: inherit;
-  display: block;
-  outline: 0;
-  padding: 0 1em;
-  text-decoration: none;
-  width: 100%;
-  box-sizing: border-box;
-
-  &:hover,
-  &:focus {
-    border-color: $color-blue-80;
-  }
 
   @media only screen and (max-width: 640px) {
     width: 100%;
@@ -1765,44 +1805,15 @@ figure figcaption {
   }
 }
 
-.checkout-button,
 .signup-button,
 .signin-button {
-  font-family: 'Fira Sans', sans-serif;
-  display: inline-block;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 1.66666em 0 1.33333em;
-  border: 0 !important;
   border-radius: 0 2em 2em 0;
-  cursor: pointer;
-  font-size: 0.75em;
-  font-weight: 500;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  appearance: none;
-  transition: 0.2s ease;
-  color: $color-white;
-  background: $primary-color;
-  box-shadow: none;
-  box-sizing: border-box;
-
-  &:hover,
-  &:focus {
-    color: $color-white !important;
-    background: $color-blue-15;
-  }
 
   @media only screen and (max-width: 640px) {
     width: 100%;
     border-radius: 2em;
     font-size: 1em;
   }
-}
-
-.checkout-button {
-  border-radius: 2em;
 }
 
 .checkout-title,
@@ -1923,8 +1934,55 @@ figure figcaption {
 form[data-members-form] .button-loader,
 form[data-members-form] .message-success,
 form[data-members-form] .message-error {
-    display: none;
+  display: none;
 }
+
+
+
+.button-loader {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -25px;
+  display: block;
+  width: 50px;
+  height: 50px;
+}
+
+.button-loader:after {
+  content: '';
+  display: block;
+  width: 21px;
+  height: 21px;
+  margin: 13px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: loading 1.2s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide button text */
+form[data-members-form].loading .button-content {
+    visibility: hidden;
+}
+
+/* Show loading spinner */
+form[data-members-form].loading .button-loader {
+    display: inline-block;
+}
+
+
+
+
 
 .message-success svg,
 .message-error svg {
@@ -1973,25 +2031,7 @@ form[data-members-form] .button {
 
 /*-- Loading --*/
 
-/* Hide button text */
-form[data-members-form].loading .button-content {
-    visibility: hidden;
-}
 
-/* Show loading spinner */
-form[data-members-form].loading .button-loader {
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-    height: 31px;
-    margin-left: -19px;
-    transform: scale(0.7);
-}
-
-.button-loader svg path,
-.button-loader svg rect{
-  fill: #fff;
-}
 
 /*-- Show success message on success --*/
 form[data-members-form].success .message-success {
@@ -2047,22 +2087,7 @@ form[data-members-form].error .message-error {
 }
 
 
-// Post Upgrad
-
-.post-preview {
-  position: relative;
-  margin: 0 0 2em;
-}
-
-.post-preview:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
-}
+// Post Upgrade
 
 .post-upgrade {
   padding: 4em 2em 3vw;
@@ -2088,35 +2113,6 @@ form[data-members-form].error .message-error {
 .post-upgrade-info p:last-child {
   font-size: 0.8em;
   margin-bottom: 0;
-}
-
-.post-upgrade-cta {
-  font-family: 'Fira Sans', sans-serif;
-  display: inline-block;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 1.66666em 0 1.33333em;
-  border: 0 !important;
-  border-radius: 2em;
-  cursor: pointer;
-  font-size: 0.75em;
-  font-weight: 500;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  appearance: none;
-  transition: 0.2s ease;
-  color: $color-white;
-  background: $primary-color;
-  box-shadow: none;
-  box-sizing: border-box;
-
-  &:hover,
-  &:focus {
-    color: $color-white !important;
-    background: $color-blue-15;
-    text-decoration: none;
-  }
 }
 
 
