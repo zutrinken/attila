@@ -1,7 +1,8 @@
 {{!< default}}
 
 {{#author}}
-<header id="blog-header"{{#if cover_image}} class="has-cover"{{else}}{{#if @site.cover_image}} class="has-cover"{{/if}}{{/if}}>
+
+<header class="blog-header{{#if cover_image}} has-cover{{else}}{{#if @site.cover_image}} has-cover{{/if}}{{/if}}">
 	<div class="inner">
 		<nav id="navigation">
 			{{#if @site.logo}}
@@ -19,6 +20,35 @@
 			</span>
 			{{/if}}
 		</nav>
+
+		<div class="archive archive-author">
+			<span class="archive-info">
+				<span class="archive-type">{{t "Author"}}</span>
+				<span class="archive-count">{{plural ../pagination.total empty=(t "No Posts") singular=(t "% Post") plural=(t "% Posts")}}</span>
+			</span>
+			<figure class="archive-avatar avatar">
+				{{#if profile_image}}
+					<img src="{{profile_image}}" alt="{{name}}" />
+				{{/if}}
+			</figure>
+			<h2 class="archive-title">{{name}}</h2>
+			{{#if bio}}
+				<span class="archive-description">{{{bio}}}</span>
+			{{/if}}
+			<span class="archive-links">
+				{{#if website}}
+					<a target="_blank" href="{{website}}" title="{{t "Website"}}"><i class="ic ic-link"></i><span>{{t "Website"}}</span></a>
+				{{/if}}
+				{{#if twitter}}
+					<a target="_blank" href="{{twitter_url}}" title="{{t "Twitter"}}"><i class="ic ic-twitter"></i><span>{{t "Twitter"}}</span></a>
+				{{/if}}
+				{{#if facebook}}
+					<a target="_blank" href="{{facebook_url}}" title="{{t "Facebook"}}"><i class="ic ic-facebook"></i><span>{{t "Facebook"}}</span></a>
+				{{/if}}
+			</span>
+		</div>
+
+
 		{{#if cover_image}}
 		<div class="blog-cover cover">
 			<img
@@ -44,39 +74,6 @@
 		{{/if}}
 	</div>
 </header>
-
-<section id="blog-author"{{#if cover_image}} class="has-cover"{{else}}{{#if @site.cover_image}} class="has-cover"{{/if}}{{/if}}>
-	<div class="inner">
-
-		<aside class="post-author">
-			<figure class="post-author-avatar avatar">
-				{{#if profile_image}}
-					<img src="{{profile_image}}" alt="{{name}}" />
-				{{/if}}
-			</figure>
-			<div class="post-author-bio">
-				<h2 class="post-author-name">{{name}}</h2>
-				{{#if bio}}
-					<p class="post-author-about">{{{bio}}}</p>
-				{{/if}}
-				<span class="post-author-stats"><i class="ic ic-pencil"></i> {{plural ../pagination.total empty=(t "No Posts") singular=(t "% Post") plural=(t "% Posts")}}</span>
-				{{#if location}}
-					<span class="post-author-location"><i class="ic ic-location"></i> {{location}}</span>
-				{{/if}}
-				{{#if website}}
-					<span class="post-author-website"><i class="ic ic-link"></i> <a href="{{website}}">{{t "Website"}}</a></span>
-				{{/if}}
-				{{#if twitter}}
-					<span class="post-author-twitter"><i class="ic ic-twitter"></i> <a target="_blank" href="{{twitter_url}}">Twitter</a></span>
-				{{/if}}
-				{{#if facebook}}
-					<span class="post-author-facebook"><i class="ic ic-facebook"></i> <a target="_blank" href="{{facebook_url}}">Facebook</a></span>
-				{{/if}}
-			</div>
-			<div class="clear"></div>
-		</aside>
-	</div>
-</section>
 
 {{/author}}
 

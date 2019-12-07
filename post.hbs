@@ -6,26 +6,24 @@
 	<span class="progress-bar"></span>
 </div>
 
-<header id="post-header"{{#if feature_image}} class="has-cover" {{/if}}>
+<header class="post-header {{#if feature_image}} has-cover {{/if}}">
 	<div class="inner">
-		<nav id="navigation">
-			{{#if @site.logo}}
-			<span class="blog-logo">
-				<a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
-			</span>
-			{{else}}
-			<span id="home-button" class="nav-button">
-				<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}"><i class="ic ic-arrow-left"></i> {{t "Home"}}</a>
-			</span>
-			{{/if}}
-			{{#if @site.navigation}}
-			<span id="menu-button" class="nav-button">
-				<a class="menu-button"><i class="ic ic-menu"></i> {{t "Menu"}}</a>
-			</span>
-			{{/if}}
-		</nav>
 		<h1 class="post-title">{{{title}}}</h1>
-		<span class="post-meta">{{authors separator=", "}} | <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> | {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span>
+		<div class="post-meta">
+			<div class="post-meta-avatars">
+				{{#foreach authors}}
+					<figure class="post-meta-avatar avatar">
+						{{#if profile_image}}
+						<a href="{{url}}" class="author-avatar">
+								<img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+						</a>
+						{{/if}}
+					</figure>
+				{{/foreach}}
+			</div>
+			<h4 class="post-meta-author">{{authors separator=", "}}</h4>
+			<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> • {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+		</div>
 		{{#if feature_image}}
 		<div class="post-cover cover">
 			<img
@@ -58,6 +56,12 @@
 					<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
 						<i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
 					</a>
+					<a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}/&amp;title={{title}}" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+						<i class="ic ic-star"></i><span class="hidden">LinkedIn</span>
+					</a>
+					<a class="email" href="mailto:?subject=An%20Honest%20Guide%20to%20San%20Francisco&amp;body=https://astro-ghost.ecko.me/an-honest-guide-to-san-francisco/">
+						<i class="ic ic-mail"></i><span class="hidden">Email</span>
+					</a>
 				</div>
 
 				{{#if tags}}
@@ -66,44 +70,6 @@
 					{{tags separator=" "}}
 				</aside>
 				{{/if}}
-
-				<div class="clear"></div>
-
-				{{#has author="count:>1"}}
-					<aside class="post-authors">
-						<p class="post-authors-info">{{t "This post was a collaboration between:"}}</p>
-						<p class="post-authors-authors">{{authors separator=", "}}</p>
-					</aside>
-        {{else}}
-					{{#primary_author}}
-						<aside class="post-author">
-							<figure class="post-author-avatar avatar">
-								{{#if profile_image}}
-									<img src="{{profile_image}}" alt="{{name}}" />
-								{{/if}}
-							</figure>
-							<div class="post-author-bio">
-								<h4 class="post-author-name"><a href="{{url}}">{{name}}</a></h4>
-								{{#if bio}}
-									<p class="post-author-about">{{{bio}}}</p>
-								{{/if}}
-								{{#if location}}
-									<span class="post-author-location"><i class="ic ic-location"></i> {{location}}</span>
-								{{/if}}
-								{{#if website}}
-									<span class="post-author-website"><i class="ic ic-link"></i> <a href="{{website}}">{{t "Website"}}</a></span>
-								{{/if}}
-								{{#if twitter}}
-									<span class="post-author-twitter"><i class="ic ic-twitter"></i> <a target="_blank" href="{{twitter_url}}">Twitter</a></span>
-								{{/if}}
-								{{#if facebook}}
-									<span class="post-author-facebook"><i class="ic ic-facebook"></i> <a target="_blank" href="{{facebook_url}}">Facebook</a></span>
-								{{/if}}
-							</div>
-							<div class="clear"></div>
-						</aside>
-					{{/primary_author}}
-        {{/has}}
 
 			</section>
 

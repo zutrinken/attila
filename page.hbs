@@ -2,24 +2,8 @@
 
 {{#post}}
 
-<header id="post-header"{{#if cover_image}} class="has-cover" {{/if}}>
+<header class="post-header {{#if cover_image}} has-cover {{/if}}">
 	<div class="inner">
-		<nav id="navigation">
-			{{#if @site.logo}}
-			<span class="blog-logo">
-				<a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
-			</span>
-			{{else}}
-			<span id="home-button" class="nav-button">
-				<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}"><i class="ic ic-arrow-left"></i> {{t "Home"}}</a>
-			</span>
-			{{/if}}
-			{{#if @site.navigation}}
-			<span id="menu-button" class="nav-button">
-				<a class="menu-button"><i class="ic ic-menu"></i> {{t "Menu"}}</a>
-			</span>
-			{{/if}}
-		</nav>
 		<h1 class="post-title">{{{title}}}</h1>
 		{{#if cover_image}}<div class="post-cover cover" style="background-image: url('{{img_url cover_image}}');"></div>{{/if}}
 	</div>
