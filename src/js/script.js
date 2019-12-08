@@ -119,6 +119,9 @@ jQuery(function($) {
 				var code = $(this);
 				var lines = code.html().split(/\n/).length;
 				var numbers = [];
+				if (lines > 1) {
+					lines++;
+				}
 				for (i = 1; i < lines; i++) {
 					numbers += '<span class="line">' + i + '</span>';
 				}

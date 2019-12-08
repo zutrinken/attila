@@ -287,6 +287,7 @@ textarea {
 		text-align: right;
 		box-sizing: border-box;
 		background: $color-background;
+		user-select: none;
 
 	  @media (prefers-color-scheme: dark) {
 	    background: $color-background-dark;
