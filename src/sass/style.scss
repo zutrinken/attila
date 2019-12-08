@@ -259,6 +259,7 @@ pre .lines .line {
 	display: block;
 	padding-right: 0.33333em;
     color: $color-blue-30;
+	user-select: none;
 }
 
 pre code, pre tt {
