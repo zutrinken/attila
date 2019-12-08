@@ -728,6 +728,7 @@ textarea {
 	}
 
 	&.has-cover {
+		color: #FFF;
 		background: #000;
 		overflow: hidden;
 		text-shadow: 0 1px 2px rgba(0,0,0,0.1);
@@ -773,26 +774,6 @@ textarea {
   }
 }
 
-.blog-logo {
-	position: fixed;
-	max-width: 4rem;
-	left: 0;
-	top: 0;
-	margin: 1em;
-	z-index: 200;
-
-	@media only screen and (max-width: $breakpoint-large) {
-		position: absolute;
-	}
-}
-
-.blog-logo img {
-	display: block;
-	width: 100%;
-	height: auto;
-	margin: 0 auto;
-}
-
 .blog-name {
 	position: relative;
 	display: block;
@@ -836,6 +817,7 @@ textarea {
 
 .archive {
 	position: relative;
+	z-index: 10;
 
 	.archive-info {
 		display: flex;
@@ -982,6 +964,59 @@ textarea {
 	@media only screen and (max-width: $breakpoint-large) {
 		position: absolute;
 	}
+
+	&.nav-logo a {
+
+		img {
+			display: inline-block;
+			width: auto;
+			height: 2rem;
+		}
+	}
+
+	a {
+		display: flex;
+		height: 4rem;
+		padding: 1rem 2rem;
+		border: 1px solid $color-neutral-80;
+		font-weight: 500;
+		font-size: 1.5em;
+		line-height: 2rem;
+		text-shadow: none;
+		text-decoration: none;
+		color: $color-neutral-60;
+		cursor: pointer;
+		transition: all ease 0.2s;
+		border-radius: 4rem;
+		box-sizing: border-box;
+
+		@media (prefers-color-scheme: dark) {
+		color: $color-neutral-80;
+		border-color: $color-neutral-60;
+		}
+
+		&:hover,
+		&:focus {
+		color: $color-primary;
+		border-color: $color-primary;
+		}
+
+		i {
+			height: 2rem;
+			display: block;
+			color: inherit;
+			margin-right: 1rem;
+			position: relative;
+
+			&:before {
+				line-height: 2rem;
+				position: relative;
+				width: auto;
+				margin: auto;
+				font-size: 1.5em;
+			}
+		}
+	}
 }
 .nav-button#home-button {
 	left: 0;
@@ -989,49 +1024,7 @@ textarea {
 .nav-button#menu-button {
 	right: 0;
 }
-.nav-button a {
-	display: block;
-	height: 4rem;
-	margin-bottom: 1em;
-	padding: 0 2rem;
-	border: 1px solid $color-neutral-80;
-	font-weight: 500;
-	font-size: 1.5em;
-	line-height: 4rem;
-	text-shadow: none;
-	text-decoration: none;
-	color: $color-neutral-60;
-	cursor: pointer;
-	transition: all ease 0.2s;
-	border-radius: 4rem;
-	box-sizing: border-box;
 
-  @media (prefers-color-scheme: dark) {
-    color: $color-neutral-80;
-  	border-color: $color-neutral-60;
-  }
-
-  &:hover,
-  &:focus {
-  	color: $color-primary;
-  	border-color: $color-primary;
-  }
-
-	i {
-	  display: inline-block;
-	  color: inherit;
-	  margin-right: 4px;
-	  position: relative;
-	  bottom: -2px;
-
-		&:before {
-			position: relative;
-			width: auto;
-			margin: auto;
-			font-size: 1.5em;
-		}
-	}
-}
 
 .cover-active .nav-button a {
 	color: rgba(255,255,255,0.8);

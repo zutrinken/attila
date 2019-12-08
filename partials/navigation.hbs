@@ -1,7 +1,7 @@
 <nav id="navigation">
 	{{#if @site.logo}}
-	<span class="blog-logo">
-		<a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
+	<span id="home-button" class="nav-button nav-logo">
+		<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}">{{^is "home"}}<i class="ic ic-arrow-left"></i> {{/is}}<img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
 	</span>
 	{{else}}
 		{{^is "home"}}
