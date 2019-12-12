@@ -8,6 +8,10 @@
 
 <header class="post-header {{#if feature_image}} has-cover {{/if}}">
 	<div class="inner">
+		<span class="post-info">
+			<span class="post-type">{{t "Article"}}</span>
+			<span class="post-count">{{primary_tag.name}}</span>
+		</span>
 		<h1 class="post-title">{{{title}}}</h1>
 		<div class="post-meta">
 			<div class="post-meta-avatars">
@@ -46,27 +50,27 @@
 				{{content}}
 			</section>
 
-			<section class="post-info">
+			<section class="post-footer">
 
 				<div class="post-share">
-					<span class="post-info-label">{{t "Share:"}}</span>
+					<span class="post-info-label">{{t "Share"}}</span>
 					<a class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-						<i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+						<i class="icon icon-twitter"></i><span class="hidden">Twitter</span>
 					</a>
 					<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-						<i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+						<i class="icon icon-facebook"></i><span class="hidden">Facebook</span>
 					</a>
 					<a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}/&amp;title={{title}}" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
-						<i class="ic ic-star"></i><span class="hidden">LinkedIn</span>
+						<i class="icon icon-linkedin"></i><span class="hidden">LinkedIn</span>
 					</a>
 					<a class="email" href="mailto:?subject=An%20Honest%20Guide%20to%20San%20Francisco&amp;body=https://astro-ghost.ecko.me/an-honest-guide-to-san-francisco/">
-						<i class="ic ic-mail"></i><span class="hidden">Email</span>
+						<i class="icon icon-mail"></i><span class="hidden">Email</span>
 					</a>
 				</div>
 
 				{{#if tags}}
 				<aside class="post-tags">
-					<span class="post-info-label">{{t "Tags:"}}</span>
+					<span class="post-info-label">{{t "Topic"}}</span>
 					{{tags separator=" "}}
 				</aside>
 				{{/if}}
@@ -90,7 +94,7 @@
 				{{#next_post}}
 					<a class="post-nav-next" href="{{url}}">
 						<section class="post-nav-teaser">
-							<i class="ic ic-arrow-left"></i>
+							<i class="icon icon-arrow-left"></i>
 							<h2 class="post-nav-title">{{title}}</h2>
 							<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
 						</section>
@@ -99,7 +103,7 @@
 				{{#prev_post}}
 					<a class="post-nav-prev" href="{{url}}">
 						<section class="post-nav-teaser">
-							<i class="ic ic-arrow-right"></i>
+							<i class="icon icon-arrow-right"></i>
 							<h2 class="post-nav-title">{{title}}</h2>
 							<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
 						</section>

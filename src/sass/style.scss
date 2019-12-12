@@ -1,32 +1,25 @@
 /* ==========================================================================
    Includes
    ========================================================================== */
-
 @import "normalize";
 @import "colors";
 @import "icons";
 @import "fonts";
 @import "highlight";
-
-
 $breakpoint-large: 960px;
 $breakpoint-medium: 640px;
 $breakpoint-small: 480px;
-
 $inner: 72rem;
-
-
 /* ==========================================================================
    Basics
    ========================================================================== */
-
 html {
 	font-size: 62.5%;
 	overflow-x: hidden;
 }
 
-html.menu-active,
-.menu-active body{
+.menu-active body,
+html.menu-active {
 	overflow-y: hidden;
 }
 
@@ -37,23 +30,21 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
-  background: #FFF;
-
-  @media (prefers-color-scheme: dark) {
-    background: #000;
-    color: $color-text-secondary-dark;
-  }
+	background: #FFF;
+	@media (prefers-color-scheme: dark) {
+		background: #000;
+		color: $color-text-secondary-dark;
+	}
 }
-input,
+
 button,
+input,
 select,
 textarea {
 	transition: all ease-out 0.2s;
 }
 
-
 .post-content {
-
 	a {
 		color: inherit;
 		text-decoration: none;
@@ -61,71 +52,83 @@ textarea {
 		box-shadow: inset 0 -2px 0 $color-primary;
 		transition: all ease-out 0.1s;
 
-		&:hover,
-		&:focus {
+		&:focus,
+		&:hover {
 			box-shadow: inset 0 -3px 0 $color-primary;
 		}
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		text-rendering: optimizeLegibility;
 		color: #000;
-
-	  @media (prefers-color-scheme: dark) {
-	    color: $color-neutral-80;
-	  }
+		@media (prefers-color-scheme: dark) {
+			color: $color-neutral-80;
+		}
 	}
 
 	h1 {
 		font-size: 4rem;
 		line-height: 4rem;
 		text-indent: -1px;
-		margin: 2rem 0 2rem;
+		margin: 2rem 0;
 	}
 
 	h2 {
 		font-size: 3rem;
 		line-height: 3rem;
 		text-indent: -1px;
-		margin: 2rem 0 2rem;
+		margin: 2rem 0;
 	}
 
 	h3 {
 		font-size: 2rem;
 		line-height: 2rem;
-		margin: 2rem 0 2rem;
+		margin: 2rem 0;
 	}
 
 	h4 {
 		font-size: 1.5rem;
 		line-height: 1.5rem;
-		margin: 2rem 0 2rem;
+		margin: 2rem 0;
 	}
 
-	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	h1 a,
+	h2 a,
+	h3 a,
+	h4 a,
+	h5 a,
+	h6 a {
 		font-weight: inherit;
 	}
 
 	p {
 		font-family: 'Cardo', serif;
-	  margin: 0 0 2em;
+		margin: 0 0 2em;
 	}
 
-	ul, ol {
+	ol,
+	ul {
 		font-family: 'Cardo', serif;
-	  margin: 0 0 2em;
-	  padding-left: 2em;
-	  box-sizing: border-box;
+		margin: 0 0 2em;
+		padding-left: 2em;
+		box-sizing: border-box;
 	}
 
 	ul {
 		list-style: none;
 	}
+
 	li {
 		position: relative;
 	}
-	ul > li:before,
-	ol > li:before {
+
+	ol > li:before,
+	ul > li:before {
 		position: absolute;
 		width: 1.5em;
 		margin-left: -2em;
@@ -135,52 +138,57 @@ textarea {
 		text-align: right;
 		color: $color-primary;
 	}
+
 	ul > li:before {
 		margin-top: 0.25em;
 		content: '*';
 	}
+
 	ol {
 		list-style-type: none;
 		counter-reset: item;
 	}
+
 	ol > li:before {
 		content: counter(item) ". " !important;
 		counter-increment: item;
 	}
 
-	ol ol, ul ul, ul ol, ol ul {
+	ol ol,
+	ol ul,
+	ul ol,
+	ul ul {
 		padding-left: 30px;
 		margin: 15px 0;
 	}
 
 	hr {
-	  display: block;
-	  height: 1px;
-	  margin: 0 0 2em;
-	  padding: 0;
-	  background: $color-border;
-	  border: 0;
-
-	  @media (prefers-color-scheme: dark) {
-	    background: $color-border-dark;
-	  }
+		display: block;
+		height: 1px;
+		margin: 0 0 2em;
+		padding: 0;
+		background: $color-border;
+		border: 0;
+		@media (prefers-color-scheme: dark) {
+			background: $color-border-dark;
+		}
 	}
 
 	blockquote {
 		font-family: 'Cardo', serif;
-	  margin: 0 0 2em;
-	  padding: 0.25em 1em;
-	  -moz-box-sizing: border-box;
-	  box-sizing: border-box;
-	  border-left: 0.25em solid $color-primary;
-	  font-style: italic;
-	  font-weight: 400;
+		margin: 0 0 2em;
+		padding: 0.25em 1em;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		border-left: 0.25em solid $color-primary;
+		font-style: italic;
+		font-weight: 400;
 	}
 
 	blockquote * {
-	  margin: 0 0 1em;
-	  font-family: inherit;
-	  color: inherit;
+		margin: 0 0 1em;
+		font-family: inherit;
+		color: inherit;
 	}
 
 	blockquote *:first-child {
@@ -191,20 +199,21 @@ textarea {
 		margin-bottom: 0;
 	}
 
-	em, i {
+	em,
+	i {
 		font-style: italic;
 	}
 
-	strong, b {
+	b,
+	strong {
 		font-weight: 700;
-
 		@media (prefers-color-scheme: dark) {
-	    color: $color-neutral-80;
-	  }
+			color: $color-neutral-80;
+		}
 	}
 
 	small {
-	  font-size: 0.9em;
+		font-size: 0.9em;
 	}
 
 	dl {
@@ -214,47 +223,47 @@ textarea {
 	}
 
 	dl dt {
-	  	font-weight: 500;
-	  	font-size: 0.75em;
-	  	line-height: 1.25em;
-	    font-weight: 700;
-	    margin-bottom: 0.33334em;
+		font-weight: 500;
+		font-size: 0.75em;
+		line-height: 1.25em;
+		font-weight: 700;
+		margin-bottom: 0.33334em;
 	}
 
 	dl dt:before {
-	    content: '';
-	    position: absolute;
-	    width: 1em;
-	    height: 1px;
-	    margin-left: -30px;
-	    margin-top: 0.5em;
-	    background: $color-neutral-80;
+		content: '';
+		position: absolute;
+		width: 1em;
+		height: 1px;
+		margin-left: -30px;
+		margin-top: 0.5em;
+		background: $color-neutral-80;
 	}
 
 	dl dd {
-	    margin-left: 0;
-	    margin-bottom: 1em;
+		margin-left: 0;
+		margin-bottom: 1em;
 	}
 
 	mark {
-	    background-color: $color-yellow-100;
+		background-color: $color-yellow-100;
 	}
 
-	code, tt {
+	code,
+	tt {
 		position: relative;
 		margin: 0 1px;
 		padding: 4px 8px;
 		font-family: monospace, sans-serif;
 		font-size: 0.75em;
 		background: $color-background;
-	  border: 1px solid $color-border;
+		border: 1px solid $color-border;
 		top: -2px;
-	  white-space: pre-wrap;
-
-	  @media (prefers-color-scheme: dark) {
-	    background: $color-background-dark;
-	    border-color: $color-border-dark;
-	  }
+		white-space: pre-wrap;
+		@media (prefers-color-scheme: dark) {
+			background: $color-background-dark;
+			border-color: $color-border-dark;
+		}
 	}
 
 	pre {
@@ -265,14 +274,14 @@ textarea {
 		font-family: monospace, sans-serif;
 		white-space: pre;
 		background: $color-background;
-	  border: 1px solid $color-border;
+		border: 1px solid $color-border;
 		box-sizing: border-box;
-
-	  @media (prefers-color-scheme: dark) {
-	    background: $color-background-dark;
-	    border-color: $color-border-dark;
-	  }
+		@media (prefers-color-scheme: dark) {
+			background: $color-background-dark;
+			border-color: $color-border-dark;
+		}
 	}
+
 	pre .lines {
 		position: absolute;
 		width: 2.66667em;
@@ -281,31 +290,32 @@ textarea {
 		top: 0;
 		padding: 1.33334em 0;
 		border-right: 1px solid $color-border;
-	  color: $color-text-secondary;
+		color: $color-text-secondary;
 		font-size: 0.75em;
 		line-height: 2em;
 		text-align: right;
 		box-sizing: border-box;
 		background: $color-background;
 		user-select: none;
-
-	  @media (prefers-color-scheme: dark) {
-	    background: $color-background-dark;
-	    border-color: $color-border-dark;
-	  }
+		@media (prefers-color-scheme: dark) {
+			background: $color-background-dark;
+			border-color: $color-border-dark;
+		}
 	}
+
 	pre .lines .line {
-	  display: block;
-	  padding-right: 0.33334em;
+		display: block;
+		padding-right: 0.33334em;
 	}
 
-	pre code, pre tt {
-	  display: block;
+	pre code,
+	pre tt {
+		display: block;
 		position: static;
 		top: auto;
 		margin: -1.33334em -1.33334em -1.33334em 1.33334em;
 		padding: 1.33334em;
-	  overflow-x: auto;
+		overflow-x: auto;
 		font-size: 0.75em;
 		line-height: 2em;
 		white-space: pre;
@@ -313,61 +323,59 @@ textarea {
 		border: none;
 		vertical-align: inherit;
 	}
+
 	pre code.language-text {
-	  overflow: hidden;
-	  white-space: normal;
-	  margin-left: -1.33334em;
+		overflow: hidden;
+		white-space: normal;
+		margin-left: -1.33334em;
 	}
 
 	kbd {
-	    display: inline-block;
-	    margin-bottom: 0.5em;
-	    padding: 1px 8px;
-	    border: $color-border 1px solid;
-	    text-shadow: #FFF 0 1px 0;
-	    font-size: 0.9em;
-	    font-weight: bold;
-	    background: $color-background;
-	    border-radius: 4px;
-	    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #FFF inset;
-
-	    @media (prefers-color-scheme: dark) {
-	      background: $color-background-dark;
-	      border-color: $color-border-dark;
-	    }
+		display: inline-block;
+		margin-bottom: 0.5em;
+		padding: 1px 8px;
+		border: $color-border 1px solid;
+		text-shadow: #FFF 0 1px 0;
+		font-size: 0.9em;
+		font-weight: bold;
+		background: $color-background;
+		border-radius: 4px;
+		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #FFF inset;
+		@media (prefers-color-scheme: dark) {
+			background: $color-background-dark;
+			border-color: $color-border-dark;
+		}
 	}
 
 	table {
-	  position: relative;
+		position: relative;
 		width: 100%;
 		max-width: 100%;
 		margin: 0 0 2em;
 		background-color: transparent;
 		border: 1px solid $color-border;
-	  background: $color-background;
+		background: $color-background;
+		@media (prefers-color-scheme: dark) {
+			border-color: $color-border-dark;
+			background: $color-background-dark;
+		}
 
-	  @media (prefers-color-scheme: dark) {
-	    border-color: $color-border-dark;
-	    background: $color-background-dark;
-	  }
-
-		th,
-		td {
-		  position: relative;
-		  padding: 1.5rem;
+		td,
+		th {
+			position: relative;
+			padding: 1.5rem;
 			font-size: 0.75em;
 			line-height: 1.33334em;
-		  border: 1px solid $color-border;
-
-		  @media (prefers-color-scheme: dark) {
-		    border-color: $color-border-dark;
-		  }
+			border: 1px solid $color-border;
+			@media (prefers-color-scheme: dark) {
+				border-color: $color-border-dark;
+			}
 		}
 
 		th {
 			text-align: left;
 			font-weight: 500;
-		  letter-spacing: 1px;
+			letter-spacing: 1px;
 			font-size: 0.75em;
 			line-height: 1.33334em;
 			color: $color-text-secondary;
@@ -385,21 +393,18 @@ textarea {
 		margin: 0 0 2em;
 	}
 }
-
 /* ==========================================================================
    KG Cards
    ========================================================================== */
-
 .post-content {
-
 	figure figcaption {
 		position: relative;
-	  color: $color-text-secondary;
-	  max-width: $inner;
-	  margin: auto;
-	  font-size: 0.75em;
-	  line-height: 2em;
-	  padding: 2rem 0;
+		color: $color-text-secondary;
+		max-width: $inner;
+		margin: auto;
+		font-size: 0.75em;
+		line-height: 2em;
+		padding: 2rem 0;
 
 		&:after {
 			content: '';
@@ -409,7 +414,6 @@ textarea {
 			width: 8rem;
 			height: 1px;
 			background: $color-border;
-
 			@media (prefers-color-scheme: dark) {
 				background: $color-border-dark;
 			}
@@ -417,234 +421,218 @@ textarea {
 
 		a {
 			box-shadow: inset 0 -1px 0 $color-border;
-
 			@media (prefers-color-scheme: dark) {
-		    box-shadow: inset 0 -1px 0 $color-border-dark;
-		  }
+				box-shadow: inset 0 -1px 0 $color-border-dark;
+			}
 
-			&:hover,
-			&:focus {
+			&:focus,
+			&:hover {
 				box-shadow: inset 0 -2px 0 $color-border;
-
 				@media (prefers-color-scheme: dark) {
-			    box-shadow: inset 0 -2px 0 $color-border-dark;
-			  }
+					box-shadow: inset 0 -2px 0 $color-border-dark;
+				}
 			}
 		}
 	}
-
 	// KG Image
-
 	.kg-image-card {
-	  margin: 0 0 2em;
-	  max-width: none !important;
+		margin: 0 0 2em;
+		max-width: none !important;
 
-	  &.kg-width-wide {
-	    max-width: 48em !important;
-	    min-width: 100%;
-	    width: 75vw;
-	  }
+		&.kg-width-wide {
+			max-width: 48em !important;
+			min-width: 100%;
+			width: 75vw;
+		}
 
-	  &.kg-width-full {
-	    max-width: none;
-	    width: 100vw;
-	    margin-top: 2em;
-	  }
+		&.kg-width-full {
+			max-width: none;
+			width: 100vw;
+			margin-top: 2em;
+		}
 
-	  .kg-image {
-	    margin: 0 auto;
-	  }
+		.kg-image {
+			margin: 0 auto;
+		}
 
-	  .kg-image-full + figcaption {
-	    margin-bottom: 1.33334em;
-	  }
+		.kg-image-full + figcaption {
+			margin-bottom: 1.33334em;
+		}
 	}
-
 	// KG Gallery
-
 	.kg-gallery-card {
-	  margin: 0 0 2em;
-	  max-width: 48em !important;
-	  min-width: 100%;
-	  width: 75vw;
+		margin: 0 0 2em;
+		max-width: 48em !important;
+		min-width: 100%;
+		width: 75vw;
 	}
 
 	.kg-gallery-container {
-	  display: flex;
-	  flex-direction: column;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.kg-gallery-row {
-	  display: flex;
-	  flex-direction: row;
-	  justify-content: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 	}
 
 	.kg-gallery-image img {
-	  display: block;
-	  margin: 0;
-	  width: 100%;
-	  height: 100%;
+		display: block;
+		margin: 0;
+		width: 100%;
+		height: 100%;
 	}
 
 	.kg-gallery-row:not(:first-of-type) {
-	  margin: 0.75em 0 0 0;
+		margin: 0.75em 0 0;
 	}
 
 	.kg-gallery-image:not(:first-of-type) {
-	  margin: 0 0 0 0.75em;
+		margin: 0 0 0 0.75em;
 	}
-
 	// KG Embed
-
 	.kg-embed-card {
-	  margin: 0 0 2em;
+		margin: 0 0 2em;
 
-	  > * {
-	    margin-left: auto;
-	    margin-right: auto;
-	  }
+		> * {
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
-
 	// KG Code
-
 	.kg-code-card {
-	  min-width: 100%;
-	  margin: 0 0 2em;
+		min-width: 100%;
+		margin: 0 0 2em;
 	}
 
 	.kg-code-card pre {
-	  margin: 0;
+		margin: 0;
 	}
-
 	// KG Bookmark
-
 	.kg-bookmark-card {
-	  width: 100%;
-	  margin: 0 0 2em;
+		width: 100%;
+		margin: 0 0 2em;
 	}
 
 	.kg-bookmark-container {
-	  display: flex;
-	  text-decoration: none;
-	  min-height: 8em;
-	  background: $color-background;
-	  border: 1px solid $color-border;
+		display: flex;
+		text-decoration: none;
+		min-height: 8em;
+		background: $color-background;
+		border: 1px solid $color-border;
 		box-shadow: none !important;
-	  overflow: hidden;
-
-	  @media (prefers-color-scheme: dark) {
-	    background: $color-background-dark;
-	    border-color: $color-border-dark;
-	  }
+		overflow: hidden;
+		@media (prefers-color-scheme: dark) {
+			background: $color-background-dark;
+			border-color: $color-border-dark;
+		}
 	}
 
 	.kg-bookmark-content {
-	  text-rendering: optimizeLegibility;
-	  display: flex;
-	  flex-direction: column;
-	  flex-grow: 1;
-	  align-items: flex-start;
-	  justify-content: start;
-	  padding: 1.5em;
-	  color: $color-text-secondary;
+		text-rendering: optimizeLegibility;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		align-items: flex-start;
+		justify-content: start;
+		padding: 1.5em;
+		color: $color-text-secondary;
+		@media (prefers-color-scheme: dark) {
+			color: $color-text-secondary-dark;
+		}
 	}
 
 	.kg-bookmark-title {
-	  color: $color-text-primary;
-	  font-size: 0.75em;
-	  line-height: 1.66667em;
-	  font-weight: 700;
-	  letter-spacing: 0.5px;
-
-	  @media (prefers-color-scheme: dark) {
-	    color: $color-neutral-80;
-	  }
+		color: $color-text-primary;
+		font-size: 0.75em;
+		line-height: 1.66667em;
+		font-weight: 700;
+		letter-spacing: 0.5px;
+		@media (prefers-color-scheme: dark) {
+			color: $color-text-primary-dark;
+		}
 	}
 
 	.kg-bookmark-description {
-	  display: -webkit-box;
-	  font-size: 0.75em;
-	  line-height: 1.66667em;
-	  font-weight: 400;
-	  margin-top: 0.33334em;
-	  max-height: 3.33334em;
-	  overflow-y: hidden;
-	  -webkit-line-clamp: 2;
-	  -webkit-box-orient: vertical;
+		display: -webkit-box;
+		font-size: 0.75em;
+		line-height: 1.66667em;
+		font-weight: 400;
+		margin-top: 0.33334em;
+		max-height: 3.33334em;
+		overflow-y: hidden;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
 	}
 
 	.kg-bookmark-thumbnail {
-	  position: relative;
-	  min-width: 33%;
-	  max-height: 100%;
+		position: relative;
+		min-width: 33%;
+		max-height: 100%;
 	}
 
 	.kg-bookmark-thumbnail img {
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
-	  object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
 	}
 
 	.kg-bookmark-metadata {
-	  text-rendering: optimizeLegibility;
-	  display: flex;
-	  align-items: center;
-	  font-size: 0.75em;
-	  line-height: 1.66667em;
-	  color: $color-neutral-25;
-	  font-weight: 400;
-	  margin-top: 1em;
-	  flex-wrap: wrap;
-
-	  @media (prefers-color-scheme: dark) {
-	    color: $color-neutral-80;
-	  }
+		text-rendering: optimizeLegibility;
+		display: flex;
+		align-items: center;
+		font-size: 0.75em;
+		line-height: 1.66667em;
+		color: $color-text-primary;
+		font-weight: 400;
+		margin-top: 1em;
+		flex-wrap: wrap;
+		@media (prefers-color-scheme: dark) {
+			color: $color-text-primary-dark;
+		}
 	}
 
 	.kg-bookmark-icon {
-	  width: 1.33334em;
-	  margin: 0 0.75em 0 0;
+		width: 1.33334em;
+		margin: 0 0.75em 0 0;
 	}
 
 	.kg-bookmark-author:after {
-	  content: "•";
-	  margin: 0 0.33334em;
+		content: "•";
+		margin: 0 0.33334em;
 	}
 
 	.kg-bookmark-publisher {
-	    color: $color-primary;
+		color: $color-primary;
 	}
-
 	@media (max-width: 640px) {
-	  .kg-bookmark-container {
-	    flex-direction: column;
-	  }
+		.kg-bookmark-container {
+			flex-direction: column;
+		}
 
-	  .kg-bookmark-thumbnail {
-	    order: 1;
-	    width: 100%;
-	    min-height: 160px;
-	  }
+		.kg-bookmark-thumbnail {
+			order: 1;
+			width: 100%;
+			min-height: 160px;
+		}
 
-	  .kg-bookmark-thumbnail img {
-	    border-radius: 3px 3px 0 0;
-	  }
+		.kg-bookmark-thumbnail img {
+			border-radius: 3px 3px 0 0;
+		}
 
-	  .kg-bookmark-content {
-	    order: 2
-	  }
+		.kg-bookmark-content {
+			order: 2;
+		}
 	}
 }
-
- /* ==========================================================================
+/* ==========================================================================
     Misc
     ========================================================================== */
-
-
 .clear {
 	clear: both;
 }
@@ -652,13 +640,13 @@ textarea {
 .hidden {
 	display: none;
 }
-
 @keyframes fadein {
 	0% {
-	    opacity: .2;
+		opacity: 0.2;
 	}
+
 	100% {
-		opacity: .9;
+		opacity: 0.9;
 	}
 }
 
@@ -667,13 +655,12 @@ textarea {
 	overflow: hidden;
 	background: $color-border;
 	margin: 0;
+	@media (prefers-color-scheme: dark) {
+		background: $color-border-dark;
+	}
 
-  @media (prefers-color-scheme: dark) {
-    background: $color-border-dark;
-  }
-
-	&:before,
-	&:after {
+	&:after,
+	&:before {
 		content: '';
 		position: absolute;
 		z-index: 1;
@@ -683,11 +670,10 @@ textarea {
 		left: 25%;
 		border-radius: 100%;
 		background: $color-background;
-    box-sizing: border-box;
-
-    @media (prefers-color-scheme: dark) {
-      background: $color-background-dark;
-    }
+		box-sizing: border-box;
+		@media (prefers-color-scheme: dark) {
+			background: $color-background-dark;
+		}
 	}
 
 	&:after {
@@ -704,14 +690,12 @@ textarea {
 		height: auto;
 	}
 }
-
 /* ==========================================================================
    Header
    ========================================================================== */
-
 .blog-header {
 	position: relative;
-	padding: calc( 12rem + 4vw ) 0 8rem;
+	padding: calc(12rem + 4vw) 0 8rem;
 
 	&:after {
 		content: '';
@@ -722,10 +706,9 @@ textarea {
 		bottom: 0;
 		margin-left: $inner * -0.5;
 		background: $color-border;
-
-	  @media (prefers-color-scheme: dark) {
-	    background: $color-border-dark;
-	  }
+		@media (prefers-color-scheme: dark) {
+			background: $color-border-dark;
+		}
 	}
 
 	&.has-cover {
@@ -749,8 +732,8 @@ textarea {
 	z-index: 5;
 	background: no-repeat scroll center center / cover #000;
 	animation: 0.5s ease-in forwards fadein;
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 
 	&:after {
 		content: '';
@@ -760,19 +743,19 @@ textarea {
 		left: 0;
 		bottom: 0;
 		z-index: 8;
-	  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.333) 100%);
-		background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.333) 100%);
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.333) 100%);
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.333) 100%);
 	}
 
-  img {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    z-index: 6;
-    object-fit: cover;
-  }
+	img {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		z-index: 6;
+		object-fit: cover;
+	}
 }
 
 .blog-name {
@@ -786,7 +769,6 @@ textarea {
 	line-height: 1em;
 	text-decoration: none;
 	color: $color-text-primary;
-
 	@media (prefers-color-scheme: dark) {
 		color: $color-text-primary-dark;
 	}
@@ -806,7 +788,6 @@ textarea {
 	font-size: 3em;
 	line-height: 1.33334em;
 	color: $color-text-secondary;
-
 	@media (prefers-color-scheme: dark) {
 		color: $color-text-secondary-dark;
 	}
@@ -858,7 +839,11 @@ textarea {
 		font-size: 2em;
 		line-height: 1.5em;
 		margin: 1rem 0;
+		font-family: 'Cardo', serif;
 		color: $color-text-secondary;
+		@media (prefers-color-scheme: dark) {
+			color: $color-text-secondary-dark;
+		}
 	}
 
 	.archive-links {
@@ -896,12 +881,8 @@ textarea {
 		}
 	}
 
-	&.archive-tag {
-
-	}
+	&.archive-tag {}
 }
-
-
 
 .page-wrapper {
 	display: flex;
@@ -910,7 +891,6 @@ textarea {
 	position: relative;
 	padding-right: 0;
 	transition: all ease-in-out 0.3s;
-
 	@media only screen and (max-width: $breakpoint-large) {
 		transform: translate3d(0,0,0);
 	}
@@ -928,7 +908,6 @@ textarea {
 
 .menu-active .page-wrapper {
 	padding-right: 32rem;
-
 	@media only screen and (max-width: $breakpoint-large) {
 		padding-right: 0;
 		transform: translate3d(-32rem,0,0);
@@ -939,35 +918,29 @@ textarea {
 	display: block;
 }
 
-
-
 .inner {
 	max-width: $inner;
 	margin: 0 auto;
 	padding: 0 8rem;
-
 	@media only screen and (max-width: $breakpoint-medium) {
 		padding: 0 4rem;
 	}
 }
-
 /* ==========================================================================
    Navigation
    ========================================================================== */
-
 #navigation {}
+
 .nav-button {
 	position: fixed;
 	top: 0;
 	margin: 2rem;
 	z-index: 200;
-
 	@media only screen and (max-width: $breakpoint-large) {
 		position: absolute;
 	}
 
 	&.nav-logo a {
-
 		img {
 			display: inline-block;
 			width: auto;
@@ -990,16 +963,15 @@ textarea {
 		transition: all ease 0.2s;
 		border-radius: 4rem;
 		box-sizing: border-box;
-
 		@media (prefers-color-scheme: dark) {
-		color: $color-neutral-80;
-		border-color: $color-neutral-60;
+			color: $color-neutral-80;
+			border-color: $color-neutral-60;
 		}
 
-		&:hover,
-		&:focus {
-		color: $color-primary;
-		border-color: $color-primary;
+		&:focus,
+		&:hover {
+			color: $color-primary;
+			border-color: $color-primary;
 		}
 
 		i {
@@ -1014,36 +986,34 @@ textarea {
 				position: relative;
 				width: auto;
 				margin: auto;
-				font-size: 1.5em;
+				font-size: 1.25em;
 			}
 		}
 	}
 }
+
 .nav-button#home-button {
 	left: 0;
 }
+
 .nav-button#menu-button {
 	right: 0;
 }
-
 
 .cover-active .nav-button a {
 	color: rgba(255,255,255,0.8);
 	border-color: rgba(255,255,255,0.6);
 	background: transparent;
 
-  &:hover,
-  &:focus {
-  	color: #FFF;
-  	border-color: rgba(255,255,255,0.8);
-  }
+	&:focus,
+	&:hover {
+		color: #FFF;
+		border-color: rgba(255,255,255,0.8);
+	}
 }
-
-
 /* ==========================================================================
    Menu
    ========================================================================== */
-
 #menu {
 	position: fixed;
 	width: 32rem;
@@ -1055,7 +1025,7 @@ textarea {
 	overflow: hidden;
 	transform: translate3d(32em,0,0);
 	transition: all ease-in-out 0.3s;
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 .menu-active #menu {
@@ -1077,38 +1047,38 @@ textarea {
 	box-sizing: border-box;
 	z-index: 500;
 
-  &:hover,
-  &:focus {
-  	transform: rotate(180deg);
-  	border-color: $color-primary;
+	&:focus,
+	&:hover {
+		transform: rotate(180deg);
+		border-color: $color-primary;
 
-    &:after,
-    &:before {
-      background: $color-primary;
-    }
-  }
+		&:after,
+		&:before {
+			background: $color-primary;
+		}
+	}
 
-  &:after,
-  &:before {
-  	content: '';
-  	position: absolute;
-  	width: 2rem;
-  	height: 1.5px;
-  	left: 50%;
-  	top: 50%;
-    margin-top: -0.5px;
-  	margin-left: -1rem;
-  	background: $color-neutral-60;
-  	transition: all ease 0.2s;
-  }
+	&:after,
+	&:before {
+		content: '';
+		position: absolute;
+		width: 2rem;
+		height: 1.5px;
+		left: 50%;
+		top: 50%;
+		margin-top: -0.5px;
+		margin-left: -1rem;
+		background: $color-neutral-60;
+		transition: all ease 0.2s;
+	}
 
-  &:after {
-  	transform: rotate(45deg);
-  }
+	&:after {
+		transform: rotate(45deg);
+	}
 
-  &:before {
-  	transform: rotate(-45deg);
-  }
+	&:before {
+		transform: rotate(-45deg);
+	}
 }
 
 #menu .nav-wrapper {
@@ -1127,8 +1097,8 @@ textarea {
 	opacity: 0.5;
 	font-size: 1.5em;
 	line-height: 4rem;
-  font-weight: 500;
-  color: $color-neutral-60;
+	font-weight: 500;
+	color: $color-neutral-60;
 }
 
 #menu ul {
@@ -1147,11 +1117,11 @@ textarea {
 	position: absolute;
 	width: 100%;
 	height: 1px;
-	left: 2rem;
+	left: 3rem;
 	top: 50%;
 	margin: auto;
 	background: $color-neutral-25;
-  z-index: 1;
+	z-index: 1;
 }
 
 #menu li.active {}
@@ -1168,7 +1138,7 @@ textarea {
 
 #menu li a {
 	display: block;
-	padding: 1.5em 2rem;
+	padding: 1.5em 3rem;
 	font-size: 2em;
 	line-height: 1em;
 	color: $color-neutral-60;
@@ -1177,17 +1147,17 @@ textarea {
 	text-decoration: none;
 	font-weight: 400;
 
-  &:hover,
-  &:focus {
-  	color: $color-neutral-80;
-  }
+	&:focus,
+	&:hover {
+		color: $color-neutral-80;
+	}
 
-  span {
-    position: relative;
-    padding-right: 8px;
-    background: $color-neutral-15;
-    z-index: 2;
-  }
+	span {
+		position: relative;
+		padding-right: 8px;
+		background: $color-neutral-15;
+		z-index: 2;
+	}
 }
 
 #menu li a i {
@@ -1201,11 +1171,9 @@ textarea {
 	color: #FFF;
 	font-weight: 500;
 }
-
 /* ==========================================================================
    Reading Progress
    ========================================================================== */
-
 .progress-container {
 	position: fixed;
 	width: 100%;
@@ -1216,9 +1184,11 @@ textarea {
 	background: transparent;
 	transition: opacity ease-out 1s;
 }
+
 .progress-container.ready {
 	opacity: 0.2;
 }
+
 .progress-bar {
 	display: block;
 	width: 0;
@@ -1226,15 +1196,13 @@ textarea {
 	background: $color-primary;
 	box-shadow: 0 0 1px $color-primary, 0 0 3px $color-primary;
 }
-
 /* ==========================================================================
    Footer
    ========================================================================== */
-
 .page-footer {
 	position: relative;
 	z-index: 20;
-	padding-top: calc( 12rem + 8vw );
+	padding-top: calc(12rem + 8vw);
 	padding-bottom: 4rem;
 	margin-top: auto;
 
@@ -1267,17 +1235,15 @@ textarea {
 .credits-software {
 	float: right;
 }
-
 /* ==========================================================================
    Index
    ========================================================================== */
-
 .container {
 	position: relative;
 }
 
 .container .post {
-	padding: calc( 4rem + 2vw ) 0;
+	padding: calc(4rem + 2vw) 0;
 
 	&:after {
 		content: '';
@@ -1288,10 +1254,9 @@ textarea {
 		bottom: 0;
 		margin-left: $inner * -0.5;
 		background: $color-border;
-
-	  @media (prefers-color-scheme: dark) {
-	    background: $color-border-dark;
-	  }
+		@media (prefers-color-scheme: dark) {
+			background: $color-border-dark;
+		}
 	}
 }
 
@@ -1301,19 +1266,17 @@ textarea {
 	height: 4rem;
 	left: -4rem;
 	top: 0;
-	font-family: 'icons';
+	font-family: 'icon';
 	font-size: 0.5em;
 	font-style: normal;
 	font-weight: normal;
-	content: '\e808';
+	content: '\e800';
 	color: $color-yellow-100;
 	text-align: center;
 }
-
 /* ==========================================================================
    Post
    ========================================================================== */
-
 .page-template #footer:after {
 	position: absolute;
 	width: $inner;
@@ -1323,24 +1286,21 @@ textarea {
 	margin-left: $inner * -0.5;
 	content: '';
 	background: $color-border;
-
-  @media (prefers-color-scheme: dark) {
-    background: $color-border-dark;
-  }
+	@media (prefers-color-scheme: dark) {
+		background: $color-border-dark;
+	}
 }
-
 /* ==========================================================================
    Post
    ========================================================================== */
-
 .post-header {
 	position: relative;
-	padding: calc( 12rem + 4vw ) 0 calc( 2rem + 2vw );
+	padding: calc(12rem + 4vw) 0 calc(2rem + 2vw);
 }
 
 .post-header.has-cover {
-	padding: calc( 16rem + 8vw ) 0 calc( 4rem + 6vw );
-	margin-bottom: calc( 4rem + 2vw );
+	padding: calc(16rem + 8vw) 0 calc(4rem + 6vw);
+	margin-bottom: calc(4rem + 2vw);
 	background: #000;
 	overflow: hidden;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.1);
@@ -1355,18 +1315,18 @@ textarea {
 	z-index: 5;
 	background: no-repeat scroll center center / cover #000;
 	animation: 0.5s ease-in forwards fadein;
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 
-  img {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    z-index: 6;
-    object-fit: cover;
-  }
+	img {
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		z-index: 6;
+		object-fit: cover;
+	}
 
 	&:after {
 		content: '';
@@ -1376,14 +1336,57 @@ textarea {
 		left: 0;
 		bottom: 0;
 		z-index: 8;
-		background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.333) 100%);
-		background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.333) 100%);
+		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.333) 100%);
+		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.333) 100%);
 	}
 }
 
 .post {
 	position: relative;
 	z-index: 10;
+}
+
+.post-info {
+	position: relative;
+	z-index: 10;
+	display: flex;
+	margin-bottom: 2rem;
+	font-size: 2em;
+	line-height: 1em;
+
+	.post-type {
+		color: $color-primary;
+	}
+
+	.post-count {
+		position: relative;
+		margin-left: 3rem;
+		color: $color-text-secondary;
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: -2rem;
+			top: 50%;
+			width: 1rem;
+			height: 1px;
+			background: $color-neutral-80;
+		}
+	}
+}
+
+.has-cover .post-info {
+	.post-count {
+		color: #FFF;
+
+		&:after {
+			background: #FFF;
+		}
+	}
+
+	.post-type {
+		color: #FFF;
+	}
 }
 
 .post-title {
@@ -1395,10 +1398,9 @@ textarea {
 	font-weight: 700;
 	text-indent: -1px;
 	color: #000;
-
-  @media (prefers-color-scheme: dark) {
-    color: #FFF;
-  }
+	@media (prefers-color-scheme: dark) {
+		color: #FFF;
+	}
 
 	a {
 		text-decoration: none;
@@ -1421,8 +1423,7 @@ textarea {
 	font-weight: 400;
 	font-size: 1.5rem;
 	line-height: 2rem;
-  color: $color-text-secondary;
-
+	color: $color-text-secondary;
 	@media (prefers-color-scheme: dark) {
 		color: $color-text-secondary-dark;
 	}
@@ -1432,8 +1433,8 @@ textarea {
 		text-decoration: none;
 		color: inherit;
 
-		&:hover,
-		&:focus {
+		&:focus,
+		&:hover {
 			text-decoration: underline;
 		}
 	}
@@ -1458,7 +1459,6 @@ textarea {
 		width: 8rem;
 		height: 1px;
 		background: $color-border;
-
 		@media (prefers-color-scheme: dark) {
 			background: $color-border-dark;
 		}
@@ -1493,7 +1493,6 @@ textarea {
 		color: $color-text-primary;
 		font-weight: 500;
 		margin: 0;
-
 		@media (prefers-color-scheme: dark) {
 			color: $color-text-primary-dark;
 		}
@@ -1526,17 +1525,17 @@ textarea {
 }
 
 .post-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	font-size: 2rem;
 	line-height: 3rem;
 }
 
 .post-content > * {
-  min-width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+	min-width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -1546,12 +1545,10 @@ textarea {
 		margin-top: 0;
 	}
 }
-
 /* ==========================================================================
    Post Info
    ========================================================================== */
-
-.post-info {
+.post-footer {
 	margin: 12rem 0 6rem;
 
 	&:after {
@@ -1562,19 +1559,18 @@ textarea {
 }
 
 .post-info-label {
-  margin-right: 0.75em;
-  font-size: 1.5em;
-  line-height: 3rem;
-  font-weight: 400;
-  color: $color-neutral-60;
+	margin-right: 0.75em;
+	font-size: 1.5em;
+	line-height: 3rem;
+	font-weight: 400;
+	color: $color-neutral-60;
 }
 
 .post-share {
-  position: relative;
+	position: relative;
 	max-width: 33.33333%;
 	float: right;
-  display: flex;
-
+	display: flex;
 	@media only screen and (max-width: $breakpoint-medium) {
 		max-width: none;
 		float: none;
@@ -1584,7 +1580,7 @@ textarea {
 
 .post-share a {
 	display: block;
-  width: 3rem;
+	width: 3rem;
 	height: 3rem;
 	margin-right: 0.5em;
 	padding: 0;
@@ -1595,20 +1591,19 @@ textarea {
 	color: #FFF;
 	border-radius: 2em;
 	transition: all ease 0.2s;
-
 	@media only screen and (max-width: $breakpoint-medium) {
 		margin-left: 0;
 		margin-right: 0.66667em;
 	}
 
-	&:hover,
-	&:focus {
+	&:focus,
+	&:hover {
 		background-color: $color-neutral-15;
 	}
 }
 
 .post-share a:last-child {
-  margin-right: 0;
+	margin-right: 0;
 }
 
 .post-share a i {
@@ -1637,12 +1632,11 @@ textarea {
 }
 
 .post-tags {
-  position: relative;
+	position: relative;
 	max-width: 66.66666%;
 	float: left;
-  display: flex;
-  flex-wrap: wrap;
-
+	display: flex;
+	flex-wrap: wrap;
 	@media only screen and (max-width: 640px) {
 		max-width: none;
 		float: none;
@@ -1653,7 +1647,7 @@ textarea {
 .post-tags a {
 	display: inline-block;
 	margin-right: 0.5em;
-  margin-bottom: 0.5em;
+	margin-bottom: 0.5em;
 	padding: 0 1.5rem;
 	background: $color-primary;
 	font-size: 1.5em;
@@ -1665,19 +1659,17 @@ textarea {
 	border-radius: 2em;
 	transition: all ease 0.2s;
 	box-sizing: border-box;
-  white-space: nowrap;
+	white-space: nowrap;
 
-	&:hover,
-	&:focus {
+	&:focus,
+	&:hover {
 		background: $color-neutral-15;
 		color: #FFF;
 	}
 }
-
 /* ==========================================================================
    Post Comments
    ========================================================================== */
-
 .post-comments {
 	position: relative;
 	padding: 8rem 0;
@@ -1685,10 +1677,9 @@ textarea {
 	border-top: 1px solid $color-border;
 	border-bottom: 1px solid $color-border;
 	box-sizing: border-box;
-
-  @media (prefers-color-scheme: dark) {
-    border-color: $color-border-dark;
-  }
+	@media (prefers-color-scheme: dark) {
+		border-color: $color-border-dark;
+	}
 }
 
 .post-comments-activate {
@@ -1706,8 +1697,8 @@ textarea {
 	transition: all ease 0.2s;
 	border-radius: 2em;
 
-	&:hover,
-	&:focus {
+	&:focus,
+	&:hover {
 		color: $color-primary;
 		border-color: $color-primary;
 	}
@@ -1716,23 +1707,21 @@ textarea {
 .activated .post-comments-activate {
 	display: none;
 }
-
 /* ==========================================================================
    Post Subscribe
    ========================================================================== */
-
 .post-subscribe {
 	position: relative;
 	padding: 4rem 0;
-  margin: 1em 0;
+	margin: 1em 0;
 	text-align: center;
 	background: $color-neutral-25;
-  color: $color-neutral-80;
+	color: $color-neutral-80;
 	box-sizing: border-box;
-  border-radius: 2px;
+	border-radius: 2px;
 
 	p {
-    max-width: 13.33334em;
+		max-width: 13.33334em;
 		margin: 0 auto 1.33334em;
 		font-size: 1.2em;
 		line-height: 1.33334em;
@@ -1754,7 +1743,7 @@ textarea {
 			box-shadow: none;
 			box-sizing: border-box;
 			border-radius: 4em 0 0 4em;
-      color: $color-neutral-25;
+			color: $color-neutral-25;
 		}
 
 		.post-subscribe-button {
@@ -1772,28 +1761,26 @@ textarea {
 			box-sizing: border-box;
 			border-radius: 0 4em 4em 0;
 
-      &:hover,
-      &:focus {
+			&:focus,
+			&:hover {
 				background: $color-primary;
 			}
 		}
 	}
 }
-
 /* ==========================================================================
    Post Comments
    ========================================================================== */
-
 .post-nav {
 	position: relative;
-  margin-top: -1px;
-  border-top: 1px solid $color-border;
+	margin-top: -1px;
+	border-top: 1px solid $color-border;
 	border-bottom: 1px solid $color-border;
-
-  @media (prefers-color-scheme: dark) {
-    border-color: $color-border-dark;
-  }
+	@media (prefers-color-scheme: dark) {
+		border-color: $color-border-dark;
+	}
 }
+
 .post-nav:after {
 	position: absolute;
 	content: '';
@@ -1803,38 +1790,82 @@ textarea {
 	top: 0;
 	background: $color-border;
 	z-index: 2;
-
-  @media (prefers-color-scheme: dark) {
-    background: $color-border-dark;
-  }
+	@media (prefers-color-scheme: dark) {
+		background: $color-border-dark;
+	}
+	@media only screen and (max-width: $breakpoint-medium) {
+		display: none;
+	}
 }
-.post-nav a {
+
+.post-nav-next,
+.post-nav-prev {
 	text-decoration: none;
 	color: inherit;
 	display: block;
 	width: 50%;
+	@media only screen and (max-width: $breakpoint-medium) {
+		display: block;
+		width: 100%;
+	}
 
-  &:hover,
-  &:focus {
-  	color: inherit;
-  }
+	&:focus,
+	&:hover {
+		color: inherit;
+
+		i {
+			color: $color-primary;
+		}
+	}
 }
+
 .post-nav-next {
 	float: left;
+
+	.post-nav-teaser {
+		padding-right: 3rem;
+		@media only screen and (max-width: $breakpoint-medium) {
+			padding-right: 0;
+		}
+	}
 }
+
 .post-nav-prev {
 	float: right;
+
+	.post-nav-teaser {
+		padding-left: 3rem;
+		@media only screen and (max-width: $breakpoint-medium) {
+			padding-left: 0;
+		}
+	}
 }
+
 .post-nav-teaser {
+	position: relative;
 	padding: 2rem 0;
 	min-height: 8rem;
+	@media only screen and (max-width: $breakpoint-medium) {
+		min-height: 4em;
+		padding: 2em 0;
+
+		&:after {
+			position: absolute;
+			content: '';
+			width: 100%;
+			height: 1px;
+			left: 0;
+			bottom: 0;
+			margin-bottom: -1px;
+			background: $color-border;
+			z-index: 2;
+			@media (prefers-color-scheme: dark) {
+				background: $color-border-dark;
+			}
+		}
+	}
 }
-.post-nav-next .post-nav-teaser {
-	padding-right: 3rem;
-}
-.post-nav-prev .post-nav-teaser {
-	padding-left: 3rem;
-}
+
 .post-nav i {
 	position: absolute;
 	top: 50%;
@@ -1846,79 +1877,62 @@ textarea {
 	text-align: center;
 	transition: all ease-out 0.2s;
 	color: $color-border;
-
-  @media (prefers-color-scheme: dark) {
-    color: $color-border-dark;
-  }
+	@media (prefers-color-scheme: dark) {
+		color: $color-border-dark;
+	}
 
 	&:before {
 		margin: 0;
 		width: auto;
 	}
 }
+
 .post-nav-next i {
 	left: 0;
 	margin-left: -4rem;
 }
+
 .post-nav-prev i {
 	right: 0;
 	margin-right: -4rem;
 }
-.post-nav a:hover i,
-.post-nav a:focus i {
-	color: $color-primary;
-}
+
 .post-nav-title {
-	margin: 0 0 .5rem;
+	margin: 0 0 0.5rem;
 	padding: 0;
 	font-size: 2em;
 	line-height: 3rem;
 	color: inherit;
 	display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
 	overflow: hidden;
-  text-overflow: ellipsis;
+	text-overflow: ellipsis;
 }
+
 .post-nav-excerpt {
-  height: 5rem;
+	height: 5rem;
 	margin: 0;
 	font-family: 'Cardo', serif;
 	font-size: 1.75em;
 	line-height: 2.5rem;
 	color: $color-text-secondary;
 	display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
-
 /* ==========================================================================
    Pagination
    ========================================================================== */
-
-
 .pagination {
 	position: relative;
 	height: 4rem;
 	margin: 0;
 	padding: 4rem 0;
 }
-.pagination:after {
-	content: '';
-	position: absolute;
-	width: $inner;
-	height: 1px;
-	left: 50%;
-	bottom: 0;
-	margin-left: $inner * -0.5;
-	background: $color-border;
 
-  @media (prefers-color-scheme: dark) {
-    background: $color-border-dark;
-  }
-}
 .pagination a {
 	position: relative;
 	display: block;
@@ -1929,15 +1943,16 @@ textarea {
 	border: 1px solid $color-neutral-80;
 	font-size: 1.5em;
 	line-height: 4rem;
+	font-weight: 500;
 	text-align: center;
 	text-decoration: none;
 	color: $color-neutral-60;
 	transition: all ease 0.2s;
-	border-radius:4rem;
+	border-radius: 4rem;
 	box-sizing: border-box;
 
-	&:hover,
-	&:focus {
+	&:focus,
+	&:hover {
 		color: $color-primary;
 		border-color: $color-primary;
 	}
@@ -1961,7 +1976,7 @@ textarea {
 
 .pagination a i {
 	position: relative;
-  top: 1px;
+	top: 1px;
 	width: auto;
 	margin: auto 4px;
 	color: inherit;
@@ -1969,9 +1984,9 @@ textarea {
 	line-height: 0.75em;
 
 	&:before {
-	  position: relative;
-	  width: auto;
-	  margin: auto;
+		position: relative;
+		width: auto;
+		margin: auto;
 	}
 }
 
@@ -1993,86 +2008,48 @@ textarea {
 }
 
 .extra-pagination .pagination:after {
-	top: auto;
+	content: '';
+	position: absolute;
+	width: $inner;
+	height: 1px;
+	left: 50%;
 	bottom: 0;
+	margin-left: $inner * -0.5;
+	background: $color-border;
+	@media (prefers-color-scheme: dark) {
+		background: $color-border-dark;
+	}
 }
 
 .paged .extra-pagination {
 	display: block;
 }
-
-
-
 /* ==========================================================================
    Media Queries - Smaller than 480px
    ========================================================================== */
-
-
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: $breakpoint-small) {
 	.post-template #main-header {
 		padding: 16px 0;
 	}
+
 	#main-nav a {
 		margin: 16px;
 	}
+
 	.container .post.featured .post-title:after {
 		left: 0;
 		top: -1.75em;
 	}
-	.post-content img,
-	.post-content .fluid-width-video-wrapper {
+
+	.post-content .fluid-width-video-wrapper,
+	.post-content img {
 		width: 100%;
 		margin-left: auto;
 	}
-	.post-nav:after {
-		display: none;
-	}
-	.post-nav-next,
-	.post-nav-prev {
-		display: block;
-		width: 100%;
-	}
-	.post-nav-teaser {
-		position: relative;
-		min-height: 4em;
-		padding: 2em 0;
-	}
-	.post-nav-next .post-nav-teaser:after {
-		position: absolute;
-		content: '';
-		width: 100%;
-		height: 1px;
-		left: 0;
-		bottom: 0;
-		margin-bottom: -1px;
-		background: $color-border;
-		z-index: 2;
-
-    @media (prefers-color-scheme: dark) {
-      background: $color-border-dark;
-    }
-	}
-	.post-nav-next .post-nav-teaser {
-		padding-right: 0;
-		padding-left: 1.5em;
-	}
-	.post-nav-prev .post-nav-teaser {
-		padding-left: 0;
-		padding-right: 1.5em;
-	}
-	.post-nav-next i {
-		margin-left: -1em;
-	}
-	.post-nav-prev i {
-		margin-right: -1em;
-	}
 }
-
 /* ==========================================================================
    Media Queries - Smaller than 320px
    ========================================================================== */
-
-
 @media only screen and (max-width: 320px) {
 	.pagination .pagination-label {
 		display: none;

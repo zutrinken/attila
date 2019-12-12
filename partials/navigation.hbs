@@ -1,18 +1,18 @@
 <nav id="navigation">
 	{{#if @site.logo}}
 	<span id="home-button" class="nav-button nav-logo">
-		<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}">{{^is "home"}}<i class="ic ic-arrow-left"></i> {{/is}}<img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
+		<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}">{{^is "home"}}<i class="icon icon-arrow-left"></i> {{/is}}<img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
 	</span>
 	{{else}}
 		{{^is "home"}}
 		<span id="home-button" class="nav-button">
-			<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}"><i class="ic ic-arrow-left"></i> {{t "Home"}}</a>
+			<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}"><i class="icon icon-arrow-left"></i> {{t "Home"}}</a>
 		</span>
 		{{/is}}
 	{{/if}}
 	{{#if @site.navigation}}
 	<span id="menu-button" class="nav-button">
-		<a class="menu-button"><i class="ic ic-menu"></i> {{t "Menu"}}</a>
+		<a class="menu-button"><i class="icon icon-menu"></i> {{t "Menu"}}</a>
 	</span>
 	{{/if}}
 </nav>
@@ -26,15 +26,15 @@
 			<li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}"><span>{{label}}</span></a></li>
 			{{/foreach}}
 			{{#if @site.twitter}}
-			<li class="nav-twitter"><a href="{{twitter_url}}" title="{{@site.twitter}}"><span><i class="ic ic-twitter"></i> Twitter</span></a></li>
+			<li class="nav-twitter"><a href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><span><i class="icon icon-twitter"></i> Twitter</span></a></li>
 			{{/if}}
 			{{#if @site.facebook}}
-			<li class="nav-facebook"><a href="{{facebook_url}}" title="{{@site.facebook}}"><span><i class="ic ic-facebook"></i> Facebook</span></a></li>
+			<li class="nav-facebook"><a href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank"><span><i class="icon icon-facebook"></i> Facebook</span></a></li>
 			{{/if}}
 			{{#if @labs.subscribers}}
-			<li class="nav-subscribe"><a href="{{@site.url}}/subscribe/"><span><i class="ic ic-mail"></i> {{t "Subscribe"}}</span></a></li>
+			<li class="nav-subscribe"><a href="{{@site.url}}/subscribe/" target="_blank"><span><i class="icon icon-mail"></i> {{t "Subscribe"}}</span></a></li>
 			{{else}}
-			<li class="nav-rss"><a href="{{@site.url}}/rss/"><span><i class="ic ic-rss"></i> {{t "Subscribe"}}</span></a></li>
+			<li class="nav-rss"><a href="{{@site.url}}/rss/" target="_blank"><span><i class="icon icon-rss"></i> {{t "Subscribe"}}</span></a></li>
 			{{/if}}
 		</ul>
 	</div>
