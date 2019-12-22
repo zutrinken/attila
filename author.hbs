@@ -4,23 +4,6 @@
 
 <header class="blog-header{{#if cover_image}} has-cover{{else}}{{#if @site.cover_image}} has-cover{{/if}}{{/if}}">
 	<div class="inner">
-		<nav id="navigation">
-			{{#if @site.logo}}
-			<span class="blog-logo">
-				<a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
-			</span>
-			{{else}}
-			<span id="home-button" class="nav-button">
-				<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}"><i class="icon icon-arrow-left"></i> {{t "Home"}}</a>
-			</span>
-			{{/if}}
-			{{#if @site.navigation}}
-			<span id="menu-button" class="nav-button">
-				<a class="menu-button"><i class="icon icon-menu"></i> {{t "Menu"}}</a>
-			</span>
-			{{/if}}
-		</nav>
-
 		<div class="archive archive-author">
 			<span class="archive-info">
 				<span class="archive-type">{{t "Creator"}}</span>

@@ -1,41 +1,34 @@
-<nav id="navigation">
-	{{#if @site.logo}}
-	<span id="home-button" class="nav-button nav-logo">
-		<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}">{{^is "home"}}<i class="icon icon-arrow-left"></i> {{/is}}<img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
-	</span>
-	{{else}}
-		{{^is "home"}}
-		<span id="home-button" class="nav-button">
-			<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}"><i class="icon icon-arrow-left"></i> {{t "Home"}}</a>
-		</span>
-		{{/is}}
-	{{/if}}
-	{{#if @site.navigation}}
-	<span id="menu-button" class="nav-button">
-		<a class="menu-button"><i class="icon icon-menu"></i> {{t "Menu"}}</a>
-	</span>
-	{{/if}}
-</nav>
 
-<nav id="menu">
-	<a class="close-button">{{t "Close"}}</a>
-	<div class="nav-wrapper">
-		<p class="nav-label">{{t "Menu"}}</p>
-		<ul>
-			{{#foreach navigation}}
-			<li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}"><span>{{label}}</span></a></li>
-			{{/foreach}}
-			{{#if @site.twitter}}
-			<li class="nav-twitter"><a href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><span><i class="icon icon-twitter"></i> Twitter</span></a></li>
-			{{/if}}
-			{{#if @site.facebook}}
-			<li class="nav-facebook"><a href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank"><span><i class="icon icon-facebook"></i> Facebook</span></a></li>
-			{{/if}}
-			{{#if @labs.subscribers}}
-			<li class="nav-subscribe"><a href="{{@site.url}}/subscribe/" target="_blank"><span><i class="icon icon-mail"></i> {{t "Subscribe"}}</span></a></li>
-			{{else}}
-			<li class="nav-rss"><a href="{{@site.url}}/rss/" target="_blank"><span><i class="icon icon-rss"></i> {{t "Subscribe"}}</span></a></li>
-			{{/if}}
-		</ul>
+<div class="navigation">
+	<nav class="nav-wrapper">
+		<div class="inner">
+			<ul>
+				{{#if @site.logo}}
+				<li class="nav-logo">
+					<a href="{{@site.url}}" title="{{t "Home"}}"><img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
+				</li>
+				{{/if}}
+				{{#foreach navigation}}
+				<li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}"><span>{{label}}</span></a></li>
+				{{/foreach}}
+				<li class="nav-seperator"></li>
+				{{#if @site.twitter}}
+				<li class="nav-twitter"><a href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i class="icon icon-twitter"></i><span>Twitter</span></a></li>
+				{{/if}}
+				{{#if @site.facebook}}
+				<li class="nav-facebook"><a href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank"><i class="icon icon-facebook"></i><span>Facebook</span></a></li>
+				{{/if}}
+				{{#if @labs.subscribers}}
+				<li class="nav-subscribe"><a href="{{@site.url}}/subscribe/" target="_blank"><i class="icon icon-mail"></i><span>{{t "Subscribe"}}</span></a></li>
+				{{else}}
+				<li class="nav-rss"><a href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss"></i><span>{{t "Subscribe"}}</span></a></li>
+				{{/if}}
+			</ul>
+		</div>
+	</nav>
+	<div class="nav-wrapper-control">
+		<div class="inner">
+			<a class="nav-menu"><i class="icon icon-menu"></i>{{t "Menu"}}</a>
+		</div>
 	</div>
-</nav>
+</div>

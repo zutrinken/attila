@@ -695,7 +695,7 @@ textarea {
    ========================================================================== */
 .blog-header {
 	position: relative;
-	padding: calc(12rem + 4vw) 0 8rem;
+	padding: calc(16rem + 4vw) 0 8rem;
 
 	&:after {
 		content: '';
@@ -896,28 +896,6 @@ textarea {
 	}
 }
 
-.page-wrapper .hidden-close {
-	display: none;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	z-index: 350;
-}
-
-.menu-active .page-wrapper {
-	padding-right: 32rem;
-	@media only screen and (max-width: $breakpoint-large) {
-		padding-right: 0;
-		transform: translate3d(-32rem,0,0);
-	}
-}
-
-.menu-active .page-wrapper .hidden-close {
-	display: block;
-}
-
 .inner {
 	max-width: $inner;
 	margin: 0 auto;
@@ -929,247 +907,185 @@ textarea {
 /* ==========================================================================
    Navigation
    ========================================================================== */
-#navigation {}
-
-.nav-button {
-	position: fixed;
+.navigation {
+	position: absolute;
 	top: 0;
-	margin: 2rem;
-	z-index: 200;
-	@media only screen and (max-width: $breakpoint-large) {
-		position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: 400;
+	transition: all ease-out 0.3s;
+	@media only screen and (max-width: $breakpoint-medium) {
+		transform: translate3d(0,-100%,0);
+	}
+}
+
+.menu-active .navigation {
+	transform: translate3d(0,0,0);
+}
+
+.navigation .nav-wrapper-control {
+	position: absolute;
+	z-index: 500;
+	left: 0;
+	top: 100%;
+	width: 100%;
+	cursor: pointer;
+	display: none;
+	color: $color-text-secondary;
+	border-top: 1px solid transparent;
+	box-sizing: border-box;
+	transition: all linear 0.1s;
+	@media (prefers-color-scheme: dark) {
+		color: $color-text-secondary-dark;
+	}
+	@media only screen and (max-width: $breakpoint-medium) {
+		display: block;
 	}
 
-	&.nav-logo a {
-		img {
-			display: inline-block;
-			width: auto;
-			height: 2rem;
+	a {
+		display: block;
+		padding: 2rem 0;
+		font-size: 2em;
+		line-height: 2rem;
+	}
+}
+
+.cover-active .navigation .nav-wrapper-control {
+	color: #FFF;
+}
+
+.menu-active .navigation .nav-wrapper-control {
+	background: $color-neutral-15;
+	color: $color-text-secondary;
+	border-color: $color-border-dark;
+}
+
+.navigation .nav-wrapper {
+	max-height: calc(100vh - 6rem);
+	overflow-y: auto;
+	@media only screen and (max-width: $breakpoint-medium) {
+		background: $color-neutral-15;
+	}
+}
+
+.navigation ul {
+	position: relative;
+	display: flex;
+	width: 100%;
+	margin: auto;
+	padding: 0;
+	list-style: none;
+	@media only screen and (max-width: $breakpoint-medium) {
+		flex-direction: column;
+	}
+}
+
+.navigation li {
+	position: relative;
+	margin-right: 3rem;
+
+	&.active {
+		&:after {
+			position: absolute;
+			content: '';
+			width: 100%;
+			height: 2px;
+			left: 0;
+			bottom: -1px;
+			background: $color-primary;
+			@media only screen and (max-width: $breakpoint-medium) {
+				width: 2px;
+				height: 100%;
+				bottom: 0;
+				margin-left: -4rem;
+			}
+		}
+
+		a {
+			color: $color-neutral-25;
+			font-weight: 500;
+			@media only screen and (max-width: $breakpoint-medium) {
+				color: #FFF;
+			}
 		}
 	}
 
 	a {
-		display: flex;
-		height: 4rem;
-		padding: 1rem 2rem;
-		border: 1px solid $color-neutral-80;
-		font-weight: 500;
+		display: block;
+		padding: 2rem 0;
 		font-size: 1.5em;
 		line-height: 2rem;
-		text-shadow: none;
-		text-decoration: none;
 		color: $color-neutral-60;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		text-decoration: none;
+		font-weight: 400;
 		cursor: pointer;
-		transition: all ease 0.2s;
-		border-radius: 4rem;
-		box-sizing: border-box;
-		@media (prefers-color-scheme: dark) {
-			color: $color-neutral-80;
-			border-color: $color-neutral-60;
+		@media only screen and (max-width: $breakpoint-medium) {
+			font-size: 2em;
 		}
 
 		&:focus,
 		&:hover {
-			color: $color-primary;
-			border-color: $color-primary;
+			color: $color-neutral-25;
+			@media only screen and (max-width: $breakpoint-medium) {
+				color: $color-neutral-80;
+			}
+		}
+	}
+
+	&.nav-seperator {
+		margin: 0 auto;
+	}
+
+	&.nav-facebook,
+	&.nav-rss,
+	&.nav-subscribe,
+	&.nav-twitter {
+		margin-right: 1rem;
+		@media only screen and (max-width: $breakpoint-medium) {
+			display: none;
 		}
 
-		i {
-			height: 2rem;
-			display: block;
-			color: inherit;
-			margin-right: 1rem;
-			position: relative;
+		span {
+			display: none;
+		}
+	}
 
-			&:before {
-				line-height: 2rem;
-				position: relative;
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&.nav-logo {
+		@media only screen and (max-width: $breakpoint-medium) {
+			display: none;
+		}
+
+		a {
+			display: block;
+			height: 3rem;
+			padding: 1.5rem 0;
+
+			img {
+				display: block;
 				width: auto;
-				margin: auto;
-				font-size: 1.25em;
+				height: 3rem;
 			}
 		}
 	}
 }
 
-.nav-button#home-button {
-	left: 0;
-}
-
-.nav-button#menu-button {
-	right: 0;
-}
-
-.cover-active .nav-button a {
-	color: rgba(255,255,255,0.8);
-	border-color: rgba(255,255,255,0.6);
-	background: transparent;
-
-	&:focus,
-	&:hover {
-		color: #FFF;
-		border-color: rgba(255,255,255,0.8);
+.cover-active .navigation li a {
+	@media only screen and (min-width: $breakpoint-medium) {
+		color: rgba(255,255,255,0.8);
 	}
-}
-/* ==========================================================================
-   Menu
-   ========================================================================== */
-#menu {
-	position: fixed;
-	width: 32rem;
-	height: 100%;
-	top: 0;
-	right: 0;
-	background: $color-neutral-15;
-	z-index: 400;
-	overflow: hidden;
-	transform: translate3d(32em,0,0);
-	transition: all ease-in-out 0.3s;
-	box-sizing: border-box;
-}
-
-.menu-active #menu {
-	transform: translate3d(0,0,0);
-}
-
-#menu .close-button {
-	position: absolute;
-	width: 4rem;
-	height: 4rem;
-	top: 0;
-	right: 0;
-	margin: 2rem;
-	border: 1px solid $color-neutral-80;
-	color: transparent;
-	cursor: pointer;
-	transition: all ease 0.2s;
-	border-radius: 4rem;
-	box-sizing: border-box;
-	z-index: 500;
 
 	&:focus,
 	&:hover {
-		transform: rotate(180deg);
-		border-color: $color-primary;
-
-		&:after,
-		&:before {
-			background: $color-primary;
+		@media only screen and (min-width: $breakpoint-medium) {
+			color: #FFF;
 		}
 	}
-
-	&:after,
-	&:before {
-		content: '';
-		position: absolute;
-		width: 2rem;
-		height: 1.5px;
-		left: 50%;
-		top: 50%;
-		margin-top: -0.5px;
-		margin-left: -1rem;
-		background: $color-neutral-60;
-		transition: all ease 0.2s;
-	}
-
-	&:after {
-		transform: rotate(45deg);
-	}
-
-	&:before {
-		transform: rotate(-45deg);
-	}
-}
-
-#menu .nav-wrapper {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	box-sizing: border-box;
-}
-
-#menu .nav-label {
-	display: block;
-	padding: 2rem 3rem;
-	margin: 0;
-	opacity: 0.5;
-	font-size: 1.5em;
-	line-height: 4rem;
-	font-weight: 500;
-	color: $color-neutral-60;
-}
-
-#menu ul {
-	position: relative;
-	width: 100%;
-	margin: auto;
-	padding: 0;
-}
-
-#menu li {
-	position: relative;
-}
-
-#menu li:before {
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 1px;
-	left: 3rem;
-	top: 50%;
-	margin: auto;
-	background: $color-neutral-25;
-	z-index: 1;
-}
-
-#menu li.active {}
-
-#menu li.active:after {
-	position: absolute;
-	content: '';
-	width: 4px;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: $color-primary;
-}
-
-#menu li a {
-	display: block;
-	padding: 1.5em 3rem;
-	font-size: 2em;
-	line-height: 1em;
-	color: $color-neutral-60;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	text-decoration: none;
-	font-weight: 400;
-
-	&:focus,
-	&:hover {
-		color: $color-neutral-80;
-	}
-
-	span {
-		position: relative;
-		padding-right: 8px;
-		background: $color-neutral-15;
-		z-index: 2;
-	}
-}
-
-#menu li a i {
-	position: relative;
-	top: -1px;
-	font-size: 0.8em;
-	color: inherit;
-}
-
-#menu li.active a {
-	color: #FFF;
-	font-weight: 500;
 }
 /* ==========================================================================
    Reading Progress
@@ -1295,7 +1211,7 @@ textarea {
    ========================================================================== */
 .post-header {
 	position: relative;
-	padding: calc(12rem + 4vw) 0 calc(2rem + 2vw);
+	padding: calc(16rem + 4vw) 0 calc(2rem + 2vw);
 }
 
 .post-header.has-cover {

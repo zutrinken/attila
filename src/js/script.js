@@ -18,19 +18,29 @@ jQuery(function($) {
 		}
 	});
 
-	$('.menu-button').on({
+	$('.nav-menu').on({
 		'click': function() {
 			menu();
 		}
 	});
 
-	$('.hidden-close').on({
+	$('.nav-close').on({
 		'click': function() {
 			menu();
 		}
 	});
 
-	/* ==========================================================================
+	viewport.on({
+		'resize': function() {
+			html.removeClass('menu-active');
+		},
+		'orientationchange': function() {
+			html.removeClass('menu-active');
+		}
+	});
+
+
+		/* ==========================================================================
 	   Parallax cover
 	   ========================================================================== */
 
