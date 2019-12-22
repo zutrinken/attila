@@ -7,31 +7,24 @@
     @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
   }
 }
-
 $color-neutral-98: hsb(215, 1, 98);
 $color-neutral-90: hsb(215, 2, 90);
 $color-neutral-80: hsb(215, 4, 80); // nav, menu, pagination - button border
 $color-neutral-60: hsb(215, 6, 60); // nav, menu, pagination - button font
 $color-neutral-25: hsb(215, 8, 25);
 $color-neutral-15: hsb(215, 10, 15);
-
-$color-yellow-100:	#ffc336;
-$color-red-95:		#f26a3d;
-
+$color-yellow-100: #ffc336;
+$color-red-95: #f26a3d;
 $color-social-twitter: #3ea9dd;
 $color-social-facebook: #3c5a98;
 $color-social-linkedin: #0e76a8;
-
+$color-social-mail: #2997ee;
 $color-primary: $color-red-95; // define primary color
-
 $color-text-primary: $color-neutral-15;
 $color-text-primary-dark: #FFF;
-
 $color-text-secondary: $color-neutral-60;
 $color-text-secondary-dark: $color-neutral-80;
-
 $color-border: $color-neutral-90;
 $color-background: $color-neutral-98;
-
 $color-border-dark: $color-neutral-25;
 $color-background-dark: $color-neutral-15;

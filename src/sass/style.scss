@@ -32,7 +32,7 @@ body {
 	overflow-x: hidden;
 	background: #FFF;
 	@media (prefers-color-scheme: dark) {
-		background: #000;
+		background: $color-background-dark;
 		color: $color-text-secondary-dark;
 	}
 }
@@ -1628,7 +1628,7 @@ textarea {
 }
 
 .post-share .email {
-	background-color: $color-neutral-25;
+	background-color: $color-social-mail;
 }
 
 .post-tags {
