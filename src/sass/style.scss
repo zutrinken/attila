@@ -923,6 +923,27 @@ textarea {
 	transform: translate3d(0,0,0);
 }
 
+.nav-close {
+	position: fixed;
+	z-index: 350;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.2;
+	display: none;
+	@media (prefers-color-scheme: dark) {
+		opacity: 0.4;
+	}
+}
+
+.menu-active .nav-close {
+	@media only screen and (max-width: $breakpoint-medium) {
+		display: block;
+	}
+}
+
 .navigation .nav-wrapper-control {
 	position: absolute;
 	z-index: 500;
@@ -943,10 +964,16 @@ textarea {
 	}
 
 	a {
+		position: relative;
 		display: block;
 		padding: 2rem 0;
 		font-size: 2em;
 		line-height: 2rem;
+
+		i {
+			display: inline-block;
+			width: 4rem;
+		}
 	}
 }
 
@@ -977,6 +1004,7 @@ textarea {
 	list-style: none;
 	@media only screen and (max-width: $breakpoint-medium) {
 		flex-direction: column;
+		padding: 2rem 0;
 	}
 }
 
@@ -994,16 +1022,22 @@ textarea {
 			bottom: -1px;
 			background: $color-primary;
 			@media only screen and (max-width: $breakpoint-medium) {
-				width: 2px;
-				height: 100%;
-				bottom: 0;
-				margin-left: -4rem;
+				left: 0;
+				top: 50%;
+				width: 1.5rem;
+				height: 2px;
+				margin-left: 6px;
+				margin-top: -1px;
+				border-radius: 2px;
 			}
 		}
 
 		a {
 			color: $color-neutral-25;
 			font-weight: 500;
+			@media (prefers-color-scheme: dark) {
+				color: $color-neutral-90;
+			}
 			@media only screen and (max-width: $breakpoint-medium) {
 				color: #FFF;
 			}
@@ -1023,11 +1057,28 @@ textarea {
 		cursor: pointer;
 		@media only screen and (max-width: $breakpoint-medium) {
 			font-size: 2em;
+			padding-left: 4rem;
+
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: 1.5rem;
+				height: 2px;
+				margin-left: 6px;
+				margin-top: -1px;
+				border-radius: 2px;
+				background: $color-neutral-25;
+			}
 		}
 
 		&:focus,
 		&:hover {
 			color: $color-neutral-25;
+			@media (prefers-color-scheme: dark) {
+				color: $color-neutral-90;
+			}
 			@media only screen and (max-width: $breakpoint-medium) {
 				color: $color-neutral-80;
 			}
