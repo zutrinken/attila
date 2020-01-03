@@ -9,7 +9,7 @@
 $breakpoint-large: 960px;
 $breakpoint-medium: 640px;
 $breakpoint-small: 480px;
-$inner: 72rem;
+$inner: calc(64rem + 8vw);
 /* ==========================================================================
    Basics
    ========================================================================== */
@@ -440,9 +440,9 @@ textarea {
 		max-width: none !important;
 
 		&.kg-width-wide {
-			max-width: 48em !important;
+			max-width: calc(72rem + 24vw) !important;
 			min-width: 100%;
-			width: 75vw;
+			width: calc(100vw - 4rem);
 		}
 
 		&.kg-width-full {
@@ -462,9 +462,9 @@ textarea {
 	// KG Gallery
 	.kg-gallery-card {
 		margin: 0 0 2em;
-		max-width: 48em !important;
+		max-width: calc(72rem + 24vw) !important;
 		min-width: 100%;
-		width: 75vw;
+		width: calc(100vw - 4rem);
 	}
 
 	.kg-gallery-container {
@@ -695,21 +695,7 @@ textarea {
    ========================================================================== */
 .blog-header {
 	position: relative;
-	padding: calc(16rem + 4vw) 0 8rem;
-
-	&:after {
-		content: '';
-		position: absolute;
-		width: $inner;
-		height: 1px;
-		left: 50%;
-		bottom: 0;
-		margin-left: $inner * -0.5;
-		background: $color-border;
-		@media (prefers-color-scheme: dark) {
-			background: $color-border-dark;
-		}
-	}
+	padding-top: calc(16rem + 4vw);
 
 	&.has-cover {
 		color: #FFF;
@@ -720,6 +706,13 @@ textarea {
 		&:after {
 			display: none;
 		}
+	}
+
+	.blog-box {
+		position: relative;
+		z-index: 10;
+		padding-bottom: calc(4rem + 2vw);
+		border-bottom: 1px solid $color-border;
 	}
 }
 
@@ -759,9 +752,7 @@ textarea {
 }
 
 .blog-name {
-	position: relative;
 	display: block;
-	z-index: 10;
 	margin: 0;
 	padding: 0;
 	font-weight: 700;
@@ -780,9 +771,7 @@ textarea {
 
 .blog-description {
 	font-family: 'Cardo', serif;
-	position: relative;
 	display: block;
-	z-index: 10;
 	margin-top: 1rem;
 	padding: 0;
 	font-size: 3em;
@@ -801,11 +790,19 @@ textarea {
 	position: relative;
 	z-index: 10;
 
+	&.archive-box {
+		padding-bottom: calc(4rem + 2vw);
+		border-bottom: 1px solid $color-border;
+	}
+
 	.archive-info {
 		display: flex;
 		margin-bottom: 2rem;
 		font-size: 2em;
 		line-height: 1em;
+		@media only screen and (max-width: $breakpoint-medium) {
+			margin-bottom: 4rem;
+		}
 
 		.archive-type {
 			color: $color-primary;
@@ -826,6 +823,10 @@ textarea {
 				background: $color-neutral-80;
 			}
 		}
+	}
+
+	.has-cover .archive .archive-info span {
+		color: #FFF;
 	}
 
 	.archive-title {
@@ -863,6 +864,9 @@ textarea {
 
 	&.archive-author {
 		padding-left: 16rem;
+		@media only screen and (max-width: $breakpoint-medium) {
+			padding-left: 0;
+		}
 
 		.archive-avatar {
 			position: absolute;
@@ -872,6 +876,13 @@ textarea {
 			height: 10rem;
 			border-radius: 8rem;
 			overflow: hidden;
+			@media only screen and (max-width: $breakpoint-medium) {
+				position: relative;
+				left: 0;
+				width: 6rem;
+				height: 6rem;
+				margin-bottom: 4rem;
+			}
 
 			img {
 				display: block;
@@ -890,10 +901,6 @@ textarea {
 	min-height: 100vh;
 	position: relative;
 	padding-right: 0;
-	transition: all ease-in-out 0.3s;
-	@media only screen and (max-width: $breakpoint-large) {
-		transform: translate3d(0,0,0);
-	}
 }
 
 .inner {
@@ -916,6 +923,11 @@ textarea {
 	transition: all ease-out 0.3s;
 	@media only screen and (max-width: $breakpoint-medium) {
 		transform: translate3d(0,-100%,0);
+	}
+
+	.inner {
+		max-width: none;
+		padding: 0 4rem;
 	}
 }
 
@@ -1019,7 +1031,9 @@ textarea {
 			width: 100%;
 			height: 2px;
 			left: 0;
-			bottom: -1px;
+			top: 0;
+			padding: 0 1rem;
+			margin-left: -1rem;
 			background: $color-primary;
 			@media only screen and (max-width: $breakpoint-medium) {
 				left: 0;
@@ -1207,23 +1221,11 @@ textarea {
    ========================================================================== */
 .container {
 	position: relative;
-}
 
-.container .post {
-	padding: calc(4rem + 2vw) 0;
-
-	&:after {
-		content: '';
-		position: absolute;
-		width: $inner;
-		height: 1px;
-		left: 50%;
-		bottom: 0;
-		margin-left: $inner * -0.5;
-		background: $color-border;
-		@media (prefers-color-scheme: dark) {
-			background: $color-border-dark;
-		}
+	.post .post-box {
+		padding-top: calc(4rem + 2vw);
+		padding-bottom: calc(4rem + 2vw);
+		border-bottom: 1px solid $color-border;
 	}
 }
 
@@ -1240,22 +1242,6 @@ textarea {
 	content: '\e800';
 	color: $color-yellow-100;
 	text-align: center;
-}
-/* ==========================================================================
-   Post
-   ========================================================================== */
-.page-template #footer:after {
-	position: absolute;
-	width: $inner;
-	height: 1px;
-	left: 50%;
-	top: 0;
-	margin-left: $inner * -0.5;
-	content: '';
-	background: $color-border;
-	@media (prefers-color-scheme: dark) {
-		background: $color-border-dark;
-	}
 }
 /* ==========================================================================
    Post
@@ -1488,7 +1474,6 @@ textarea {
 	font-family: 'Cardo', serif;
 	font-size: 2em;
 	line-height: 1.5em;
-	color: $color-text-secondary;
 }
 
 .post-content {
@@ -1895,9 +1880,18 @@ textarea {
    ========================================================================== */
 .pagination {
 	position: relative;
-	height: 4rem;
 	margin: 0;
-	padding: 4rem 0;
+
+	.pagination-box {
+		padding-top: calc(2rem + 1vw);
+		padding-bottom: calc(2rem + 1vw);
+
+		&:after {
+			clear: both;
+			content: '';
+			display: table;
+		}
+	}
 }
 
 .pagination a {
@@ -1939,6 +1933,9 @@ textarea {
 	position: relative;
 	top: -1px;
 	display: inline-block;
+	@media only screen and (max-width: $breakpoint-small) {
+		display: none;
+	}
 }
 
 .pagination a i {
@@ -1974,51 +1971,10 @@ textarea {
 	display: none;
 }
 
-.extra-pagination .pagination:after {
-	content: '';
-	position: absolute;
-	width: $inner;
-	height: 1px;
-	left: 50%;
-	bottom: 0;
-	margin-left: $inner * -0.5;
-	background: $color-border;
-	@media (prefers-color-scheme: dark) {
-		background: $color-border-dark;
-	}
-}
-
 .paged .extra-pagination {
 	display: block;
-}
-/* ==========================================================================
-   Media Queries - Smaller than 480px
-   ========================================================================== */
-@media only screen and (max-width: $breakpoint-small) {
-	.post-template #main-header {
-		padding: 16px 0;
-	}
 
-	#main-nav a {
-		margin: 16px;
-	}
-
-	.container .post.featured .post-title:after {
-		left: 0;
-		top: -1.75em;
-	}
-
-	.post-content .fluid-width-video-wrapper,
-	.post-content img {
-		width: 100%;
-		margin-left: auto;
-	}
-}
-/* ==========================================================================
-   Media Queries - Smaller than 320px
-   ========================================================================== */
-@media only screen and (max-width: 320px) {
-	.pagination .pagination-label {
-		display: none;
+	.pagination-box {
+		border-bottom: 1px solid $color-border;
 	}
 }

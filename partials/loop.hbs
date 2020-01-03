@@ -6,15 +6,17 @@
 
 <article class="{{post_class}}">
 	<div class="inner">
-		<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-		<span class="post-meta">
-			{{t "Posted by"}}
-			{{authors separator=", "}}
-			{{#primary_tag}}{{t "in"}} <a class="post-meta-tag" href="{{url}}">{{name}}</a>{{/primary_tag}}
-			{{t "on"}}
-			<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
-		</span>
-		<p class="post-excerpt">{{excerpt}}&hellip;</p>
+		<div class="box post-box">
+			<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+			<span class="post-meta">
+				{{t "Posted by"}}
+				{{authors separator=", "}}
+				{{#primary_tag}}{{t "in"}} <a class="post-meta-tag" href="{{url}}">{{name}}</a>{{/primary_tag}}
+				{{t "on"}}
+				<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+			</span>
+			<p class="post-excerpt">{{excerpt}}&hellip;</p>
+		</div>
 	</div>
 </article>
 

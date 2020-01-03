@@ -1,11 +1,13 @@
 {{!< default}}
 <header class="blog-header {{#if @site.cover_image}} has-cover{{/if}}">
 	<div class="inner">
-		<h1 class="blog-name">{{@site.title}}</h1>
-		{{#if @site.description}}
-		<span class="blog-description">{{@site.description}}</span>
-		{{/if}}
-		{{#if @site.cover_image}}
+		<div class="box blog-box">
+			<h1 class="blog-name">{{@site.title}}</h1>
+			{{#if @site.description}}
+			<span class="blog-description">{{@site.description}}</span>
+			{{/if}}
+			{{#if @site.cover_image}}
+		</div>
 		<div class="blog-cover cover">
 			<img
 			srcset="{{img_url @site.cover_image size="s"}} 320w,
