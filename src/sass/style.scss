@@ -713,6 +713,9 @@ textarea {
 		z-index: 10;
 		padding-bottom: calc(4rem + 2vw);
 		border-bottom: 1px solid $color-border;
+		@media (prefers-color-scheme: dark) {
+			border-color: $color-border-dark;
+		}
 	}
 }
 
@@ -793,6 +796,9 @@ textarea {
 	&.archive-box {
 		padding-bottom: calc(4rem + 2vw);
 		border-bottom: 1px solid $color-border;
+		@media (prefers-color-scheme: dark) {
+			border-color: $color-border-dark;
+		}
 	}
 
 	.archive-info {
@@ -1147,6 +1153,67 @@ textarea {
 			}
 		}
 	}
+
+	&.nav-search {
+		/* WIP */
+		display: none;
+
+		.search {
+			padding: 2rem 0;
+			display: flex;
+
+			input[type="text"] {
+				font-size: 1.5em;
+				width: 15rem;
+				height: 3rem;
+				margin: -0.5rem 0;
+				padding: 0 1.5rem;
+				border-radius: 2rem;
+				border: 1px solid $color-border;
+				background: transparent;
+				box-sizing: border-box;
+				box-shadow: none !important;
+				outline: 0 !important;
+				@media (prefers-color-scheme: dark) {
+					border-color: $color-border-dark;
+				}
+				@media only screen and (max-width: $breakpoint-medium) {
+					width: 100%;
+					border-color: $color-border-dark;
+
+					&:focus,
+					&:hover {
+						color: #FFF;
+					}
+				}
+
+				&:focus,
+				&:hover {
+					border-color: $color-primary;
+				}
+			}
+
+			input[type="submit"] {
+				appeareance: none;
+				background: none;
+				border: 0;
+				display: none;
+			}
+		}
+	}
+}
+
+.cover-active .navigation li.nav-search input[type="text"] {
+	@media only screen and (min-width: $breakpoint-medium) {
+		background: #FFF;
+		border-color: transparent;
+		color: $color-text-primary;
+
+		&:focus,
+		&:hover {
+			border-color: #FFF;
+		}
+	}
 }
 
 .cover-active .navigation li a {
@@ -1245,6 +1312,9 @@ textarea {
 		padding-top: calc(4rem + 2vw);
 		padding-bottom: calc(4rem + 2vw);
 		border-bottom: 1px solid $color-border;
+		@media (prefers-color-scheme: dark) {
+			border-color: $color-border-dark;
+		}
 	}
 }
 
@@ -1995,5 +2065,8 @@ textarea {
 
 	.pagination-box {
 		border-bottom: 1px solid $color-border;
+		@media (prefers-color-scheme: dark) {
+			border-color: $color-border-dark;
+		}
 	}
 }

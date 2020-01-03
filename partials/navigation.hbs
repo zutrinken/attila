@@ -23,6 +23,12 @@
 				{{else}}
 				<li class="nav-rss"><a href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss"></i><span>{{t "Subscribe"}}</span></a></li>
 				{{/if}}
+				<li class="nav-search">
+					<form class="search">
+						<input type="text" id="search-field" placeholder="{{t "Search"}}" />
+						<input type="submit" value="search" />
+					</form>
+				</li>
 			</ul>
 		</div>
 	</nav>

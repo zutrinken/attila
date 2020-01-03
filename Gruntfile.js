@@ -10,7 +10,10 @@ module.exports = function(grunt) {
       'cssSrcDir': 'src/sass',
       'cssTargetDir': 'css',
       'jsSrcDir': 'src/js',
-      'jsTargetDir': 'js'
+      'jsTargetDir': 'js',
+      'jsDependencies': [
+        'node_modules/ghosthunter/dist/jquery.ghosthunter.js'
+      ]
     },
     copy: {
       dev: {
@@ -68,7 +71,11 @@ module.exports = function(grunt) {
     uglify: {
       js: {
         files: {
-          'assets/<%=  config.jsTargetDir %>/script.js': ['<%=  config.jsSrcDir %>/libs/jquery-*.js', '<%=  config.jsSrcDir %>/**/*.js']
+          'assets/<%=  config.jsTargetDir %>/script.js': [
+            '<%=  config.jsSrcDir %>/libs/jquery-*.js',
+            '<%=  config.jsDependencies %>',
+            '<%=  config.jsSrcDir %>/**/*.js'
+          ]
         }
       }
     },
