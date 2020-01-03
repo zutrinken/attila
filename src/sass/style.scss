@@ -1194,11 +1194,14 @@ textarea {
 }
 
 .credits {
-	text-align: center;
+	display: flex;
 	font-size: 1.5em;
 	line-height: 1.33334em;
 	overflow: auto;
 	color: $color-text-secondary;
+	@media only screen and (max-width: $breakpoint-medium) {
+		flex-direction: column;
+	}
 }
 
 .credits a {
@@ -1210,11 +1213,18 @@ textarea {
 }
 
 .credits-theme {
-	float: left;
+	margin-right: auto;
+	@media only screen and (max-width: $breakpoint-medium) {
+		margin-left: auto;
+		margin-bottom: 1rem;
+	}
 }
 
 .credits-software {
-	float: right;
+	margin-left: auto;
+	@media only screen and (max-width: $breakpoint-medium) {
+		margin-right: auto;
+	}
 }
 /* ==========================================================================
    Index
