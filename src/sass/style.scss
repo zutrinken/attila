@@ -717,6 +717,10 @@ textarea {
 			border-color: $color-border-dark;
 		}
 	}
+
+	&.has-cover .blog-box {
+		border: none;
+	}
 }
 
 .blog-cover {
@@ -831,10 +835,6 @@ textarea {
 		}
 	}
 
-	.has-cover .archive .archive-info span {
-		color: #FFF;
-	}
-
 	.archive-title {
 		font-size: 4em;
 		line-height: 1em;
@@ -899,6 +899,18 @@ textarea {
 	}
 
 	&.archive-tag {}
+}
+
+.has-cover {
+	.archive {
+		&.archive-box {
+			border: none;
+		}
+
+		.archive-info span {
+			color: #FFF;
+		}
+	}
 }
 
 .page-wrapper {
