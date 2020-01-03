@@ -1033,7 +1033,7 @@ textarea {
 	margin-right: 3rem;
 
 	&.active {
-		&:after {
+		& a:before {
 			position: absolute;
 			content: '';
 			width: 100%;
@@ -1051,6 +1051,7 @@ textarea {
 				margin-left: 6px;
 				margin-top: -1px;
 				border-radius: 2px;
+				padding: 0;
 			}
 		}
 
