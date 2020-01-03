@@ -997,6 +997,10 @@ textarea {
 	background: $color-neutral-15;
 	color: $color-text-secondary;
 	border-color: $color-border-dark;
+	@supports (-webkit-backdrop-filter: blur(2rem)) {
+		background: rgba(34,36,38,0.9);
+		-webkit-backdrop-filter: blur(2rem);
+	}
 }
 
 .navigation .nav-wrapper {
@@ -1004,6 +1008,10 @@ textarea {
 	overflow-y: auto;
 	@media only screen and (max-width: $breakpoint-medium) {
 		background: $color-neutral-15;
+		@supports (-webkit-backdrop-filter: blur(2rem)) {
+			background: rgba(34,36,38,0.9);
+			-webkit-backdrop-filter: blur(2rem);
+		}
 	}
 }
 
