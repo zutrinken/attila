@@ -8,10 +8,15 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     config: {
       'cssSrcDir': 'src/sass',
-      'cssTargetDir': 'css',
+      'cssTargetDir': 'assets/css',
       'jsSrcDir': 'src/js',
-      'jsTargetDir': 'js',
+      'jsTargetDir': 'assets/js',
       'jsDependencies': [
+        '<%= config.jsSrcDir %>/libs/jquery-3.4.1.min.js',
+        '<%= config.jsSrcDir %>/libs/jquery.fitvids.js',
+        '<%= config.jsSrcDir %>/libs/jquery.history.js',
+        '<%= config.jsSrcDir %>/libs/highlight.pack.js',
+        '<%= config.jsSrcDir %>/libs/nprogress.js',
         'node_modules/ghosthunter/dist/jquery.ghosthunter.js'
       ]
     },
@@ -45,7 +50,7 @@ module.exports = function(grunt) {
           sourceMaps: true
         },
         files: {
-          'assets/<%=  config.cssTargetDir %>/style.css': '<%=  config.cssSrcDir %>/style.scss'
+          '<%= config.cssTargetDir %>/style.css': '<%= config.cssSrcDir %>/style.scss'
         }
       },
       dist: {
@@ -53,7 +58,7 @@ module.exports = function(grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'assets/<%=  config.cssTargetDir %>/style.css': '<%=  config.cssSrcDir %>/style.scss'
+          '<%= config.cssTargetDir %>/style.css': '<%= config.cssSrcDir %>/style.scss'
         }
       }
     },
@@ -62,18 +67,18 @@ module.exports = function(grunt) {
         map: true
       },
       dev: {
-        src: 'assets/<%=  config.cssTargetDir %>/*.css'
+        src: '<%=  config.cssTargetDir %>/*.css'
       },
       dist: {
-        src: 'assets/<%=  config.cssTargetDir %>/*.css'
+        src: '<%=  config.cssTargetDir %>/*.css'
       }
     },
     uglify: {
       js: {
         files: {
-          'assets/<%=  config.jsTargetDir %>/script.js': [
-            '<%=  config.jsDependencies %>',
-            '<%=  config.jsSrcDir %>/**/*.js'
+          '<%= config.jsTargetDir %>/script.js': [
+            '<%= config.jsDependencies %>',
+            '<%= config.jsSrcDir %>/script.js'
           ]
         }
       }
@@ -108,8 +113,8 @@ module.exports = function(grunt) {
             '!Gruntfile.js',
             '!package-lock.json'
           ],
-          dest: '.'}
-        ]
+          dest: '.'
+        }]
       },
     }
   });

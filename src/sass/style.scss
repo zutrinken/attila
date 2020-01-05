@@ -1251,19 +1251,19 @@ textarea {
 	top: 0;
 	z-index: 1000;
 	background: transparent;
-	transition: opacity ease-out 1s;
+	transition: all ease-out 0.2s;
 }
 
 .progress-container.ready {
-	opacity: 0.2;
+	transform: translateY(-3px);
 }
 
 .progress-bar {
 	display: block;
 	width: 0;
-	height: 1px;
+	height: 3px;
 	background: $color-primary;
-	box-shadow: 0 0 1px $color-primary, 0 0 3px $color-primary;
+	//box-shadow: 0 0 1px $color-primary, 0 0 3px $color-primary;
 }
 /* ==========================================================================
    Footer
