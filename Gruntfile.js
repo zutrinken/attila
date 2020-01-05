@@ -72,7 +72,6 @@ module.exports = function(grunt) {
       js: {
         files: {
           'assets/<%=  config.jsTargetDir %>/script.js': [
-            '<%=  config.jsSrcDir %>/libs/jquery-*.js',
             '<%=  config.jsDependencies %>',
             '<%=  config.jsSrcDir %>/**/*.js'
           ]
@@ -83,6 +82,10 @@ module.exports = function(grunt) {
       css: {
         files: '<%=  config.cssSrcDir %>/**/*.scss',
         tasks: ['sass:dev', 'copy:dev', 'postcss:dev']
+      },
+      js: {
+        files: '<%=  config.jsSrcDir %>/**/*.js',
+        tasks: ['uglify']
       }
     },
     compress: {
