@@ -1196,11 +1196,7 @@ textarea {
 				@media only screen and (max-width: $breakpoint-medium) {
 					width: 100%;
 					border-color: $color-border-dark;
-
-					&:focus,
-					&:hover {
-						color: #FFF;
-					}
+					color: #FFF;
 				}
 
 				&:focus,
