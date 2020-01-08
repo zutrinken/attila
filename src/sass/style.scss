@@ -54,7 +54,7 @@ textarea {
 
 		&:focus,
 		&:hover {
-			box-shadow: inset 0 -3px 0 $color-primary;
+			box-shadow: inset 0 -3px 0 $color-primary-active;
 		}
 	}
 
@@ -67,7 +67,7 @@ textarea {
 		text-rendering: optimizeLegibility;
 		color: #000;
 		@media (prefers-color-scheme: dark) {
-			color: $color-neutral-80;
+			color: #FFF;
 		}
 	}
 
@@ -867,6 +867,11 @@ textarea {
 			span {
 				display: none;
 			}
+
+			&:focus,
+			&:hover {
+				color: $color-primary-active;
+			}
 		}
 	}
 
@@ -1053,7 +1058,7 @@ textarea {
 	margin-right: 3rem;
 
 	&.active {
-		& a:before {
+		a:before {
 			position: absolute;
 			content: '';
 			width: 100%;
@@ -1203,7 +1208,7 @@ textarea {
 
 				&:focus,
 				&:hover {
-					border-color: $color-primary;
+					border-color: $color-primary-active;
 				}
 			}
 
@@ -1655,7 +1660,7 @@ textarea {
 	&:hover {
 		background-color: $color-neutral-15;
 		@media (prefers-color-scheme: dark) {
-			background-color: $color-primary;
+			background-color: $color-primary-active;
 		}
 	}
 }
@@ -1721,8 +1726,7 @@ textarea {
 
 	&:focus,
 	&:hover {
-		background: $color-neutral-15;
-		color: #FFF;
+		background: $color-primary-active;
 	}
 }
 /* ==========================================================================
@@ -1757,8 +1761,8 @@ textarea {
 
 	&:focus,
 	&:hover {
-		color: $color-primary;
-		border-color: $color-primary;
+		color: $color-primary-active;
+		border-color: $color-primary-active;
 	}
 }
 
@@ -1821,7 +1825,7 @@ textarea {
 
 			&:focus,
 			&:hover {
-				background: $color-primary;
+				background: $color-primary-active;
 			}
 		}
 	}
@@ -1872,7 +1876,7 @@ textarea {
 		color: inherit;
 
 		i {
-			color: $color-primary;
+			color: $color-primary-active;
 		}
 	}
 }
@@ -1974,7 +1978,6 @@ textarea {
 	font-family: 'Cardo', serif;
 	font-size: 1.75em;
 	line-height: 2.5rem;
-	color: $color-text-secondary;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
@@ -2027,8 +2030,8 @@ textarea {
 
 	&:focus,
 	&:hover {
-		color: $color-primary;
-		border-color: $color-primary;
+		color: $color-primary-active;
+		border-color: $color-primary-active;
 	}
 }
 
