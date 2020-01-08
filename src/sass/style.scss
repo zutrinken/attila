@@ -698,6 +698,7 @@ textarea {
 	padding-top: calc(16rem + 4vw);
 
 	&.has-cover {
+		padding-top: calc(24rem + 8vw);
 		color: #FFF;
 		background: #000;
 		overflow: hidden;
@@ -720,6 +721,7 @@ textarea {
 
 	&.has-cover .blog-box {
 		border: none;
+		padding-bottom: calc(8rem + 4vw);
 	}
 }
 
