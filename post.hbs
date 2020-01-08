@@ -26,7 +26,7 @@
 				{{/foreach}}
 			</div>
 			<h4 class="post-meta-author">{{authors separator=", "}}</h4>
-			<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> • {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+			<time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time> • {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
 		</div>
 		{{#if feature_image}}
 		<div class="post-cover cover">
@@ -97,6 +97,7 @@
 							<i class="icon icon-arrow-left"></i>
 							<h2 class="post-nav-title">{{title}}</h2>
 							<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
+							<p class="post-nav-meta"><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></p>
 						</section>
 					</a>
 				{{/next_post}}
@@ -106,6 +107,7 @@
 							<i class="icon icon-arrow-right"></i>
 							<h2 class="post-nav-title">{{title}}</h2>
 							<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
+							<p class="post-nav-meta"><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></p>
 						</section>
 					</a>
 				{{/prev_post}}

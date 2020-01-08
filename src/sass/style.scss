@@ -1652,6 +1652,9 @@ textarea {
 	&:focus,
 	&:hover {
 		background-color: $color-neutral-15;
+		@media (prefers-color-scheme: dark) {
+			background-color: $color-primary;
+		}
 	}
 }
 
@@ -1965,7 +1968,7 @@ textarea {
 
 .post-nav-excerpt {
 	height: 5rem;
-	margin: 0;
+	margin: 0 0 1rem;
 	font-family: 'Cardo', serif;
 	font-size: 1.75em;
 	line-height: 2.5rem;
@@ -1975,6 +1978,13 @@ textarea {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.post-nav-meta {
+	margin: 0;
+	font-size: 1.5em;
+	line-height: 2rem;
+	color: $color-text-secondary;
 }
 /* ==========================================================================
    Pagination
