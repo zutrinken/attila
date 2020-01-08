@@ -768,9 +768,9 @@ textarea {
 	font-size: 6em;
 	line-height: 1em;
 	text-decoration: none;
-	color: $color-text-primary;
+	color: #000;
 	@media (prefers-color-scheme: dark) {
-		color: $color-text-primary-dark;
+		color: #FFF;
 	}
 }
 
