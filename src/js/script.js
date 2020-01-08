@@ -44,24 +44,26 @@ jQuery(function($) {
    ========================================================================== */
 
   if (typeof ghosthunter_key === 'undefined') {
-    $(".nav-search").css({
-      'display': 'none'
-    });
+
   } else {
+    $(".nav-search").css({
+      'display': 'block'
+    });
     $("#search-field").ghostHunter({
       results: "#results",
       result_template: '<article class="post"><div class="inner"><div class="box post-box"><h2 class="post-title"><a href="{{link}}">{{title}}</a></h2><span class="post-meta">On <span class="post-date">{{pubDate}}</span></span></div></div></article>',
-      info_template: '<div class="blog-header"><div class="inner"><div class="archive archive-search box archive-box"><h1 class="archive-title">Search</h1><span class="archive-description">{{amount}} article found</span></div></div></div>',
+      info_template: '<div class="blog-header"><div class="inner"><div class="archive archive-search box archive-box"><span class="archive-info"><span class="archive-type">Search</span><span class="archive-count">{{amount}} Posts</span></span><h1 class="archive-title">Results for "<span id="search-term"></span>"</h1></div></div></div>',
       displaySearchInfo: true,
       includebodysearch: true,
       onComplete: function(results) {
         if ($("#search-field").prop('value')) {
-          $('.search-wrapper').show();
-          $('.page-wrapper').hide();
+          $('#results').show();
+          $('#default').hide();
         } else {
-          $('.search-wrapper').hide();
-          $('.page-wrapper').show();
+          $('#results').hide();
+          $('#default').show();
         }
+        $('#search-term').text($("#search-field").prop('value'));
         html.removeClass('menu-active');
       }
     });
