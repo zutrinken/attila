@@ -20,9 +20,10 @@ Demo: [attila.zutrinken.com](https://attila.zutrinken.com/)
 ## Features
 
 * Responsive layout
-* Parallax cover images for blog, archives and posts
-* Reading progress for posts
-* Automatic code syntax highlight and line numbers
+* Dark Mode
+* Search
+* Post reading progress
+* Code highlight including line numbers
 * Disqus support
 
 ## Localization
@@ -39,9 +40,24 @@ Demo: [attila.zutrinken.com](https://attila.zutrinken.com/)
 * __Russian__ by [schamberg97](https://github.com/schamberg97)
 * __Turkish__ by [cgrgrbz](https://github.com/cgrgrbz)
 
-## Setup
+## Setup Disqus
 
 To enable [Disqus](https://disqus.com/) comments go to your blogs code injection settings and add `<script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>` to your blog header.
+
+## Setup search
+
+The search function is build with [ghostHunter](https://github.com/jamalneufeld/ghostHunter). It has to be activated manually:
+
+1. Go to __Integrations__
+2. Choose __Add custom integration__, name it `ghostHunter` and choose __Create__. Copy the generated Content API Key.
+3. Go to __Code injection__
+4. Add this to __Blog Header__:
+
+	<script>
+		var ghosthunter_key = 'PASTE_THE_GENERATED_KEY_HERE';
+		//optional: set your custom ghost_root url, default is `"/ghost/api/v2"`
+		var ghost_root_url = "/ghost/api/v2"
+	</script>
 
 ## Development
 
@@ -63,4 +79,4 @@ The compress Grunt task packages the theme files into `dist/<theme-name>.zip`, w
 
 ## Copyright & License
 
-Copyright (C) 2015-2019 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).
+Copyright (C) 2015-2020 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).

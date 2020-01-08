@@ -39,30 +39,35 @@ jQuery(function($) {
     }
   });
 
-
   /* ==========================================================================
    ghostHunter
    ========================================================================== */
 
-  /*
-  $("#search-field").ghostHunter({
-  	results: "#results",
-  	result_template: '<article class="post"><h2 class="post-title"><a href="{{link}}">{{title}}</a></h2><span class="post-meta">On <span class="post-date">{{pubDate}}</span></span></article>',
-  	info_template: '<div class="header-title"><h1 class="header-name">Searchresults</h1><span class="header-meta"><span class="header-posts">{{amount}} posts found</span></span></div>',
-  	displaySearchInfo : true,
-  	onComplete: function(results) {
-  		if ($("#search-field").prop('value')) {
-  			$('#searchresults').show();
-  			$('#main').hide();
-  		} else {
-  			$('#searchresults').hide();
-  			$('#main').show();
-  		}
-  	}
-  });
-  +/
+  if (typeof ghosthunter_key === 'undefined') {
+    $(".nav-search").css({
+      'display': 'none'
+    });
+  } else {
+    $("#search-field").ghostHunter({
+      results: "#results",
+      result_template: '<article class="post"><div class="inner"><div class="box post-box"><h2 class="post-title"><a href="{{link}}">{{title}}</a></h2><span class="post-meta">On <span class="post-date">{{pubDate}}</span></span></div></div></article>',
+      info_template: '<div class="blog-header"><div class="inner"><div class="archive archive-search box archive-box"><h1 class="archive-title">Search</h1><span class="archive-description">{{amount}} article found</span></div></div></div>',
+      displaySearchInfo: true,
+      includebodysearch: true,
+      onComplete: function(results) {
+        if ($("#search-field").prop('value')) {
+          $('.search-wrapper').show();
+          $('.page-wrapper').hide();
+        } else {
+          $('.search-wrapper').hide();
+          $('.page-wrapper').show();
+        }
+        html.removeClass('menu-active');
+      }
+    });
+  }
 
-	/* ==========================================================================
+  /* ==========================================================================
    Parallax cover
    ========================================================================== */
 

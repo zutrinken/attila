@@ -1174,9 +1174,6 @@ textarea {
 	}
 
 	&.nav-search {
-		/* WIP */
-		display: none;
-
 		.search {
 			padding: 2rem 0;
 			display: flex;
@@ -1470,7 +1467,7 @@ textarea {
 	}
 }
 
-.post-template .post-title {
+.post-header .post-title {
 	margin: 0 0 4rem;
 	font-size: 6em;
 	line-height: 1.25em;
@@ -1501,7 +1498,7 @@ textarea {
 	}
 }
 
-.post-template .post-meta {
+.post-header .post-meta {
 	position: relative;
 	padding-bottom: 4rem;
 	z-index: 10;

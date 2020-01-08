@@ -17,20 +17,25 @@
 <body class="{{body_class}}">
 
 	{{navigation}}
+	<section class="search-wrapper">
+		<div id="results" class="container">
+			<div class="content" id="results"></div>
+		</div>
+	</section>
 
 	<section class="page-wrapper">
 		{{{body}}}
 		<div id="body-class" style="display: none;" class="{{body_class}}"></div>
-
-		<footer class="page-footer">
-			<div class="inner">
-				<section class="credits">
-					<span class="credits-theme">{{t "Theme" }} <a href="https://github.com/zutrinken/attila">Attila</a> {{t "by"}} <a href="https://zutrinken.com" rel="nofollow">zutrinken</a></span>
-					<span class="credits-software">{{t "Published with"}} <a href="https://ghost.org">Ghost</a></span>
-				</section>
-			</div>
-		</footer>
 	</section>
+
+	<footer class="page-footer">
+		<div class="inner">
+			<section class="credits">
+				<span class="credits-theme">{{t "Theme" }} <a href="https://github.com/zutrinken/attila">Attila</a> {{t "by"}} <a href="https://zutrinken.com" rel="nofollow">zutrinken</a></span>
+				<span class="credits-software">{{t "Published with"}} <a href="https://ghost.org">Ghost</a></span>
+			</section>
+		</div>
+	</footer>
 
 	<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
 
