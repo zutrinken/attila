@@ -40,13 +40,17 @@ Demo: [attila.zutrinken.com](https://attila.zutrinken.com/)
 * __Russian__ by [schamberg97](https://github.com/schamberg97)
 * __Turkish__ by [cgrgrbz](https://github.com/cgrgrbz)
 
-## Setup Disqus
+## Setup [Disqus](https://disqus.com/)
 
-To enable [Disqus](https://disqus.com/) comments go to your blogs code injection settings and add `<script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>` to your blog header.
+1. Go to __Code injection__.  
+2. Add this to __Blog Header__:  
+````
+<script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>`
+````
 
 ## Setup search
 
-The search function is build with [ghostHunter](https://github.com/jamalneufeld/ghostHunter). It has to be activated manually:
+The search function is build with [ghostHunter](https://github.com/jamalneufeld/ghostHunter):
 
 1. Go to __Integrations__.  
 2. Choose __Add custom integration__, name it `ghostHunter` and choose __Create__. Copy the generated Content API Key.  
