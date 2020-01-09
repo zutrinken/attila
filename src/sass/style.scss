@@ -1964,6 +1964,10 @@ textarea {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	color: #000;
+	@media (prefers-color-scheme: dark) {
+		color: #FFF;
+	}
 }
 
 .post-nav-excerpt {
