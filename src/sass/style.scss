@@ -137,11 +137,12 @@ textarea {
 		line-height: 1.5em;
 		text-align: right;
 		color: $color-primary;
+		font-family: 'Fira Sans', sans-serif;
 	}
 
 	ul > li:before {
-		margin-top: 0.25em;
-		content: '*';
+		margin-top: -1px;
+		content: '—';
 	}
 
 	ol {
