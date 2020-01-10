@@ -298,6 +298,7 @@ textarea {
 		box-sizing: border-box;
 		background: $color-background;
 		user-select: none;
+		-webkit-user-select: none;
 		@media (prefers-color-scheme: dark) {
 			background: $color-background-dark;
 			border-color: $color-border-dark;
@@ -326,8 +327,6 @@ textarea {
 	}
 
 	pre code.language-text {
-		overflow: hidden;
-		white-space: normal;
 		margin-left: -1.33334em;
 	}
 

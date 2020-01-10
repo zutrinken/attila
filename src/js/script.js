@@ -157,16 +157,13 @@ jQuery(function($) {
       /* No lines for plain text blocks */
       if (!$(this).hasClass('language-text')) {
         var code = $(this);
-        var lines = code.html().split(/\n/).length;
+        var lines = code.html().split(/\n(?!$)/g).length;
         var numbers = [];
-        /* Check if it is a Ghost codeblock or Markdown codeblock */
-        if ($(this).is('[class*="language-"]')) {
-          if (lines > 1) {
-            lines++;
-          }
+        if (lines > 1) {
+          lines++;
         }
         for (i = 1; i < lines; i++) {
-          numbers += '<span class="line">' + i + '</span>';
+          numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
         }
         code.parent().append('<div class="lines">' + numbers + '</div>');
       }
