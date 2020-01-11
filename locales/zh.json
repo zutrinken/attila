@@ -23,7 +23,8 @@
     "youremail@example.com": "youremail@example.com",
     "1 min read": "1 min read",
     "% min read": "% min read",
-    "Author": "作者",
-    "Topic": "话题",
-    "Search": "搜索"
+    "Author": "Author",
+    "Topic": "Topic",
+    "Share": "Share",
+    "Search": "Search"
 }

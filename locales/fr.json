@@ -23,7 +23,8 @@
     "youremail@example.com": "votreemail@exemple.fr",
     "1 min read": "1 min de lecture",
     "% min read": "% min de lecture",
-    "Author": "Auteur",
-    "Topic": "Sujet",
-    "Search": "Recherche"
+    "Author": "Author",
+    "Topic": "Topic",
+    "Share": "Share",
+    "Search": "Search"
 }

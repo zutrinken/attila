@@ -23,7 +23,8 @@
     "youremail@example.com": "ваш@адресэлектроннойпочты.ru",
     "1 min read": "Время прочтения: 1 Мин.",
     "% min read": "Время прочтения: % Мин.",
-    "Author": "Автор",
-    "Topic": "Тема",
-    "Search": "Поиск"
+    "Author": "Author",
+    "Topic": "Topic",
+    "Share": "Share",
+    "Search": "Search"
 }
