@@ -64,7 +64,7 @@ module.exports = function(grunt) {
     },
     postcss: {
       options: {
-        map: true
+        map: false
       },
       dev: {
         src: '<%=  config.cssTargetDir %>/*.css'
