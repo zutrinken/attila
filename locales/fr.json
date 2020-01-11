@@ -1,5 +1,5 @@
 {
-    "Blog Logo": "Logo du blog",
+    "Logo": "Logo",
     "Close": "Fermer",
     "Get the latest posts delivered right to your inbox.": "Recevez les derniers articles directement dans votre boîte de réception.",
     "Home": "Accueil",
@@ -14,7 +14,7 @@
     "Theme": "Thème",
     "Website": "Site",
     "Your email address": "Votre adresse email",
-    "by": "par",
+    "By": "Par",
     "on ": "sur ",
     "No Posts": "Pas d'article",
     "% Post": "% Article",
@@ -22,5 +22,8 @@
     "This post was a collaboration between:": "Cet article a été une collaboration entre :",
     "youremail@example.com": "votreemail@exemple.fr",
     "1 min read": "1 min de lecture",
-    "% min read": "% min de lecture"
+    "% min read": "% min de lecture",
+    "Author": "Auteur",
+    "Topic": "Sujet",
+    "Search": "Recherche"
 }
