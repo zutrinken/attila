@@ -352,7 +352,6 @@ textarea {
 		width: 100%;
 		max-width: 100%;
 		margin: 0 0 2em;
-		background-color: transparent;
 		border: 1px solid $color-border;
 		background: $color-background;
 		@media (prefers-color-scheme: dark) {
@@ -1730,7 +1729,7 @@ textarea {
    ========================================================================== */
 .post-comments {
 	position: relative;
-	padding: 8rem 0;
+	padding: 4rem;
 	text-align: center;
 	border-top: 1px solid $color-border;
 	border-bottom: 1px solid $color-border;
@@ -1738,12 +1737,21 @@ textarea {
 	@media (prefers-color-scheme: dark) {
 		border-color: $color-border-dark;
 	}
+
+	&.activated {
+		background: $color-background;
+		border: 1px solid $color-border;
+		@media (prefers-color-scheme: dark) {
+			background: $color-background-dark;
+			border-color: $color-border-dark;
+		}
+	}
 }
 
 .post-comments-activate {
 	display: inline-block;
 	height: 4rem;
-	margin: 0;
+	margin: 2rem 0;
 	padding: 0 2rem;
 	border: 1px solid $color-neutral-80;
 	font-weight: 500;
