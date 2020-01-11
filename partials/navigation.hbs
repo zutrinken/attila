@@ -13,15 +13,15 @@
 				{{/foreach}}
 				<li class="nav-seperator"></li>
 				{{#if @site.twitter}}
-				<li class="nav-twitter"><a href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i class="icon icon-twitter"></i><span>Twitter</span></a></li>
+				<li class="nav-twitter"><a title="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i class="icon icon-twitter"></i><span>Twitter</span></a></li>
 				{{/if}}
 				{{#if @site.facebook}}
-				<li class="nav-facebook"><a href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank"><i class="icon icon-facebook"></i><span>Facebook</span></a></li>
+				<li class="nav-facebook"><a title="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank"><i class="icon icon-facebook"></i><span>Facebook</span></a></li>
 				{{/if}}
 				{{#if @labs.subscribers}}
-				<li class="nav-subscribe"><a href="{{@site.url}}/subscribe/" target="_blank"><i class="icon icon-mail"></i><span>{{t "Subscribe"}}</span></a></li>
+				<li class="nav-subscribe"><a title="Subscribe" href="{{@site.url}}/subscribe/" target="_blank"><i class="icon icon-mail"></i><span>{{t "Subscribe"}}</span></a></li>
 				{{else}}
-				<li class="nav-rss"><a href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss"></i><span>{{t "Subscribe"}}</span></a></li>
+				<li class="nav-rss"><a title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss"></i><span>{{t "Subscribe"}}</span></a></li>
 				{{/if}}
 				<li class="nav-search" style="display: none;">
 					<form class="search">
