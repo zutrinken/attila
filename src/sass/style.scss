@@ -1188,16 +1188,18 @@ textarea {
 				padding: 0 1.5rem;
 				border-radius: 2rem;
 				border: 1px solid $color-border;
-				background: transparent;
+				background: $color-background;
 				box-sizing: border-box;
 				box-shadow: none !important;
 				outline: 0 !important;
 				@media (prefers-color-scheme: dark) {
 					border-color: $color-border-dark;
+					background: $color-background-dark;
 				}
 				@media only screen and (max-width: $breakpoint-medium) {
 					width: 100%;
 					border-color: $color-border-dark;
+					background: transparent;
 					color: #FFF;
 				}
 
@@ -1222,6 +1224,10 @@ textarea {
 		background: #FFF;
 		border-color: transparent;
 		color: $color-text-primary;
+		@supports (-webkit-backdrop-filter: blur(2rem)) {
+			background: rgba(255,255,255,0.8);
+			-webkit-backdrop-filter: blur(2rem);
+		}
 
 		&:focus,
 		&:hover {
