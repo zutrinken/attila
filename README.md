@@ -59,8 +59,8 @@ The search function is build with [ghostHunter](https://github.com/jamalneufeld/
 ````
 <script>
   var ghosthunter_key = 'PASTE_THE_GENERATED_KEY_HERE';
-  //optional: set your custom ghost_root url, default is `"/ghost/api/v2"`
-  var ghost_root_url = '/ghost/api/v';
+  //optional: set your custom ghost_root url, default is "/ghost/api/v2"
+  var ghost_root_url = '/ghost/api/v2';
 </script>
 ````
 ## Development
