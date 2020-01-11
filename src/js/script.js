@@ -50,17 +50,17 @@ jQuery(function($) {
       'display': 'block'
     });
     $("#search-field").ghostHunter({
-      results: "#search-results",
+      results: "#results",
       result_template: '<article class="post"><div class="inner"><div class="box post-box"><h2 class="post-title"><a href="{{link}}">{{title}}</a></h2><span class="post-meta">On <span class="post-date">{{pubDate}}</span></span></div></div></article>',
       info_template: '<div class="blog-header"><div class="inner"><div class="archive archive-search box archive-box"><span class="archive-info"><span class="archive-type">Search</span><span class="archive-count">{{amount}} Posts</span></span><h1 class="archive-title">Results for "<span id="search-term"></span>"</h1></div></div></div>',
       displaySearchInfo: true,
       includebodysearch: true,
       onComplete: function(results) {
         if ($("#search-field").prop('value')) {
-          $('#results').show();
+          $('#search').show();
           $('#default').hide();
         } else {
-          $('#results').hide();
+          $('#search').hide();
           $('#default').show();
         }
         $('#search-term').text($("#search-field").prop('value'));

@@ -14,7 +14,7 @@
     "Theme": "Theme",
     "Website": "Website",
     "Your email address": "Your email address",
-    "by": "by",
+    "By": "By",
     "on ": "on ",
     "No Posts": "No Posts",
     "% Post": "% Post",
@@ -22,5 +22,8 @@
     "This post was a collaboration between:": "This post was a collaboration between:",
     "youremail@example.com": "youremail@example.com",
     "1 min read": "1 min read",
-    "% min read": "% min read"
+    "% min read": "% min read",
+    "Author": "Author",
+    "Topic": "Topic",
+    "Search": "Search"
 }
