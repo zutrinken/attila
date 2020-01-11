@@ -45,7 +45,7 @@ Become a financial contributor to support future development of Attila. [[Contri
 1. Go to __Code injection__.  
 2. Add this to __Blog Header__:  
 ````
-<script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>`
+<script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>
 ````
 
 ## Setup search
@@ -60,7 +60,7 @@ The search function is build with [ghostHunter](https://github.com/jamalneufeld/
 <script>
   var ghosthunter_key = 'PASTE_THE_GENERATED_KEY_HERE';
   //optional: set your custom ghost_root url, default is `"/ghost/api/v2"`
-  var ghost_root_url = "/ghost/api/v2"
+  var ghost_root_url = '/ghost/api/v';
 </script>
 ````
 ## Development
