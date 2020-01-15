@@ -941,7 +941,7 @@ textarea {
 /* ==========================================================================
    Navigation
    ========================================================================== */
-.navigation {
+.nav-header {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -951,14 +951,9 @@ textarea {
 	@media only screen and (max-width: $breakpoint-medium) {
 		transform: translate3d(0,-100%,0);
 	}
-
-	.inner {
-		max-width: none;
-		padding: 0 4rem;
-	}
 }
 
-.menu-active .navigation {
+.menu-active .nav-header {
 	transform: translate3d(0,0,0);
 }
 
@@ -983,7 +978,7 @@ textarea {
 	}
 }
 
-.navigation .nav-wrapper-control {
+.nav-header .nav-wrapper-control {
 	position: absolute;
 	z-index: 500;
 	left: 0;
@@ -1016,11 +1011,11 @@ textarea {
 	}
 }
 
-.cover-active .navigation .nav-wrapper-control {
+.cover-active .nav-header .nav-wrapper-control {
 	color: #FFF;
 }
 
-.menu-active .navigation .nav-wrapper-control {
+.menu-active .nav-header .nav-wrapper-control {
 	background: $color-neutral-15;
 	color: $color-text-secondary;
 	border-color: $color-border-dark;
@@ -1030,11 +1025,14 @@ textarea {
 	}
 }
 
-.navigation .nav-wrapper {
+.nav-header .nav-wrapper {
+	display: flex;
 	max-height: calc(100vh - 6rem);
+	padding: 0 4rem;
 	overflow-y: auto;
 	@media only screen and (max-width: $breakpoint-medium) {
 		background: $color-neutral-15;
+		flex-direction: column;
 		@supports (-webkit-backdrop-filter: blur(2rem)) {
 			background: rgba(34,36,38,0.9);
 			-webkit-backdrop-filter: blur(2rem);
@@ -1042,7 +1040,26 @@ textarea {
 	}
 }
 
-.navigation ul {
+.nav-header .logo {
+	margin-right: 3rem;
+	@media only screen and (max-width: $breakpoint-medium) {
+		display: none;
+	}
+
+	a {
+		display: block;
+		height: 3rem;
+		padding: 1.5rem 0;
+
+		img {
+			display: block;
+			width: auto;
+			height: 3rem;
+		}
+	}
+}
+
+.nav-header ul {
 	position: relative;
 	display: flex;
 	width: 100%;
@@ -1053,9 +1070,13 @@ textarea {
 		flex-direction: column;
 		padding: 2rem 0;
 	}
+
+	&:last-child {
+		justify-content: flex-end;
+	}
 }
 
-.navigation li {
+.nav-header li {
 	position: relative;
 	margin-right: 3rem;
 
@@ -1135,10 +1156,6 @@ textarea {
 		}
 	}
 
-	&.nav-seperator {
-		margin: 0 auto;
-	}
-
 	&.nav-facebook,
 	&.nav-rss,
 	&.nav-subscribe,
@@ -1157,24 +1174,6 @@ textarea {
 		margin-right: 0;
 	}
 
-	&.nav-logo {
-		@media only screen and (max-width: $breakpoint-medium) {
-			display: none;
-		}
-
-		a {
-			display: block;
-			height: 3rem;
-			padding: 1.5rem 0;
-
-			img {
-				display: block;
-				width: auto;
-				height: 3rem;
-			}
-		}
-	}
-
 	&.nav-search {
 		.search {
 			padding: 2rem 0;
@@ -1186,7 +1185,7 @@ textarea {
 				height: 3rem;
 				margin: -0.5rem 0;
 				padding: 0 1.5rem;
-				border-radius: 2rem;
+				border-radius: 5rem;
 				border: 1px solid $color-border;
 				background: $color-background;
 				box-sizing: border-box;
@@ -1198,6 +1197,8 @@ textarea {
 				}
 				@media only screen and (max-width: $breakpoint-medium) {
 					width: 100%;
+					height: 5rem;
+					padding: 0 2rem;
 					border-color: $color-border-dark;
 					background: transparent;
 					color: #FFF;
@@ -1219,7 +1220,7 @@ textarea {
 	}
 }
 
-.cover-active .navigation li.nav-search input[type="text"] {
+.cover-active .nav-header li.nav-search input[type="text"] {
 	@media only screen and (min-width: $breakpoint-medium) {
 		background: #FFF;
 		border-color: transparent;
@@ -1248,6 +1249,7 @@ textarea {
 		}
 	}
 }
+
 /* ==========================================================================
    Reading Progress
    ========================================================================== */
@@ -1276,7 +1278,7 @@ textarea {
 /* ==========================================================================
    Footer
    ========================================================================== */
-.page-footer {
+.nav-footer {
 	position: relative;
 	z-index: 20;
 	padding-top: calc(12rem + 8vw);
@@ -1289,39 +1291,84 @@ textarea {
 	}
 }
 
-.credits {
+.nav-footer .nav-wrapper {
 	display: flex;
-	font-size: 1.5em;
-	line-height: 1.33334em;
-	overflow: auto;
-	color: $color-text-secondary;
+	padding: 0 4rem;
 	@media only screen and (max-width: $breakpoint-medium) {
 		flex-direction: column;
 	}
 }
 
-.credits a {
-	color: inherit;
+.nav-footer ul {
+	position: relative;
+	display: flex;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	&:last-child {
+		justify-content: flex-end;
+	}
 }
 
-.credits span {
+.nav-footer li {
+	position: relative;
+	margin-right: 3rem;
+
+	&.active a {
+		color: $color-neutral-25;
+		font-weight: 500;
+		@media (prefers-color-scheme: dark) {
+			color: $color-neutral-90;
+		}
+	}
+
+	a {
+		display: block;
+		font-size: 1.5em;
+		line-height: 2rem;
+		color: $color-neutral-60;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		text-decoration: none;
+		font-weight: 400;
+		cursor: pointer;
+
+		&:focus,
+		&:hover {
+			color: $color-neutral-25;
+			@media (prefers-color-scheme: dark) {
+				color: $color-neutral-90;
+			}
+		}
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.nav-credits {
+	flex-shrink: 0;
 	display: block;
-}
-
-.credits-theme {
-	margin-right: auto;
+	font-size: 1.5em;
+	line-height: 2rem;
+	color: $color-text-secondary;
 	@media only screen and (max-width: $breakpoint-medium) {
-		margin-left: auto;
-		margin-bottom: 1rem;
+		margin-top: 3rem;
+	}
+	@media (prefers-color-scheme: dark) {
+		color: $color-text-secondary-dark;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: none;
+		font-weight: 500;
 	}
 }
 
-.credits-software {
-	margin-left: auto;
-	@media only screen and (max-width: $breakpoint-medium) {
-		margin-right: auto;
-	}
-}
 /* ==========================================================================
    Index
    ========================================================================== */
