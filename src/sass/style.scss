@@ -1249,7 +1249,6 @@ textarea {
 		}
 	}
 }
-
 /* ==========================================================================
    Reading Progress
    ========================================================================== */
@@ -1306,6 +1305,9 @@ textarea {
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	@media only screen and (max-width: $breakpoint-medium) {
+		margin-bottom: 3rem;
+	}
 
 	&:last-child {
 		justify-content: flex-end;
@@ -1349,15 +1351,26 @@ textarea {
 	}
 }
 
+.nav-copy {
+	display: block;
+	width: 100%;
+	font-size: 1.5em;
+	line-height: 2rem;
+	color: $color-text-secondary;
+	@media (prefers-color-scheme: dark) {
+		color: $color-text-secondary-dark;
+	}
+	@media only screen and (max-width: $breakpoint-medium) {
+		margin-bottom: 1rem;
+	}
+}
+
 .nav-credits {
 	flex-shrink: 0;
 	display: block;
 	font-size: 1.5em;
 	line-height: 2rem;
 	color: $color-text-secondary;
-	@media only screen and (max-width: $breakpoint-medium) {
-		margin-top: 3rem;
-	}
 	@media (prefers-color-scheme: dark) {
 		color: $color-text-secondary-dark;
 	}
@@ -1368,7 +1381,6 @@ textarea {
 		font-weight: 500;
 	}
 }
-
 /* ==========================================================================
    Index
    ========================================================================== */
