@@ -938,6 +938,112 @@ textarea {
 		padding: 0 4rem;
 	}
 }
+
+#search {
+	display: none;
+	position: fixed;
+	z-index: 500;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+	background: $color-background;
+	@media (prefers-color-scheme: dark) {
+		background: $color-background-dark;
+	}
+
+	#results {
+		padding-bottom: calc(12rem + 8vw);
+	}
+}
+
+.search-active {
+	overflow-y: hidden;
+
+	#search {
+		display: block;
+	}
+}
+
+.search {
+	padding: 2rem 0;
+	display: flex;
+
+	input[type="text"] {
+		font-size: 2em;
+		width: 100%;
+		height: 5rem;
+		margin: -0.5rem 0;
+		padding: 0 2rem;
+		border-radius: 5rem;
+		border: 1px solid $color-border;
+		background: $color-background;
+		box-sizing: border-box;
+		box-shadow: none !important;
+		outline: 0 !important;
+		@media (prefers-color-scheme: dark) {
+			border-color: $color-border-dark;
+			background: $color-background-dark;
+		}
+
+		&:focus,
+		&:hover {
+			border-color: $color-primary-active;
+		}
+	}
+
+	input[type="submit"] {
+		appeareance: none;
+		background: none;
+		border: 0;
+		display: none;
+	}
+}
+
+.search-close {
+	position: fixed;
+	z-index: 600;
+	top: 0;
+	right: 0;
+	width: 4rem;
+	height: 4rem;
+	margin: 2rem;
+	border: 1px solid $color-neutral-80;
+	border-radius: 4rem;
+	box-sizing: border-box;
+	cursor: pointer;
+
+	&:after,
+	&:before {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 20%;
+		width: 60%;
+		height: 1px;
+		background: $color-neutral-80;
+		transition: all ease-out 0.1s;
+	}
+
+	&:after {
+		transform: rotate(45deg);
+	}
+
+	&:before {
+		transform: rotate(-45deg);
+	}
+
+	&:focus,
+	&:hover {
+		border-color: $color-primary-active;
+
+		&:after,
+		&:before {
+			background: $color-primary-active;
+		}
+	}
+}
 /* ==========================================================================
    Navigation
    ========================================================================== */
@@ -1158,6 +1264,7 @@ textarea {
 
 	&.nav-facebook,
 	&.nav-rss,
+	&.nav-search,
 	&.nav-subscribe,
 	&.nav-twitter {
 		margin-right: 1rem;
@@ -1173,71 +1280,9 @@ textarea {
 	&:last-child {
 		margin-right: 0;
 	}
-
-	&.nav-search {
-		.search {
-			padding: 2rem 0;
-			display: flex;
-
-			input[type="text"] {
-				font-size: 1.5em;
-				width: 15rem;
-				height: 3rem;
-				margin: -0.5rem 0;
-				padding: 0 1.5rem;
-				border-radius: 5rem;
-				border: 1px solid $color-border;
-				background: $color-background;
-				box-sizing: border-box;
-				box-shadow: none !important;
-				outline: 0 !important;
-				@media (prefers-color-scheme: dark) {
-					border-color: $color-border-dark;
-					background: $color-background-dark;
-				}
-				@media only screen and (max-width: $breakpoint-medium) {
-					width: 100%;
-					height: 5rem;
-					padding: 0 2rem;
-					border-color: $color-border-dark;
-					background: transparent;
-					color: #FFF;
-				}
-
-				&:focus,
-				&:hover {
-					border-color: $color-primary-active;
-				}
-			}
-
-			input[type="submit"] {
-				appeareance: none;
-				background: none;
-				border: 0;
-				display: none;
-			}
-		}
-	}
 }
 
-.cover-active .nav-header li.nav-search input[type="text"] {
-	@media only screen and (min-width: $breakpoint-medium) {
-		background: #FFF;
-		border-color: transparent;
-		color: $color-text-primary;
-		@supports (-webkit-backdrop-filter: blur(2rem)) {
-			background: rgba(255,255,255,0.8);
-			-webkit-backdrop-filter: blur(2rem);
-		}
-
-		&:focus,
-		&:hover {
-			border-color: #FFF;
-		}
-	}
-}
-
-.cover-active .navigation li a {
+.cover-active .nav-header li a {
 	@media only screen and (min-width: $breakpoint-medium) {
 		color: rgba(255,255,255,0.8);
 	}

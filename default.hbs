@@ -25,23 +25,17 @@
 				{{/if}}
 				{{navigation}}
 				<ul>
+					<li class="nav-search"><a title="{{t "Search"}}"><i class="icon icon-search"></i><span>{{t "Search"}}</span></a></li>
+					{{#if @labs.subscribers}}
+					<li class="nav-subscribe"><a title="Subscribe" href="{{@site.url}}/subscribe/" target="_blank"><i class="icon icon-mail"></i><span>{{t "Subscribe"}}</span></a></li>
+					{{/if}}
+					<li class="nav-rss"><a title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss"></i><span>RSS</span></a></li>
 					{{#if @site.twitter}}
 					<li class="nav-twitter"><a title="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i class="icon icon-twitter"></i><span>Twitter</span></a></li>
 					{{/if}}
 					{{#if @site.facebook}}
 					<li class="nav-facebook"><a title="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank"><i class="icon icon-facebook"></i><span>Facebook</span></a></li>
 					{{/if}}
-					{{#if @labs.subscribers}}
-					<li class="nav-subscribe"><a title="Subscribe" href="{{@site.url}}/subscribe/" target="_blank"><i class="icon icon-mail"></i><span>{{t "Subscribe"}}</span></a></li>
-					{{else}}
-					<li class="nav-rss"><a title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss"></i><span>{{t "Subscribe"}}</span></a></li>
-					{{/if}}
-					<li class="nav-search" style="display: none;">
-						<form class="search">
-							<input type="text" id="search-field" placeholder="{{t "Search"}}" />
-							<input type="submit" value="search" />
-						</form>
-					</li>
 				</ul>
 		</nav>
 
@@ -55,12 +49,23 @@
 
 	<section class="page-wrapper">
 
-		<div id="default">
-			{{{body}}}
-		</div>
+		{{{body}}}
 
-		<div id="search" class="container" style="display:none;">
-			<div class="content" id="results"></div>
+		<div id="search" class="container">
+			<div class="content">
+				<div class="blog-header">
+					<div class="inner">
+						<div class="archive archive-search box archive-box">
+							<form class="search">
+								<input type="text" id="search-field" placeholder="{{t "Search"}}" />
+								<input type="submit" value="search" />
+							</form>
+						</div>
+					</div>
+				</div>
+				<div id="results"></div>
+			</div>
+			<div class="search-close"></div>
 		</div>
 
 		<div class="nav-footer">
