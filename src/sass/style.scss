@@ -940,7 +940,6 @@ textarea {
 }
 
 #search {
-	display: none;
 	position: fixed;
 	z-index: 500;
 	left: 0;
@@ -949,8 +948,18 @@ textarea {
 	height: 100%;
 	overflow-y: scroll;
 	background: $color-background;
+	display: none;
 	@media (prefers-color-scheme: dark) {
 		background: $color-background-dark;
+	}
+	@media only screen and (max-width: $breakpoint-medium) {
+		display: block;
+		transition: all ease-out 0.3s;
+		transform: translate3d(0,100%,0);
+		border-top: 1px solid $color-border;
+		@media (prefers-color-scheme: dark) {
+			border-color: $color-border-dark;
+		}
 	}
 
 	#results {
@@ -963,6 +972,9 @@ textarea {
 
 	#search {
 		display: block;
+		@media only screen and (max-width: $breakpoint-medium) {
+			transform: translate3d(0,0,0);
+		}
 	}
 }
 
@@ -1013,6 +1025,7 @@ textarea {
 	border-radius: 4rem;
 	box-sizing: border-box;
 	cursor: pointer;
+	transition: all ease-out 0.1s;
 
 	&:after,
 	&:before {
@@ -1103,16 +1116,41 @@ textarea {
 		display: block;
 	}
 
+	.inner {
+		display: flex;
+		justify-content: space-between;
+	}
+
 	a {
 		position: relative;
 		display: block;
+		width: 100%;
 		padding: 2rem 0;
 		font-size: 2em;
 		line-height: 2rem;
+		color: inherit;
+		transition: all ease-out 0.1s;
 
 		i {
 			display: inline-block;
 			width: 4rem;
+		}
+
+		&.nav-search {
+			width: auto;
+			text-align: right;
+
+			span {
+				display: none;
+			}
+		}
+
+		&:focus,
+		&:hover {
+			color: $color-text-primary;
+			@media (prefers-color-scheme: dark) {
+				color: $color-text-primary-dark;
+			}
 		}
 	}
 }
@@ -1134,7 +1172,7 @@ textarea {
 .nav-header .nav-wrapper {
 	display: flex;
 	max-height: calc(100vh - 6rem);
-	padding: 0 4rem;
+	padding: 2rem 4rem;
 	overflow-y: auto;
 	@media only screen and (max-width: $breakpoint-medium) {
 		background: $color-neutral-15;
@@ -1174,11 +1212,15 @@ textarea {
 	list-style: none;
 	@media only screen and (max-width: $breakpoint-medium) {
 		flex-direction: column;
+		flex-shrink: 0;
 		padding: 2rem 0;
 	}
 
 	&:last-child {
 		justify-content: flex-end;
+		@media only screen and (max-width: $breakpoint-medium) {
+			display: none;
+		}
 	}
 }
 
@@ -1191,11 +1233,12 @@ textarea {
 			position: absolute;
 			content: '';
 			width: 100%;
-			height: 2px;
+			height: 3px;
 			left: 0;
 			top: 0;
 			padding: 0 1rem;
 			margin-left: -1rem;
+			margin-top: -2rem;
 			background: $color-primary;
 			@media only screen and (max-width: $breakpoint-medium) {
 				left: 0;
@@ -1267,9 +1310,10 @@ textarea {
 	&.nav-search,
 	&.nav-subscribe,
 	&.nav-twitter {
-		margin-right: 1rem;
-		@media only screen and (max-width: $breakpoint-medium) {
-			display: none;
+		margin-right: 1.5rem;
+
+		a {
+			font-size: 1.75em;
 		}
 
 		span {
