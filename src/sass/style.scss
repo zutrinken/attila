@@ -877,6 +877,10 @@ textarea {
 		}
 	}
 
+	&.archive-search {
+		border: 0;
+	}
+
 	&.archive-author {
 		padding-left: 16rem;
 		@media only screen and (max-width: $breakpoint-medium) {
@@ -1026,6 +1030,9 @@ textarea {
 	box-sizing: border-box;
 	cursor: pointer;
 	transition: all ease-out 0.1s;
+	@media (prefers-color-scheme: dark) {
+		border-color: $color-neutral-60;
+	}
 
 	&:after,
 	&:before {
@@ -1035,8 +1042,11 @@ textarea {
 		left: 20%;
 		width: 60%;
 		height: 1px;
-		background: $color-neutral-80;
+		background: $color-neutral-60;
 		transition: all ease-out 0.1s;
+		@media (prefers-color-scheme: dark) {
+			background: $color-neutral-80;
+		}
 	}
 
 	&:after {
@@ -1326,15 +1336,26 @@ textarea {
 	}
 }
 
-.cover-active .nav-header li a {
-	@media only screen and (min-width: $breakpoint-medium) {
+.cover-active {
+	.nav-wrapper-control a {
 		color: rgba(255,255,255,0.8);
+
+		&:focus,
+		&:hover {
+			color: #FFF;
+		}
 	}
 
-	&:focus,
-	&:hover {
+	.nav-header a {
 		@media only screen and (min-width: $breakpoint-medium) {
-			color: #FFF;
+			color: rgba(255,255,255,0.8);
+		}
+
+		&:focus,
+		&:hover {
+			@media only screen and (min-width: $breakpoint-medium) {
+				color: #FFF;
+			}
 		}
 	}
 }
@@ -1480,6 +1501,13 @@ textarea {
 		padding-top: calc(4rem + 2vw);
 		padding-bottom: calc(4rem + 2vw);
 		border-bottom: 1px solid $color-border;
+		@media (prefers-color-scheme: dark) {
+			border-color: $color-border-dark;
+		}
+	}
+
+	#results .post .post-box {
+		border-top: 1px solid $color-border;
 		@media (prefers-color-scheme: dark) {
 			border-color: $color-border-dark;
 		}
@@ -1916,6 +1944,10 @@ textarea {
 	cursor: pointer;
 	transition: all ease 0.2s;
 	border-radius: 2em;
+	@media (prefers-color-scheme: dark) {
+		border-color: $color-neutral-60;
+		color: $color-neutral-80;
+	}
 
 	&:focus,
 	&:hover {
@@ -2189,6 +2221,10 @@ textarea {
 	transition: all ease 0.2s;
 	border-radius: 4rem;
 	box-sizing: border-box;
+	@media (prefers-color-scheme: dark) {
+		border-color: $color-neutral-60;
+		color: $color-neutral-80;
+	}
 
 	&:focus,
 	&:hover {
