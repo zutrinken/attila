@@ -715,6 +715,7 @@ textarea {
 		position: relative;
 		z-index: 10;
 		padding-bottom: calc(4rem + 2vw);
+		text-align: center;
 		border-bottom: 1px solid $color-border;
 		@media (prefers-color-scheme: dark) {
 			border-color: $color-border-dark;
