@@ -1041,7 +1041,9 @@ textarea {
 		top: 50%;
 		left: 20%;
 		width: 60%;
-		height: 1px;
+		height: 2px;
+		margin-top: -1px;
+		border-radius: 2px;
 		background: $color-neutral-60;
 		transition: all ease-out 0.1s;
 		@media (prefers-color-scheme: dark) {
