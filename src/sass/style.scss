@@ -942,7 +942,9 @@ textarea {
 		padding: 0 4rem;
 	}
 }
-
+/* ==========================================================================
+   Search
+   ========================================================================== */
 #search {
 	position: fixed;
 	z-index: 500;
@@ -1154,14 +1156,6 @@ textarea {
 
 			span {
 				display: none;
-			}
-		}
-
-		&:focus,
-		&:hover {
-			color: $color-text-primary;
-			@media (prefers-color-scheme: dark) {
-				color: $color-text-primary-dark;
 			}
 		}
 	}
