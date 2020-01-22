@@ -843,6 +843,10 @@ textarea {
 		font-size: 4em;
 		line-height: 1em;
 		margin: 1rem 0;
+		color: #000;
+		@media (prefers-color-scheme: dark) {
+			color: #FFF;
+		}
 	}
 
 	.archive-description {
@@ -1296,6 +1300,7 @@ textarea {
 		text-decoration: none;
 		font-weight: 400;
 		cursor: pointer;
+		transition: color linear 0.1s;
 		@media only screen and (max-width: $breakpoint-medium) {
 			font-size: 2em;
 			padding-left: 4rem;
@@ -1357,13 +1362,21 @@ textarea {
 		}
 	}
 
-	.nav-header a {
-		@media only screen and (min-width: $breakpoint-medium) {
-			color: rgba(255,255,255,0.8);
+	.nav-header li {
+		a {
+			@media only screen and (min-width: $breakpoint-medium) {
+				color: rgba(255,255,255,0.8);
+			}
+
+			&:focus,
+			&:hover {
+				@media only screen and (min-width: $breakpoint-medium) {
+					color: #FFF;
+				}
+			}
 		}
 
-		&:focus,
-		&:hover {
+		&.active a {
 			@media only screen and (min-width: $breakpoint-medium) {
 				color: #FFF;
 			}
