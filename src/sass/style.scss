@@ -869,6 +869,7 @@ textarea {
 
 		a {
 			color: $color-primary;
+			transition: color linear 0.1s;
 
 			span {
 				display: none;
@@ -930,6 +931,19 @@ textarea {
 
 		.archive-title {
 			color: #FFF;
+		}
+
+		.archive-description {
+			color: rgba(255,255,255,0.8);
+		}
+
+		.archive-links a {
+			color: rgba(255,255,255,0.8);
+
+			&:focus,
+			&:hover {
+				color: #FFF;
+			}
 		}
 	}
 }
