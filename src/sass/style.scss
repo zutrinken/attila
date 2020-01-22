@@ -1158,6 +1158,14 @@ textarea {
 				display: none;
 			}
 		}
+
+		&:focus,
+		&:hover {
+			color: $color-text-primary;
+			@media (prefers-color-scheme: dark) {
+				color: $color-text-primary-dark;
+			}
+		}
 	}
 }
 
@@ -1172,6 +1180,13 @@ textarea {
 	@supports (-webkit-backdrop-filter: blur(2rem)) {
 		background: rgba(34,36,38,0.9);
 		-webkit-backdrop-filter: blur(2rem);
+	}
+
+	a {
+		&:focus,
+		&:hover {
+			color: $color-text-primary-dark;
+		}
 	}
 }
 
