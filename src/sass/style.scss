@@ -815,9 +815,6 @@ textarea {
 		margin-bottom: 2rem;
 		font-size: 2em;
 		line-height: 1em;
-		@media only screen and (max-width: $breakpoint-medium) {
-			margin-bottom: 4rem;
-		}
 
 		.archive-type {
 			color: $color-primary;
@@ -891,6 +888,7 @@ textarea {
 		padding-left: 16rem;
 		@media only screen and (max-width: $breakpoint-medium) {
 			padding-left: 0;
+			padding-right: 10rem;
 		}
 
 		.archive-avatar {
@@ -902,11 +900,11 @@ textarea {
 			border-radius: 8rem;
 			overflow: hidden;
 			@media only screen and (max-width: $breakpoint-medium) {
-				position: relative;
-				left: 0;
-				width: 6rem;
-				height: 6rem;
-				margin-bottom: 4rem;
+				left: auto;
+				right: 0;
+				top: 2rem;
+				width: 8rem;
+				height: 8rem;
 			}
 
 			img {
