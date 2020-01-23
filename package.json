@@ -4,8 +4,8 @@
   "demo": "https://attila.zutrinken.com",
   "version": "2.0.0",
   "engines": {
-    "ghost": ">=2.1.0",
-    "ghost-api": "v2"
+    "ghost": ">=3.0.0",
+    "ghost-api": "v3"
   },
   "license": "MIT",
   "screenshots": {
