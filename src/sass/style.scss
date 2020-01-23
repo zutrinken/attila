@@ -64,6 +64,8 @@ textarea {
 	h4,
 	h5,
 	h6 {
+		line-height: 1.25em;
+		margin: 0 0 4rem;
 		text-rendering: optimizeLegibility;
 		color: #000;
 		@media (prefers-color-scheme: dark) {
@@ -73,28 +75,26 @@ textarea {
 
 	h1 {
 		font-size: 4rem;
-		line-height: 4rem;
 		text-indent: -1px;
-		margin: 2rem 0;
 	}
 
 	h2 {
 		font-size: 3rem;
-		line-height: 3rem;
 		text-indent: -1px;
-		margin: 2rem 0;
 	}
 
 	h3 {
-		font-size: 2rem;
-		line-height: 2rem;
-		margin: 2rem 0;
+		font-size: 2.4rem;
 	}
 
 	h4 {
-		font-size: 1.5rem;
-		line-height: 1.5rem;
-		margin: 2rem 0;
+		font-size: 2rem;
+	}
+
+	h5,
+	h6 {
+		font-size: 2rem;
+		font-weight: 500;
 	}
 
 	h1 a,
@@ -108,13 +108,13 @@ textarea {
 
 	p {
 		font-family: 'Cardo', serif;
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 	}
 
 	ol,
 	ul {
 		font-family: 'Cardo', serif;
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 		padding-left: 2em;
 		box-sizing: border-box;
 	}
@@ -166,7 +166,7 @@ textarea {
 	hr {
 		display: block;
 		height: 1px;
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 		padding: 0;
 		background: $color-border;
 		border: 0;
@@ -177,7 +177,7 @@ textarea {
 
 	blockquote {
 		font-family: 'Cardo', serif;
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 		padding: 0.25em 1em;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
@@ -219,7 +219,7 @@ textarea {
 
 	dl {
 		font-family: 'Cardo', serif;
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 		padding-left: 30px;
 	}
 
@@ -269,7 +269,7 @@ textarea {
 
 	pre {
 		position: relative;
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 		padding: 1em;
 		overflow: hidden;
 		font-family: monospace, sans-serif;
@@ -351,7 +351,7 @@ textarea {
 		position: relative;
 		width: 100%;
 		max-width: 100%;
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 		border: 1px solid $color-border;
 		background: $color-background;
 		@media (prefers-color-scheme: dark) {
@@ -385,11 +385,11 @@ textarea {
 		display: block;
 		max-width: 100%;
 		height: auto;
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 	}
 
 	.fluid-width-video-wrapper {
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 	}
 }
 /* ==========================================================================
@@ -435,7 +435,7 @@ textarea {
 	}
 	// KG Image
 	.kg-image-card {
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 		max-width: none !important;
 
 		&.kg-width-wide {
@@ -460,7 +460,7 @@ textarea {
 	}
 	// KG Gallery
 	.kg-gallery-card {
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 		max-width: calc(72rem + 24vw) !important;
 		min-width: 100%;
 		width: calc(100vw - 4rem);
@@ -493,7 +493,7 @@ textarea {
 	}
 	// KG Embed
 	.kg-embed-card {
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 
 		> * {
 			margin-left: auto;
@@ -503,7 +503,7 @@ textarea {
 	// KG Code
 	.kg-code-card {
 		min-width: 100%;
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 	}
 
 	.kg-code-card pre {
@@ -512,7 +512,7 @@ textarea {
 	// KG Bookmark
 	.kg-bookmark-card {
 		width: 100%;
-		margin: 0 0 2em;
+		margin: 0 0 4rem;
 	}
 
 	.kg-bookmark-container {
