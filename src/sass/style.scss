@@ -1448,6 +1448,7 @@ textarea {
 	padding: 0 4rem;
 	@media only screen and (max-width: $breakpoint-medium) {
 		flex-direction: column;
+		text-align: center;
 	}
 }
 
@@ -1460,6 +1461,7 @@ textarea {
 	list-style: none;
 	@media only screen and (max-width: $breakpoint-medium) {
 		margin-bottom: 3rem;
+		justify-content: center;
 	}
 
 	&:last-child {
