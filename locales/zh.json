@@ -1,5 +1,5 @@
 {
-    "Blog Logo": "博客图标",
+    "Logo": "商标",
     "Close": "关闭",
     "Get the latest posts delivered right to your inbox.": "将最新的博文发送到你的邮箱",
     "Home": "主页",
@@ -14,10 +14,17 @@
     "Theme": "主题",
     "Website": "网站",
     "Your email address": "你的邮件地址",
-    "by": "来自",
+    "By": "来自",
     "on ": "发表在 ",
     "No Posts": "没有博文了",
     "% Post": "% 篇博文",
     "% Posts": "% 篇博文",
-    "This post was a collaboration between:": "此博文由以下人员合作完成："
+    "This post was a collaboration between:": "此博文由以下人员合作完成：",
+    "youremail@example.com": "youremail@example.com",
+    "1 min read": "1 min read",
+    "% min read": "% min read",
+    "Author": "Author",
+    "Topic": "Topic",
+    "Share": "Share",
+    "Search": "Search"
 }

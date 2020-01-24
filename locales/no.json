@@ -1,5 +1,5 @@
 {
-    "Blog Logo": "Blogg logo",
+    "Logo": "Logo",
     "Close": "Lukk",
     "Get the latest posts delivered right to your inbox.": "Få de siste innleggene rett i innboksen",
     "Home": "Hjem",
@@ -14,10 +14,17 @@
     "Theme": "Tema",
     "Website": "Nettside",
     "Your email address": "Din e-post adresse",
-    "by": "av",
+    "By": "Av",
     "on ": "i ",
     "No Posts": "Ingen innlegg",
     "% Post": "% innlegg",
     "% Posts": "% innlegg",
-    "This post was a collaboration between:": "Dette innlegget var et samarbeid mellom:"
+    "This post was a collaboration between:": "Dette innlegget var et samarbeid mellom:",
+    "youremail@example.com": "dinepost@eksempel.com",
+    "1 min read": "1 min lest",
+    "% min read": "% min lest",
+    "Author": "Author",
+    "Topic": "Topic",
+    "Share": "Share",
+    "Search": "Search"
 }

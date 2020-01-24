@@ -1,36 +1,40 @@
 {{!< default}}
 
-<header id="blog-header"{{#if tag.feature_image}} class="has-cover"{{else}}{{#if @site.cover_image}} class="has-cover"{{/if}}{{/if}}>
+
+<header class="blog-header{{#if tag.feature_image}} has-cover{{else}}{{#if @site.cover_image}} has-cover{{/if}}{{/if}}">
 	<div class="inner">
-		<nav id="navigation">
-			{{#if @site.logo}}
-			<span class="blog-logo">
-				<a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
+		<div class="archive archive-tag box archive-box">
+			<span class="archive-info">
+				<span class="archive-type">{{t "Topic"}}</span>
+				<span class="archive-count">{{pagination.total}} {{t "Posts"}}</span>
 			</span>
-			{{else}}
-			<span id="home-button" class="nav-button">
-				<a class="home-button" href="{{@site.url}}" title="Home"><i class="ic ic-arrow-left"></i> {{t "Home"}}</a>
-			</span>
+			<h2 class="archive-title">{{tag.name}}</h2>
+			{{#if tag.description}}
+				<span class="archive-description">{{{tag.description}}}</span>
 			{{/if}}
-			{{#if @site.navigation}}
-			<span id="menu-button" class="nav-button">
-				<a class="menu-button"><i class="ic ic-menu"></i> {{t "Menu"}}</a>
-			</span>
-			{{/if}}
-		</nav>
-		<h1 class="blog-name">{{tag.name}}</h1>
-		<span class="blog-description">
-		{{#if tag.description}}
-			{{tag.description}}
-		{{else}}
-			{{t "Posts"}}: {{pagination.total}}
-		{{/if}}
-		</span>
+		</div>
+
 		{{#if tag.feature_image}}
-		<div class="blog-cover cover" style="background-image: url('{{img_url tag.feature_image}}');"></div>
+		<div class="blog-cover cover">
+			<img
+			srcset="{{img_url tag.feature_image size="s"}} 320w,
+              {{img_url tag.feature_image size="m"}} 640w,
+              {{img_url tag.feature_image size="l"}} 960w,
+              {{img_url tag.feature_image size="xl"}} 1920w"
+      src="{{img_url tag.feature_image size="xl"}}"
+			alt="{{@site.title}}" />
+		</div>
 		{{else}}
 		{{#if @site.cover_image}}
-		<div class="blog-cover cover" style="background-image: url('{{img_url @site.cover_image}}');"></div>
+		<div class="blog-cover cover">
+			<img
+			srcset="{{img_url @site.cover_image size="s"}} 320w,
+              {{img_url @site.cover_image size="m"}} 640w,
+              {{img_url @site.cover_image size="l"}} 960w,
+              {{img_url @site.cover_image size="xl"}} 1920w"
+      src="{{img_url @site.cover_image size="xl"}}"
+			alt="{{@site.title}}" />
+		</div>
 		{{/if}}
 		{{/if}}
 	</div>

@@ -1,5 +1,5 @@
 {
-    "Blog Logo": "Blog Logo",
+    "Logo": "Logo",
     "Close": "Schließen",
     "Get the latest posts delivered right to your inbox.": "Empfange die neuesten Posts direkt in deinem Posteingang.",
     "Home": "Startseite",
@@ -14,10 +14,17 @@
     "Theme": "Theme",
     "Website": "Website",
     "Your email address": "Deine Email-Addresse",
-    "by": "von",
+    "By": "Von",
     "on ": "in ",
     "No Posts": "Keine Beiträge",
     "% Post": "% Beitrag",
     "% Posts": "% Beiträge",
-    "This post was a collaboration between:": "Dieser Beitrag war eine Zusammenarbeit von:"
+    "This post was a collaboration between:": "Dieser Beitrag war eine Zusammenarbeit von:",
+    "youremail@example.com": "deine@emailadresse.de",
+    "1 min read": "Lesezeit: 1 Min.",
+    "% min read": "Lesezeit: % Min.",
+    "Author": "Autor",
+    "Topic": "Thema",
+    "Share": "Teilen",
+    "Search": "Suche"
 }
