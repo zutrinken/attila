@@ -5,7 +5,7 @@
     "Home": "Hjem",
     "Menu": "Meny",
     "Newer Posts": "Nyere",
-    "Older Posts": "Gamlere",
+    "Older Posts": "Eldre",
     "Page {page} of {pages}": "Side {page} av {pages}",
     "Posts": "Innlegg",
     "Published with": "Publisert med",
@@ -13,7 +13,7 @@
     "Subscribe": "Abonner",
     "Theme": "Tema",
     "Website": "Nettside",
-    "Your email address": "Din e-post adresse",
+    "Your email address": "Din e-postadresse",
     "By": "Av",
     "on ": "i ",
     "No Posts": "Ingen innlegg",
@@ -23,8 +23,8 @@
     "youremail@example.com": "dinepost@eksempel.com",
     "1 min read": "1 min lest",
     "% min read": "% min lest",
-    "Author": "Author",
-    "Topic": "Topic",
-    "Share": "Share",
-    "Search": "Search"
+    "Author": "Forfatter",
+    "Topic": "Tema",
+    "Share": "Del",
+    "Search": "Søk"
 }
