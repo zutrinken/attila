@@ -1,6 +1,5 @@
 jQuery(function($) {
 
-  var body = $('body');
   var html = $('html');
   var viewport = $(window);
 
@@ -43,10 +42,8 @@ jQuery(function($) {
    ghostHunter
    ========================================================================== */
 
-  if (typeof ghosthunter_key === 'undefined') {
-
-  } else {
-    var searchField = $("#search-field")
+  if (typeof ghosthunter_key !== 'undefined') {
+    var searchField = $("#search-field");
     $(".nav-search").css({
       'display': 'block'
     });
@@ -119,36 +116,6 @@ jQuery(function($) {
   });
 
   /* ==========================================================================
-     Reading Progress
-     ========================================================================== */
-
-  var post = $('.post-content');
-
-  function readingProgress() {
-    if (post.length >= 1) {
-      var postBottom = post.offset().top + post.height();
-      var windowBottom = viewport.scrollTop() + viewport.height();
-      var progress = 100 - (((postBottom - windowBottom + viewport.height() / 3) / (postBottom - viewport.height() + viewport.height() / 3)) * 100);
-      $('.progress-bar').css('width', progress + '%');
-      (progress > 100) ? $('.progress-container').addClass('ready'): $('.progress-container').removeClass('ready');
-    }
-  }
-
-  readingProgress();
-
-  viewport.on({
-    'scroll': function() {
-      readingProgress();
-    },
-    'resize': function() {
-      readingProgress();
-    },
-    'orientationchange': function() {
-      readingProgress();
-    }
-  });
-
-  /* ==========================================================================
      Gallery
      ========================================================================== */
 
@@ -163,57 +130,4 @@ jQuery(function($) {
     });
   }
   gallery();
-
-  /* ==========================================================================
-     Style code blocks with highlight and numbered lines
-     ========================================================================== */
-
-  function codestyling() {
-    $('pre code').each(function(i, e) {
-      hljs.highlightBlock(e);
-      /* No lines for plain text blocks */
-      if (!$(this).hasClass('language-text')) {
-        var code = $(this);
-        var lines = code.html().split(/\n(?!$)/g).length;
-        var numbers = [];
-        if (lines > 1) {
-          lines++;
-        }
-        for (i = 1; i < lines; i++) {
-          numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
-        }
-        code.parent().append('<div class="lines">' + numbers + '</div>');
-      }
-    });
-  }
-  codestyling();
-
-  /* ==========================================================================
-     Responsive Videos with Fitvids
-     ========================================================================== */
-
-  function video() {
-    $('#wrapper').fitVids();
-  }
-  video();
-
-  /* ==========================================================================
-     Initialize and load Disqus
-     ========================================================================== */
-
-  if (typeof disqus === 'undefined') {
-    $('.post-comments').css({
-      'display': 'none'
-    });
-  } else {
-    $('#show-disqus').on('click', function() {
-      $.ajax({
-        type: "GET",
-        url: "//" + disqus + ".disqus.com/embed.js",
-        dataType: "script",
-        cache: true
-      });
-      $(this).parent().addClass('activated');
-    });
-  }
 });

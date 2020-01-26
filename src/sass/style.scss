@@ -1412,10 +1412,10 @@ textarea {
 	z-index: 1000;
 	background: transparent;
 	transition: all ease-out 0.2s;
-}
 
-.progress-container.ready {
-	transform: translateY(-3px);
+	&.complete {
+		transform: translateY(-3px);
+	}
 }
 
 .progress-bar {
@@ -1423,7 +1423,6 @@ textarea {
 	width: 0;
 	height: 3px;
 	background: $color-primary;
-	//box-shadow: 0 0 1px $color-primary, 0 0 3px $color-primary;
 }
 /* ==========================================================================
    Footer

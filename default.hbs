@@ -82,7 +82,11 @@
 
 	</section>
 
+	{{!-- Load basic scripts --}}
 	<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
+
+	{{!-- Load scripts from other template files --}}
+	{{{block "scripts"}}}
 
 	{{ghost_foot}}
 
