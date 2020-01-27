@@ -20,11 +20,11 @@
     "% Post": "% Новость",
     "% Posts": "% Новости",
     "This post was a collaboration between:": " Эта новость была совместной работой:",
-    "youremail@example.com": "ваш@адресэлектроннойпочты.ru",
+    "youremail@example.com": "Ваш@АдресЭлектроннойПочты.ru",
     "1 min read": "Время прочтения: 1 Мин.",
     "% min read": "Время прочтения: % Мин.",
-    "Author": "Author",
-    "Topic": "Topic",
-    "Share": "Share",
-    "Search": "Search"
+    "Author": "Автор",
+    "Topic": "Тема",
+    "Share": "Поделиться",
+    "Search": "Поиск",
 }
