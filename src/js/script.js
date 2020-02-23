@@ -1,159 +1,133 @@
 jQuery(function($) {
 
-	var body = $('body');
-	var html = $('html');
-	var viewport = $(window);
+  var html = $('html');
+  var viewport = $(window);
 
-	/* ==========================================================================
-	   Menu
-	   ========================================================================== */
+  /* ==========================================================================
+     Menu
+     ========================================================================== */
 
-	function menu() {
-		html.toggleClass('menu-active');
-	};
+  function menu() {
+    html.toggleClass('menu-active');
+  };
 
-	$('#menu').on({
-		'click': function() {
-			menu();
-		}
-	});
+  $('#menu').on({
+    'click': function() {
+      menu();
+    }
+  });
 
-	$('.menu-button').on({
-		'click': function() {
-			menu();
-		}
-	});
+  $('.nav-menu').on({
+    'click': function() {
+      menu();
+    }
+  });
 
-	$('.hidden-close').on({
-		'click': function() {
-			menu();
-		}
-	});
+  $('.nav-close').on({
+    'click': function() {
+      menu();
+    }
+  });
 
-	/* ==========================================================================
-	   Parallax cover
-	   ========================================================================== */
+  viewport.on({
+    'resize': function() {
+      html.removeClass('menu-active');
+    },
+    'orientationchange': function() {
+      html.removeClass('menu-active');
+    }
+  });
 
-	var cover = $('.cover');
-	var coverPosition = 0;
+  /* ==========================================================================
+   ghostHunter
+   ========================================================================== */
 
-	function prlx() {
-		if(cover.length >= 1) {
-			var windowPosition = viewport.scrollTop();
-			(windowPosition > 0) ? coverPosition = Math.floor(windowPosition * 0.25) : coverPosition = 0;
-			cover.css({
-				'-webkit-transform' : 'translate3d(0, ' + coverPosition + 'px, 0)',
-				'transform' : 'translate3d(0, ' + coverPosition + 'px, 0)'
-			});
-			(viewport.scrollTop() < cover.height()) ? html.addClass('cover-active') : html.removeClass('cover-active');
-		}
-	}
-	prlx();
+  if (typeof ghosthunter_key !== 'undefined') {
+    var searchField = $("#search-field");
+    $(".nav-search").css({
+      'display': 'block'
+    });
 
-	viewport.on({
-		'scroll': function() {
-			prlx();
-		},
-		'resize': function() {
-			prlx();
-		},
-		'orientationchange': function() {
-			prlx();
-		}
-	});
+    $('.nav-search').on({
+      'click': function() {
+        html.addClass('search-active');
+        searchField.focus();
+        html.removeClass('menu-active');
+      }
+    });
 
-	/* ==========================================================================
-	   Reading Progress
-	   ========================================================================== */
+    $('.search-close').on({
+      'click': function() {
+        html.removeClass('search-active');
+        searchField.val('');
+        $('#results').empty();
+      }
+    });
 
-	var post = $('.post-content');
+    $(document).keydown(function(e) {
+      if (e.key === "Escape") { // escape key maps to keycode `27`
+        if (html.hasClass('search-active')) {
+          html.removeClass('search-active');
+          searchField.val('');
+          $('#results').empty();
+        }
+      }
+    });
 
-	function readingProgress() {
-		if(post.length >= 1) {
-			var postBottom = post.offset().top + post.height();
-			var windowBottom = viewport.scrollTop() + viewport.height();
-			var progress = 100 - (((postBottom - windowBottom) / (postBottom - viewport.height())) * 100);
-			$('.progress-bar').css('width', progress + '%');
-			(progress > 100) ? $('.progress-container').addClass('ready') : $('.progress-container').removeClass('ready');
-		}
-	}
-	readingProgress();
+    searchField.ghostHunter({
+      results: "#results",
+      result_template: '<article class="post"><div class="inner"><div class="box post-box"><h2 class="post-title"><a href="{{link}}">{{title}}</a></h2><span class="post-meta">On <span class="post-date">{{pubDate}}</span></span></div></div></article>',
+      info_template: '',
+      displaySearchInfo: true,
+      includebodysearch: true
+    });
+  }
 
-	viewport.on({
-		'scroll': function() {
-			readingProgress();
-		},
-		'resize': function() {
-			readingProgress();
-		},
-		'orientationchange': function() {
-			readingProgress();
-		}
-	});
+  /* ==========================================================================
+   Parallax cover
+   ========================================================================== */
 
-	/* ==========================================================================
-	   Gallery
-	   ========================================================================== */
+  var cover = $('.cover');
+  var coverPosition = 0;
 
-	function gallery() {
-		var images = document.querySelectorAll('.kg-gallery-image img');
-		images.forEach(function (image) {
-			var container = image.closest('.kg-gallery-image');
-			var width = image.attributes.width.value;
-			var height = image.attributes.height.value;
-			var ratio = width / height;
-			container.style.flex = ratio + ' 1 0%';
-		});
-	}
-	gallery();
+  function prlx() {
+    if (cover.length >= 1) {
+      var windowPosition = viewport.scrollTop();
+      (windowPosition > 0) ? coverPosition = Math.floor(windowPosition * 0.25): coverPosition = 0;
+      cover.css({
+        '-webkit-transform': 'translate3d(0, ' + coverPosition + 'px, 0)',
+        'transform': 'translate3d(0, ' + coverPosition + 'px, 0)'
+      });
+      (viewport.scrollTop() < cover.height()) ? html.addClass('cover-active'): html.removeClass('cover-active');
+    }
+  }
+  prlx();
 
-	/* ==========================================================================
-	   Style code blocks with highlight and numbered lines
-	   ========================================================================== */
+  viewport.on({
+    'scroll': function() {
+      prlx();
+    },
+    'resize': function() {
+      prlx();
+    },
+    'orientationchange': function() {
+      prlx();
+    }
+  });
 
-	function codestyling() {
-		$('pre code').each(function(i, e) {
-			hljs.highlightBlock(e);
+  /* ==========================================================================
+     Gallery
+     ========================================================================== */
 
-			if(!$(this).hasClass('language-text')) {
-				var code = $(this);
-				var lines = code.html().split(/\n/).length;
-				var numbers = [];
-				for (i = 1; i < lines; i++) {
-					numbers += '<span class="line">' + i + '</span>';
-				}
-				code.parent().append('<div class="lines">' + numbers + '</div>');
-			}
-		});
-	}
-	codestyling();
-
-	/* ==========================================================================
-	   Responsive Videos with Fitvids
-	   ========================================================================== */
-
-	function video() {
-		$('#wrapper').fitVids();
-	}
-	video();
-
-	/* ==========================================================================
-	   Initialize and load Disqus
-	   ========================================================================== */
-
-	if (typeof disqus === 'undefined') {
-		$('.post-comments').css({
-			'display' : 'none'
-		});
-	} else {
-		$('#show-disqus').on('click', function() {
-			$.ajax({
-				type: "GET",
-				url: "//" + disqus + ".disqus.com/embed.js",
-				dataType: "script",
-				cache: true
-			});
-			$(this).parent().addClass('activated');
-		});
-	}
+  function gallery() {
+    var images = document.querySelectorAll('.kg-gallery-image img');
+    images.forEach(function(image) {
+      var container = image.closest('.kg-gallery-image');
+      var width = image.attributes.width.value;
+      var height = image.attributes.height.value;
+      var ratio = width / height;
+      container.style.flex = ratio + ' 1 0%';
+    });
+  }
+  gallery();
 });

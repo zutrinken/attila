@@ -1,8 +1,8 @@
 # Attila
 
-A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost/).
+A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost/). See a demo at: [attila.zutrinken.com](https://attila.zutrinken.com/)
 
-Demo: [attila.zutrinken.com](https://attila.zutrinken.com/)
+If you like this theme and want to support future development you can become a [financial contributor](https://paypal.me/zutrinken).
 
 ## Screenshots
 
@@ -20,9 +20,10 @@ Demo: [attila.zutrinken.com](https://attila.zutrinken.com/)
 ## Features
 
 * Responsive layout
-* Parallax cover images for blog, archives and posts
-* Reading progress for posts
-* Automatic code syntax highlight and line numbers
+* Dark Mode
+* Search
+* Post reading progress
+* Code highlight including line numbers
 * Disqus support
 
 ## Members
@@ -44,11 +45,32 @@ Demo: [attila.zutrinken.com](https://attila.zutrinken.com/)
 * __Romanian__ by [cdorin93](https://github.com/cdorin93)
 * __Russian__ by [schamberg97](https://github.com/schamberg97)
 * __Turkish__ by [cgrgrbz](https://github.com/cgrgrbz)
+* __Swedish__ by [martenj77](https://github.com/martenj77)
+* __Czech__ by [lunakv](https://github.com/lunakv)
 
-## Setup
+## Setup [Disqus](https://disqus.com/)
 
-To enable [Disqus](https://disqus.com/) comments go to your blogs code injection settings and add `<script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>` to your blog header.
+1. Go to __Code injection__.  
+2. Add this to __Blog Header__:  
+````
+<script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>
+````
 
+## Setup search
+
+The search function is build with [ghostHunter](https://github.com/jamalneufeld/ghostHunter):
+
+1. Go to __Integrations__.  
+2. Choose __Add custom integration__, name it `ghostHunter` and choose __Create__. Copy the generated Content API Key.  
+3. Go to __Code injection__.  
+4. Add this to __Blog Header__:  
+````
+<script>
+  var ghosthunter_key = 'PASTE_THE_GENERATED_KEY_HERE';
+  //optional: set your custom ghost_root url, default is "/ghost/api/v2"
+  var ghost_root_url = '/ghost/api/v2';
+</script>
+````
 ## Development
 
 Install [Grunt](https://gruntjs.com/getting-started/):
@@ -63,10 +85,10 @@ Build Grunt project:
 
 	grunt build
 
-The zip Grunt task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
+The compress Grunt task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
 
-	grunt zip
+	grunt compress
 
 ## Copyright & License
 
-Copyright (C) 2015-2019 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).
+Copyright (C) 2015-2020 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).

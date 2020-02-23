@@ -1,5 +1,5 @@
 {
-    "Blog Logo": "Blog Logosu",
+    "Logo": "Logosu",
     "Close": "Kapat",
     "Get the latest posts delivered right to your inbox.": "Son gönderileri doğrudan posta kutunuza edinin.",
     "Home": "Anasayfa",
@@ -14,7 +14,7 @@
     "Theme": "Tema",
     "Website": "Web Sayfası",
     "Your email address": "E-posta adresiniz",
-    "by": "tarafından",
+    "By": "Tarafından",
     "on ": "ile ",
     "No Posts": "Gönderi Yok",
     "% Post": "% Gönderi",
@@ -22,5 +22,9 @@
     "This post was a collaboration between:": "Bu gönderi şu kullanıcıların ortaklama çalışmasıdır:",
     "youremail@example.com": "eposta@örnek.com",
     "1 min read": "1 dk okuma süresi",
-    "% min read": "% dk okuma süresi"
+    "% min read": "% dk okuma süresi",
+    "Author": "Yazar",
+    "Topic": "Konu",
+    "Share": "Paylaş",
+    "Search": "Ara"
 }

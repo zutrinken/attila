@@ -1,5 +1,5 @@
 {
-    "Blog Logo": "Blog Logo",
+    "Logo": "Logo",
     "Close": "Close",
     "Home": "Home",
     "Menu": "Menu",
@@ -11,7 +11,12 @@
     "Show Comments": "Show Comments",
     "Theme": "Theme",
     "Website": "Website",
+<<<<<<< HEAD
     "by": "by",
+=======
+    "Your email address": "Your email address",
+    "By": "By",
+>>>>>>> master
     "on ": "on ",
     "No Posts": "No Posts",
     "% Post": "% Post",
@@ -19,6 +24,7 @@
     "This post was a collaboration between:": "This post was a collaboration between:",
     "1 min read": "1 min read",
     "% min read": "% min read",
+<<<<<<< HEAD
     "----------------------------------------": "----------------------------------------",
     "Get the latest posts delivered right to your inbox.": "Get the latest posts delivered right to your inbox.",
     "Your email address": "Your email address",
@@ -54,4 +60,10 @@
     "Currently, you're not a subscriber": "Currently, you're not a subscriber",
     "is subscribed to free updates, but doesn't have a paid subscription to unlock full access.": "is subscribed to free updates, but doesn't have a paid subscription to unlock full access.",
     "Subscribe now": "Subscribe now"
+=======
+    "Author": "Author",
+    "Topic": "Topic",
+    "Share": "Share",
+    "Search": "Search"
+>>>>>>> master
 }

@@ -20,22 +20,70 @@
 
 <body class="{{body_class}}">
 
-	{{navigation}}
+	<div class="nav-header">
+		<nav class="nav-wrapper">
+				{{#if @site.logo}}
+				<span class="logo">
+					<a href="{{@site.url}}" title="{{t "Home"}}"><img src="{{@site.logo}}" alt="{{t "Logo"}}" /></a>
+				</span>
+				{{/if}}
+				{{navigation}}
+				<ul class="nav-side">
+					{{#if @site.twitter}}
+					<li class="nav-twitter"><a title="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i class="icon icon-twitter"></i><span>Twitter</span></a></li>
+					{{/if}}
+					{{#if @site.facebook}}
+					<li class="nav-facebook"><a title="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank"><i class="icon icon-facebook"></i><span>Facebook</span></a></li>
+					{{/if}}
+					{{#if @labs.subscribers}}
+					<li class="nav-subscribe"><a title="Subscribe" href="{{@site.url}}/subscribe/" target="_blank"><i class="icon icon-mail"></i><span>{{t "Subscribe"}}</span></a></li>
+					{{/if}}
+					<li class="nav-rss"><a title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss"></i><span>RSS</span></a></li>
+					<li class="nav-search" style="display: none;"><a title="{{t "Search"}}"><i class="icon icon-search"></i><span>{{t "Search"}}</span></a></li>
+				</ul>
+		</nav>
 
-	<section id="wrapper">
-		<a class="hidden-close"></a>
-		{{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-		{{{body}}}
-		<div id="body-class" style="display: none;" class="{{body_class}}"></div>
-
-		<footer id="footer">
+		<div class="nav-wrapper-control">
 			<div class="inner">
-				<section class="credits">
-					<span class="credits-theme">{{t "Theme" }} <a href="https://github.com/zutrinken/attila">Attila</a> {{t "by"}} <a href="https://zutrinken.com" rel="nofollow">zutrinken</a></span>
-					<span class="credits-software">{{t "Published with"}} <a href="https://ghost.org">Ghost</a></span>
-				</section>
+				<a class="nav-menu"><i class="icon icon-menu"></i>{{t "Menu"}}</a>
+				<a class="nav-search" style="display: none;" title="{{t "Search"}}"><i class="icon icon-search"></i><span>{{t "Search"}}</span></a>
 			</div>
-		</footer>
+		</div>
+	</div>
+	<div class="nav-close"></div>
+
+	<section class="page-wrapper">
+
+		{{{body}}}
+
+		<div id="search" class="container">
+			<div class="content">
+				<div class="blog-header">
+					<div class="inner">
+						<div class="archive archive-search box archive-box">
+							<form class="search">
+								<input type="text" id="search-field" placeholder="{{t "Search"}}&#8230;" />
+								<input type="submit" value="search" />
+							</form>
+						</div>
+					</div>
+				</div>
+				<div id="results"></div>
+			</div>
+			<div class="search-close"></div>
+		</div>
+
+		<div class="nav-footer">
+			<nav class="nav-wrapper">
+				{{#if @site.secondary_navigation}}
+				{{navigation type="secondary"}}
+				{{else}}
+				<span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}}</span>
+				{{/if}}
+				<span class="nav-credits">{{t "Published with"}} <a href="https://ghost.org">Ghost</a> &bull; {{t "Theme" }} <a href="https://github.com/zutrinken/attila">Attila</a></span>
+			</nav>
+		</div>
+
 	</section>
 
 	{{> "notifications"}}
@@ -84,10 +132,11 @@
 			});
 	</script>
 
-
+	{{!-- Load basic scripts --}}
+	<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
 
 	{{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
-	{{block "scripts"}}
+	{{{block "scripts"}}}
 
 	{{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
 	{{ghost_foot}}

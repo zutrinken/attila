@@ -1,5 +1,5 @@
 {
-    "Blog Logo": "Logo Blog",
+    "Logo": "Logo",
     "Close": "Tutup",
     "Get the latest posts delivered right to your inbox.": "Dapatkan pos terbaru langsung di kotak masuk anda.",
     "Home": "Beranda",
@@ -14,13 +14,17 @@
     "Theme": "Tema",
     "Website": "Situs web",
     "Your email address": "Alamat email anda",
-    "by": "oleh",
+    "By": "Oleh",
     "on ": "di ",
     "No Posts": "Tidak ada Pos",
     "% Post": "% Pos",
     "% Posts": "% Pos-pos",
     "This post was a collaboration between:": "Pos ini merupakan hasil kolaborasi antara:",
-    "youremail@example.com": "latuaemail@example.com",
-    "1 min read": "1 minuto di lettura",
-    "% min read": "% minuti di lettura"
+    "youremail@example.com": "emailanda@contoh.com",
+    "1 min read": "1 menit dibaca",
+    "% min read": "% menit dibaca",
+    "Author": "Penulis",
+    "Topic": "Topik",
+    "Share": "Bagikan",
+    "Search": "Pencarian"
 }
