@@ -1225,9 +1225,9 @@ textarea {
 
 .nav-header .logo {
 	margin-right: 3rem;
-	@media only screen and (max-width: $breakpoint-medium) {
-		display: none;
-	}
+	// @media only screen and (max-width: $breakpoint-medium) {
+	// 	display: none;
+	// }
 
 	a {
 		display: block;
