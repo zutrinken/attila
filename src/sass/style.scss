@@ -1601,6 +1601,7 @@ textarea {
 		margin: 0;
 		z-index: 6;
 		object-fit: cover;
+		filter: blur(4px) brightness(0.75);
 	}
 
 	&:after {
