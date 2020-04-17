@@ -1249,6 +1249,7 @@ textarea {
 	margin: auto;
 	padding: 0;
 	list-style: none;
+	justify-content: flex-end;
 	@media only screen and (max-width: $breakpoint-medium) {
 		flex-direction: column;
 		flex-shrink: 0;
@@ -1345,7 +1346,7 @@ textarea {
 		}
 	}
 
-	&.nav-facebook,
+	// &.nav-facebook,
 	&.nav-rss,
 	&.nav-search,
 	&.nav-subscribe,
