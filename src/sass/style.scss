@@ -1091,7 +1091,8 @@ textarea {
    Navigation
    ========================================================================== */
 .nav-header {
-	position: absolute;
+	background-color: black;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -1128,6 +1129,7 @@ textarea {
 }
 
 .nav-header .nav-wrapper-control {
+	background: black;
 	position: absolute;
 	z-index: 500;
 	left: 0;
@@ -1135,7 +1137,7 @@ textarea {
 	width: 100%;
 	cursor: pointer;
 	display: none;
-	color: $color-text-secondary;
+	color: white;
 	border-top: 1px solid transparent;
 	box-sizing: border-box;
 	transition: all linear 0.1s;
@@ -1177,20 +1179,20 @@ textarea {
 
 		&:focus,
 		&:hover {
-			color: $color-text-primary;
+			color: $color-primary;
 			@media (prefers-color-scheme: dark) {
-				color: $color-text-primary-dark;
+				color: $color-primary;
 			}
 		}
 	}
 }
 
-.cover-active .nav-header .nav-wrapper-control {
-	color: #FFF;
+.cover-active .nav-header, .cover-active .nav-wrapper-control {
+	background: rgba(0, 0, 0, 0);
 }
 
 .menu-active .nav-header .nav-wrapper-control {
-	background: $color-neutral-15;
+	background: black;
 	color: $color-text-secondary;
 	border-color: $color-border-dark;
 	@supports (-webkit-backdrop-filter: blur(2rem)) {
@@ -1293,7 +1295,7 @@ textarea {
 			color: $color-neutral-25;
 			font-weight: 500;
 			@media (prefers-color-scheme: dark) {
-				color: $color-neutral-90;
+				color: white;
 			}
 			@media only screen and (max-width: $breakpoint-medium) {
 				color: #FFF;
@@ -1306,7 +1308,7 @@ textarea {
 		padding: 1rem 0;
 		font-size: 1.5em;
 		line-height: 2rem;
-		color: $color-neutral-60;
+		color: white;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		text-decoration: none;
@@ -1333,9 +1335,9 @@ textarea {
 
 		&:focus,
 		&:hover {
-			color: $color-neutral-25;
+			color: $color-primary;
 			@media (prefers-color-scheme: dark) {
-				color: $color-neutral-90;
+				color: $color-primary;
 			}
 			@media only screen and (max-width: $breakpoint-medium) {
 				color: $color-neutral-80;
@@ -1366,31 +1368,31 @@ textarea {
 
 .cover-active {
 	.nav-wrapper-control a {
-		color: rgba(255,255,255,0.8);
+		color: rgba(255,255,255,1);
 
 		&:focus,
 		&:hover {
-			color: #FFF;
+			color: $color-primary;
 		}
 	}
 
 	.nav-header li {
 		a {
 			@media only screen and (min-width: $breakpoint-medium) {
-				color: rgba(255,255,255,0.8);
+				color: rgba(255,255,255,1);
 			}
 
 			&:focus,
 			&:hover {
 				@media only screen and (min-width: $breakpoint-medium) {
-					color: #FFF;
+					color: $color-primary;
 				}
 			}
 		}
 
 		&.active a {
 			@media only screen and (min-width: $breakpoint-medium) {
-				color: #FFF;
+				color: $color-primary;
 			}
 		}
 	}
@@ -1937,7 +1939,7 @@ textarea {
 	line-height: 3rem;
 	text-align: center;
 	text-decoration: none;
-	color: #FFF;
+	color: #212426;
 	border-radius: 2em;
 	transition: all ease 0.2s;
 	box-sizing: border-box;
