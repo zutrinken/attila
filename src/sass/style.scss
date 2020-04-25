@@ -34,7 +34,7 @@ html {
 
 body {
 	background: $color-background;
-	color: $color-text-primary;
+	color: $mauve-500;
 	font-family: 'Rubik', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif';
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -791,14 +791,6 @@ p {
 	font-size: 6em;
 	line-height: 1em;
 	text-decoration: none;
-	color: #000;
-	@media (prefers-color-scheme: dark) {
-		color: #FFF;
-	}
-}
-
-.has-cover .blog-name {
-	color: #FFF;
 }
 
 .blog-description {
@@ -807,14 +799,6 @@ p {
 	padding: 0;
 	font-size: 3em;
 	line-height: 1.33334em;
-	color: $color-text-secondary;
-	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
-	}
-}
-
-.has-cover .blog-description {
-	color: #FFF;
 }
 
 .archive {
@@ -974,30 +958,6 @@ p {
 	@media only screen and (max-width: $breakpoint-medium) {
 		padding: 0 4rem;
 	}
-}
-/* ==========================================================================
-   Reading Progress
-   ========================================================================== */
-.progress-container {
-	position: fixed;
-	width: 100%;
-	height: 4px;
-	left: 0;
-	top: 0;
-	z-index: 1000;
-	background: transparent;
-	transition: all ease-out 0.2s;
-
-	&.complete {
-		transform: translateY(-3px);
-	}
-}
-
-.progress-bar {
-	display: block;
-	width: 0;
-	height: 3px;
-	background: $color-primary;
 }
 /* ==========================================================================
    Footer
@@ -1290,7 +1250,6 @@ footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-size: 2rem;
 	line-height: 3rem;
 }
 
@@ -1430,59 +1389,6 @@ footer {
 	&:hover {
 		background: $color-primary-active;
 	}
-}
-/* ==========================================================================
-   Post Comments
-   ========================================================================== */
-.post-comments {
-	position: relative;
-	padding: 4rem;
-	text-align: center;
-	border-top: 1px solid $color-border;
-	border-bottom: 1px solid $color-border;
-	box-sizing: border-box;
-	@media (prefers-color-scheme: dark) {
-		border-color: $color-border-dark;
-	}
-
-	&.activated {
-		background: $color-background;
-		border: 1px solid $color-border;
-		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-			border-color: $color-border-dark;
-		}
-	}
-}
-
-.post-comments-activate {
-	display: inline-block;
-	height: 4rem;
-	margin: 2rem 0;
-	padding: 0 2rem;
-	border: 1px solid $color-neutral-80;
-	font-weight: 500;
-	font-size: 1.5em;
-	line-height: 4rem;
-	color: $color-neutral-60;
-	text-align: center;
-	cursor: pointer;
-	transition: all ease 0.2s;
-	border-radius: 2em;
-	@media (prefers-color-scheme: dark) {
-		border-color: $color-neutral-60;
-		color: $color-neutral-80;
-	}
-
-	&:focus,
-	&:hover {
-		color: $color-primary-active;
-		border-color: $color-primary-active;
-	}
-}
-
-.activated .post-comments-activate {
-	display: none;
 }
 /* ==========================================================================
    Post Subscribe

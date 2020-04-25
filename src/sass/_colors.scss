@@ -1,3 +1,24 @@
+// Normal blues
+$blue-900: #2472D3;
+$blue-500: #70B0FF;
+$blue-400: #ADD2FF;
+
+// Dark blues
+$darkblue-900: #000920;
+$darkblue-800: #101F3E;
+$darkblue-700: #21335A;
+$darkblue-600: #344F88;
+
+// Weird whites
+$mauve-1000: #7D8CB6;
+$mauve-900: #B0BCDC;
+$mauve-500: #DEE7FF;
+
+// Reds
+$red-500: #FF3C5F;
+$red-700: #CA1148;
+
+
 @function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
   @if $b-hsb == 0 {
     @return hsla(0, 0, 0, $a)
@@ -24,27 +45,7 @@ $color-text-primary: $color-neutral-15;
 $color-text-primary-dark: $color-neutral-90;
 $color-text-secondary: $color-neutral-60;
 $color-text-secondary-dark: $color-neutral-60;
-$color-border: $color-neutral-90;
+$color-border: $darkblue-900;
 $color-background: $darkblue-800;
-$color-border-dark: $color-neutral-25;
+$color-border-dark: $darkblue-900;
 $color-background-dark: $darkblue-800;
-
-// Normal blues
-$blue-900: #2472D3;
-$blue-500: #70B0FF;
-$blue-400: #ADD2FF;
-
-// Dark blues
-$darkblue-900: #000920;
-$darkblue-800: #101F3E;
-$darkblue-700: #21335A;
-$darkblue-600: #344F88;
-
-// Weird whites
-$mauve-1000: #7D8CB6;
-$mauve-900: #B0BCDC;
-$mauve-500: #DEE7FF;
-
-// Reds
-$red-500: #FF3C5F;
-$red-700: #CA1148;
