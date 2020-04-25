@@ -1,0 +1,11 @@
+@mixin tablet-down {
+  @media only screen and (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin tablet-up {
+  @media only screen and (min-width: $tablet) {
+    @content;
+  }
+}

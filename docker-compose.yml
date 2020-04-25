@@ -1,0 +1,6 @@
+version: '2.0'
+services:
+  blog:
+    image: 'ghost:latest'
+    ports:
+      - '3001:2368'

@@ -2,10 +2,15 @@
    Includes
    ========================================================================== */
 @import "normalize";
+
+@import "./variables";
+@import "./mixins/breakpoints";
+
 @import "colors";
 @import "icons";
-@import "fonts";
 @import "highlight";
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap');
+
 $breakpoint-large: 960px;
 $breakpoint-medium: 640px;
 $breakpoint-small: 480px;
@@ -24,13 +29,13 @@ html.menu-active {
 }
 
 body {
-	font: 400 1em / 1.5em 'Fira Sans', sans-serif;
+	background: $darkblue-800;
 	color: $color-text-primary;
+	font-family: 'Rubik', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif';
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
-	background: #FFF;
 	@media (prefers-color-scheme: dark) {
 		background: $color-background-dark;
 		color: $color-text-primary-dark;
@@ -45,75 +50,87 @@ textarea {
 }
 
 .post-content {
-	a {
-		color: inherit;
-		text-decoration: none;
-		font-weight: 400;
-		box-shadow: inset 0 -2px 0 $color-primary;
-		transition: all ease-out 0.1s;
-
-		&:focus,
-		&:hover {
-			box-shadow: inset 0 -3px 0 $color-primary-active;
-		}
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		line-height: 1.25em;
-		margin: 0 0 4rem;
-		text-rendering: optimizeLegibility;
-		color: #000;
-		@media (prefers-color-scheme: dark) {
-			color: #FFF;
-		}
-	}
-
 	h1 {
-		font-size: 4rem;
-		text-indent: -1px;
+		color: $mauve-500;
+		font-size: 46px;
+		font-weight: $font-weight-bold;
+		line-height: 60px;
+		margin: 0 0 4rem 0;
+
+		@include tablet-down  {
+			font-size: 36px;
+			line-height: 48px;
+		}
 	}
 
 	h2 {
-		font-size: 3rem;
-		text-indent: -1px;
+		color: $mauve-500;
+		font-size: 32px;
+		font-weight: $font-weight-bold;
+		line-height: 44px;
+		margin: 0 0 4rem 0;
+
+		@include tablet-down  {
+			font-size: 24px;
+			line-height: 32px;
+		}
 	}
 
 	h3 {
-		font-size: 2.4rem;
+		color: $mauve-500;
+		font-size: 24px;
+		font-weight: $font-weight-bold;
+		line-height: 28px;
+		margin: 0 0 4rem 0;
+
+		@include tablet-down  {
+			font-size: 20px;
+			line-height: 24px;
+		}
 	}
 
 	h4 {
-		font-size: 2rem;
-	}
+		color: $mauve-500;
+		font-size: 18px;
+		font-weight: $font-weight-bold;
+		line-height: 24px;
+		margin: 0 0 4rem 0;
 
-	h5,
-	h6 {
-		font-size: 2rem;
-		font-weight: 500;
-	}
-
-	h1 a,
-	h2 a,
-	h3 a,
-	h4 a,
-	h5 a,
-	h6 a {
-		font-weight: inherit;
+		@include tablet-down  {
+			font-size: 16px;
+			line-height: 24px;
+		}
 	}
 
 	p {
-		font-family: 'Cardo', serif;
-		margin: 0 0 4rem;
+		color: $mauve-900;
+		font-size: 16px;
+		font-weight: $font-weight-normal;
+		line-height: 20px;
+		margin: 0 0 4rem 0;
+
+		a {
+			color: $blue-500;
+			cursor: pointer;
+			text-decoration: underline;
+		}
+
+		&.small {
+			font-size: 14px;
+		}
+
+		@include tablet-down  {
+			font-size: 14px;
+
+			&.small {
+				font-size: 12px;
+				line-height: 16px;
+			}
+		}
 	}
 
 	ol,
 	ul {
-		font-family: 'Cardo', serif;
 		margin: 0 0 4rem;
 		padding-left: 2em;
 		box-sizing: border-box;
@@ -137,7 +154,6 @@ textarea {
 		line-height: 1.5em;
 		text-align: right;
 		color: $color-primary;
-		font-family: 'Fira Sans', sans-serif;
 	}
 
 	ul > li:before {
@@ -176,7 +192,6 @@ textarea {
 	}
 
 	blockquote {
-		font-family: 'Cardo', serif;
 		margin: 0 0 4rem;
 		padding: 0.25em 1em;
 		-moz-box-sizing: border-box;
@@ -218,7 +233,6 @@ textarea {
 	}
 
 	dl {
-		font-family: 'Cardo', serif;
 		margin: 0 0 4rem;
 		padding-left: 30px;
 	}
