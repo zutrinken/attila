@@ -1,10 +1,10 @@
 {{!< default}}
-<header class="blog-header {{#if @site.cover_image}} has-cover{{/if}}">
+<header class="blog-header{{#if @site.cover_image}} has-cover{{/if}}">
 	<div class="inner">
 		<div class="box blog-box">
 			<h1 class="blog-name">{{@site.title}}</h1>
 			{{#if @site.description}}
-			<span class="blog-description">{{@site.description}}</span>
+			<h3 class="blog-description">{{@site.description}}</h3>
 			{{/if}}
 			{{#if @site.cover_image}}
 		</div>

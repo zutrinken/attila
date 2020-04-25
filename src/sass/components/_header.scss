@@ -1,7 +1,7 @@
-header {
+.header {
   display: flex;
   justify-content: space-between;
-  margin: 8rem;
+  margin: 5rem;
   position: relative;
 
   .logo {
@@ -10,8 +10,8 @@ header {
 
     .pipe {
       background: $mauve-1000;
-      height: 2.4rem;
-      margin: 0 1.6rem;
+      height: 1.5rem;
+      margin: 0 1rem;
       width: 1px;
     }
 
@@ -26,8 +26,8 @@ header {
 
     a {
       color: $mauve-500;
-      font-size: 1.6rem;
-      margin-right: 3.2rem;
+      font-size: 1rem;
+      margin-right: 2rem;
       text-decoration: none;
     }
 
@@ -40,23 +40,22 @@ header {
       background: $darkblue-900;
       border-radius: 50%;
       display: flex;
-      height: 3.2rem;
+      height: 2rem;
       justify-content: center;
       margin-right: 0;
-      width: 3.2rem;
+      width: 2rem;
 
       i {
-        font-size: 1.6rem;
+        font-size: 1rem;
       }
     }
   }
 
   @include tablet-down {
     background: $darkblue-900;
-    border-radius: 1.6rem;
-    margin: 1.6rem 0 4.8rem -.8rem;
-    padding: 2.4rem;
-    width: calc(100% + 1.6rem);
+    border-radius: 1rem;
+    margin: 1rem 1rem 3rem 1rem;
+    padding: 1.5rem;
 
     .logo {
       .pipe, p {
@@ -66,29 +65,30 @@ header {
 
     nav {
       .twitter {
-        margin-right: .8rem;
+        margin-right: .5rem;
       }
 
       .hamburger {
         color: $mauve-900;
         display: block;
-        font-size: 2.4rem;
+        font-size: 1.5rem;
       }
 
       .links {
         background: $darkblue-900;
-        border-radius: 0 0 1.6rem 1.6rem;
+        border-radius: 0 0 1rem 1rem;
         display: none;
         left: 0;
-        padding: 1.6rem;
+        padding: 1rem;
         position: absolute;
-        top: 6.4rem;
+        top: 4rem;
         width: 100%;
+        z-index: 99;
 
         a {
           display: block;
-          margin: 0 0 .4rem 0;
-          padding: 1.6rem;
+          margin: 0 0 .25rem 0;
+          padding: 1rem;
           width: 100%;
         }
       }

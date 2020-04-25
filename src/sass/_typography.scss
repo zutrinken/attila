@@ -1,0 +1,157 @@
+h1 {
+  color: $mauve-500;
+  font-size: 46px;
+  font-weight: $font-weight-bold;
+  line-height: 60px;
+  margin: 0;
+
+  @include tablet-down  {
+    font-size: 36px;
+    line-height: 48px;
+  }
+}
+
+h2 {
+  color: $mauve-500;
+  font-size: 32px;
+  font-weight: $font-weight-bold;
+  line-height: 44px;
+  margin: 0;
+
+  @include tablet-down  {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+h3 {
+  color: $mauve-500;
+  font-size: 24px;
+  font-weight: $font-weight-bold;
+  line-height: 28px;
+  margin: 0;
+
+  @include tablet-down  {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+h4 {
+  color: $mauve-500;
+  font-size: 18px;
+  font-weight: $font-weight-bold;
+  line-height: 24px;
+  margin: 0;
+
+  @include tablet-down  {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+p {
+  color: $mauve-900;
+  font-size: 16px;
+  font-weight: $font-weight-normal;
+  line-height: 20px;
+  margin: 0 0 1rem 0;
+
+  &.small {
+    font-size: 14px;
+  }
+
+  @include tablet-down  {
+    font-size: 14px;
+
+    &.small {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+a {
+  color: $blue-500;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.label {
+  color: $mauve-500;
+  font-size: 16px;
+  font-weight: $font-weight-bold;
+  line-height: 20px;
+  margin: 0 0 1rem 0;
+
+  @include tablet-down  {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.input,
+.textarea {
+  appearance: none;
+  color: $mauve-500;
+  font-size: 16px;
+  font-family: inherit;
+  line-height: 20px;
+
+  &:disabled {
+    color: $darkblue-900;
+  }
+
+  @include tablet-down  {
+    font-size: 14px;
+  }
+
+  &::placeholder {
+    color: $mauve-900;
+    font-family: inherit;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: $font-weight-normal;
+    line-height: 20px;
+
+    @include tablet-down  {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+.select {
+  .native,
+  .fancy {
+    appearance: none;
+    color: $mauve-500;
+    font-size: 16px;
+    font-family: inherit;
+    line-height: 20px;
+
+    &:disabled {
+      color: $darkblue-900;
+    }
+
+    @include tablet-down  {
+      font-size: 14px;
+    }
+  }
+}
+
+.button {
+  appearance: none;
+  color: $blue-500;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: $font-weight-bold;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+
+  @include tablet-down  {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
