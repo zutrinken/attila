@@ -11,32 +11,7 @@ module.exports = function(grunt) {
       'cssTargetDir': 'assets/css',
       'jsSrcDir': 'src/js',
       'jsTargetDir': 'assets/js',
-      'jsDependencies': [
-        '<%= config.jsSrcDir %>/libs/jquery-3.4.1.min.js',
-        '<%= config.jsSrcDir %>/libs/jquery.fitvids.js',
-        '<%= config.jsSrcDir %>/libs/jquery.history.js',
-        '<%= config.jsSrcDir %>/libs/highlight.pack.js',
-        '<%= config.jsSrcDir %>/libs/nprogress.js',
-        'node_modules/ghosthunter/dist/jquery.ghosthunter.js'
-      ]
-    },
-    copy: {
-      dev: {
-        files: [{
-          dest: 'assets/font/',
-          src: '*',
-          cwd: 'src/font/',
-          expand: true
-        }]
-      },
-      dist: {
-        files: [{
-          dest: 'assets/font/',
-          src: '*',
-          cwd: 'src/font/',
-          expand: true
-        }]
-      }
+      'jsDependencies': []
     },
     clean: {
       dev: ['dev'],
@@ -86,7 +61,7 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: '<%=  config.cssSrcDir %>/**/*.scss',
-        tasks: ['sass:dev', 'copy:dev', 'postcss:dev']
+        tasks: ['sass:dev', 'postcss:dev']
       },
       js: {
         files: '<%=  config.jsSrcDir %>/**/*.js',
@@ -122,13 +97,11 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'sass:dist',
     'postcss:dist',
-    'copy:dist',
     'uglify'
   ]);
   grunt.registerTask('default', [
     'sass:dev',
     'postcss:dev',
-    'copy:dev',
     'uglify',
     'watch'
   ]);

@@ -1,13 +1,10 @@
 /* ==========================================================================
    Includes
    ========================================================================== */
-@import "normalize";
-
 @import "./variables";
 @import "./mixins/breakpoints";
 
 @import "colors";
-@import "highlight";
 
 @import url('https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css');
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap');
@@ -27,9 +24,12 @@ html {
 	overflow-x: hidden;
 }
 
-.menu-active body,
-html.menu-active {
-	overflow-y: hidden;
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 body {
@@ -39,7 +39,13 @@ body {
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
 	overflow-x: hidden;
+}
+
+i[class^="ri-"] {
+  color: $blue-500;
+  font-size: 1.25rem;
 }
 
 button,
