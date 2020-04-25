@@ -7,14 +7,18 @@
 @import "./mixins/breakpoints";
 
 @import "colors";
-@import "icons";
 @import "highlight";
+
+@import url('https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css');
 @import url('https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap');
 
 $breakpoint-large: 960px;
 $breakpoint-medium: 640px;
 $breakpoint-small: 480px;
 $inner: calc(64rem + 8vw);
+
+@import "./header";
+
 /* ==========================================================================
    Basics
    ========================================================================== */
@@ -29,17 +33,13 @@ html.menu-active {
 }
 
 body {
-	background: $darkblue-800;
+	background: $color-background;
 	color: $color-text-primary;
 	font-family: 'Rubik', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'sans-serif';
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
-	@media (prefers-color-scheme: dark) {
-		background: $color-background-dark;
-		color: $color-text-primary-dark;
-	}
 }
 
 button,
@@ -49,86 +49,86 @@ textarea {
 	transition: all ease-out 0.2s;
 }
 
-.post-content {
-	h1 {
-		color: $mauve-500;
-		font-size: 46px;
-		font-weight: $font-weight-bold;
-		line-height: 60px;
-		margin: 0 0 4rem 0;
+h1 {
+	color: $mauve-500;
+	font-size: 46px;
+	font-weight: $font-weight-bold;
+	line-height: 60px;
+	margin: 0 0 4rem 0;
 
-		@include tablet-down  {
-			font-size: 36px;
-			line-height: 48px;
-		}
+	@include tablet-down  {
+		font-size: 36px;
+		line-height: 48px;
 	}
+}
 
-	h2 {
-		color: $mauve-500;
-		font-size: 32px;
-		font-weight: $font-weight-bold;
-		line-height: 44px;
-		margin: 0 0 4rem 0;
+h2 {
+	color: $mauve-500;
+	font-size: 32px;
+	font-weight: $font-weight-bold;
+	line-height: 44px;
+	margin: 0 0 4rem 0;
 
-		@include tablet-down  {
-			font-size: 24px;
-			line-height: 32px;
-		}
-	}
-
-	h3 {
-		color: $mauve-500;
+	@include tablet-down  {
 		font-size: 24px;
-		font-weight: $font-weight-bold;
-		line-height: 28px;
-		margin: 0 0 4rem 0;
-
-		@include tablet-down  {
-			font-size: 20px;
-			line-height: 24px;
-		}
+		line-height: 32px;
 	}
+}
 
-	h4 {
-		color: $mauve-500;
-		font-size: 18px;
-		font-weight: $font-weight-bold;
+h3 {
+	color: $mauve-500;
+	font-size: 24px;
+	font-weight: $font-weight-bold;
+	line-height: 28px;
+	margin: 0 0 4rem 0;
+
+	@include tablet-down  {
+		font-size: 20px;
 		line-height: 24px;
-		margin: 0 0 4rem 0;
+	}
+}
 
-		@include tablet-down  {
-			font-size: 16px;
-			line-height: 24px;
-		}
+h4 {
+	color: $mauve-500;
+	font-size: 18px;
+	font-weight: $font-weight-bold;
+	line-height: 24px;
+	margin: 0 0 4rem 0;
+
+	@include tablet-down  {
+		font-size: 16px;
+		line-height: 24px;
+	}
+}
+
+p {
+	color: $mauve-900;
+	font-size: 16px;
+	font-weight: $font-weight-normal;
+	line-height: 20px;
+	margin: 0 0 4rem 0;
+
+	a {
+		color: $blue-500;
+		cursor: pointer;
+		text-decoration: underline;
 	}
 
-	p {
-		color: $mauve-900;
-		font-size: 16px;
-		font-weight: $font-weight-normal;
-		line-height: 20px;
-		margin: 0 0 4rem 0;
+	&.small {
+		font-size: 14px;
+	}
 
-		a {
-			color: $blue-500;
-			cursor: pointer;
-			text-decoration: underline;
-		}
+	@include tablet-down  {
+		font-size: 14px;
 
 		&.small {
-			font-size: 14px;
-		}
-
-		@include tablet-down  {
-			font-size: 14px;
-
-			&.small {
-				font-size: 12px;
-				line-height: 16px;
-			}
+			font-size: 12px;
+			line-height: 16px;
 		}
 	}
+}
 
+.post-content {
 	ol,
 	ul {
 		margin: 0 0 4rem;
@@ -712,7 +712,6 @@ textarea {
    ========================================================================== */
 .blog-header {
 	position: relative;
-	padding-top: calc(16rem + 4vw);
 
 	&.has-cover {
 		padding-top: calc(24rem + 8vw);
@@ -797,7 +796,6 @@ textarea {
 }
 
 .blog-description {
-	font-family: 'Cardo', serif;
 	display: block;
 	margin-top: 1rem;
 	padding: 0;
@@ -867,7 +865,6 @@ textarea {
 		font-size: 2em;
 		line-height: 1.5em;
 		margin: 1rem 0;
-		font-family: 'Cardo', serif;
 		color: $color-text-secondary;
 		@media (prefers-color-scheme: dark) {
 			color: $color-text-secondary-dark;
@@ -973,443 +970,6 @@ textarea {
 	}
 }
 /* ==========================================================================
-   Search
-   ========================================================================== */
-#search {
-	position: fixed;
-	z-index: 500;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow-y: scroll;
-	background: $color-background;
-	display: none;
-	@media (prefers-color-scheme: dark) {
-		background: $color-background-dark;
-	}
-	@media only screen and (max-width: $breakpoint-medium) {
-		display: block;
-		transition: all ease-out 0.3s;
-		transform: translate3d(0,100%,0);
-		border-top: 1px solid $color-border;
-		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
-		}
-	}
-
-	#results {
-		padding-bottom: calc(12rem + 8vw);
-	}
-}
-
-.search-active {
-	overflow-y: hidden;
-
-	#search {
-		display: block;
-		@media only screen and (max-width: $breakpoint-medium) {
-			transform: translate3d(0,0,0);
-		}
-	}
-}
-
-.search {
-	padding: 2rem 0;
-	display: flex;
-
-	input[type="text"] {
-		font-size: 2em;
-		width: 100%;
-		height: 5rem;
-		margin: -0.5rem 0;
-		padding: 0 2rem;
-		border-radius: 5rem;
-		border: 1px solid $color-border;
-		background: $color-background;
-		box-sizing: border-box;
-		box-shadow: none !important;
-		outline: 0 !important;
-		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
-			background: $color-background-dark;
-		}
-
-		&:focus,
-		&:hover {
-			border-color: $color-primary-active;
-		}
-	}
-
-	input[type="submit"] {
-		appeareance: none;
-		background: none;
-		border: 0;
-		display: none;
-	}
-}
-
-.search-close {
-	position: fixed;
-	z-index: 600;
-	top: 0;
-	right: 0;
-	width: 4rem;
-	height: 4rem;
-	margin: 2rem;
-	border: 1px solid $color-neutral-80;
-	border-radius: 4rem;
-	box-sizing: border-box;
-	cursor: pointer;
-	transition: all ease-out 0.1s;
-	@media (prefers-color-scheme: dark) {
-		border-color: $color-neutral-60;
-	}
-
-	&:after,
-	&:before {
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: 20%;
-		width: 60%;
-		height: 2px;
-		margin-top: -1px;
-		border-radius: 2px;
-		background: $color-neutral-60;
-		transition: all ease-out 0.1s;
-		@media (prefers-color-scheme: dark) {
-			background: $color-neutral-80;
-		}
-	}
-
-	&:after {
-		transform: rotate(45deg);
-	}
-
-	&:before {
-		transform: rotate(-45deg);
-	}
-
-	&:focus,
-	&:hover {
-		border-color: $color-primary-active;
-
-		&:after,
-		&:before {
-			background: $color-primary-active;
-		}
-	}
-}
-/* ==========================================================================
-   Navigation
-   ========================================================================== */
-.nav-header {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 400;
-	transition: all ease-out 0.3s;
-	@media only screen and (max-width: $breakpoint-medium) {
-		transform: translate3d(0,-100%,0);
-	}
-}
-
-.menu-active .nav-header {
-	transform: translate3d(0,0,0);
-}
-
-.nav-close {
-	position: fixed;
-	z-index: 350;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background: #000;
-	opacity: 0.2;
-	display: none;
-	@media (prefers-color-scheme: dark) {
-		opacity: 0.4;
-	}
-}
-
-.menu-active .nav-close {
-	@media only screen and (max-width: $breakpoint-medium) {
-		display: block;
-	}
-}
-
-.nav-header .nav-wrapper-control {
-	position: absolute;
-	z-index: 500;
-	left: 0;
-	top: 100%;
-	width: 100%;
-	cursor: pointer;
-	display: none;
-	color: $color-text-secondary;
-	border-top: 1px solid transparent;
-	box-sizing: border-box;
-	transition: all linear 0.1s;
-	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
-	}
-	@media only screen and (max-width: $breakpoint-medium) {
-		display: block;
-	}
-
-	.inner {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	a {
-		position: relative;
-		display: block;
-		width: 100%;
-		padding: 2rem 0;
-		font-size: 2em;
-		line-height: 2rem;
-		color: inherit;
-		transition: all ease-out 0.1s;
-
-		i {
-			display: inline-block;
-			width: 4rem;
-		}
-
-		&.nav-search {
-			width: auto;
-			text-align: right;
-
-			span {
-				display: none;
-			}
-		}
-
-		&:focus,
-		&:hover {
-			color: $color-text-primary;
-			@media (prefers-color-scheme: dark) {
-				color: $color-text-primary-dark;
-			}
-		}
-	}
-}
-
-.cover-active .nav-header .nav-wrapper-control {
-	color: #FFF;
-}
-
-.menu-active .nav-header .nav-wrapper-control {
-	background: $color-neutral-15;
-	color: $color-text-secondary;
-	border-color: $color-border-dark;
-	@supports (-webkit-backdrop-filter: blur(2rem)) {
-		background: rgba(34,36,38,0.9);
-		-webkit-backdrop-filter: blur(2rem);
-	}
-
-	a {
-		&:focus,
-		&:hover {
-			color: $color-text-primary-dark;
-		}
-	}
-}
-
-.nav-header .nav-wrapper {
-	display: flex;
-	max-height: calc(100vh - 6rem);
-	padding: 2rem 4rem;
-	overflow-y: auto;
-	@media only screen and (max-width: $breakpoint-medium) {
-		background: $color-neutral-15;
-		flex-direction: column;
-		@supports (-webkit-backdrop-filter: blur(2rem)) {
-			background: rgba(34,36,38,0.9);
-			-webkit-backdrop-filter: blur(2rem);
-		}
-	}
-}
-
-.nav-header .logo {
-	margin-right: 3rem;
-	@media only screen and (max-width: $breakpoint-medium) {
-		display: none;
-	}
-
-	a {
-		display: block;
-		height: 4rem;
-		padding: 0;
-
-		img {
-			display: block;
-			width: auto;
-			height: 4rem;
-		}
-	}
-}
-
-.nav-header ul {
-	position: relative;
-	display: flex;
-	width: 100%;
-	margin: auto;
-	padding: 0;
-	list-style: none;
-	@media only screen and (max-width: $breakpoint-medium) {
-		flex-direction: column;
-		flex-shrink: 0;
-		padding: 2rem 0;
-	}
-
-	&:last-child {
-		justify-content: flex-end;
-		@media only screen and (max-width: $breakpoint-medium) {
-			display: none;
-		}
-	}
-}
-
-.nav-header li {
-	position: relative;
-	margin-right: 3rem;
-
-	&.active {
-		a:before {
-			position: absolute;
-			content: '';
-			width: 100%;
-			height: 3px;
-			left: 0;
-			top: 0;
-			padding: 0 1rem;
-			margin-left: -1rem;
-			margin-top: -2rem;
-			background: $color-primary;
-			@media only screen and (max-width: $breakpoint-medium) {
-				left: 0;
-				top: 50%;
-				width: 1.5rem;
-				height: 2px;
-				margin-left: 6px;
-				margin-top: -1px;
-				border-radius: 2px;
-				padding: 0;
-			}
-		}
-
-		a {
-			color: $color-neutral-25;
-			font-weight: 500;
-			@media (prefers-color-scheme: dark) {
-				color: $color-neutral-90;
-			}
-			@media only screen and (max-width: $breakpoint-medium) {
-				color: #FFF;
-			}
-		}
-	}
-
-	a {
-		display: block;
-		padding: 1rem 0;
-		font-size: 1.5em;
-		line-height: 2rem;
-		color: $color-neutral-60;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		text-decoration: none;
-		font-weight: 400;
-		cursor: pointer;
-		transition: color linear 0.1s;
-		@media only screen and (max-width: $breakpoint-medium) {
-			font-size: 2em;
-			padding-left: 4rem;
-
-			&:before {
-				content: '';
-				position: absolute;
-				left: 0;
-				top: 50%;
-				width: 1.5rem;
-				height: 2px;
-				margin-left: 6px;
-				margin-top: -1px;
-				border-radius: 2px;
-				background: $color-neutral-25;
-			}
-		}
-
-		&:focus,
-		&:hover {
-			color: $color-neutral-25;
-			@media (prefers-color-scheme: dark) {
-				color: $color-neutral-90;
-			}
-			@media only screen and (max-width: $breakpoint-medium) {
-				color: $color-neutral-80;
-			}
-		}
-	}
-
-	&.nav-facebook,
-	&.nav-rss,
-	&.nav-search,
-	&.nav-subscribe,
-	&.nav-twitter {
-		margin-right: 1.5rem;
-
-		a {
-			font-size: 1.75em;
-		}
-
-		span {
-			display: none;
-		}
-	}
-
-	&:last-child {
-		margin-right: 0;
-	}
-}
-
-.cover-active {
-	.nav-wrapper-control a {
-		color: rgba(255,255,255,0.8);
-
-		&:focus,
-		&:hover {
-			color: #FFF;
-		}
-	}
-
-	.nav-header li {
-		a {
-			@media only screen and (min-width: $breakpoint-medium) {
-				color: rgba(255,255,255,0.8);
-			}
-
-			&:focus,
-			&:hover {
-				@media only screen and (min-width: $breakpoint-medium) {
-					color: #FFF;
-				}
-			}
-		}
-
-		&.active a {
-			@media only screen and (min-width: $breakpoint-medium) {
-				color: #FFF;
-			}
-		}
-	}
-}
-/* ==========================================================================
    Reading Progress
    ========================================================================== */
 .progress-container {
@@ -1436,110 +996,15 @@ textarea {
 /* ==========================================================================
    Footer
    ========================================================================== */
-.nav-footer {
-	position: relative;
-	z-index: 20;
-	padding-top: calc(12rem + 8vw);
-	padding-bottom: 4rem;
-	margin-top: auto;
+footer {
+	background: $darkblue-700;
+	margin-top: 8rem;
+	padding: 1.8rem 0;
 
-	.inner {
-		max-width: none;
-		padding: 0 4rem;
-	}
-}
-
-.nav-footer .nav-wrapper {
-	display: flex;
-	padding: 0 4rem;
-	@media only screen and (max-width: $breakpoint-medium) {
-		flex-direction: column;
+	p {
+		font-size: 1.6rem;
+		margin: 0;
 		text-align: center;
-	}
-}
-
-.nav-footer ul {
-	position: relative;
-	display: flex;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	@media only screen and (max-width: $breakpoint-medium) {
-		margin-bottom: 3rem;
-		justify-content: center;
-	}
-
-	&:last-child {
-		justify-content: flex-end;
-	}
-}
-
-.nav-footer li {
-	position: relative;
-	margin-right: 3rem;
-
-	&.active a {
-		color: $color-neutral-25;
-		font-weight: 500;
-		@media (prefers-color-scheme: dark) {
-			color: $color-neutral-90;
-		}
-	}
-
-	a {
-		display: block;
-		font-size: 1.5em;
-		line-height: 2rem;
-		color: $color-neutral-60;
-		white-space: nowrap;
-		text-overflow: ellipsis;
-		text-decoration: none;
-		font-weight: 400;
-		cursor: pointer;
-
-		&:focus,
-		&:hover {
-			color: $color-neutral-25;
-			@media (prefers-color-scheme: dark) {
-				color: $color-neutral-90;
-			}
-		}
-	}
-
-	&:last-child {
-		margin-right: 0;
-	}
-}
-
-.nav-copy {
-	display: block;
-	width: 100%;
-	font-size: 1.5em;
-	line-height: 2rem;
-	color: $color-text-secondary;
-	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
-	}
-	@media only screen and (max-width: $breakpoint-medium) {
-		margin-bottom: 1rem;
-	}
-}
-
-.nav-credits {
-	flex-shrink: 0;
-	display: block;
-	font-size: 1.5em;
-	line-height: 2rem;
-	color: $color-text-secondary;
-	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
-	}
-
-	a {
-		color: inherit;
-		text-decoration: none;
-		font-weight: 500;
 	}
 }
 /* ==========================================================================
@@ -1811,7 +1276,6 @@ textarea {
 
 .post-excerpt {
 	margin: 1em 0 0;
-	font-family: 'Cardo', serif;
 	font-size: 2em;
 	line-height: 1.5em;
 }
@@ -2224,7 +1688,6 @@ textarea {
 .post-nav-excerpt {
 	height: 5rem;
 	margin: 0 0 1rem;
-	font-family: 'Cardo', serif;
 	font-size: 1.75em;
 	line-height: 2.5rem;
 	display: -webkit-box;

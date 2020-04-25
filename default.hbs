@@ -16,69 +16,39 @@
 
 <body class="{{body_class}}">
 
-	<div class="nav-header">
-		<nav class="nav-wrapper">
-				{{#if @site.logo}}
-				<span class="logo">
-					<a href="/" title="{{t "Home"}}"><img src="{{@site.logo}}" alt="{{t "Logo"}}" /></a>
-				</span>
-				{{/if}}
-				{{navigation}}
-				<ul class="nav-side">
-					{{#if @site.twitter}}
-					<li class="nav-twitter"><a title="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i class="icon icon-twitter"></i><span>Twitter</span></a></li>
-					{{/if}}
-					{{#if @site.facebook}}
-					<li class="nav-facebook"><a title="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank"><i class="icon icon-facebook"></i><span>Facebook</span></a></li>
-					{{/if}}
-					{{#if @labs.subscribers}}
-					<li class="nav-subscribe"><a title="Subscribe" href="/blog/subscribe/" target="_blank"><i class="icon icon-mail"></i><span>{{t "Subscribe"}}</span></a></li>
-					{{/if}}
-					<li class="nav-rss"><a title="RSS" href="/blog/rss/" target="_blank"><i class="icon icon-rss"></i><span>RSS</span></a></li>
-					<li class="nav-search" style="display: none;"><a title="{{t "Search"}}"><i class="icon icon-search"></i><span>{{t "Search"}}</span></a></li>
-				</ul>
-		</nav>
-
-		<div class="nav-wrapper-control">
-			<div class="inner">
-				<a class="nav-menu"><i class="icon icon-menu"></i>{{t "Menu"}}</a>
-				<a class="nav-search" style="display: none;" title="{{t "Search"}}"><i class="icon icon-search"></i><span>{{t "Search"}}</span></a>
-			</div>
+	<header>
+		<div class="logo">
+			{{#if @site.logo}}
+			<span class="logo">
+				<a href="/" title="{{t "Home"}}"><img src="{{@site.logo}}" alt="{{t "Logo"}}" /></a>
+			</span>
+			{{/if}}
+			<div class="pipe"></div>
+			<p class="small">Funding. hacked.</p>
 		</div>
-	</div>
-	<div class="nav-close"></div>
+
+		<nav>
+			<div class="links">
+				{{navigation}}
+			</div>
+
+			{{#if @site.twitter}}
+				<a class="twitter" title="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank">
+					<i class="ri-twitter-fill"></i>
+				</a>
+			{{/if}}
+
+			<i class="hamburger ri-menu-line"></i>
+		</nav>
+	</header>
 
 	<section class="page-wrapper">
 
 		{{{body}}}
 
-		<div id="search" class="container">
-			<div class="content">
-				<div class="blog-header">
-					<div class="inner">
-						<div class="archive archive-search box archive-box">
-							<form class="search">
-								<input type="text" id="search-field" placeholder="{{t "Search"}}&#8230;" />
-								<input type="submit" value="search" />
-							</form>
-						</div>
-					</div>
-				</div>
-				<div id="results"></div>
-			</div>
-			<div class="search-close"></div>
-		</div>
-
-		<div class="nav-footer">
-			<nav class="nav-wrapper">
-				{{#if @site.secondary_navigation}}
-				{{navigation type="secondary"}}
-				{{else}}
-				<span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}}</span>
-				{{/if}}
-				<span class="nav-credits">{{t "Published with"}} <a href="https://ghost.org">Ghost</a> &bull; {{t "Theme" }} <a href="https://github.com/zutrinken/attila">Attila</a></span>
-			</nav>
-		</div>
+		<footer>
+			<p>{{@site.title}} &copy; {{date format='YYYY'}}</p>
+		</footer>
 
 	</section>
 
