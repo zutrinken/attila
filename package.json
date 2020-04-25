@@ -1,41 +1,11 @@
 {
-  "name": "attila",
+  "name": "hackerstash",
   "description": "Ghost Theme",
-  "demo": "https://attila.zutrinken.com",
-  "version": "2.0.1",
-  "engines": {
-    "ghost": ">=3.0.0",
-    "ghost-api": "v3"
+  "version": "0.0.1",
+  "scripts": {
+    "build": "grunt build && grunt compress"
   },
-  "license": "MIT",
-  "screenshots": {
-    "desktop": "src/screenshot-desktop.jpg",
-    "mobile": "src/screenshot-mobile.jpg"
-  },
-  "author": {
-    "name": "Peter Amende",
-    "email": "xoxo@zutrinken.com",
-    "url": "https://zutrinken.com"
-  },
-  "gpm": {
-    "type": "theme",
-    "categories": [
-      "Minimal",
-      "Personal Blogs"
-    ]
-  },
-  "keywords": [
-    "ghost-theme",
-    "ghost",
-    "theme"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zutrinken/attila.git"
-  },
-  "dependencies": {
-    "ghosthunter": "github:jamalneufeld/ghostHunter"
-  },
+  "dependencies": {},
   "devDependencies": {
     "autoprefixer": "^9.1.5",
     "grunt": "^1.0.4",
