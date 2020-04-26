@@ -49,7 +49,7 @@ i[class^="ri-"] {
 .post-content {
 	ol,
 	ul {
-		margin: 0 0 4rem;
+		margin: 0 0 2rem;
 		padding-left: 2em;
 		box-sizing: border-box;
 	}
@@ -59,6 +59,7 @@ i[class^="ri-"] {
 	}
 
 	li {
+		margin-bottom: .5rem;
 		position: relative;
 	}
 
@@ -102,6 +103,25 @@ i[class^="ri-"] {
 		background: $color-border;
 		border: 0;
 	}
+
+	img {
+		margin-bottom: 2rem;
+		max-width: 100%;
+	}
+
+	pre {
+		background: $darkblue-900;
+		border-radius: .5rem;
+		margin-bottom: 2rem;
+		padding: 1.5rem;
+		white-space: pre-wrap;
+	}
+
+	code {
+		background: $darkblue-900;
+		border-radius: .25rem;
+		padding: .125rem .25rem;
+	}
 }
 /* ==========================================================================
     Misc
@@ -112,15 +132,6 @@ i[class^="ri-"] {
 
 .hidden {
 	display: none;
-}
-@keyframes fadein {
-	0% {
-		opacity: 0.2;
-	}
-
-	100% {
-		opacity: 0.9;
-	}
 }
 
 .avatar {
@@ -200,7 +211,6 @@ i[class^="ri-"] {
 	left: 0;
 	top: 0;
 	z-index: 5;
-	animation: 0.5s ease-in forwards fadein;
 	display: flex;
 	align-items: center;
 
@@ -341,7 +351,6 @@ i[class^="ri-"] {
    ========================================================================== */
 .post-header {
 	position: relative;
-	padding: calc(16rem + 4vw) 0 calc(2rem + 2vw);
 }
 
 .post-header.has-cover {
@@ -359,7 +368,6 @@ i[class^="ri-"] {
 	top: 0;
 	z-index: 5;
 	background: no-repeat scroll center center / cover #000;
-	animation: 0.5s ease-in forwards fadein;
 	display: flex;
 	align-items: center;
 
@@ -516,6 +524,9 @@ i[class^="ri-"] {
 		margin-top: 0;
 	}
 }
+main.content {
+	flex: 1;
+}
 /* ==========================================================================
    Post Info
    ========================================================================== */
@@ -535,6 +546,7 @@ i[class^="ri-"] {
 }
 
 .post-share {
+	align-items: center;
 	position: relative;
 	max-width: 33.33333%;
 	float: right;
@@ -547,35 +559,23 @@ i[class^="ri-"] {
 }
 
 .post-share a {
-	display: block;
-	width: 3rem;
-	height: 3rem;
-	margin-right: 0.5em;
-	padding: 0;
-	text-align: center;
+	align-items: center;
+	background: #000920;
+	border-radius: 50%;
+	display: flex;
+	height: 2rem;
+	justify-content: center;
+	margin-right: .5rem;
 	text-decoration: none;
-	border-radius: 2em;
-	transition: all ease 0.2s;
-	@media only screen and (max-width: $breakpoint-medium) {
-		margin-left: 0;
-		margin-right: 0.66667em;
-	}
+	width: 2rem;
 
-	&:focus,
-	&:hover {
-		background-color: $color-neutral-15;
+	i {
+		color: $mauve-500;
 	}
 }
 
 .post-share a:last-child {
 	margin-right: 0;
-}
-
-.post-share a i {
-	&:before {
-		width: auto;
-		height: auto;
-	}
 }
 
 .post-share .twitter {
@@ -616,7 +616,6 @@ i[class^="ri-"] {
 	text-align: center;
 	text-decoration: none;
 	border-radius: 2em;
-	transition: all ease 0.2s;
 	box-sizing: border-box;
 	white-space: nowrap;
 }
@@ -750,7 +749,6 @@ i[class^="ri-"] {
 	width: 4rem;
 	height: 4rem;
 	text-align: center;
-	transition: all ease-out 0.2s;
 
 	&:before {
 		margin: 0;
@@ -821,7 +819,6 @@ i[class^="ri-"] {
 	font-weight: 500;
 	text-align: center;
 	text-decoration: none;
-	transition: all ease 0.2s;
 	border-radius: 4rem;
 	box-sizing: border-box;
 }
