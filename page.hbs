@@ -2,10 +2,10 @@
 
 {{#post}}
 
-<header class="post-header {{#if cover_image}} has-cover {{/if}}">
+<header class="post-header {{#if feature_image}} has-cover {{/if}}">
 	<div class="inner">
 		<h1 class="post-title">{{{title}}}</h1>
-		{{#if cover_image}}<div class="post-cover cover" style="background-image: url('{{img_url cover_image}}');"></div>{{/if}}
+		{{#if feature_image}}<div class="post-cover cover" style="background-image: url('{{img_url feature_image}}');"></div>{{/if}}
 	</div>
 </header>
 
