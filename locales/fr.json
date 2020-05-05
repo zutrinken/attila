@@ -15,7 +15,7 @@
     "Website": "Site",
     "Your email address": "Votre adresse email",
     "By": "par",
-    "on ": "le",
+    "on": "le",
     "in": "dans",
     "No Posts": "Pas d'article",
     "% Post": "% article",
@@ -24,10 +24,10 @@
     "youremail@example.com": "votreemail@exemple.fr",
     "1 min read": "1 min de lecture",
     "% min read": "% min de lecture",
+    "Article": "Article",
     "Author": "Auteur",
     "Topic": "Thème",
     "Article": "Article",
     "Share": "Partager",
     "Search": "Rechercher"
 }
-
