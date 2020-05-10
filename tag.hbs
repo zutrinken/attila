@@ -6,7 +6,7 @@
 		<div class="archive archive-tag box archive-box">
 			<span class="archive-info">
 				<span class="archive-type">{{t "Topic"}}</span>
-				<span class="archive-count">{{pagination.total}} {{t "Posts"}}</span>
+				<span class="archive-count">{{plural pagination.total empty=(t "No Posts") singular=(t "% Post") plural=(t "% Posts")}}</span>
 			</span>
 			<h2 class="archive-title">{{tag.name}}</h2>
 			{{#if tag.description}}

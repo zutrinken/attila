@@ -11,23 +11,23 @@
     "Show Comments": "Show Comments",
     "Theme": "Theme",
     "Website": "Website",
-<<<<<<< HEAD
-    "by": "by",
-=======
     "Your email address": "Your email address",
     "By": "By",
->>>>>>> master
-    "on ": "on ",
+    "on": "on",
+    "in": "in",
     "No Posts": "No Posts",
     "% Post": "% Post",
     "% Posts": "% Posts",
     "This post was a collaboration between:": "This post was a collaboration between:",
     "1 min read": "1 min read",
     "% min read": "% min read",
-<<<<<<< HEAD
+    "Article": "Article",
+    "Author": "Author",
+    "Topic": "Topic",
+    "Share": "Share",
+    "Search": "Search",
     "----------------------------------------": "----------------------------------------",
     "Get the latest posts delivered right to your inbox.": "Get the latest posts delivered right to your inbox.",
-    "Your email address": "Your email address",
     "youremail@example.com": "youremail@example.com",
     "Subscribe": "Subscribe",
     "----------------------------------------": "----------------------------------------",
@@ -60,10 +60,4 @@
     "Currently, you're not a subscriber": "Currently, you're not a subscriber",
     "is subscribed to free updates, but doesn't have a paid subscription to unlock full access.": "is subscribed to free updates, but doesn't have a paid subscription to unlock full access.",
     "Subscribe now": "Subscribe now"
-=======
-    "Author": "Author",
-    "Topic": "Topic",
-    "Share": "Share",
-    "Search": "Search"
->>>>>>> master
 }
