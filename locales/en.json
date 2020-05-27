@@ -31,5 +31,7 @@
     "Search": "Search",
     "Main": "Main",
     "Footer": "Footer",
-    "Pagination": "Pagination"
+    "Pagination": "Pagination",
+    "Next post": "Next post",
+    "Previous post": "Previous post"
 }
