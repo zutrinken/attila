@@ -17,7 +17,7 @@
 <body class="{{body_class}}">
 
 	<div class="nav-header">
-		<nav class="nav-wrapper">
+		<nav class="nav-wrapper" aria-label="{{t "Main"}}">
 				{{#if @site.logo}}
 				<span class="logo">
 					<a href="{{@site.url}}" title="{{t "Home"}}"><img src="{{@site.logo}}" alt="{{t "Logo"}}" /></a>
@@ -70,7 +70,7 @@
 		</div>
 
 		<div class="nav-footer">
-			<nav class="nav-wrapper">
+			<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
 				{{#if @site.secondary_navigation}}
 				{{navigation type="secondary"}}
 				{{else}}

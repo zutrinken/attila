@@ -28,5 +28,8 @@
     "Author": "Author",
     "Topic": "Topic",
     "Share": "Share",
-    "Search": "Search"
+    "Search": "Search",
+    "Main": "Main",
+    "Footer": "Footer",
+    "Pagination": "Pagination"
 }
