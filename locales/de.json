@@ -28,5 +28,10 @@
     "Author": "Autor",
     "Topic": "Thema",
     "Share": "Teilen",
-    "Search": "Suche"
+    "Search": "Suche",
+    "Main": "Haupt",
+    "Footer": "Fußzeile",
+    "Pagination": "Seiten",
+    "Next post": "Nächster Beitrag",
+    "Previous post": "Vorheriger Beitrag"
 }
