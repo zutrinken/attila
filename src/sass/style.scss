@@ -378,6 +378,9 @@ textarea {
 			font-size: 0.75em;
 			line-height: 1.33334em;
 			color: $color-text-secondary;
+			@media (prefers-color-scheme: dark) {
+				color: $color-text-secondary-dark;
+			}
 		}
 	}
 
@@ -404,6 +407,9 @@ textarea {
 		font-size: 0.75em;
 		line-height: 2em;
 		padding: 2rem 0;
+		@media (prefers-color-scheme: dark) {
+			color: $color-text-secondary-dark;
+		}
 
 		&:after {
 			content: '';
@@ -1302,13 +1308,16 @@ textarea {
 		padding: 1rem 0;
 		font-size: 1.5em;
 		line-height: 2rem;
-		color: $color-neutral-60;
+		color: $color-text-secondary;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		text-decoration: none;
 		font-weight: 400;
 		cursor: pointer;
 		transition: color linear 0.1s;
+		@media (prefers-color-scheme: dark) {
+			color: $color-text-secondary-dark;
+		}
 		@media only screen and (max-width: $breakpoint-medium) {
 			font-size: 2em;
 			padding-left: 4rem;
@@ -1473,13 +1482,15 @@ textarea {
 		display: block;
 		font-size: 1.5em;
 		line-height: 2rem;
-		color: $color-neutral-60;
+		color: $color-text-secondary;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		text-decoration: none;
 		font-weight: 400;
 		cursor: pointer;
-
+		@media (prefers-color-scheme: dark) {
+			color: $color-text-secondary-dark;
+		}
 		&:focus,
 		&:hover {
 			color: $color-neutral-25;
@@ -1837,7 +1848,10 @@ textarea {
 	font-size: 1.5em;
 	line-height: 3rem;
 	font-weight: 400;
-	color: $color-neutral-60;
+	color: $color-text-secondary;
+	@media (prefers-color-scheme: dark) {
+		color: $color-text-secondary-dark;
+	}
 }
 
 .post-share {
@@ -1976,7 +1990,7 @@ textarea {
 	font-weight: 500;
 	font-size: 1.5em;
 	line-height: 4rem;
-	color: $color-neutral-60;
+	color: $color-text-secondary;
 	text-align: center;
 	cursor: pointer;
 	transition: all ease 0.2s;
@@ -2221,6 +2235,9 @@ textarea {
 	font-size: 1.5em;
 	line-height: 2rem;
 	color: $color-text-secondary;
+	@media (prefers-color-scheme: dark) {
+		color: $color-text-secondary-dark;
+	}
 }
 /* ==========================================================================
    Pagination
@@ -2254,7 +2271,7 @@ textarea {
 	font-weight: 500;
 	text-align: center;
 	text-decoration: none;
-	color: $color-neutral-60;
+	color: $color-text-secondary;
 	transition: all ease 0.2s;
 	border-radius: 4rem;
 	box-sizing: border-box;
@@ -2316,6 +2333,9 @@ textarea {
 	display: block;
 	text-align: center;
 	color: $color-text-secondary;
+	@media (prefers-color-scheme: dark) {
+		color: $color-text-secondary-dark;
+	}
 }
 
 .extra-pagination {
