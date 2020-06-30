@@ -448,12 +448,44 @@ textarea {
 			max-width: calc(72rem + 24vw) !important;
 			min-width: 100%;
 			width: calc(100vw - 4rem);
+
+			figcaption {
+				padding-left: 6rem;
+				padding-right: 6rem;
+				@media only screen and (max-width: $breakpoint-medium) {
+					padding-left: 2rem;
+					padding-right: 2rem;
+				}
+
+				&:after {
+					margin-left: 6rem;
+					@media only screen and (max-width: $breakpoint-medium) {
+						margin-left: 2rem;
+					}
+				}
+			}
 		}
 
 		&.kg-width-full {
 			max-width: none;
 			width: 100vw;
 			margin-top: 2em;
+
+			figcaption {
+				padding-left: 8rem;
+				padding-right: 8rem;
+				@media only screen and (max-width: $breakpoint-medium) {
+					padding-left: 4rem;
+					padding-right: 4rem;
+				}
+
+				&:after {
+					margin-left: 8rem;
+					@media only screen and (max-width: $breakpoint-medium) {
+						margin-left: 4rem;
+					}
+				}
+			}
 		}
 
 		.kg-image {
@@ -470,6 +502,22 @@ textarea {
 		max-width: calc(72rem + 24vw) !important;
 		min-width: 100%;
 		width: calc(100vw - 4rem);
+
+		figcaption {
+			padding-left: 6rem;
+			padding-right: 6rem;
+			@media only screen and (max-width: $breakpoint-medium) {
+				padding-left: 2rem;
+				padding-right: 2rem;
+			}
+
+			&:after {
+				margin-left: 6rem;
+				@media only screen and (max-width: $breakpoint-medium) {
+					margin-left: 2rem;
+				}
+			}
+		}
 	}
 
 	.kg-gallery-container {
