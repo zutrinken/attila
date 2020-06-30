@@ -2,7 +2,7 @@
 
 A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost/). See a demo at: [attila.zutrinken.com](https://attila.zutrinken.com/)
 
-If you like this theme and want to support future development you can become a [financial contributor](https://paypal.me/zutrinken).
+If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zutrinken).
 
 ## Screenshots
 
