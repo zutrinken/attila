@@ -13,6 +13,11 @@ $inner: calc(64rem + 8vw);
 /* ==========================================================================
    Basics
    ========================================================================== */
+:root {
+	--font-primary: 'Fira Sans', sans-serif;
+	--font-secondary: 'Cardo', serif;
+}
+
 html {
 	font-size: 62.5%;
 	overflow-x: hidden;
@@ -24,7 +29,10 @@ html.menu-active {
 }
 
 body {
-	font: 400 1em / 1.5em 'Fira Sans', sans-serif;
+	font-family: var(--font-primary);
+	font-size: 1em;
+	line-height: 1.5em;
+	font-weight: 400;
 	color: $color-text-primary;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -107,13 +115,13 @@ textarea {
 	}
 
 	p {
-		font-family: 'Cardo', serif;
+		font-family: var(--font-secondary);
 		margin: 0 0 4rem;
 	}
 
 	ol,
 	ul {
-		font-family: 'Cardo', serif;
+		font-family: var(--font-secondary);
 		margin: 0 0 4rem;
 		padding-left: 2em;
 		box-sizing: border-box;
@@ -137,7 +145,7 @@ textarea {
 		line-height: 1.5em;
 		text-align: right;
 		color: $color-primary;
-		font-family: 'Fira Sans', sans-serif;
+		font-family: var(--font-primary);
 	}
 
 	ul > li:before {
@@ -176,7 +184,7 @@ textarea {
 	}
 
 	blockquote {
-		font-family: 'Cardo', serif;
+		font-family: var(--font-secondary);
 		margin: 0 0 4rem;
 		padding: 0.25em 1em;
 		-moz-box-sizing: border-box;
@@ -218,7 +226,7 @@ textarea {
 	}
 
 	dl {
-		font-family: 'Cardo', serif;
+		font-family: var(--font-secondary);
 		margin: 0 0 4rem;
 		padding-left: 30px;
 	}
@@ -837,7 +845,7 @@ textarea {
 }
 
 .blog-description {
-	font-family: 'Cardo', serif;
+	font-family: var(--font-secondary);
 	display: block;
 	margin-top: 1rem;
 	padding: 0;
@@ -907,7 +915,7 @@ textarea {
 		font-size: 2em;
 		line-height: 1.5em;
 		margin: 1rem 0;
-		font-family: 'Cardo', serif;
+		font-family: var(--font-secondary);
 		color: $color-text-secondary;
 		@media (prefers-color-scheme: dark) {
 			color: $color-text-secondary-dark;
@@ -1875,7 +1883,7 @@ textarea {
 
 .post-excerpt {
 	margin: 1em 0 0;
-	font-family: 'Cardo', serif;
+	font-family: var(--font-secondary);
 	font-size: 2em;
 	line-height: 1.5em;
 }
@@ -2291,7 +2299,7 @@ textarea {
 .post-nav-excerpt {
 	height: 5rem;
 	margin: 0 0 1rem;
-	font-family: 'Cardo', serif;
+	font-family: var(--font-secondary);
 	font-size: 1.75em;
 	line-height: 2.5rem;
 	display: -webkit-box;

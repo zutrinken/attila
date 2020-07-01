@@ -21,7 +21,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 
 * Responsive layout
 * Dark Mode
-* Search
+* Search & Tag archive
 * Post reading progress
 * Code highlight including line numbers
 * Disqus support
@@ -53,6 +53,23 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
   :root {
     --color-primary: #D95736;
     --color-primary-active: #BF4526;
+  }
+</style>
+````
+
+## Setup custom google fonts
+
+1. Go to [fonts.google.com](https://fonts.google.com/) and choose a font.
+2. Choose __Embed__ and copy the `<link>` code.
+3. Go to __Code injection__.  
+4. Add this to __Blog Header__:  
+````
+<link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --font-primary: 'Mukta', sans-serif;
+    --font-secondary: 'Crimson Text', serif;
   }
 </style>
 ````
