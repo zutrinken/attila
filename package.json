@@ -2,7 +2,7 @@
   "name": "attila",
   "description": "Ghost Theme",
   "demo": "https://attila.zutrinken.com",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "engines": {
     "ghost": ">=3.0.0",
     "ghost-api": "v3"
