@@ -79,7 +79,14 @@ jQuery(function($) {
       result_template: '<article class="post"><div class="inner"><div class="box post-box"><h2 class="post-title"><a href="{{link}}">{{title}}</a></h2><span class="post-meta">On <span class="post-date">{{pubDate}}</span></span></div></div></article>',
       info_template: '',
       displaySearchInfo: true,
-      includebodysearch: true
+      includebodysearch: true,
+      onComplete: function(results) {
+        if ($('#search-field').prop('value')) {
+            $('#topics').hide();
+        } else {
+            $('#topics').show();
+        }
+    }
     });
   }
 

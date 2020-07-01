@@ -965,6 +965,13 @@ textarea {
 	}
 
 	&.archive-tag {}
+
+	.archive-taglist {
+		display: block;
+		margin: 2rem 0 1rem;
+		max-width: none;
+		float: none;
+	}
 }
 
 .has-cover {
@@ -1038,6 +1045,10 @@ textarea {
 		}
 	}
 
+	#topics {
+		margin-top: calc(4rem + 8vw);
+	}
+
 	#results {
 		padding-bottom: calc(12rem + 8vw);
 	}
@@ -1055,14 +1066,14 @@ textarea {
 }
 
 .search {
-	padding: 2rem 0;
-	display: flex;
+	position: relative;
+	margin: 2rem 0;
 
 	input[type="text"] {
 		font-size: 2em;
 		width: 100%;
 		height: 5rem;
-		margin: -0.5rem 0;
+		margin: 0;
 		padding: 0 2rem;
 		border-radius: 5rem;
 		border: 1px solid $color-border;
@@ -1082,10 +1093,22 @@ textarea {
 	}
 
 	input[type="submit"] {
-		appeareance: none;
-		background: none;
+		font-size: 1.5em;
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 4rem;
+		margin: 0.5rem;
+		padding: 0 1.5rem;
 		border: 0;
-		display: none;
+		border-radius: 10rem;
+		color: #FFF;
+		background: $color-primary;
+
+		&:focus,
+		&:hover {
+			background-color: $color-primary-active;
+		}
 	}
 }
 
@@ -1598,7 +1621,7 @@ textarea {
 		}
 	}
 
-	#results .post .post-box {
+	#results .post:first-child .post-box {
 		border-top: 1px solid $color-border;
 		@media (prefers-color-scheme: dark) {
 			border-color: $color-border-dark;
