@@ -4,7 +4,7 @@ A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost
 
 If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zutrinken).
 
-## Screenshots
+## 📷 Screenshots
 
 <table>
 <tr>
@@ -17,7 +17,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 </tr>
 </table>
 
-## Features
+## ⭐️ Features
 
 * Responsive layout
 * Dark Mode
@@ -26,7 +26,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 * Code highlight including line numbers
 * Disqus support
 
-## Localization
+## 🌍 Localization
 
 * __English__
 * __German__
@@ -44,7 +44,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 * __Portuguese__ by [matheusvanzan](https://github.com/matheusvanzan)
 * __Vietnamese__ by [JustHmmmm](https://github.com/justhmmmm)
 
-## Setup custom color
+## 🎨 Setup custom color
 
 1. Go to __Code injection__.  
 2. Add this to __Blog Header__:  
@@ -57,7 +57,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 </style>
 ````
 
-## Setup custom google fonts
+## 🔠 Setup custom google fonts
 
 1. Go to [fonts.google.com](https://fonts.google.com/) and choose a font.
 2. Choose __Embed__ and copy the `<link>` code.
@@ -74,7 +74,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 </style>
 ````
 
-## Setup [Disqus](https://disqus.com/)
+## 💬 Setup [Disqus](https://disqus.com/)
 
 1. Go to __Code injection__.  
 2. Add this to __Blog Header__:  
@@ -82,7 +82,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 <script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>
 ````
 
-## Setup search
+## 🔍 Setup search
 
 The search function is build with [ghostHunter](https://github.com/jamalneufeld/ghostHunter):
 
@@ -97,7 +97,7 @@ The search function is build with [ghostHunter](https://github.com/jamalneufeld/
   var ghost_root_url = '/ghost/api/v2';
 </script>
 ````
-## Development
+## ⚙️ Development
 
 Install [Grunt](https://gruntjs.com/getting-started/):
 
@@ -115,6 +115,6 @@ The compress Grunt task packages the theme files into `dist/<theme-name>.zip`, w
 
 	grunt compress
 
-## Copyright & License
+## ⚖️ Copyright & License
 
 Copyright (C) 2015-2020 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).
