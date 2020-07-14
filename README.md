@@ -105,6 +105,17 @@ The search function is build with [ghostHunter](https://github.com/jamalneufeld/
   var ghost_root_url = '/ghost/api/v2';
 </script>
 ````
+
+## 🔍 Setup Table Of Contents
+
+3. Go to __Code injection__.  
+4. Add this to __Blog Header__:  
+````
+<script>
+  var activateTableOfContents = true;
+</script>
+````
+
 ## ⚙️ Development
 
 Install [Grunt](https://gruntjs.com/getting-started/):
@@ -129,3 +140,4 @@ Copyright (C) 2015-2020 Peter Amende - Released under the [MIT License](https://
 
 ## Changelog
 - 2.3.0 - Add Commento
+- 2.4.0 - Add Table Of Contents

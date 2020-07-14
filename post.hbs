@@ -46,8 +46,12 @@
 
 <main class="content" role="main">
 	<article class="{{post_class}}">
-		<div class="inner">
 
+		<div class="inner">
+            <aside class="toc-container">
+                <h2>Table Of Contents:</h2>
+                <div class="toc"></div>
+            </aside>
 			<section class="post-content">
 				{{content}}
 			</section>
@@ -206,6 +210,17 @@
           script.setAttribute("src", "https://" + commentoDomain + "/js/commento.js");
           script.setAttribute("defer", "true");
           document.getElementById("post-comments-commento").append(script);
+      }
+
+      // table of contents
+      if (activateTableOfContents) {
+          tocbot.init({
+              tocSelector: '.toc',
+              contentSelector: '.post-content',
+              hasInnerContainers: true
+          });
+      } else {
+          $('.toc-container').css({'display': 'none'});
       }
   });
 </script>

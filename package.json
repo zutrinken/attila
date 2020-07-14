@@ -2,7 +2,7 @@
   "name": "attila-extended",
   "description": "Extended Attila Ghost Theme",
   "demo": "https://roettgers.co",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "engines": {
     "ghost": ">=3.0.0",
     "ghost-api": "v3"
@@ -41,7 +41,8 @@
     "url": "https://github.com/zutrinken/attila.git"
   },
   "dependencies": {
-    "ghosthunter": "github:jamalneufeld/ghostHunter"
+    "ghosthunter": "github:jamalneufeld/ghostHunter",
+    "tocbot": "github:tscanlin/tocbot"
   },
   "devDependencies": {
     "autoprefixer": "^9.1.5",

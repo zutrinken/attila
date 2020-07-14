@@ -15,7 +15,8 @@ module.exports = function(grunt) {
         '<%= config.jsSrcDir %>/libs/jquery.min.js',
         '<%= config.jsSrcDir %>/libs/jquery.fitvids.js',
         '<%= config.jsSrcDir %>/libs/highlight.pack.js',
-        'node_modules/ghosthunter/dist/jquery.ghosthunter.js'
+        'node_modules/ghosthunter/dist/jquery.ghosthunter.js',
+        'node_modules/tocbot/dist/tocbot.min.js'
       ]
     },
     copy: {

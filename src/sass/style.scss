@@ -2319,6 +2319,36 @@ textarea {
 	}
 }
 /* ==========================================================================
+   Table Of Contents
+   ========================================================================== */
+.post-content h2,
+.post-content h3 {
+	outline: none;
+}
+.toc-container {
+	padding: 2rem;
+	width: 100%;
+	background-color: $color-primary;
+	margin-bottom: 2.5rem;
+	border-radius: 20px;
+}
+.toc-container .toc {
+	font-family: var(--font-primary);
+	font-size: 2rem;
+	line-height: 1rem;
+}
+.toc-container h2 {
+	font-size: 3rem;
+	margin-top: 5px;
+}
+.toc .toc-list-item {
+	padding: 0.75rem 0;
+}
+.toc > .toc-list {
+	position: initial !important;
+	padding: 0;
+}
+/* ==========================================================================
    Pagination
    ========================================================================== */
 .pagination {
