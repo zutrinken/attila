@@ -196,14 +196,14 @@
           $(this).parent().addClass('activated');
         });
       }
-      if (typeof commento === 'undefined') {
+      if (typeof commentoDomain === 'undefined') {
           // hide comment section
           $('#post-comments-commento').css({
               'display': 'none'
           });
       } else {
           let script = document.createElement("script");
-          script.setAttribute("src", "https://" + commento + "/js/commento.js");
+          script.setAttribute("src", "https://" + commentoDomain + "/js/commento.js");
           script.setAttribute("defer", "true");
           document.getElementById("post-comments-commento").append(script);
       }

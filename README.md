@@ -82,6 +82,14 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 <script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>
 ````
 
+## 💬 Setup [Commento](https://commento.io/)
+
+1. Go to __Code injection__.  
+2. Add this to __Blog Header__:  
+````
+<script>var commentoDomain = 'your.commento.domain';</script>
+````
+
 ## 🔍 Setup search
 
 The search function is build with [ghostHunter](https://github.com/jamalneufeld/ghostHunter):
