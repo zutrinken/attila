@@ -90,6 +90,14 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 <script>var commentoDomain = 'your.commento.domain';</script>
 ````
 
+## 💬 Setup [Buttondown](https://buttondown.email/)
+
+1. Go to __Code injection__.  
+2. Add this to __Blog Header__:  
+````
+<script>var buttondown = 'your_username';</script>
+````
+
 ## 🔍 Setup search
 
 The search function is build with [ghostHunter](https://github.com/jamalneufeld/ghostHunter):
@@ -141,3 +149,4 @@ Copyright (C) 2015-2020 Peter Amende - Released under the [MIT License](https://
 ## Changelog
 - 2.3.0 - Add Commento
 - 2.4.0 - Add Table Of Contents
+- 2.5.0 - Email Subscriptions via Buttondown

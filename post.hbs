@@ -57,6 +57,20 @@
 			</section>
 
 			<section class="post-footer">
+                <form
+                        method="post"
+                        target="popupwindow"
+                        onsubmit="window.open('https://buttondown.email/bruce', 'popupwindow')"
+                        class="post-subscribe"
+                        id="buttondown-form"
+                >
+                    <label for="bd-email">Was this useful? Receive new posts in your inbox.</label>
+                    <div class="post-subscribe-form">
+                        <input type="email" name="email" id="bd-email" class="post-subscribe-input">
+                        <input type="hidden" value="1" name="embed"></input>
+                        <button type="submit" class="post-subscribe-button">Submit</button>
+                    </div>
+                </form>
 
 				<div class="post-share">
 					<span class="post-info-label">{{t "Share"}}</span>
@@ -213,14 +227,20 @@
       }
 
       // table of contents
-      if (activateTableOfContents) {
+      if (typeof activateTableOfContents === 'undefined') {
+          $('.toc-container').css({'display': 'none'});
+      } else {
           tocbot.init({
               tocSelector: '.toc',
               contentSelector: '.post-content',
               hasInnerContainers: true
           });
+      }
+
+      if (typeof buttondown === 'undefined') {
+          $('#buttondown-form').css({'display': 'none'});
       } else {
-          $('.toc-container').css({'display': 'none'});
+          $('buttondown-form').attr('action', 'https://buttondown.email/api/emails/embed-subscribe/' + buttondown);
       }
   });
 </script>

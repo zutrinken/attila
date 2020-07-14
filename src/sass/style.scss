@@ -9,7 +9,7 @@
 $breakpoint-large: 960px;
 $breakpoint-medium: 640px;
 $breakpoint-small: 480px;
-$inner: calc(64rem + 8vw);
+$inner: calc(68rem + 8vw);
 /* ==========================================================================
    Basics
    ========================================================================== */
@@ -1913,7 +1913,7 @@ textarea {
    Post Info
    ========================================================================== */
 .post-footer {
-	margin: 12rem 0 6rem;
+	margin: 6rem 0;
 
 	&:after {
 		clear: both;
@@ -2093,61 +2093,33 @@ textarea {
    Post Subscribe
    ========================================================================== */
 .post-subscribe {
-	position: relative;
-	padding: 4rem 0;
-	margin: 1em 0;
-	text-align: center;
-	background: $color-neutral-25;
-	color: $color-neutral-80;
-	box-sizing: border-box;
-	border-radius: 2px;
-
-	p {
-		max-width: 13.33334em;
-		margin: 0 auto 1.33334em;
-		font-size: 1.2em;
-		line-height: 1.33334em;
-	}
+	background: $color-primary;
+	border-radius: 20px;
+	max-width: 100%;
+	display: flex;
+	justify-content: space-between;
+	font-size: 2rem;
+	padding: 2rem;
+	margin-bottom: 3rem;
+	line-height: normal;
+	align-items: center;
 
 	.post-subscribe-form {
 		display: flex;
-		justify-content: center;
+		flex-wrap: nowrap;
+	}
 
-		.post-subscribe-input {
-			width: 100%;
-			font-size: 0.8em;
-			height: 2.5em;
-			padding: 0 0.25em 0 1.25em;
-			border: 0;
-			border-right: none;
-			appearance: none;
-			outline: none;
-			box-shadow: none;
-			box-sizing: border-box;
-			border-radius: 4em 0 0 4em;
-			color: $color-neutral-25;
-		}
+	.post-subscribe-button {
+		background-color: black;
+		color: white;
 
-		.post-subscribe-button {
-			display: inline-block;
-			font-size: 0.8em;
-			height: 2.5em;
-			padding: 0 1.25em 0 1em;
-			font-weight: 500;
-			color: #FFF;
-			background: $color-neutral-60;
-			border: 0;
-			appearance: none;
-			outline: none;
-			box-shadow: none;
-			box-sizing: border-box;
-			border-radius: 0 4em 4em 0;
+	}
 
-			&:focus,
-			&:hover {
-				background: $color-primary-active;
-			}
-		}
+	.post-subscribe-input, .post-subscribe-button {
+		border-radius: 5px;
+		border: none;
+		margin: 0 0.75rem;
+		padding: 0.5rem 2rem;
 	}
 }
 /* ==========================================================================
