@@ -118,3 +118,6 @@ The compress Grunt task packages the theme files into `dist/<theme-name>.zip`, w
 ## ⚖️ Copyright & License
 
 Copyright (C) 2015-2020 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).
+
+## Changelog
+- 2.3.0 - Add Commento

@@ -80,10 +80,15 @@
 			</section>
 
 
-			<section class="post-comments">
+			<section id="post-comments-disqus" class="post-comments">
 				<a id="show-disqus" class="post-comments-activate">{{t "Show Comments"}}</a>
 			   <div id="disqus_thread"></div>
 			</section>
+
+            <section id="post-comments-commento" class="post-comments">
+                <div id="commento"></div>
+                <noscript>Please enable JavaScript to load the comments.</noscript>
+            </section>
 
       {{#if @labs.subscribers}}
       <section class="post-subscribe">
@@ -174,23 +179,34 @@
 	      readingProgress();
 	    }
 	  });
-		// Check if disqus is defined by code injection
-		if (typeof disqus === 'undefined') {
-			// hide comment section
-	    $('.post-comments').css({
-	      'display': 'none'
-	    });
-	  } else {
-	    $('#show-disqus').on('click', function() {
-	      $.ajax({
-	        type: "GET",
-	        url: "//" + disqus + ".disqus.com/embed.js",
-	        dataType: "script",
-	        cache: true
-	      });
-	      $(this).parent().addClass('activated');
-	    });
-	  }
+        // Check if disqus is defined by code injection
+      if (typeof disqus === 'undefined') {
+          // hide comment section
+          $('#post-comments-disqus').css({
+          'display': 'none'
+          });
+      } else {
+        $('#show-disqus').on('click', function() {
+          $.ajax({
+            type: "GET",
+            url: "//" + disqus + ".disqus.com/embed.js",
+            dataType: "script",
+            cache: true
+          });
+          $(this).parent().addClass('activated');
+        });
+      }
+      if (typeof commento === 'undefined') {
+          // hide comment section
+          $('#post-comments-commento').css({
+              'display': 'none'
+          });
+      } else {
+          let script = document.createElement("script");
+          script.setAttribute("src", "https://" + commento + "/js/commento.js");
+          script.setAttribute("defer", "true");
+          document.getElementById("post-comments-commento").append(script);
+      }
   });
 </script>
 {{/contentFor}}

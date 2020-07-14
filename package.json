@@ -1,8 +1,8 @@
 {
-  "name": "attila",
-  "description": "Ghost Theme",
-  "demo": "https://attila.zutrinken.com",
-  "version": "2.2.0",
+  "name": "attila-extended",
+  "description": "Extended Attila Ghost Theme",
+  "demo": "https://roettgers.co",
+  "version": "2.3.0",
   "engines": {
     "ghost": ">=3.0.0",
     "ghost-api": "v3"
@@ -12,11 +12,18 @@
     "desktop": "src/screenshot-desktop.jpg",
     "mobile": "src/screenshot-mobile.jpg"
   },
-  "author": {
-    "name": "Peter Amende",
-    "email": "xoxo@zutrinken.com",
-    "url": "https://zutrinken.com"
-  },
+  "contributors": [
+    {
+      "name": "Peter Amende",
+      "email": "xoxo@zutrinken.com",
+      "url": "https://zutrinken.com"
+    },
+    {
+      "name": "Bruce Röttgers",
+      "email": "bruce@roettgers.co",
+      "url": "https://roettgers.co"
+    }
+  ],
   "gpm": {
     "type": "theme",
     "categories": [
