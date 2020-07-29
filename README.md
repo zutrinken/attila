@@ -43,6 +43,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 * __Czech__ by [lunakv](https://github.com/lunakv)
 * __Portuguese__ by [matheusvanzan](https://github.com/matheusvanzan)
 * __Vietnamese__ by [JustHmmmm](https://github.com/justhmmmm)
+* __Greek__ by [thiodordelis](https://github.com/thiodordelis)
 
 ## 🎨 Setup custom color
 
