@@ -1,0 +1,71 @@
+{{!< default}}
+
+{{#author}}
+
+<header class="blog-header{{#if cover_image}} has-cover{{else}}{{#if @site.cover_image}} has-cover{{/if}}{{/if}}">
+	<div class="inner">
+		<div class="archive archive-author box archive-box">
+			<span class="archive-info">
+				<span class="archive-type">{{t "Author"}}</span>
+				<span class="archive-count">{{plural ../pagination.total empty=(t "No Posts") singular=(t "% Post") plural=(t "% Posts")}}</span>
+			</span>
+			<figure class="archive-avatar avatar">
+				{{#if profile_image}}
+					<img src="{{profile_image}}" alt="{{name}}" />
+				{{/if}}
+			</figure>
+			<h2 class="archive-title">{{name}}</h2>
+			{{#if bio}}
+				<span class="archive-description">{{{bio}}}</span>
+			{{/if}}
+			<span class="archive-links">
+				{{#if website}}
+					<a target="_blank" href="{{website}}" title="{{t "Website"}}"><i class="icon icon-globe"></i><span>{{t "Website"}}</span></a>
+				{{/if}}
+				{{#if twitter}}
+					<a target="_blank" href="{{twitter_url}}" title="{{t "Twitter"}}"><i class="icon icon-twitter"></i><span>{{t "Twitter"}}</span></a>
+				{{/if}}
+				{{#if facebook}}
+					<a target="_blank" href="{{facebook_url}}" title="{{t "Facebook"}}"><i class="icon icon-facebook"></i><span>{{t "Facebook"}}</span></a>
+				{{/if}}
+			</span>
+		</div>
+
+
+		{{#if cover_image}}
+		<div class="blog-cover cover">
+			<img
+			srcset="{{img_url cover_image size="s"}} 320w,
+              {{img_url cover_image size="m"}} 640w,
+              {{img_url cover_image size="l"}} 960w,
+              {{img_url cover_image size="xl"}} 1920w"
+      src="{{img_url cover_image size="xl"}}"
+			alt="{{@site.title}}" />
+		</div>
+		{{else}}
+		{{#if @site.cover_image}}
+		<div class="blog-cover cover">
+			<img
+			srcset="{{img_url @site.cover_image size="s"}} 320w,
+              {{img_url @site.cover_image size="m"}} 640w,
+              {{img_url @site.cover_image size="l"}} 960w,
+              {{img_url @site.cover_image size="xl"}} 1920w"
+      src="{{img_url @site.cover_image size="xl"}}"
+			alt="{{@site.title}}" />
+		</div>
+		{{/if}}
+		{{/if}}
+	</div>
+</header>
+
+{{/author}}
+
+<div id="index" class="container">
+
+	<main class="content" role="main">
+
+		{{> "loop"}}
+
+	</main>
+
+</div>

@@ -1,0 +1,67 @@
+{{!< default}}
+
+{{#post}}
+
+<header class="post-header {{#if feature_image}} has-cover {{/if}}">
+	<div class="inner">
+		<h1 class="post-title">{{{title}}}</h1>
+		{{#if feature_image}}
+		<div class="post-cover cover">
+			<img
+			srcset="{{img_url feature_image size="s"}} 320w,
+							{{img_url feature_image size="m"}} 640w,
+							{{img_url feature_image size="l"}} 960w,
+							{{img_url feature_image size="xl"}} 1920w"
+			src="{{img_url feature_image size="xl"}}"
+			alt="{{title}}" />
+		</div>
+		{{/if}}
+	</div>
+</header>
+
+<main class="content" role="main">
+	<article class="{{post_class}}">
+		<div class="inner">
+
+			<section class="post-content">
+				{{content}}
+			</section>
+
+		</div>
+	</article>
+</main>
+
+{{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+  $(document).ready(function () {
+		var post = $('.post-content');
+		// Responsive videos with fitVids
+    post.fitVids();
+		// Format code blocks and add line numbers
+		function codestyling() {
+	    $('pre code').each(function(i, e) {
+				// Code highlight
+	      hljs.highlightBlock(e);
+	      // No lines for plain text blocks
+	      if (!$(this).hasClass('language-text')) {
+	        var code = $(this);
+					// Calculate amount of lines
+	        var lines = code.html().split(/\n(?!$)/g).length;
+	        var numbers = [];
+	        if (lines > 1) {
+	          lines++;
+	        }
+	        for (i = 1; i < lines; i++) {
+	          numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+	        }
+	        code.parent().append('<div class="lines">' + numbers + '</div>');
+	      }
+	    });
+	  }
+	  codestyling();
+  });
+</script>
+{{/contentFor}}

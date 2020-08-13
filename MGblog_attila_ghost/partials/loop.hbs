@@ -1,0 +1,25 @@
+<div class="extra-pagination">
+	{{pagination}}
+</div>
+
+{{#foreach posts}}
+
+<article class="{{post_class}}">
+	<div class="inner">
+		<div class="box post-box">
+			<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+			<span class="post-meta">
+				{{t "By"}}
+				{{authors separator=", "}}
+				{{#primary_tag}}{{t "in"}} <a class="post-meta-tag" href="{{url}}">{{name}}</a>{{/primary_tag}}
+				{{t "on"}}
+				<time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time>
+			</span>
+			<p class="post-excerpt">{{excerpt}}&hellip;</p>
+		</div>
+	</div>
+</article>
+
+{{/foreach}}
+
+{{pagination}}

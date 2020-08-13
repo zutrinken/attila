@@ -1,0 +1,196 @@
+{{!< default}}
+
+{{#post}}
+
+<div class="progress-container">
+	<span class="progress-bar"></span>
+</div>
+
+<header class="post-header {{#if feature_image}} has-cover {{/if}}">
+	<div class="inner">
+		<span class="post-info">
+			<span class="post-type">{{t "Article"}}</span>
+			{{#if tags}}
+			<span class="post-count">{{primary_tag.name}}</span>
+			{{/if}}
+		</span>
+		<h1 class="post-title">{{{title}}}</h1>
+		<div class="post-meta">
+			<div class="post-meta-avatars">
+				{{#foreach authors}}
+					<figure class="post-meta-avatar avatar">
+						{{#if profile_image}}
+						<a href="{{url}}" class="author-avatar">
+								<img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+						</a>
+						{{/if}}
+					</figure>
+				{{/foreach}}
+			</div>
+			<h4 class="post-meta-author">{{authors separator=", "}}</h4>
+			<time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time> &bull; {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+		</div>
+		{{#if feature_image}}
+		<div class="post-cover cover">
+			<img
+			srcset="{{img_url feature_image size="s"}} 320w,
+              {{img_url feature_image size="m"}} 640w,
+              {{img_url feature_image size="l"}} 960w,
+              {{img_url feature_image size="xl"}} 1920w"
+      src="{{img_url feature_image size="xl"}}"
+			alt="{{title}}" />
+		</div>
+		{{/if}}
+	</div>
+</header>
+
+<main class="content" role="main">
+	<article class="{{post_class}}">
+		<div class="inner">
+
+			<section class="post-content">
+				{{content}}
+			</section>
+
+			<section class="post-footer">
+
+				<div class="post-share">
+					<span class="post-info-label">{{t "Share"}}</span>
+					<a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+						<i class="icon icon-twitter" aria-hidden="true"></i>
+					</a>
+					<a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+						<i class="icon icon-facebook" aria-hidden="true"></i>
+					</a>
+					<a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}/&amp;title={{title}}" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+						<i class="icon icon-linkedin" aria-hidden="true"></i>
+					</a>
+					<a title="Email" aria-label="Email" class="email" href="mailto:?subject={{title}}&amp;body={{url absolute="true"}}">
+						<i class="icon icon-mail" aria-hidden="true"></i>
+					</a>
+				</div>
+
+				{{#if tags}}
+				<aside class="post-tags">
+					<span class="post-info-label">{{t "Topic"}}</span>
+					{{tags separator=" "}}
+				</aside>
+				{{/if}}
+
+			</section>
+
+
+			<section class="post-comments">
+				<a id="show-disqus" class="post-comments-activate">{{t "Show Comments"}}</a>
+			   <div id="disqus_thread"></div>
+			</section>
+
+      {{#if @labs.subscribers}}
+      <section class="post-subscribe">
+				<p>{{t "Get the latest posts delivered right to your inbox."}}</p>
+        {{subscribe_form placeholder=(t "Your email address") form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
+      </section>
+      {{/if}}
+
+			<aside class="post-nav">
+				{{#next_post}}
+					<a class="post-nav-next" href="{{url}}">
+						<section class="post-nav-teaser">
+							<i class="icon icon-arrow-left" aria-label="{{t "Next post"}}"></i>
+							<h2 class="post-nav-title">{{title}}</h2>
+							<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
+							<p class="post-nav-meta"><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></p>
+						</section>
+					</a>
+				{{/next_post}}
+				{{#prev_post}}
+					<a class="post-nav-prev" href="{{url}}">
+						<section class="post-nav-teaser">
+							<i class="icon icon-arrow-right" aria-label="{{t "Previous post"}}"></i>
+							<h2 class="post-nav-title">{{title}}</h2>
+							<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
+							<p class="post-nav-meta"><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></p>
+						</section>
+					</a>
+				{{/prev_post}}
+				<div class="clear"></div>
+			</aside>
+
+
+		</div>
+	</article>
+</main>
+
+{{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+  $(document).ready(function () {
+		var viewport = $(window);
+		var post = $('.post-content');
+		// Responsive videos with fitVids
+    post.fitVids();
+		// Format code blocks and add line numbers
+		function codestyling() {
+	    $('pre code').each(function(i, e) {
+				// Code highlight
+	      hljs.highlightBlock(e);
+	      // No lines for plain text blocks
+	      if (!$(this).hasClass('language-text')) {
+	        var code = $(this);
+					// Calculate amount of lines
+	        var lines = code.html().split(/\n(?!$)/g).length;
+	        var numbers = [];
+	        if (lines > 1) {
+	          lines++;
+	        }
+	        for (i = 1; i < lines; i++) {
+	          numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+	        }
+	        code.parent().append('<div class="lines">' + numbers + '</div>');
+	      }
+	    });
+	  }
+	  codestyling();
+		// Reading progress bar on window top
+	  function readingProgress() {
+			var postBottom = post.offset().top + post.height();
+			var viewportHeight = viewport.height();
+      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+      $('.progress-bar').css('width', progress + '%');
+      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
+	  }
+	  readingProgress();
+		// Trigger reading progress
+	  viewport.on({
+	    'scroll': function() {
+	      readingProgress();
+	    },
+	    'resize': function() {
+	      readingProgress();
+	    },
+	    'orientationchange': function() {
+	      readingProgress();
+	    }
+	  });
+		// Check if disqus is defined by code injection
+		if (typeof disqus === 'undefined') {
+			// hide comment section
+	    $('.post-comments').css({
+	      'display': 'none'
+	    });
+	  } else {
+	    $('#show-disqus').on('click', function() {
+	      $.ajax({
+	        type: "GET",
+	        url: "//" + disqus + ".disqus.com/embed.js",
+	        dataType: "script",
+	        cache: true
+	      });
+	      $(this).parent().addClass('activated');
+	    });
+	  }
+  });
+</script>
+{{/contentFor}}
