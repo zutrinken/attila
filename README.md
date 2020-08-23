@@ -46,6 +46,8 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 * __Greek__ by [thiodordelis](https://github.com/thiodordelis)
 * __Danish__ by [jmayntzhusen](https://github.com/jmayntzhusen)
 * __Arabic__ by [pop-eax](https://github.com/pop-eax)
+* __Catalan__ by [arthurnoerve](https://github.com/arthurnoerve)
+* __Lithuanian__ by [arthurnoerve](https://github.com/arthurnoerve)
 
 ## 🎨 Setup custom color
 
