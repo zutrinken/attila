@@ -25,8 +25,16 @@
     "1 min read": "Lesezeit: 1 Min.",
     "% min read": "Lesezeit: % Min.",
     "Article": "Artikel",
+    "Archive": "Archiv",
     "Author": "Autor",
     "Topic": "Thema",
+    "Topics": "Themen",
     "Share": "Teilen",
-    "Search": "Suche"
+    "Search": "Suche",
+    "Search all posts": "Durchsuche alle Beiträge",
+    "Main": "Haupt",
+    "Footer": "Fußzeile",
+    "Pagination": "Seiten",
+    "Next post": "Nächster Beitrag",
+    "Previous post": "Vorheriger Beitrag"
 }

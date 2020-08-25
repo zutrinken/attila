@@ -2,7 +2,7 @@
   "name": "attila",
   "description": "Ghost Theme",
   "demo": "https://attila.zutrinken.com",
-  "version": "2.0.1",
+  "version": "2.3.0",
   "engines": {
     "ghost": ">=3.0.0",
     "ghost-api": "v3"
@@ -14,8 +14,8 @@
   },
   "author": {
     "name": "Peter Amende",
-    "email": "xoxo@zutrinken.com",
-    "url": "https://zutrinken.com"
+    "email": "xoxo@peteramende.de",
+    "url": "https://peteramende.de"
   },
   "gpm": {
     "type": "theme",

@@ -21,7 +21,7 @@
 <body class="{{body_class}}">
 
 	<div class="nav-header">
-		<nav class="nav-wrapper">
+		<nav class="nav-wrapper" aria-label="{{t "Main"}}">
 				{{#if @site.logo}}
 				<span class="logo">
 					<a href="{{@site.url}}" title="{{t "Home"}}"><img src="{{@site.logo}}" alt="{{t "Logo"}}" /></a>
@@ -30,27 +30,27 @@
 				{{navigation}}
 				<ul class="nav-side">
 					{{#if @site.twitter}}
-					<li class="nav-twitter"><a title="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i class="icon icon-twitter"></i><span>Twitter</span></a></li>
+					<li class="nav-twitter"><a aria-label="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i class="icon icon-twitter" aria-hidden="true"></i></a></li>
 					{{/if}}
 					{{#if @site.facebook}}
-					<li class="nav-facebook"><a title="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank"><i class="icon icon-facebook"></i><span>Facebook</span></a></li>
+					<li class="nav-facebook"><a aria-label="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank"><i class="icon icon-facebook" aria-hidden="true"></i></a></li>
 					{{/if}}
 					{{#if @labs.subscribers}}
-					<li class="nav-subscribe"><a title="Subscribe" href="{{@site.url}}/subscribe/" target="_blank"><i class="icon icon-mail"></i><span>{{t "Subscribe"}}</span></a></li>
+					<li class="nav-subscribe"><a title="{{t "Subscribe"}}" href="{{@site.url}}/subscribe/" target="_blank"><i class="icon icon-mail" aria-hidden="true"></i></a></li>
 					{{/if}}
-					<li class="nav-rss"><a title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss"></i><span>RSS</span></a></li>
-					<li class="nav-search" style="display: none;"><a title="{{t "Search"}}"><i class="icon icon-search"></i><span>{{t "Search"}}</span></a></li>
+					<li class="nav-rss"><a title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></li>
+					<li class="nav-search" style="display: none;"><a title="{{t "Search"}}"><i class="icon icon-search" aria-hidden="true"></i></a></li>
 				</ul>
 		</nav>
 
 		<div class="nav-wrapper-control">
 			<div class="inner">
-				<a class="nav-menu"><i class="icon icon-menu"></i>{{t "Menu"}}</a>
-				<a class="nav-search" style="display: none;" title="{{t "Search"}}"><i class="icon icon-search"></i><span>{{t "Search"}}</span></a>
+				<a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>{{t "Menu"}}</a>
+				<a class="nav-search" style="display: none;" title="{{t "Search"}}" role="button"><i class="icon icon-search" aria-hidden="true"></i></a>
 			</div>
 		</div>
 	</div>
-	<div class="nav-close"></div>
+	<div class="nav-close" role="button" aria-label="{{t "Close"}}"></div>
 
 	<section class="page-wrapper">
 
@@ -61,10 +61,27 @@
 				<div class="blog-header">
 					<div class="inner">
 						<div class="archive archive-search box archive-box">
+							<span class="archive-info">
+								<span class="archive-type">{{t "Archive"}}</span>
+							</span>
+							<h2 class="archive-title">{{t "Search"}}</h2>
 							<form class="search">
-								<input type="text" id="search-field" placeholder="{{t "Search"}}&#8230;" />
-								<input type="submit" value="search" />
+								<input type="text" id="search-field" placeholder="{{t "Search all posts"}}&#8230;" />
+								<input type="submit" value="{{t "Search"}}" />
 							</form>
+							<div id="topics">
+								<span class="archive-info">
+									<span class="archive-type">{{t "Archive"}}</span>
+								</span>
+								<h2 class="archive-title">{{t "Topics"}}</h2>
+								<span class="post-tags archive-taglist">
+									{{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+										{{#foreach tags}}
+											<a href='{{ url }}'>{{ name }}: {{ count.posts }}</a>
+										{{/foreach}}
+									{{/get}}
+								</span>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -74,7 +91,7 @@
 		</div>
 
 		<div class="nav-footer">
-			<nav class="nav-wrapper">
+			<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
 				{{#if @site.secondary_navigation}}
 				{{navigation type="secondary"}}
 				{{else}}
@@ -88,6 +105,7 @@
 
 	{{> "notifications"}}
 
+	{{!-- Load basic scripts --}}
 	<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
 
 	{{!-- Scripts for Members subscription --}}
@@ -131,9 +149,6 @@
 					});
 			});
 	</script>
-
-	{{!-- Load basic scripts --}}
-	<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
 
 	{{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
 	{{{block "scripts"}}}
