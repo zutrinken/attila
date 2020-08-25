@@ -15,7 +15,7 @@ $inner: calc(64rem + 8vw);
    ========================================================================== */
 :root {
 	--font-primary: 'Fira Sans', sans-serif;
-	--font-secondary: 'Cardo', serif;
+	--font-secondary: 'Libre Baskerville', serif;
 }
 
 html {
@@ -31,7 +31,7 @@ html.menu-active {
 body {
 	font-family: var(--font-primary);
 	font-size: 1em;
-	line-height: 1.5em;
+	line-height: 1.75em;
 	font-weight: 400;
 	color: $color-text-primary;
 	text-rendering: optimizeLegibility;
@@ -53,6 +53,9 @@ textarea {
 }
 
 .post-content {
+	font-size: 1.75em;
+	line-height: 2em;
+
 	a {
 		color: inherit;
 		text-decoration: none;
@@ -142,7 +145,7 @@ textarea {
 		margin-left: -2em;
 		font-size: 1em;
 		font-weight: 500;
-		line-height: 1.5em;
+		line-height: 2em;
 		text-align: right;
 		color: $color-primary;
 		font-family: var(--font-primary);
@@ -2002,16 +2005,14 @@ textarea {
 .post-excerpt {
 	margin: 1em 0 0;
 	font-family: var(--font-secondary);
-	font-size: 2em;
-	line-height: 1.5em;
+	font-size: 1.75em;
+	line-height: 2em;
 }
 
 .post-content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-size: 2rem;
-	line-height: 3rem;
 }
 
 .post-content > * {
@@ -2418,7 +2419,7 @@ textarea {
 	height: 5rem;
 	margin: 0 0 1rem;
 	font-family: var(--font-secondary);
-	font-size: 1.75em;
+	font-size: 1.5em;
 	line-height: 2.5rem;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
