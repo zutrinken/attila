@@ -28,5 +28,11 @@
     "Author": "Forfatter",
     "Topic": "Tema",
     "Share": "Del",
-    "Search": "Søk"
+    "Search": "Søk",
+    "Search all posts": "Søk alle innlegg",
+    "Main": "Hoved",
+    "Footer": "Bunn",
+    "Pagination": "Paginering",
+    "Next post": "Neste innlegg",
+    "Previous post": "Forrige innlegg"
 }
