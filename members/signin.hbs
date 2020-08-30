@@ -20,10 +20,10 @@
         {{else}}
 
             {{!-- Not logged in: Signin form --}}
-            <form class="signin-form" data-members-form="signin">
-                <h1 class="signin-title">{{t "Welcome back!"}}</h1>
+            <form class="members-form signin-form" data-members-form="signin">
+                <h1 class="members-form-title">{{t "Welcome back!"}}</h1>
                 <p>{{t "Sign into your account again for full access"}}</p>
-                <div class="signin-box">
+                <div class="members-form-box">
                     <input class="signin-email input" data-members-email type="email" placeholder="{{t "Your email address"}}" required="true" autocomplete="false" />
                     <button class="signin-button button" type="submit">
                         <span class="button-content">{{t "Send login link"}}</span>

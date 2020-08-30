@@ -62,15 +62,19 @@
 					<p>You don't have access to this post on <strong>{{@site.title}}</strong> at the moment, but if you upgrade your account you'll be able to see the whole thing, as well as all the other posts in the archive! Subscribing only takes a few seconds and will give you immediate access.</p>
 
 					<aside class="post-upgrade">
+						<h3 class="post-upgrade-title">Get the full story</h3>
 						<div class="post-upgrade-info">
+							<p>
 							{{#if @member}}
-								<p>{{t "This post is for paying subscribers only."}}</p>
+								<strong>{{t "This post is for paying subscribers only."}}</strong>
 							{{else}}
-								<p>{{t "This post is for subscribers only."}}</p>
+								<strong>{{t "This post is for subscribers only."}}</strong>
 							{{/if}}
+							Sign up now to read the full story and get access to the library of all previous published posts.
+							</p>
 							<p>{{t "Already have an account?"}} <a href="/signin/">{{t "Sign in"}}</a></p>
 						</div>
-						<p><a class="post-upgrade-button button" href="/signup/">{{t "Subscribe now"}}</a></p>
+						<a class="post-upgrade-button button" href="/signup/">{{t "Sign up now"}}</a>
 					</aside>
 
 				{{/if}}

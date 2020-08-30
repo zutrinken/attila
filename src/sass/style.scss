@@ -2526,9 +2526,7 @@ textarea {
    Members
    ========================================================================== */
 
-.checkout-form,
-.signup-form,
-.signin-form {
+.members-form {
  padding: 4rem;
  max-width: 48em !important;
  min-width: 100%;
@@ -2545,85 +2543,37 @@ textarea {
  }
 }
 
-.checkout-box,
-.signup-box,
-.signin-box {
+.members-form-box {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 32em;
-  margin: auto;
+  margin: 0 auto 2rem;
 
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: $breakpoint-medium) {
     flex-direction: column;
   }
 }
 
-.checkout-box {
-  max-width: none;
-
-  @media (max-width: 960px) {
-    flex-direction: column;
-  }
-}
-
-.signup-email,
-.signin-email {
-  border-radius: 2em 0 0 2em;
-
-  @media only screen and (max-width: 640px) {
-    width: 100%;
-    border-radius: 2em;
-    margin-bottom: 1em;
-  }
-}
-
-.signup-button,
-.signin-button {
-  border-radius: 0 2em 2em 0;
-
-  @media only screen and (max-width: 640px) {
-    width: 100%;
-    border-radius: 2em;
-    font-size: 1em;
-  }
-}
-
-.checkout-title,
-.signup-title,
-.signin-title {
-    font-size: 2em;
-    line-height: 1em;
-    text-indent: -1px;
-    margin: 0 0 0.2em;
-}
-
-.signup-form p,
-.signin-form p {
-    font-size: 1.33333em;
-}
-
-.signup-form p small,
-.signin-form p small {
-    display: inline-block;
-    margin: 1em 0 0 0;
-    font-size: 0.66666em;
-}
 
 /* Checkout */
+.pricingtable {
+	max-width: none;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+	@media only screen and (max-width: $breakpoint-large) {
+    flex-direction: column;
+  }
 
 
-.checkout-box {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-}
-
-.checkout-plan {
+	.pricingtable-plan {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    padding: 4em 2em 3vw;
+		width: 50%;
+    padding: 3rem;
     text-align: left;
 		border-radius: 0.5rem;
     background: #FFF;
@@ -2634,119 +2584,102 @@ textarea {
 		 border: 1px solid $color-border-dark;
 		 box-shadow: none;
 	  }
-}
 
-.checkout-plan + .checkout-plan {
-  margin-left: 2em;
+		@media (max-width: $breakpoint-large) {
+	  	width: auto;
+	  }
+	}
 
-  @media (max-width: 960px) {
-    margin: 2em 0 1em 0;
-  }
-}
+	.pricingtable-plan + .pricingtable-plan {
+	  margin-left: 2em;
 
-.checkout-plan-header {
+	  @media (max-width: $breakpoint-large) {
+	    margin: 2em 0 1em 0;
+	  }
+	}
+
+	.pricingtable-header {
     position: relative;
-    padding: 0 0 3em;
+		margin-bottom: 3rem;
+    padding-bottom: 2rem;
     color: $color-text-secondary;
-    text-align: center;
 
 		@media (prefers-color-scheme: dark) {
 	 	 color: $color-text-secondary-dark;
 	  }
-}
+	}
 
-.checkout-plan-header:after {
+	.pricingtable-header:after {
     content: "";
     display: block;
-    height: 1px;
     position: absolute;
-    bottom: 1.5em;
-    left: 30%;
-    right: 30%;
-    background: $color-neutral-90;
-}
-
-.checkout-plan-header h3 {
-    margin: 0 0 2em 0;
-    color: $color-primary;
-    font-size: 0.75em;
-    line-height: 1.33333em;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.checkout-plan-header span {
-    font-size: 2.6rem;
-}
-
-.checkout-plan-header strong {
-    color: #000;
-    font-size: 4.5rem;
-    font-weight: 700;
+    bottom: 0;
+    left: 0;
+		width: 100%;
+		height: 1px;
+    background: $color-border;
 
 		@media (prefers-color-scheme: dark) {
-	 	 color: #FFF;
-	  }
-}
+			background: $color-border-dark;
+		}
+	}
 
-.checkout-plan-content {
+	.pricingtable-title {
+    margin: 0 0 1rem;
+	}
+
+	.pricingtable-desc {
+		font-family: var(--font-secondary);
+		font-size: 0.8em;
+		line-height: 1.75em;
+		margin: 0 0 1rem;
+	}
+
+	.pricingtable-price {
+		color: $color-primary;
+
+		span {
+			color: #000;
+			font-size: 2em;
+			@media (prefers-color-scheme: dark) {
+				color: #FFF;
+			}
+
+			strong {
+				margin-left: 0.2em;
+			}
+		}
+	}
+
+	.pricingtable-details {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+	}
 
-.checkout-plan-content ul {
+	.pricingtable-details ul {
+	  margin: 0 0 2rem;
+		font-family: var(--font-primary);
+	}
 
-}
+	.pricingtable-details li {
+	  margin-bottom: 0.5em;
+		line-height: 1.5em;
+	}
 
-.checkout-plan-content li {
-  margin-bottom: 0.5em;
-}
-
-.checkout-plan-content li:before {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: $color-primary;
+	.pricingtable-details li:before {
     content: "✓";
-}
+	}
 
-.checkout-plan-content .button {
-    margin: 1em 0 0 0;
-}
-
-
-
-form[data-members-form] .button-loader,
-form[data-members-form] .message-success,
-form[data-members-form] .message-error {
-  display: none;
+	.button {
+		margin: 1em 0 0 0;
+	}
 }
 
 
 
-.button-loader {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin-left: -25px;
-  display: block;
-  width: 5rem;
-  height: 5rem;
-}
 
-.button-loader:after {
-  content: '';
-  display: block;
-  width: 21px;
-  height: 21px;
-  margin: 13px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  border-color: #fff transparent #fff transparent;
-  animation: loading 1.2s linear infinite;
-}
 
 @keyframes loading {
   0% {
@@ -2757,15 +2690,50 @@ form[data-members-form] .message-error {
   }
 }
 
-/* Hide button text */
-form[data-members-form].loading .button-content {
-    visibility: hidden;
+form[data-members-form] {
+
+	.button-loader,
+	.message-success,
+	.message-error {
+	  display: none;
+	}
+
+	.button-loader {
+	  position: absolute;
+	  top: 0;
+	  left: 50%;
+	  margin-left: -25px;
+	  width: 5rem;
+	  height: 5rem;
+
+		&:after {
+		  content: '';
+		  display: block;
+		  width: 21px;
+		  height: 21px;
+		  margin: 13px;
+		  border-radius: 50%;
+		  border: 2px solid #fff;
+		  border-color: #fff transparent #fff transparent;
+		  animation: loading 1.2s linear infinite;
+		}
+	}
+
+	&.loading {
+
+		/* Hide button text */
+		.button-content {
+		    visibility: hidden;
+		}
+
+		/* Show loading spinner */
+		.button-loader {
+		    display: inline-block;
+		}
+	}
 }
 
-/* Show loading spinner */
-form[data-members-form].loading .button-loader {
-    display: inline-block;
-}
+
 
 
 
@@ -2779,9 +2747,11 @@ form[data-members-form].loading .button-loader {
     height: 15px;
     width: 15px;
 }
+
 .message-success svg {
     fill: #fff;
 }
+
 .message-error svg {
     fill:  red;
 }
@@ -2807,21 +2777,47 @@ form[data-members-form].error .message-error {
     box-shadow:  red 0 0 0 1px;
 }
 
-form[data-members-form] .input {
-    height: 5rem !important;
-		padding: 0 2rem !important;
-}
+form[data-members-form] {
 
-form[data-members-form] .button {
+	.input {
+    height: 5rem;
+		padding: 0 2rem;
+		background: #FFF;
+
+		&.signup-email,
+		&.signin-email {
+		  border-radius: 2em 0 0 2em;
+			border-right-width: 0;
+
+		  @media only screen and (max-width: $breakpoint-medium) {
+		    width: 100%;
+		    border-radius: 2em;
+		    margin-bottom: 1em;
+				border-right-width: 1px;
+		  }
+		}
+	}
+
+	.button {
     position: relative;
 		width: auto;
 		height: 5rem;
-		padding: 0 2rem;
+		padding: 0 2.5rem 0 2rem;
 		white-space: nowrap;
+
+		&.signup-button,
+		&.signin-button {
+		  border-radius: 0 2em 2em 0;
+
+		  @media only screen and (max-width: $breakpoint-medium) {
+		    width: 100%;
+				padding: 0 2rem;
+		    border-radius: 2em;
+		    font-size: 1em;
+		  }
+		}
+	}
 }
-
-/*-- Loading --*/
-
 
 
 /*-- Show success message on success --*/
@@ -2881,12 +2877,11 @@ form[data-members-form].error .message-error {
 // Post Upgrade
 
 .post-upgrade {
-  padding: 4em 2em 3vw;
+  padding: 5rem;
   max-width: 48em !important;
   min-width: 100%;
   width: 75vw;
   border-radius: 0.5rem;
-  text-align: center;
   border: 1px solid $color-border;
   background: $color-background;
 
@@ -2895,17 +2890,16 @@ form[data-members-form].error .message-error {
 	  background: $color-background-dark;
 	}
 
-	.post-upgrade-info {
-	  margin-bottom: 2em;
+	.post-upgrade-title {
+	  margin-bottom: 2rem;
 	}
 
-	.post-upgrade-info p:first-child {
-	  font-size: 1.33333em;
-	  margin: 0 0 0.33333em;
-	  color: #000;
-		@media (prefers-color-scheme: dark) {
-			color: #FFF;
-		}
+	.post-upgrade-info {
+	  margin-bottom: 2rem;
+	}
+
+	.post-upgrade-info p {
+	  margin-bottom: 1rem;
 	}
 
 	.post-upgrade-info p:last-child {

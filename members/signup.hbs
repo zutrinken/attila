@@ -20,16 +20,19 @@
         {{else if @member}}
 
             {{!-- Logged in, not paying: Check out --}}
-            <div class="checkout-form">
-                <h1 class="checkout-title">{{ t "Choose your subscription"}}</h1>
+            <div class="members-form checkout-form">
+                <h1 class="members-form-title">{{ t "Choose your subscription"}}</h1>
                 <p>Unlock full access to {{@site.title}} and see the entire library of members-only content & updates</p>
-                <div class="checkout-box">
-                    <div class="checkout-plan">
-                        <header class="checkout-plan-header">
-                            <h3>{{t "Monthly"}}</h3>
-                            <span>$</span><strong>{{@price.monthly}}</strong> / {{t "month"}}
+                <div class="pricingtable">
+                    <div class="pricingtable-plan">
+                        <header class="pricingtable-header">
+                            <h3 class="pricingtable-title">{{t "Monthly"}}</h3>
+														<div class="pricingtable-desc">Get access to everything</div>
+														<div class="pricingtable-price">
+	                            <span>{{@price.currency_symbol}}<strong>{{@price.monthly}}</strong></span> / {{t "month"}}
+														</div>
                         </header>
-                        <div class="checkout-plan-content">
+                        <div class="pricingtable-details">
                             <ul>
                                 <li>Full access to all private posts</li>
                                 <li>Regular updates with new content</li>
@@ -39,12 +42,15 @@
                             <a class="checkout-button button" href="javascript:void(0)" data-members-plan="Monthly">{{t "Choose this plan"}}</a>
                         </div>
                     </div>
-                    <div class="checkout-plan">
-                        <header class="checkout-plan-header">
-                            <h3>{{t "Yearly"}}</h3>
-                            <span>$</span><strong>{{@price.yearly}}</strong> / {{t "year"}}
+                    <div class="pricingtable-plan">
+                        <header class="pricingtable-header">
+                            <h3 class="pricingtable-title">{{t "Yearly"}}</h3>
+														<div class="pricingtable-desc">Save on an extra 20% discount</div>
+														<div class="pricingtable-price">
+	                            <span>{{@price.currency_symbol}}<strong>{{@price.yearly}}</strong></span> / {{t "year"}}
+														</div>
                         </header>
-                        <div class="checkout-plan-content">
+                        <div class="pricingtable-details">
                             <ul>
                                 <li>Full access to all private posts</li>
                                 <li>Regular updates with new content</li>
@@ -61,10 +67,10 @@
         {{else}}
 
             {{!-- Not logged in: Sign up --}}
-            <form class="signup-form" data-members-form="signup">
-                <h1 class="signup-title">{{t "Signup to"}} {{@site.title}}</h1>
+            <form class="members-form signup-form" data-members-form="signup">
+                <h1 class="members-form-title">{{t "Signup to"}} {{@site.title}}</h1>
                 <p>{{@site.description}}</p>
-                <div class="signup-box">
+                <div class="members-form-box">
                     <input class="signup-email input" data-members-email type="email" placeholder="{{t "Type your email..."}}" required="true" autocomplete="false" />
                     <button class="signup-button button" type="submit">
                         <span class="button-content">{{t "Continue"}}</span>
