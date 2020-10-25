@@ -25,8 +25,16 @@
     "1 min read": "1 menit dibaca",
     "% min read": "% menit dibaca",
     "Article": "Artikel",
+    "Archive": "Arsip",
     "Author": "Penulis",
     "Topic": "Topik",
+    "Topics": "Topik-topik",
     "Share": "Bagikan",
-    "Search": "Pencarian"
+    "Search": "Pencarian",
+    "Search all posts": "Cari semua pos",
+    "Main": "Utama",
+    "Footer": "Footer",
+    "Pagination": "Paginasi",
+    "Next post": "Pos Selanjutnya",
+    "Previous post": "Pos Sebelumnya"
 }
