@@ -49,6 +49,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 * __Catalan__ by [arthurnoerve](https://github.com/arthurnoerve)
 * __Lithuanian__ by [arthurnoerve](https://github.com/arthurnoerve)
 * __Dutch__ by [gkdp](https://github.com/gkdp)
+* __Polish__ by [filipolszewski](https://github.com/filipolszewski)
 
 ## 🎨 Setup custom color
 
