@@ -795,6 +795,30 @@ textarea {
 	}
 }
 
+.store-download-buttons{
+	display: flex;
+	align-items: center;
+    align-content: center;
+	justify-content: center;
+	margin-top: 20px;
+
+	@media only screen and (max-width: $breakpoint-medium) {
+		flex-direction: column;
+	}
+	a{
+		img{
+			// height: 130px;
+			&.icon-play-store{
+				width: 210px;
+				
+			}
+			&.icon-apple-store{
+				width: 185px;
+			}
+		}
+	}
+}
+
 .has-cover .blog-description {
 	color: #FFF;
 }
