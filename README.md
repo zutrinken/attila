@@ -21,7 +21,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 
 * Responsive layout
 * Dark Mode
-* Search & Tag archive
+* Search & Popular Tags
 * Post reading progress
 * Code highlight including line numbers
 * Disqus support
@@ -92,17 +92,14 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 
 ## 🔍 Setup search
 
-The search function is build with [ghostHunter](https://github.com/jamalneufeld/ghostHunter):
-
 1. Go to __Integrations__.  
-2. Choose __Add custom integration__, name it `ghostHunter` and choose __Create__. Copy the generated Content API Key.  
+2. Choose __Add custom integration__, name it `Search` and choose __Create__. Copy the generated Content API Key.  
 3. Go to __Code injection__.  
-4. Add this to __Blog Header__:  
+4. Add this to __Site Header__:  
 ````
 <script>
-  var ghosthunter_key = 'PASTE_THE_GENERATED_KEY_HERE';
-  //optional: set your custom ghost_root url, default is "/ghost/api/v2"
-  var ghost_root_url = '/ghost/api/v2';
+  var gh_search_key = 'API_KEY';
+  var gh_search_migration = 'v2';
 </script>
 ````
 ## ⚙️ Development

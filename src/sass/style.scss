@@ -1064,10 +1064,6 @@ textarea {
 		}
 	}
 
-	&.archive-search {
-		border: 0;
-	}
-
 	&.archive-author {
 		padding-left: 16rem;
 		@media only screen and (max-width: $breakpoint-medium) {
@@ -1148,72 +1144,116 @@ textarea {
 		padding: 0 4rem;
 	}
 }
+
 /* ==========================================================================
    Search
    ========================================================================== */
-#search {
+
+.search-wrapper {
 	position: fixed;
-	z-index: 500;
-	left: 0;
 	top: 0;
-	width: 100%;
-	height: 100%;
-	overflow-y: scroll;
-	background: $color-background;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 500;
+	box-sizing: border-box;
+	padding: 2rem;
 	display: none;
+	opacity: 0;
+	transition: opacity ease-out 0.2s;
+	pointer-events: none;
+	background: rgba(37,40,43,0.9);
 	@media (prefers-color-scheme: dark) {
-		background: $color-background-dark;
+		background: rgba(9,10,13,0.9);
 	}
-	@media only screen and (max-width: $breakpoint-medium) {
-		display: block;
-		transition: all ease-out 0.3s;
-		transform: translate3d(0,100%,0);
-		border-top: 1px solid $color-border;
-		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
+
+	.search-wrapper-close {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 4rem;
+		height: 4rem;
+		margin: 2rem;
+		background: transparent;
+		border: 0;
+		opacity: 0.5;
+		transition: opacity ease-out 0.2s;
+
+		&:focus,
+		&:hover {
+			opacity: 1;
 		}
-	}
 
-	#topics {
-		margin-top: calc(4rem + 8vw);
-	}
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			left: 20%;
+			top: 50%;
+			width: 60%;
+			height: 2px;
+			margin-top: -1px;
+			border-radius: 1px;
+			background: #FFF;
+		}
 
-	#results {
-		padding-bottom: calc(12rem + 8vw);
+		&:before {
+			transform: rotate(-45deg);
+		}
+
+		&:after {
+			transform: rotate(45deg);
+		}
 	}
 }
 
 .search-active {
 	overflow-y: hidden;
 
-	#search {
-		display: block;
-		@media only screen and (max-width: $breakpoint-medium) {
-			transform: translate3d(0,0,0);
-		}
+	.search-wrapper {
+		opacity: 1;
+		pointer-events: unset;
 	}
 }
 
 .search {
 	position: relative;
-	margin: 2rem 0;
+	top: calc(12rem + 4vw);
+	max-height: 80vh;
+	width: 100%;
+	max-width: $inner;
+	margin: auto;
+	background: #FFF;
+	border-radius: 4px;
+	box-shadow: 0 8px 24px -2px rgba(0,0,0,0.4);
+	overflow: hidden;
+	@media (prefers-color-scheme: dark) {
+		background: $color-background-dark;
+	}
+	@media only screen and (max-width: $breakpoint-large) {
+		top: 6rem;
+	}
+}
 
-	input[type="text"] {
+.search-form {
+	position: relative;
+	padding: 1rem 0;
+	border-bottom: 1px solid $color-border;
+	@media (prefers-color-scheme: dark) {
+		border-color: $color-border-dark;
+	}
+
+	.search-field {
 		font-size: 2em;
 		width: 100%;
 		height: 5rem;
 		margin: 0;
 		padding: 0 2rem;
-		border-radius: 5rem;
-		border: 1px solid $color-border;
-		background: $color-background;
+		border: 0;
+		background: transparent;
 		box-sizing: border-box;
 		box-shadow: none !important;
 		outline: 0 !important;
-		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
-			background: $color-background-dark;
-		}
 
 		&:focus,
 		&:hover {
@@ -1221,24 +1261,160 @@ textarea {
 		}
 	}
 
-	input[type="submit"] {
+	.search-button {
+		display: none;
+		position: relative;
 		font-size: 1.6em;
 		position: absolute;
 		right: 0;
 		top: 0;
 		height: 4rem;
-		margin: 0.5rem;
+		margin: 1.5rem;
 		padding: 0 1.5rem;
 		border: 0;
-		border-radius: 10rem;
+		border-radius: 4px;
 		color: #FFF;
 		background: $color-primary;
+		transition: background ease-out 0.2s;
 
 		&:focus,
 		&:hover {
 			background-color: $color-primary-active;
 		}
+
+		&.search-button-clear {
+			display: block;
+			width: 2rem;
+			height: 2rem;
+			margin: 2.5rem;
+			padding: 0;
+			border-radius: 4rem;
+			background: $color-text-secondary;
+			@media (prefers-color-scheme: dark) {
+				background: $color-text-secondary-dark;
+			}
+
+			&:focus,
+			&:hover {
+				background: $color-text-primary;
+
+				@media (prefers-color-scheme: dark) {
+					background: $color-text-primary-dark;
+				}
+			}
+
+			i {
+				display: none;
+			}
+
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				left: 20%;
+				top: 50%;
+				width: 60%;
+				height: 2px;
+				margin-top: -1px;
+				border-radius: 1px;
+				background: #FFF;
+
+				@media (prefers-color-scheme: dark) {
+					background: $color-background-dark;
+				}
+			}
+
+			&:before {
+				transform: rotate(-45deg);
+			}
+
+			&:after {
+				transform: rotate(45deg);
+			}
+		}
 	}
+}
+
+.search-result {
+	overflow-y: scroll;
+	max-height: 50vh;
+	-webkit-overflow-scrolling: touch;
+
+	@media only screen and (max-width: $breakpoint-medium) {
+		max-height: 75vh;
+	}
+
+	.search-result-row {
+		border-bottom: 1px solid $color-border;
+		@media (prefers-color-scheme: dark) {
+			border-color: $color-border-dark;
+		}
+
+		&:last-child {
+			border: 0;
+		}
+
+		.search-result-row-link {
+			display: block;
+			padding: 2rem;
+			color: inherit;
+			text-decoration: none;
+			transition: all ease-out 0.05s;
+
+			&:hover,
+			&:focus {
+				background: $color-background;
+				@media (prefers-color-scheme: dark) {
+					background: rgba(0,0,0,0.2);
+				}
+			}
+
+			.search-result-row-title {
+				font-size: 2em;
+				line-height: 1.25em;
+				font-weight: 700;
+				text-indent: -1px;
+				color: #000;
+				@media (prefers-color-scheme: dark) {
+					color: #FFF;
+				}
+			}
+
+			.search-result-row-excerpt {
+				margin: 0.5rem 0 0;
+				font-family: var(--font-secondary);
+				font-size: 1.25em;
+				line-height: 2em;
+				display: -webkit-box;
+				-webkit-line-clamp: 2;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+}
+
+.popular-wrapper {
+	padding: 2rem;
+}
+
+.popular-wrapper .popular-title {
+	font-size: 2em;
+	line-height: 1.25em;
+	font-weight: 700;
+	text-indent: -1px;
+	color: #000;
+	margin-top: 0;
+	@media (prefers-color-scheme: dark) {
+		color: #FFF;
+	}
+}
+
+.popular-wrapper .popular-tags {
+	float: none;
+	max-width: none;
+	margin-bottom: 0;
 }
 
 .search-close {

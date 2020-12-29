@@ -13,9 +13,9 @@ module.exports = function(grunt) {
       'jsTargetDir': 'assets/js',
       'jsDependencies': [
         '<%= config.jsSrcDir %>/libs/jquery.min.js',
+        '<%= config.jsSrcDir %>/libs/elasticlunr.min.js',
         '<%= config.jsSrcDir %>/libs/jquery.fitvids.js',
-        '<%= config.jsSrcDir %>/libs/highlight.pack.js',
-        'node_modules/ghosthunter/dist/jquery.ghosthunter.js'
+        '<%= config.jsSrcDir %>/libs/highlight.pack.js'
       ]
     },
     copy: {

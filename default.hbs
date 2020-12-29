@@ -11,6 +11,10 @@
 
 	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
 
+	<script>
+			var siteUrl = '{{@site.url}}';
+	</script>
+
 	{{ghost_head}}
 </head>
 
@@ -52,38 +56,28 @@
 
 		{{{body}}}
 
-		<div id="search" class="container">
-			<div class="content">
-				<div class="blog-header">
-					<div class="inner">
-						<div class="archive archive-search box archive-box">
-							<span class="archive-info">
-								<span class="archive-type">{{t "Archive"}}</span>
-							</span>
-							<h2 class="archive-title">{{t "Search"}}</h2>
-							<form class="search">
-								<input type="text" id="search-field" placeholder="{{t "Search all posts"}}&#8230;" />
-								<input type="submit" value="{{t "Search"}}" />
-							</form>
-							<div id="topics">
-								<span class="archive-info">
-									<span class="archive-type">{{t "Archive"}}</span>
-								</span>
-								<h2 class="archive-title">{{t "Topics"}}</h2>
-								<span class="post-tags archive-taglist">
-									{{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
-										{{#foreach tags}}
-											<a href='{{ url }}'>{{ name }}: {{ count.posts }}</a>
-										{{/foreach}}
-									{{/get}}
-								</span>
-							</div>
-						</div>
-					</div>
+
+		<div class="search-wrapper">
+			<div class="search">
+		    <form class="search-form">
+          <input class="search-field" type="text" placeholder="{{t "Search"}} …">
+          <button class="search-button" type="submit">
+						<i class="icon icon-search" aria-hidden="true"></i>
+					</button>
+		    </form>
+				<div class="popular-wrapper">
+					<h4 class="popular-title">{{t "Topics"}}</h4>
+					<span class="popular-tags post-tags">
+						{{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+							{{#foreach tags}}
+								<a href='{{ url }}'>{{ name }}: {{ count.posts }}</a>
+							{{/foreach}}
+						{{/get}}
+					</span>
 				</div>
-				<div id="results"></div>
+				<div class="search-result"></div>
 			</div>
-			<div class="search-close"></div>
+			<button class="search-wrapper-close" aria-label="{{t "Close"}}"></button>
 		</div>
 
 		<div class="nav-footer">
