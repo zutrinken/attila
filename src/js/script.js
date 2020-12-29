@@ -184,6 +184,10 @@ jQuery(function($) {
           modalOverlay.show().outerWidth();
           html.addClass('search-active');
           modalInput.focus();
+
+          if(html.hasClass('menu-active')) {
+            html.removeClass('menu-active');
+          }
       });
 
       $('.search-wrapper-close, .search-wrapper').on('click', function () {
