@@ -1913,11 +1913,16 @@ textarea {
 .nav-credits {
 	flex-shrink: 0;
 	display: block;
+	margin-left: auto;
 	font-size: 1.6em;
 	line-height: 2rem;
 	color: $color-text-secondary;
 	@media (prefers-color-scheme: dark) {
 		color: $color-text-secondary-dark;
+	}
+
+	@media only screen and (max-width: $breakpoint-medium) {
+		margin-right: auto;
 	}
 
 	a {
