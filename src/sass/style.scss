@@ -1814,6 +1814,24 @@ textarea {
 		max-width: none;
 		padding: 0 4rem;
 	}
+
+	a {
+		display: inline-block;
+		color: $color-text-secondary;
+		text-decoration: none;
+		font-weight: 400;
+		cursor: pointer;
+		@media (prefers-color-scheme: dark) {
+			color: $color-text-secondary-dark;
+		}
+		&:focus,
+		&:hover {
+			color: $color-neutral-25;
+			@media (prefers-color-scheme: dark) {
+				color: $color-neutral-90;
+			}
+		}
+	}
 }
 
 .nav-footer .nav-wrapper {
@@ -1856,24 +1874,14 @@ textarea {
 
 	a {
 		display: block;
+		margin: 0;
 		font-size: 1.6em;
 		line-height: 2rem;
-		color: $color-text-secondary;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		text-decoration: none;
 		font-weight: 400;
 		cursor: pointer;
-		@media (prefers-color-scheme: dark) {
-			color: $color-text-secondary-dark;
-		}
-		&:focus,
-		&:hover {
-			color: $color-neutral-25;
-			@media (prefers-color-scheme: dark) {
-				color: $color-neutral-90;
-			}
-		}
 	}
 
 	&:last-child {
@@ -1883,15 +1891,23 @@ textarea {
 
 .nav-copy {
 	display: block;
-	width: 100%;
 	font-size: 1.6em;
 	line-height: 2rem;
 	color: $color-text-secondary;
+	white-space: nowrap;
 	@media (prefers-color-scheme: dark) {
 		color: $color-text-secondary-dark;
 	}
 	@media only screen and (max-width: $breakpoint-medium) {
-		margin-bottom: 1rem;
+		margin-bottom: 3rem;
+	}
+
+	.nav-rss {
+		margin: 0 3rem;
+
+		@media only screen and (max-width: $breakpoint-medium) {
+			margin: 0 0 0 1rem;
+		}
 	}
 }
 
