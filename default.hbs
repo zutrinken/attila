@@ -14,7 +14,10 @@
 	{{!-- Styles'n'Scripts --}}
 	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
 
-	{{!-- This tag outputs SEO meta+structured data and other important settings --}}
+	<script>
+			var siteUrl = '{{@site.url}}';
+	</script>
+
 	{{ghost_head}}
 </head>
 
@@ -38,7 +41,6 @@
 					{{#if @labs.subscribers}}
 					<li class="nav-subscribe"><a title="{{t "Subscribe"}}" href="{{@site.url}}/subscribe/" target="_blank"><i class="icon icon-mail" aria-hidden="true"></i></a></li>
 					{{/if}}
-					<li class="nav-rss"><a title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></li>
 					<li class="nav-search" style="display: none;"><a title="{{t "Search"}}"><i class="icon icon-search" aria-hidden="true"></i></a></li>
 				</ul>
 		</nav>
@@ -56,46 +58,35 @@
 
 		{{{body}}}
 
-		<div id="search" class="container">
-			<div class="content">
-				<div class="blog-header">
-					<div class="inner">
-						<div class="archive archive-search box archive-box">
-							<span class="archive-info">
-								<span class="archive-type">{{t "Archive"}}</span>
-							</span>
-							<h2 class="archive-title">{{t "Search"}}</h2>
-							<form class="search">
-								<input type="text" id="search-field" placeholder="{{t "Search all posts"}}&#8230;" />
-								<input type="submit" value="{{t "Search"}}" />
-							</form>
-							<div id="topics">
-								<span class="archive-info">
-									<span class="archive-type">{{t "Archive"}}</span>
-								</span>
-								<h2 class="archive-title">{{t "Topics"}}</h2>
-								<span class="post-tags archive-taglist">
-									{{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
-										{{#foreach tags}}
-											<a href='{{ url }}'>{{ name }}: {{ count.posts }}</a>
-										{{/foreach}}
-									{{/get}}
-								</span>
-							</div>
-						</div>
-					</div>
+
+		<div class="search-wrapper">
+			<div class="search">
+		    <form class="search-form">
+          <input class="search-field" type="text" placeholder="{{t "Search"}} …">
+          <button class="search-button" type="submit">
+						<i class="icon icon-search" aria-hidden="true"></i>
+					</button>
+		    </form>
+				<div class="popular-wrapper">
+					<h4 class="popular-title">{{t "Topics"}}</h4>
+					<span class="popular-tags post-tags">
+						{{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+							{{#foreach tags}}
+								<a href='{{ url }}'>{{ name }}: {{ count.posts }}</a>
+							{{/foreach}}
+						{{/get}}
+					</span>
 				</div>
-				<div id="results"></div>
+				<div class="search-result"></div>
 			</div>
-			<div class="search-close"></div>
+			<button class="search-wrapper-close" aria-label="{{t "Close"}}"></button>
 		</div>
 
 		<div class="nav-footer">
 			<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
+				<span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}}  <a class="nav-rss" title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></span>
 				{{#if @site.secondary_navigation}}
 				{{navigation type="secondary"}}
-				{{else}}
-				<span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}}</span>
 				{{/if}}
 				<span class="nav-credits">{{t "Published with"}} <a href="https://ghost.org">Ghost</a> &bull; {{t "Theme" }} <a href="https://github.com/zutrinken/attila">Attila</a></span>
 			</nav>
