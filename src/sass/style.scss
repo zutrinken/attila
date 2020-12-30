@@ -2087,6 +2087,7 @@ textarea {
 
 	@media only screen and (max-width: $breakpoint-small) {
 		-webkit-hyphens: auto;
+		hyphens: auto;
 	}
 
 	a {
