@@ -1,7 +1,9 @@
 routes:
+  /subscribe/: members/subscribe
   /signup/: members/signup
   /signin/: members/signin
   /account/: members/account
+  /upgrade/: members/upgrade
 
 collections:
   /:
