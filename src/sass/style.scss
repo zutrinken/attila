@@ -1626,7 +1626,7 @@ textarea {
 	position: relative;
 	display: flex;
 	width: 100%;
-	margin: auto;
+	margin: 0 auto;
 	padding: 0;
 	list-style: none;
 	@media only screen and (max-width: $breakpoint-medium) {
@@ -1635,10 +1635,14 @@ textarea {
 		padding: 2rem 0;
 	}
 
-	&:last-child {
+	&.nav-meta {
+		width: auto;
 		justify-content: flex-end;
+
 		@media only screen and (max-width: $breakpoint-medium) {
-			display: none;
+			width: 100%;
+			flex-direction: row !important;
+			padding: 0;
 		}
 	}
 }
@@ -1679,6 +1683,39 @@ textarea {
 			}
 			@media only screen and (max-width: $breakpoint-medium) {
 				color: #FFF;
+			}
+		}
+	}
+
+
+	button {
+		display: block;
+		width: 100%;
+		border-radius: 0.5rem;
+		margin: 0.125rem 0;
+		padding: 0.75rem 1.25rem;
+		border: 1px solid $color-primary;
+		background: transparent;
+		white-space: nowrap;
+		font-size: 1.5em;
+		line-height: 2rem;
+		color: $color-primary;
+		font-weight: 500;
+
+		&:focus,
+		&:hover {
+			color: $color-primary-active;
+		}
+
+		&.cta {
+			font-weight: 700;
+			color: #FFF;
+			background: $color-primary;
+			border: 0;
+
+			&:focus,
+			&:hover {
+				background: $color-primary-active;
 			}
 		}
 	}
@@ -1728,12 +1765,25 @@ textarea {
 		}
 	}
 
-	&.nav-facebook,
-	&.nav-rss,
-	&.nav-search,
-	&.nav-subscribe,
-	&.nav-twitter {
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.nav-meta {
+
+	li {
 		margin-right: 1.5rem;
+		@media only screen and (max-width: $breakpoint-medium) {
+			flex-grow: 1;
+		}
+
+		&.nav-twitter,
+		&.nav-facebook {
+			@media only screen and (max-width: $breakpoint-medium) {
+				display: none;
+			}
+		}
 
 		a {
 			font-size: 1.75em;
@@ -1743,13 +1793,27 @@ textarea {
 			display: none;
 		}
 	}
+}
 
-	&:last-child {
-		margin-right: 0;
+.has-search {
+
+	.nav-meta {
+
+		li.nav-search {
+			display: block !important;
+
+			@media only screen and (max-width: $breakpoint-medium) {
+				display: none !important;
+			}
+		}
+	}
+	.nav-wrapper-control .nav-search {
+		display: block !important;
 	}
 }
 
 .cover-active {
+
 	.nav-wrapper-control a {
 		color: rgba(255,255,255,0.8);
 
@@ -1760,15 +1824,32 @@ textarea {
 	}
 
 	.nav-header li {
-		a {
+		a,
+		button:not(.cta) {
 			@media only screen and (min-width: $breakpoint-medium) {
 				color: rgba(255,255,255,0.8);
+				border-color: rgba(255,255,255,0.8);
 			}
 
 			&:focus,
 			&:hover {
 				@media only screen and (min-width: $breakpoint-medium) {
 					color: #FFF;
+					border-color: #FFF;
+				}
+			}
+		}
+
+		button.cta {
+			@media only screen and (min-width: $breakpoint-medium) {
+				color: $color-primary;
+				background-color: rgba(255,255,255,0.8);
+			}
+
+			&:focus,
+			&:hover {
+				@media only screen and (min-width: $breakpoint-medium) {
+					background-color: #FFF;
 				}
 			}
 		}
@@ -2417,6 +2498,29 @@ textarea {
 /* ==========================================================================
    Post Subscribe
    ========================================================================== */
+
+.gh-post-upgrade-cta {
+
+	.gh-post-upgrade-cta-content {
+		background: $color-primary !important;
+
+		.gh-btn {
+			padding: 1rem 2rem;
+			border-radius: 0.5rem;
+			font-weight: 700;
+			color: #FFF !important;
+			background: $color-text-primary !important;
+			transition: all ease-out 0.2s;
+
+			&:focus,
+			&:hover {
+				opacity: inherit;
+				background: #000 !important;
+			}
+		}
+	}
+}
+
 .post-subscribe {
 	position: relative;
 	padding: 4rem 0;
@@ -2641,478 +2745,6 @@ textarea {
 	color: $color-text-secondary;
 	@media (prefers-color-scheme: dark) {
 		color: $color-text-secondary-dark;
-	}
-}
-/* ==========================================================================
-   Notifications
-   ========================================================================== */
-
-.notification {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 9000;
-    padding: 20px 60px;
-    color: #FFF;
-    font-size: 1.6rem;
-    line-height: 1.3em;
-    font-weight: 500;
-    text-align: center;
-    background: $color-neutral-25;
-    transition: all 0.35s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
-    transform: translateY(-175%);
-    visibility: hidden;
-}
-
-.subscribe-success .notification-subscribe {
-    visibility: visible;
-    transform: translateY(0);
-}
-.signup-success .notification-signup {
-    visibility: visible;
-    transform: translateY(0);
-}
-.signin-success .notification-signin {
-    visibility: visible;
-    transform: translateY(0);
-}
-.checkout-success .notification-checkout {
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.notification.closed {
-    visibility: hidden;
-    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
-    transform: translateY(-175%);
-}
-
-.notification-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: block;
-}
-
-.notification-close:before {
-    content: "";
-    position: absolute;
-    top: 29px;
-    right: 25px;
-    display: block;
-    width: 18px;
-    height: 2px;
-    background: #fff;
-    border-radius: 2px;
-    transform: rotate(45deg);
-}
-
-.notification-close:after {
-    content: "";
-    position: absolute;
-    top: 29px;
-    right: 25px;
-    display: block;
-    width: 18px;
-    height: 2px;
-    background: #fff;
-    border-radius: 2px;
-    transform: rotate(-45deg);
-}
-
-/* ==========================================================================
-   Members
-   ========================================================================== */
-
-.members-form {
- padding: 4rem;
- max-width: 48em !important;
- min-width: 100%;
- width: 75vw;
- border: 1px solid $color-border;
- background: $color-background;
- text-align: center;
-
- color: $color-text-secondary;
- @media (prefers-color-scheme: dark) {
-	 color: $color-text-secondary-dark;
-	 border-color: $color-border-dark;
-	 background: $color-background-dark;
- }
-}
-
-.members-form-box {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 32em;
-  margin: 0 auto 2rem;
-
-  @media only screen and (max-width: $breakpoint-medium) {
-    flex-direction: column;
-  }
-}
-
-
-/* Checkout */
-.pricingtable {
-	max-width: none;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-
-	@media only screen and (max-width: $breakpoint-large) {
-    flex-direction: column;
-  }
-
-
-	.pricingtable-plan {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-		width: 50%;
-    padding: 3rem;
-    text-align: left;
-		border-radius: 0.5rem;
-    background: #FFF;
-    box-shadow:  0 2px 12px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.05);
-
-		@media (prefers-color-scheme: dark) {
-	 	 background: $color-background-dark;
-		 border: 1px solid $color-border-dark;
-		 box-shadow: none;
-	  }
-
-		@media (max-width: $breakpoint-large) {
-	  	width: auto;
-	  }
-	}
-
-	.pricingtable-plan + .pricingtable-plan {
-	  margin-left: 2em;
-
-	  @media (max-width: $breakpoint-large) {
-	    margin: 2em 0 1em 0;
-	  }
-	}
-
-	.pricingtable-header {
-    position: relative;
-		margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    color: $color-text-secondary;
-
-		@media (prefers-color-scheme: dark) {
-	 	 color: $color-text-secondary-dark;
-	  }
-	}
-
-	.pricingtable-header:after {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-		width: 100%;
-		height: 1px;
-    background: $color-border;
-
-		@media (prefers-color-scheme: dark) {
-			background: $color-border-dark;
-		}
-	}
-
-	.pricingtable-title {
-    margin: 0 0 1rem;
-	}
-
-	.pricingtable-desc {
-		font-family: var(--font-secondary);
-		font-size: 0.8em;
-		line-height: 1.75em;
-		margin: 0 0 1rem;
-	}
-
-	.pricingtable-price {
-		color: $color-primary;
-
-		span {
-			color: #000;
-			font-size: 2em;
-			@media (prefers-color-scheme: dark) {
-				color: #FFF;
-			}
-
-			strong {
-				margin-left: 0.2em;
-			}
-		}
-	}
-
-	.pricingtable-details {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-	}
-
-	.pricingtable-details ul {
-	  margin: 0 0 2rem;
-		font-family: var(--font-primary);
-	}
-
-	.pricingtable-details li {
-	  margin-bottom: 0.5em;
-		line-height: 1.5em;
-	}
-
-	.pricingtable-details li:before {
-    content: "✓";
-	}
-
-	.button {
-		margin: 1em 0 0 0;
-	}
-}
-
-
-
-
-
-@keyframes loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-form[data-members-form] {
-
-	.button-loader,
-	.message-success,
-	.message-error {
-	  display: none;
-	}
-
-	.button-loader {
-	  position: absolute;
-	  top: 0;
-	  left: 50%;
-	  margin-left: -25px;
-	  width: 5rem;
-	  height: 5rem;
-
-		&:after {
-		  content: '';
-		  display: block;
-		  width: 21px;
-		  height: 21px;
-		  margin: 13px;
-		  border-radius: 50%;
-		  border: 2px solid #fff;
-		  border-color: #fff transparent #fff transparent;
-		  animation: loading 1.2s linear infinite;
-		}
-	}
-
-	&.loading {
-
-		/* Hide button text */
-		.button-content {
-		    visibility: hidden;
-		}
-
-		/* Show loading spinner */
-		.button-loader {
-		    display: inline-block;
-		}
-	}
-}
-
-
-
-
-
-
-
-.message-success svg,
-.message-error svg {
-    position: relative;
-    top: -1px;
-    margin-right: 5px;
-    height: 15px;
-    width: 15px;
-}
-
-.message-success svg {
-    fill: #fff;
-}
-
-.message-error svg {
-    fill:  red;
-}
-
-form[data-members-form].success .message-success,
-form[data-members-form].error .message-error {
-    margin: 0 auto;
-    padding: 1rem;
-    color: #fff;
-    font-size: 1.5rem;
-    line-height: 3rem;
-    font-weight: 500;
-    text-align: center;
-    background:  red;
-    border-radius: 5px;
-}
-form[data-members-form].success .message-success {
-    background:  green;
-}
-form[data-members-form].error .message-error {
-    color:  red;
-    background: #fff;
-    box-shadow:  red 0 0 0 1px;
-}
-
-form[data-members-form] {
-
-	.input {
-    height: 5rem;
-		padding: 0 2rem;
-		background: #FFF;
-
-		&.signup-email,
-		&.signin-email {
-		  border-radius: 2em 0 0 2em;
-			border-right-width: 0;
-
-		  @media only screen and (max-width: $breakpoint-medium) {
-		    width: 100%;
-		    border-radius: 2em;
-		    margin-bottom: 1em;
-				border-right-width: 1px;
-		  }
-		}
-	}
-
-	.button {
-    position: relative;
-		width: auto;
-		height: 5rem;
-		padding: 0 2.5rem 0 2rem;
-		white-space: nowrap;
-
-		&.signup-button,
-		&.signin-button {
-		  border-radius: 0 2em 2em 0;
-
-		  @media only screen and (max-width: $breakpoint-medium) {
-		    width: 100%;
-				padding: 0 2rem;
-		    border-radius: 2em;
-		    font-size: 1em;
-		  }
-		}
-	}
-}
-
-
-/*-- Show success message on success --*/
-form[data-members-form].success .message-success {
-    display: block;
-}
-
-/*-- Show error message on error --*/
-form[data-members-form].error .message-error {
-    display: block;
-}
-
-.site-account {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5vw;
-}
-
-.account-box {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.account-box-title {
-    font-size: 3rem;
-}
-
-.header-cta {
-    margin-left: 15px;
-}
-
-.post-card-header-tags {
-    display: flex;
-    align-items: center;
-    margin: 0 0 0.2em;
-}
-
-.post-visibility {
-    display: inline-block;
-    margin: 0 8px 1px 0;
-    padding: 1px 5px;
-    font-size: 1.2rem;
-    line-height: 1.4em;
-    border: red 1px solid;
-    color:  red;
-    border-radius: 4px;
-}
-
-.post-visibility-members,
-.post-visibility-paid {
-    display: none;
-}
-
-
-// Post Upgrade
-
-.post-upgrade {
-  padding: 5rem;
-  max-width: 48em !important;
-  min-width: 100%;
-  width: 75vw;
-  border-radius: 0.5rem;
-  border: 1px solid $color-border;
-  background: $color-background;
-
-	@media (prefers-color-scheme: dark) {
-		border-color: $color-border-dark;
-	  background: $color-background-dark;
-	}
-
-	.post-upgrade-title {
-	  margin-bottom: 2rem;
-	}
-
-	.post-upgrade-info {
-	  margin-bottom: 2rem;
-	}
-
-	.post-upgrade-info p {
-	  margin-bottom: 1rem;
-	}
-
-	.post-upgrade-info p:last-child {
-	  font-size: 0.8em;
-	  margin-bottom: 0;
-	}
-
-	.post-upgrade-button {
-		display: inline-block;
-		width: auto;
-		padding-left: 3rem;
-		padding-right: 3rem;
 	}
 }
 

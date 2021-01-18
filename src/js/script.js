@@ -51,7 +51,7 @@ jQuery(function($) {
       )
       return;
 
-      $('.nav-search').show();
+      html.addClass('has-search');
 
       var searchInput = $('.search-field');
       var searchButton = $('.search-button');

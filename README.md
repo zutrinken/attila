@@ -6,16 +6,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 
 ## 📷 Screenshots
 
-<table>
-<tr>
-<td valign="top">
-<img src="https://raw.githubusercontent.com/zutrinken/attila/master/src/screenshot-desktop.jpg" />
-</td>
-<td valign="top">
-<img src="https://raw.githubusercontent.com/zutrinken/attila/master/src/screenshot-mobile.jpg" />
-</td>
-</tr>
-</table>
+<img src="https://raw.githubusercontent.com/zutrinken/attila/master/src/screenshot.png" />
 
 ## ⭐️ Features
 
@@ -25,12 +16,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 * Post reading progress
 * Code highlight including line numbers
 * Disqus support
-
-## Members
-
-1. Unzip the theme archive on your computer and locate the file called `routes.yaml`
-2. Inside Ghost admin, go to the `Labs` settings area and scroll down until you see the `Custom Routes` section
-3. Upload the `routes.yaml` from this theme
+* Member menu buttons
 
 ## 🌍 Localization
 

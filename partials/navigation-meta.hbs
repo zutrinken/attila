@@ -1,0 +1,43 @@
+<ul class="nav-meta">
+  {{#if @site.twitter}}
+  <li class="nav-twitter">
+    <a aria-label="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank">
+      <i class="icon icon-twitter" aria-hidden="true"></i>
+      <span>{{@site.twitter}}</span>
+    </a>
+  </li>
+  {{/if}}
+  {{#if @site.facebook}}
+  <li class="nav-facebook">
+    <a aria-label="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank">
+      <i class="icon icon-facebook" aria-hidden="true"></i>
+      <span>{{@site.facebook}}</span>
+    </a>
+  </li>
+  {{/if}}
+  <li class="nav-search" style="display: none;">
+    <a title="{{t "Search"}}">
+      <i class="icon icon-search" aria-hidden="true"></i>
+      <span>{{t "Search"}}</span>
+    </a>
+  </li>
+  {{#if @labs.members}}
+    {{#if @member}}
+      <li class="nav-account">
+        <button class="members-account" data-portal="account">{{t "Account"}}</button>
+      </li>
+      {{#unless @member.paid}}
+        <li class="nav-upgrade">
+          <button class="members-upgrade cta" data-portal="account/plans">{{t "Upgrade"}}</button>
+        </li>
+      {{/unless}}
+    {{else}}
+      <li class="nav-login">
+        <button class="members-login" data-portal="signin">{{t "Sign in"}}</button>
+      </li>
+      <li class="nav-subscribe">
+        <button class="members-subscribe cta" data-portal="signup">{{t "Sign up"}}</button>
+      </li>
+    {{/if}}
+  {{/if}}
+</ul>
