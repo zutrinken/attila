@@ -33,15 +33,15 @@ body {
 	font-size: 1em;
 	line-height: 1.75em;
 	font-weight: 400;
-	color: $color-text-primary;
+	color: var(--color-content-main);
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
-	background: #FFF;
+	background: var(--color-background-main);
 	@media (prefers-color-scheme: dark) {
-		background: $color-background-dark;
-		color: $color-text-primary-dark;
+		background: var(--color-background-main-dark);
+		color: var(--color-content-main-dark);
 	}
 }
 
@@ -60,12 +60,12 @@ textarea {
 		color: inherit;
 		text-decoration: none;
 		font-weight: 400;
-		box-shadow: inset 0 -2px 0 $color-primary;
+		box-shadow: inset 0 -2px 0 var(--color-primary);
 		transition: all ease-out 0.1s;
 
 		&:focus,
 		&:hover {
-			box-shadow: inset 0 -3px 0 $color-primary-active;
+			box-shadow: inset 0 -3px 0 var(--color-primary-active);
 		}
 	}
 
@@ -78,9 +78,9 @@ textarea {
 		line-height: 1.25em;
 		margin: 0 0 4rem;
 		text-rendering: optimizeLegibility;
-		color: #000;
+		color: var(--color-content-lead);
 		@media (prefers-color-scheme: dark) {
-			color: #FFF;
+			color: var(--color-content-lead-dark);
 		}
 	}
 
@@ -147,7 +147,7 @@ textarea {
 		font-weight: 500;
 		line-height: 2em;
 		text-align: right;
-		color: $color-primary;
+		color: var(--color-primary);
 		font-family: var(--font-primary);
 	}
 
@@ -179,10 +179,10 @@ textarea {
 		height: 1px;
 		margin: 0 0 4rem;
 		padding: 0;
-		background: $color-border;
+		background: var(--color-background-contrast);
 		border: 0;
 		@media (prefers-color-scheme: dark) {
-			background: $color-border-dark;
+			background: var(--color-background-contrast-dark);
 		}
 	}
 
@@ -192,7 +192,7 @@ textarea {
 		padding: 0.25em 1em;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-		border-left: 0.25em solid $color-primary;
+		border-left: 0.25em solid var(--color-primary);
 		font-style: italic;
 		font-weight: 400;
 	}
@@ -219,8 +219,10 @@ textarea {
 	b,
 	strong {
 		font-weight: 700;
+		color: var(--color-content-lead);
+
 		@media (prefers-color-scheme: dark) {
-			color: $color-neutral-80;
+			color: var(--color-content-lead-dark);
 		}
 	}
 
@@ -240,16 +242,17 @@ textarea {
 		line-height: 1.25em;
 		font-weight: 700;
 		margin-bottom: 0.33334em;
+		font-family: var(--font-primary);
 	}
 
 	dl dt:before {
 		content: '';
 		position: absolute;
 		width: 1em;
-		height: 1px;
+		height: 2px;
 		margin-left: -30px;
 		margin-top: 0.5em;
-		background: $color-neutral-80;
+		background: var(--color-primary);
 	}
 
 	dl dd {
@@ -258,7 +261,7 @@ textarea {
 	}
 
 	mark {
-		background-color: $color-yellow-100;
+		background-color: #FFC336;
 	}
 
 	code,
@@ -268,13 +271,13 @@ textarea {
 		padding: 4px 8px;
 		font-family: monospace, sans-serif;
 		font-size: 0.75em;
-		background: $color-background;
-		border: 1px solid $color-border;
+		background: var(--color-background-secondary);
+		border: 1px solid var(--color-background-contrast);
 		top: -2px;
 		white-space: pre-wrap;
 		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-			border-color: $color-border-dark;
+			background: var(--color-background-secondary-dark);
+			border-color: var(--color-background-contrast-dark);
 		}
 	}
 
@@ -285,12 +288,12 @@ textarea {
 		overflow: hidden;
 		font-family: monospace, sans-serif;
 		white-space: pre;
-		background: $color-background;
-		border: 1px solid $color-border;
+		background: var(--color-background-secondary);
+		border: 1px solid var(--color-background-contrast);
 		box-sizing: border-box;
 		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-			border-color: $color-border-dark;
+			background: var(--color-background-secondary-dark);
+			border-color: var(--color-background-contrast-dark);
 		}
 	}
 
@@ -301,18 +304,18 @@ textarea {
 		left: 0;
 		top: 0;
 		padding: 1.33334em 0;
-		border-right: 1px solid $color-border;
-		color: $color-text-secondary;
+		border-right: 1px solid var(--color-background-contrast);
+		color: var(--color-content-secondary);
 		font-size: 0.75em;
 		line-height: 2em;
 		text-align: right;
 		box-sizing: border-box;
-		background: $color-background;
+		background: var(--color-background-secondary);
 		user-select: none;
 		-webkit-user-select: none;
 		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-			border-color: $color-border-dark;
+			background: var(--color-background-secondary-dark);
+			border-color: var(--color-background-contrast-dark);
 		}
 	}
 
@@ -345,16 +348,16 @@ textarea {
 		display: inline-block;
 		margin-bottom: 0.5em;
 		padding: 1px 8px;
-		border: $color-border 1px solid;
-		text-shadow: #FFF 0 1px 0;
+		border: 1px solid var(--color-background-contrast);
+		text-shadow: 0 1px 0 white;
 		font-size: 0.9em;
 		font-weight: bold;
-		background: $color-background;
+		background: var(--color-background-secondary);
 		border-radius: 4px;
-		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #FFF inset;
+		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 white inset;
 		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-			border-color: $color-border-dark;
+			background: var(--color-background-secondary-dark);
+			border-color: var(--color-background-contrast-dark);
 		}
 	}
 
@@ -363,11 +366,11 @@ textarea {
 		width: 100%;
 		max-width: 100%;
 		margin: 0 0 4rem;
-		border: 1px solid $color-border;
-		background: $color-background;
+		border: 1px solid var(--color-background-contrast);
+		background: var(--color-background-secondary);
 		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
-			background: $color-background-dark;
+			border-color: var(--color-background-contrast-dark);
+			background: var(--color-background-secondary-dark);
 		}
 
 		td,
@@ -376,9 +379,9 @@ textarea {
 			padding: 1.5rem;
 			font-size: 0.75em;
 			line-height: 1.33334em;
-			border: 1px solid $color-border;
+			border: 1px solid var(--color-background-contrast);
 			@media (prefers-color-scheme: dark) {
-				border-color: $color-border-dark;
+				border-color: var(--color-background-contrast-dark);
 			}
 		}
 
@@ -388,9 +391,9 @@ textarea {
 			letter-spacing: 1px;
 			font-size: 0.75em;
 			line-height: 1.33334em;
-			color: $color-text-secondary;
+			color: var(--color-content-secondary);
 			@media (prefers-color-scheme: dark) {
-				color: $color-text-secondary-dark;
+				color: var(--color-content-secondary-dark);
 			}
 		}
 	}
@@ -424,9 +427,9 @@ textarea {
 		margin-bottom: 0.5rem;
 		font-family: var(--font-primary);
 		font-weight: 500;
-		color: $color-text-primary;
+		color: var(--color-content-main);
 		@media (prefers-color-scheme: dark) {
-			color: $color-text-primary-dark;
+			color: var(--color-content-main-dark);
 		}
 	}
 
@@ -449,13 +452,13 @@ textarea {
 		box-shadow: none;
 		-webkit-appearance: normal;
 		appearance: normal;
-		color: $color-text-primary;
-		border: 1px solid $color-border;
-		background: $color-background;
+		border-radius: 0;
+		color: var(--color-content-main);
+		border: 1px solid var(--color-content-secondary);
+		background: transparent;
 		@media (prefers-color-scheme: dark) {
-			color: $color-text-primary-dark;
-			border-color: $color-border-dark;
-			background: $color-background-dark;
+			color: var(--color-content-main-dark);
+			border-color: var(--color-content-secondary-dark);
 		}
 	}
 
@@ -469,9 +472,9 @@ textarea {
 	input[type="number"]:hover,
 	input[type="search"]:hover,
 	input[type="password"]:hover {
-		border-color: $color-neutral-80;
+		border-color: var(--color-content-main);
 		@media (prefers-color-scheme: dark) {
-			border-color: $color-neutral-60;
+			border-color: var(--color-content-main-dark);
 		}
 	}
 
@@ -485,9 +488,9 @@ textarea {
 	input[type="number"]:focus,
 	input[type="search"]:focus,
 	input[type="password"]:focus {
-		border-color: $color-primary;
+		border-color: var(--color-primary);
 		@media (prefers-color-scheme: dark) {
-			border-color: $color-primary;
+			border-color: var(--color-primary);
 		}
 	}
 
@@ -505,9 +508,9 @@ textarea {
 		-webkit-appearance: normal;
 		appearance: normal;
 		transition: all ease-out 0.1s;
-		background: $color-primary;
+		background: var(--color-primary);
 		font-weight: 600;
-		color: #FFF;
+		color: white;
 		text-decoration: none;
 		text-align: center;
 		cursor: pointer;
@@ -518,7 +521,7 @@ textarea {
 	input[type="button"]:hover,
 	button:hover,
 	.button:hover {
-		background: $color-primary-active;
+		background: var(--color-primary-active);
 	}
 
 	input[type="reset"]:focus,
@@ -526,7 +529,7 @@ textarea {
 	input[type="button"]:focus,
 	button:focus,
 	.button:focus {
-		background: $color-primary-active;
+		background: var(--color-primary-active);
 	}
 }
 /* ==========================================================================
@@ -535,14 +538,14 @@ textarea {
 .post-content {
 	figure figcaption {
 		position: relative;
-		color: $color-text-secondary;
+		color: var(--color-content-secondary);
 		max-width: $inner;
 		margin: auto;
 		font-size: 0.75em;
 		line-height: 2em;
 		padding: 2rem 0;
 		@media (prefers-color-scheme: dark) {
-			color: $color-text-secondary-dark;
+			color: var(--color-content-secondary-dark);
 		}
 
 		&:after {
@@ -552,23 +555,23 @@ textarea {
 			bottom: 0;
 			width: 8rem;
 			height: 1px;
-			background: $color-border;
+			background: var(--color-background-contrast);
 			@media (prefers-color-scheme: dark) {
-				background: $color-border-dark;
+				background: var(--color-background-contrast-dark);
 			}
 		}
 
 		a {
-			box-shadow: inset 0 -1px 0 $color-border;
+			box-shadow: inset 0 -1px 0 var(--color-background-contrast);
 			@media (prefers-color-scheme: dark) {
-				box-shadow: inset 0 -1px 0 $color-border-dark;
+				box-shadow: inset 0 -1px 0 var(--color-background-contrast-dark);
 			}
 
 			&:focus,
 			&:hover {
-				box-shadow: inset 0 -2px 0 $color-border;
+				box-shadow: inset 0 -2px 0 var(--color-background-contrast);
 				@media (prefers-color-scheme: dark) {
-					box-shadow: inset 0 -2px 0 $color-border-dark;
+					box-shadow: inset 0 -2px 0 var(--color-background-contrast-dark);
 				}
 			}
 		}
@@ -707,13 +710,13 @@ textarea {
 		display: flex;
 		text-decoration: none;
 		min-height: 8em;
-		background: $color-background;
-		border: 1px solid $color-border;
+		background: var(--color-background-secondary);
+		border: 1px solid var(--color-background-contrast);
 		box-shadow: none !important;
 		overflow: hidden;
 		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-			border-color: $color-border-dark;
+			background: var(--color-background-secondary-dark);
+			border-color: var(--color-background-contrast-dark);
 		}
 	}
 
@@ -725,20 +728,20 @@ textarea {
 		align-items: flex-start;
 		justify-content: start;
 		padding: 1.5em;
-		color: $color-text-secondary;
+		color: var(--color-content-secondary);
 		@media (prefers-color-scheme: dark) {
-			color: $color-text-secondary-dark;
+			color: var(--color-content-secondary-dark);
 		}
 	}
 
 	.kg-bookmark-title {
-		color: $color-text-primary;
+		color: var(--color-content-main);
 		font-size: 0.75em;
 		line-height: 1.66667em;
 		font-weight: 700;
 		letter-spacing: 0.5px;
 		@media (prefers-color-scheme: dark) {
-			color: $color-text-primary-dark;
+			color: var(--color-content-main-dark);
 		}
 	}
 
@@ -775,12 +778,12 @@ textarea {
 		align-items: center;
 		font-size: 0.75em;
 		line-height: 1.66667em;
-		color: $color-text-primary;
+		color: var(--color-content-main);
 		font-weight: 400;
 		margin-top: 1em;
 		flex-wrap: wrap;
 		@media (prefers-color-scheme: dark) {
-			color: $color-text-primary-dark;
+			color: var(--color-content-main-dark);
 		}
 	}
 
@@ -795,7 +798,7 @@ textarea {
 	}
 
 	.kg-bookmark-publisher {
-		color: $color-primary;
+		color: var(--color-primary);
 	}
 	@media (max-width: $breakpoint-medium) {
 		.kg-bookmark-container {
@@ -841,12 +844,12 @@ textarea {
 	position: relative;
 	overflow: hidden;
 	margin: 0;
-	border: 2px solid $color-border;
-	background: $color-border;
+	border: 2px solid var(--color-background-contrast);
+	background: var(--color-background-contrast);
 	box-sizing: border-box;
 	@media (prefers-color-scheme: dark) {
-		border-color: $color-border-dark;
-		background: $color-border-dark;
+		border-color: var(--color-background-contrast-dark);
+		background: var(--color-background-contrast-dark);
 	}
 
 	&:after,
@@ -859,10 +862,10 @@ textarea {
 		bottom: 32.5%;
 		left: 25%;
 		border-radius: 100%;
-		background: $color-background;
+		background: var(--color-background-secondary);
 		box-sizing: border-box;
 		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
+			background: var(--color-background-secondary-dark);
 		}
 	}
 
@@ -890,8 +893,8 @@ textarea {
 
 	&.has-cover {
 		padding-top: calc(24rem + 8vw);
-		color: #FFF;
-		background: #000;
+		color: white;
+		background: black;
 		overflow: hidden;
 		text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 
@@ -905,9 +908,9 @@ textarea {
 		z-index: 10;
 		padding-bottom: calc(4rem + 2vw);
 		text-align: center;
-		border-bottom: 1px solid $color-border;
+		border-bottom: 1px solid var(--color-background-contrast);
 		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
+			border-color: var(--color-background-contrast-dark);
 		}
 	}
 
@@ -960,14 +963,14 @@ textarea {
 	font-size: 6em;
 	line-height: 1em;
 	text-decoration: none;
-	color: #000;
+	color: var(--color-content-lead);
 	@media (prefers-color-scheme: dark) {
-		color: #FFF;
+		color: var(--color-content-lead-dark);
 	}
 }
 
 .has-cover .blog-name {
-	color: #FFF;
+	color: white;
 }
 
 .blog-description {
@@ -977,14 +980,14 @@ textarea {
 	padding: 0;
 	font-size: 3em;
 	line-height: 1.33334em;
-	color: $color-text-secondary;
+	color: var(--color-content-secondary);
 	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
+		color: var(--color-content-secondary-dark);
 	}
 }
 
 .has-cover .blog-description {
-	color: #FFF;
+	color: white;
 }
 
 .archive {
@@ -993,9 +996,9 @@ textarea {
 
 	&.archive-box {
 		padding-bottom: calc(4rem + 2vw);
-		border-bottom: 1px solid $color-border;
+		border-bottom: 1px solid var(--color-background-contrast);
 		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
+			border-color: var(--color-background-contrast-dark);
 		}
 	}
 
@@ -1006,22 +1009,25 @@ textarea {
 		line-height: 1em;
 
 		.archive-type {
-			color: $color-primary;
+			color: var(--color-primary);
 		}
 
 		.archive-count {
 			position: relative;
-			margin-left: 3rem;
-			color: $color-text-secondary;
+			margin-left: 3.5rem;
+			color: var(--color-content-secondary);
 
 			&:after {
 				content: '';
 				position: absolute;
-				left: -2rem;
+				left: -2.5rem;
 				top: 50%;
-				width: 1rem;
-				height: 1px;
-				background: $color-neutral-80;
+				width: 1.5rem;
+				height: 2px;
+				background: var(--color-background-contrast);
+				@media (prefers-color-scheme: dark) {
+					background: var(--color-background-contrast-dark);
+				}
 			}
 		}
 	}
@@ -1030,9 +1036,9 @@ textarea {
 		font-size: 4em;
 		line-height: 1em;
 		margin: 1rem 0;
-		color: #000;
+		color: var(--color-content-lead);
 		@media (prefers-color-scheme: dark) {
-			color: #FFF;
+			color: var(--color-content-lead-dark);
 		}
 	}
 
@@ -1042,9 +1048,9 @@ textarea {
 		line-height: 1.5em;
 		margin: 1rem 0;
 		font-family: var(--font-secondary);
-		color: $color-text-secondary;
+		color: var(--color-content-secondary);
 		@media (prefers-color-scheme: dark) {
-			color: $color-text-secondary-dark;
+			color: var(--color-content-secondary-dark);
 		}
 	}
 
@@ -1055,7 +1061,7 @@ textarea {
 		margin-top: 1rem;
 
 		a {
-			color: $color-primary;
+			color: var(--color-primary);
 			transition: color linear 0.1s;
 
 			span {
@@ -1064,7 +1070,7 @@ textarea {
 
 			&:focus,
 			&:hover {
-				color: $color-primary-active;
+				color: var(--color-primary-active);
 			}
 		}
 	}
@@ -1111,11 +1117,11 @@ textarea {
 		}
 
 		.archive-info span {
-			color: #FFF;
+			color: white;
 		}
 
 		.archive-title {
-			color: #FFF;
+			color: white;
 		}
 
 		.archive-description {
@@ -1127,7 +1133,7 @@ textarea {
 
 			&:focus,
 			&:hover {
-				color: #FFF;
+				color: white;
 			}
 		}
 	}
@@ -1199,7 +1205,7 @@ textarea {
 			height: 2px;
 			margin-top: -1px;
 			border-radius: 1px;
-			background: #FFF;
+			background: white;
 		}
 
 		&:before {
@@ -1228,12 +1234,12 @@ textarea {
 	width: 100%;
 	max-width: $inner;
 	margin: auto;
-	background: #FFF;
+	background: var(--color-background-main);
 	border-radius: 4px;
 	box-shadow: 0 8px 24px -2px rgba(0,0,0,0.4);
 	overflow: hidden;
 	@media (prefers-color-scheme: dark) {
-		background: $color-background-dark;
+		background: var(--color-background-main-dark);
 	}
 	@media only screen and (max-width: $breakpoint-large) {
 		top: 6rem;
@@ -1243,9 +1249,9 @@ textarea {
 .search-form {
 	position: relative;
 	padding: 1rem 0;
-	border-bottom: 1px solid $color-border;
+	border-bottom: 1px solid var(--color-background-contrast);
 	@media (prefers-color-scheme: dark) {
-		border-color: $color-border-dark;
+		border-color: var(--color-background-contrast-dark);
 	}
 
 	.search-field {
@@ -1262,7 +1268,7 @@ textarea {
 
 		&:focus,
 		&:hover {
-			border-color: $color-primary-active;
+			border-color: var(--color-primary-active);
 		}
 	}
 
@@ -1278,13 +1284,13 @@ textarea {
 		padding: 0 1.5rem;
 		border: 0;
 		border-radius: 4px;
-		color: #FFF;
-		background: $color-primary;
+		color: white;
+		background: var(--color-primary);
 		transition: background ease-out 0.2s;
 
 		&:focus,
 		&:hover {
-			background-color: $color-primary-active;
+			background-color: var(--color-primary-active);
 		}
 
 		&.search-button-clear {
@@ -1294,17 +1300,17 @@ textarea {
 			margin: 2.5rem;
 			padding: 0;
 			border-radius: 4rem;
-			background: $color-text-secondary;
+			background: var(--color-content-secondary);
 			@media (prefers-color-scheme: dark) {
-				background: $color-text-secondary-dark;
+				background: var(--color-content-secondary-dark);
 			}
 
 			&:focus,
 			&:hover {
-				background: $color-text-primary;
+				background: var(--color-content-main);
 
 				@media (prefers-color-scheme: dark) {
-					background: $color-text-primary-dark;
+					background: var(--color-content-main-dark);
 				}
 			}
 
@@ -1322,10 +1328,10 @@ textarea {
 				height: 2px;
 				margin-top: -1px;
 				border-radius: 1px;
-				background: #FFF;
+				background: var(--color-background-main);
 
 				@media (prefers-color-scheme: dark) {
-					background: $color-background-dark;
+					background: var(--color-background-main-dark);
 				}
 			}
 
@@ -1350,9 +1356,9 @@ textarea {
 	}
 
 	.search-result-row {
-		border-bottom: 1px solid $color-border;
+		border-bottom: 1px solid var(--color-background-contrast);
 		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
+			border-color: var(--color-background-contrast-dark);
 		}
 
 		&:last-child {
@@ -1368,7 +1374,7 @@ textarea {
 
 			&:hover,
 			&:focus {
-				background: $color-background;
+				background: var(--color-background-secondary);
 				@media (prefers-color-scheme: dark) {
 					background: rgba(0,0,0,0.2);
 				}
@@ -1379,9 +1385,9 @@ textarea {
 				line-height: 1.25em;
 				font-weight: 700;
 				text-indent: -1px;
-				color: #000;
+				color: var(--color-content-lead);
 				@media (prefers-color-scheme: dark) {
-					color: #FFF;
+					color: var(--color-content-lead-dark);
 				}
 			}
 
@@ -1409,10 +1415,10 @@ textarea {
 	line-height: 1.25em;
 	font-weight: 700;
 	text-indent: -1px;
-	color: #000;
+	color: var(--color-content-lead);
 	margin-top: 0;
 	@media (prefers-color-scheme: dark) {
-		color: #FFF;
+		color: var(--color-content-lead-dark);
 	}
 }
 
@@ -1422,58 +1428,6 @@ textarea {
 	margin-bottom: 0;
 }
 
-.search-close {
-	position: fixed;
-	z-index: 600;
-	top: 0;
-	right: 0;
-	width: 4rem;
-	height: 4rem;
-	margin: 2rem;
-	border: 1px solid $color-neutral-80;
-	border-radius: 4rem;
-	box-sizing: border-box;
-	cursor: pointer;
-	transition: all ease-out 0.1s;
-	@media (prefers-color-scheme: dark) {
-		border-color: $color-neutral-60;
-	}
-
-	&:after,
-	&:before {
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: 20%;
-		width: 60%;
-		height: 2px;
-		margin-top: -1px;
-		border-radius: 2px;
-		background: $color-neutral-60;
-		transition: all ease-out 0.1s;
-		@media (prefers-color-scheme: dark) {
-			background: $color-neutral-80;
-		}
-	}
-
-	&:after {
-		transform: rotate(45deg);
-	}
-
-	&:before {
-		transform: rotate(-45deg);
-	}
-
-	&:focus,
-	&:hover {
-		border-color: $color-primary-active;
-
-		&:after,
-		&:before {
-			background: $color-primary-active;
-		}
-	}
-}
 /* ==========================================================================
    Navigation
    ========================================================================== */
@@ -1521,12 +1475,12 @@ textarea {
 	width: 100%;
 	cursor: pointer;
 	display: none;
-	color: $color-text-secondary;
+	color: var(--color-content-secondary);
 	border-top: 1px solid transparent;
 	box-sizing: border-box;
 	transition: all linear 0.1s;
 	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
+		color: var(--color-content-secondary-dark);
 	}
 	@media only screen and (max-width: $breakpoint-medium) {
 		display: block;
@@ -1559,22 +1513,22 @@ textarea {
 
 		&:focus,
 		&:hover {
-			color: $color-text-primary;
+			color: var(--color-content-main);
 			@media (prefers-color-scheme: dark) {
-				color: $color-text-primary-dark;
+				color: var(--color-content-main-dark);
 			}
 		}
 	}
 }
 
 .cover-active .nav-header .nav-wrapper-control {
-	color: #FFF;
+	color: white;
 }
 
 .menu-active .nav-header .nav-wrapper-control {
-	background: $color-neutral-15;
-	color: $color-text-secondary;
-	border-color: $color-border-dark;
+	background: #222426;
+	color: var(--color-content-secondary);
+	border-color: var(--color-background-contrast-dark);
 	@supports (-webkit-backdrop-filter: blur(2rem)) {
 		background: rgba(34,36,38,0.9);
 		-webkit-backdrop-filter: blur(2rem);
@@ -1583,7 +1537,7 @@ textarea {
 	a {
 		&:focus,
 		&:hover {
-			color: $color-text-primary-dark;
+			color: var(--color-content-main-dark);
 		}
 	}
 }
@@ -1594,7 +1548,7 @@ textarea {
 	padding: 2rem 4rem;
 	overflow-y: auto;
 	@media only screen and (max-width: $breakpoint-medium) {
-		background: $color-neutral-15;
+		background: #222426;
 		flex-direction: column;
 		@supports (-webkit-backdrop-filter: blur(2rem)) {
 			background: rgba(34,36,38,0.9);
@@ -1662,7 +1616,7 @@ textarea {
 			padding: 0 1rem;
 			margin-left: -1rem;
 			margin-top: -2rem;
-			background: $color-primary;
+			background: var(--color-primary);
 			@media only screen and (max-width: $breakpoint-medium) {
 				left: 0;
 				top: 50%;
@@ -1676,13 +1630,13 @@ textarea {
 		}
 
 		a {
-			color: $color-neutral-25;
+			color: var(--color-content-main);
 			font-weight: 500;
 			@media (prefers-color-scheme: dark) {
-				color: $color-neutral-90;
+				color: var(--color-content-main-dark);
 			}
 			@media only screen and (max-width: $breakpoint-medium) {
-				color: #FFF;
+				color: white;
 			}
 		}
 	}
@@ -1694,28 +1648,28 @@ textarea {
 		border-radius: 0.5rem;
 		margin: 0.125rem 0;
 		padding: 0.75rem 1.25rem;
-		border: 1px solid $color-primary;
+		border: 1px solid var(--color-primary);
 		background: transparent;
 		white-space: nowrap;
 		font-size: 1.5em;
 		line-height: 2rem;
-		color: $color-primary;
+		color: var(--color-primary);
 		font-weight: 500;
 
 		&:focus,
 		&:hover {
-			color: $color-primary-active;
+			color: var(--color-primary-active);
 		}
 
 		&.cta {
 			font-weight: 700;
-			color: #FFF;
-			background: $color-primary;
+			color: white;
+			background: var(--color-primary);
 			border: 0;
 
 			&:focus,
 			&:hover {
-				background: $color-primary-active;
+				background: var(--color-primary-active);
 			}
 		}
 	}
@@ -1725,7 +1679,7 @@ textarea {
 		padding: 1rem 0;
 		font-size: 1.6em;
 		line-height: 2rem;
-		color: $color-text-secondary;
+		color: var(--color-content-secondary);
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		text-decoration: none;
@@ -1733,7 +1687,7 @@ textarea {
 		cursor: pointer;
 		transition: color linear 0.1s;
 		@media (prefers-color-scheme: dark) {
-			color: $color-text-secondary-dark;
+			color: var(--color-content-secondary-dark);
 		}
 		@media only screen and (max-width: $breakpoint-medium) {
 			font-size: 2em;
@@ -1749,18 +1703,18 @@ textarea {
 				margin-left: 6px;
 				margin-top: -1px;
 				border-radius: 2px;
-				background: $color-neutral-25;
+				background: #3B3D40;
 			}
 		}
 
 		&:focus,
 		&:hover {
-			color: $color-neutral-25;
+			color: var(--color-content-main);
 			@media (prefers-color-scheme: dark) {
-				color: $color-neutral-90;
+				color: var(--color-content-main-dark);
 			}
 			@media only screen and (max-width: $breakpoint-medium) {
-				color: $color-neutral-80;
+				color: #C4C7CC;
 			}
 		}
 	}
@@ -1819,7 +1773,7 @@ textarea {
 
 		&:focus,
 		&:hover {
-			color: #FFF;
+			color: white;
 		}
 	}
 
@@ -1834,29 +1788,29 @@ textarea {
 			&:focus,
 			&:hover {
 				@media only screen and (min-width: $breakpoint-medium) {
-					color: #FFF;
-					border-color: #FFF;
+					color: white;
+					border-color: white;
 				}
 			}
 		}
 
 		button.cta {
 			@media only screen and (min-width: $breakpoint-medium) {
-				color: $color-primary;
+				color: var(--color-primary);
 				background-color: rgba(255,255,255,0.8);
 			}
 
 			&:focus,
 			&:hover {
 				@media only screen and (min-width: $breakpoint-medium) {
-					background-color: #FFF;
+					background-color: white;
 				}
 			}
 		}
 
 		&.active a {
 			@media only screen and (min-width: $breakpoint-medium) {
-				color: #FFF;
+				color: white;
 			}
 		}
 	}
@@ -1883,7 +1837,7 @@ textarea {
 	display: block;
 	width: 0;
 	height: 3px;
-	background: $color-primary;
+	background: var(--color-primary);
 }
 /* ==========================================================================
    Footer
@@ -1902,18 +1856,18 @@ textarea {
 
 	a {
 		display: inline-block;
-		color: $color-text-secondary;
+		color: var(--color-content-secondary);
 		text-decoration: none;
 		font-weight: 400;
 		cursor: pointer;
 		@media (prefers-color-scheme: dark) {
-			color: $color-text-secondary-dark;
+			color: var(--color-content-secondary-dark);
 		}
 		&:focus,
 		&:hover {
-			color: $color-neutral-25;
+			color: var(--color-content-main);
 			@media (prefers-color-scheme: dark) {
-				color: $color-neutral-90;
+				color: var(--color-content-main-dark);
 			}
 		}
 	}
@@ -1950,10 +1904,10 @@ textarea {
 	margin-right: 3rem;
 
 	&.active a {
-		color: $color-neutral-25;
+		color: var(--color-content-main);
 		font-weight: 500;
 		@media (prefers-color-scheme: dark) {
-			color: $color-neutral-90;
+			color: var(--color-content-main-dark);
 		}
 	}
 
@@ -1978,10 +1932,10 @@ textarea {
 	display: block;
 	font-size: 1.6em;
 	line-height: 2rem;
-	color: $color-text-secondary;
+	color: var(--color-content-secondary);
 	white-space: nowrap;
 	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
+		color: var(--color-content-secondary-dark);
 	}
 	@media only screen and (max-width: $breakpoint-medium) {
 		margin-bottom: 3rem;
@@ -2002,9 +1956,9 @@ textarea {
 	margin-left: auto;
 	font-size: 1.6em;
 	line-height: 2rem;
-	color: $color-text-secondary;
+	color: var(--color-content-secondary);
 	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
+		color: var(--color-content-secondary-dark);
 	}
 
 	@media only screen and (max-width: $breakpoint-medium) {
@@ -2026,16 +1980,16 @@ textarea {
 	.post .post-box {
 		padding-top: calc(4rem + 2vw);
 		padding-bottom: calc(4rem + 2vw);
-		border-bottom: 1px solid $color-border;
+		border-bottom: 1px solid var(--color-background-contrast);
 		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
+			border-color: var(--color-background-contrast-dark);
 		}
 	}
 
 	#results .post:first-child .post-box {
-		border-top: 1px solid $color-border;
+		border-top: 1px solid var(--color-background-contrast);
 		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
+			border-color: var(--color-background-contrast-dark);
 		}
 	}
 }
@@ -2051,7 +2005,7 @@ textarea {
 	font-style: normal;
 	font-weight: normal;
 	content: '\e800';
-	color: $color-yellow-100;
+	color: #FFC336;
 	text-align: center;
 }
 /* ==========================================================================
@@ -2065,7 +2019,7 @@ textarea {
 .post-header.has-cover {
 	padding: calc(16rem + 8vw) 0 calc(4rem + 6vw);
 	margin-bottom: calc(4rem + 2vw);
-	background: #000;
+	background: black;
 	overflow: hidden;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
@@ -2119,37 +2073,40 @@ textarea {
 	line-height: 1em;
 
 	.post-type {
-		color: $color-primary;
+		color: var(--color-primary);
 	}
 
 	.post-count {
 		position: relative;
-		margin-left: 3rem;
-		color: $color-text-secondary;
+		margin-left: 3.5rem;
+		color: var(--color-content-secondary);
 
 		&:after {
 			content: '';
 			position: absolute;
-			left: -2rem;
+			left: -2.5rem;
 			top: 50%;
-			width: 1rem;
-			height: 1px;
-			background: $color-neutral-80;
+			width: 1.5rem;
+			height: 2px;
+			background: var(--color-background-contrast);
+			@media (prefers-color-scheme: dark) {
+				background: var(--color-background-contrast-dark);
+			}
 		}
 	}
 }
 
 .has-cover .post-info {
 	.post-count {
-		color: #FFF;
+		color: white;
 
 		&:after {
-			background: #FFF;
+			background: white;
 		}
 	}
 
 	.post-type {
-		color: #FFF;
+		color: white;
 	}
 }
 
@@ -2161,9 +2118,9 @@ textarea {
 	line-height: 1.25em;
 	font-weight: 700;
 	text-indent: -1px;
-	color: #000;
+	color: var(--color-content-lead);
 	@media (prefers-color-scheme: dark) {
-		color: #FFF;
+		color: var(--color-content-lead-dark);
 	}
 
 	@media only screen and (max-width: $breakpoint-small) {
@@ -2185,16 +2142,16 @@ textarea {
 }
 
 .has-cover .post-title {
-	color: #FFF;
+	color: white;
 }
 
 .post-meta {
 	font-weight: 400;
 	font-size: 1.6em;
 	line-height: 2rem;
-	color: $color-text-secondary;
+	color: var(--color-content-secondary);
 	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
+		color: var(--color-content-secondary-dark);
 	}
 
 	a {
@@ -2227,9 +2184,9 @@ textarea {
 		bottom: 0;
 		width: 8rem;
 		height: 1px;
-		background: $color-border;
+		background: var(--color-background-contrast);
 		@media (prefers-color-scheme: dark) {
-			background: $color-border-dark;
+			background: var(--color-background-contrast-dark);
 		}
 	}
 
@@ -2263,11 +2220,11 @@ textarea {
 	}
 
 	.post-meta-author {
-		color: $color-text-primary;
+		color: var(--color-content-main);
 		font-weight: 500;
 		margin: 0;
 		@media (prefers-color-scheme: dark) {
-			color: $color-text-primary-dark;
+			color: var(--color-content-main-dark);
 		}
 	}
 }
@@ -2281,11 +2238,11 @@ textarea {
 	}
 
 	.post-meta-avatar {
-		border-color: #FFF;
+		border-color: white;
 	}
 
 	.post-meta-author {
-		color: #FFF;
+		color: white;
 	}
 }
 
@@ -2333,9 +2290,9 @@ textarea {
 	font-size: 1.6em;
 	line-height: 3rem;
 	font-weight: 400;
-	color: $color-text-secondary;
+	color: var(--color-content-secondary);
 	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
+		color: var(--color-content-secondary-dark);
 	}
 }
 
@@ -2361,7 +2318,7 @@ textarea {
 	line-height: 3rem;
 	text-align: center;
 	text-decoration: none;
-	color: #FFF;
+	color: white;
 	border-radius: 2em;
 	transition: all ease 0.2s;
 	@media only screen and (max-width: $breakpoint-medium) {
@@ -2371,10 +2328,7 @@ textarea {
 
 	&:focus,
 	&:hover {
-		background-color: $color-neutral-15;
-		@media (prefers-color-scheme: dark) {
-			background-color: $color-primary-active;
-		}
+		background-color: var(--color-primary-active);
 	}
 }
 
@@ -2392,19 +2346,19 @@ textarea {
 }
 
 .post-share .twitter {
-	background-color: $color-social-twitter;
+	background-color: #3EA9DD;
 }
 
 .post-share .facebook {
-	background-color: $color-social-facebook;
+	background-color: #3C5A98;
 }
 
 .post-share .linkedin {
-	background-color: $color-social-linkedin;
+	background-color: #0E76A8;
 }
 
 .post-share .email {
-	background-color: $color-social-mail;
+	background-color: #2997EE;
 }
 
 .post-tags {
@@ -2425,13 +2379,13 @@ textarea {
 	margin-right: 0.5em;
 	margin-bottom: 0.5em;
 	padding: 0 1.5rem;
-	background: $color-primary;
+	background: var(--color-primary);
 	font-size: 1.6em;
 	font-weight: 500;
 	line-height: 3rem;
 	text-align: center;
 	text-decoration: none;
-	color: #FFF;
+	color: white;
 	border-radius: 2em;
 	transition: all ease 0.2s;
 	box-sizing: border-box;
@@ -2439,7 +2393,7 @@ textarea {
 
 	&:focus,
 	&:hover {
-		background: $color-primary-active;
+		background: var(--color-primary-active);
 	}
 }
 /* ==========================================================================
@@ -2449,19 +2403,19 @@ textarea {
 	position: relative;
 	padding: 4rem;
 	text-align: center;
-	border-top: 1px solid $color-border;
-	border-bottom: 1px solid $color-border;
+	border-top: 1px solid var(--color-background-contrast);
+	border-bottom: 1px solid var(--color-background-contrast);
 	box-sizing: border-box;
 	@media (prefers-color-scheme: dark) {
-		border-color: $color-border-dark;
+		border-color: var(--color-background-contrast-dark);
 	}
 
 	&.activated {
-		background: $color-background;
-		border: 1px solid $color-border;
+		background: var(--color-background-secondary);
+		border: 1px solid var(--color-background-contrast);
 		@media (prefers-color-scheme: dark) {
-			background: $color-background-dark;
-			border-color: $color-border-dark;
+			background: var(--color-background-secondary-dark);
+			border-color: var(--color-background-contrast-dark);
 		}
 	}
 }
@@ -2471,24 +2425,24 @@ textarea {
 	height: 4rem;
 	margin: 2rem 0;
 	padding: 0 2rem;
-	border: 1px solid $color-neutral-80;
+	border: 1px solid var(--color-background-contrast);
 	font-weight: 500;
 	font-size: 1.6em;
 	line-height: 4rem;
-	color: $color-text-secondary;
+	color: var(--color-content-secondary);
 	text-align: center;
 	cursor: pointer;
 	transition: all ease 0.2s;
 	border-radius: 2em;
 	@media (prefers-color-scheme: dark) {
-		border-color: $color-neutral-60;
-		color: $color-neutral-80;
+		border-color: var(--color-background-contrast-dark);
+		color: var(--color-content-secondary-dark);
 	}
 
 	&:focus,
 	&:hover {
-		color: $color-primary-active;
-		border-color: $color-primary-active;
+		color: var(--color-primary-active);
+		border-color: var(--color-primary-active);
 	}
 }
 
@@ -2502,93 +2456,35 @@ textarea {
 .gh-post-upgrade-cta {
 
 	.gh-post-upgrade-cta-content {
-		background: $color-primary !important;
+		background: var(--color-primary) !important;
 
 		.gh-btn {
 			padding: 1rem 2rem;
 			border-radius: 0.5rem;
 			font-weight: 700;
-			color: #FFF !important;
-			background: $color-text-primary !important;
+			color: white !important;
+			background: #222426 !important;
 			transition: all ease-out 0.2s;
 
 			&:focus,
 			&:hover {
 				opacity: inherit;
-				background: #000 !important;
+				background: black !important;
 			}
 		}
 	}
 }
 
-.post-subscribe {
-	position: relative;
-	padding: 4rem 0;
-	margin: 1em 0;
-	text-align: center;
-	background: $color-neutral-25;
-	color: $color-neutral-80;
-	box-sizing: border-box;
-	border-radius: 2px;
-
-	p {
-		max-width: 13.33334em;
-		margin: 0 auto 1.33334em;
-		font-size: 1.2em;
-		line-height: 1.33334em;
-	}
-
-	.post-subscribe-form {
-		display: flex;
-		justify-content: center;
-
-		.post-subscribe-input {
-			width: 100%;
-			font-size: 0.8em;
-			height: 2.5em;
-			padding: 0 0.25em 0 1.25em;
-			border: 0;
-			border-right: none;
-			appearance: none;
-			outline: none;
-			box-shadow: none;
-			box-sizing: border-box;
-			border-radius: 4em 0 0 4em;
-			color: $color-neutral-25;
-		}
-
-		.post-subscribe-button {
-			display: inline-block;
-			font-size: 0.8em;
-			height: 2.5em;
-			padding: 0 1.25em 0 1em;
-			font-weight: 500;
-			color: #FFF;
-			background: $color-neutral-60;
-			border: 0;
-			appearance: none;
-			outline: none;
-			box-shadow: none;
-			box-sizing: border-box;
-			border-radius: 0 4em 4em 0;
-
-			&:focus,
-			&:hover {
-				background: $color-primary-active;
-			}
-		}
-	}
-}
 /* ==========================================================================
    Post Comments
    ========================================================================== */
 .post-nav {
 	position: relative;
 	margin-top: -1px;
-	border-top: 1px solid $color-border;
-	border-bottom: 1px solid $color-border;
+	border-top: 1px solid var(--color-background-contrast);
+	border-bottom: 1px solid var(--color-background-contrast);
 	@media (prefers-color-scheme: dark) {
-		border-color: $color-border-dark;
+		border-color: var(--color-background-contrast-dark);
 	}
 }
 
@@ -2599,10 +2495,10 @@ textarea {
 	height: 100%;
 	left: 50%;
 	top: 0;
-	background: $color-border;
+	background: var(--color-background-contrast);
 	z-index: 2;
 	@media (prefers-color-scheme: dark) {
-		background: $color-border-dark;
+		background: var(--color-background-contrast-dark);
 	}
 	@media only screen and (max-width: $breakpoint-medium) {
 		display: none;
@@ -2625,7 +2521,7 @@ textarea {
 		color: inherit;
 
 		i {
-			color: $color-primary-active;
+			color: var(--color-primary-active);
 		}
 	}
 }
@@ -2668,10 +2564,10 @@ textarea {
 			left: 0;
 			bottom: 0;
 			margin-bottom: -1px;
-			background: $color-border;
+			background: var(--color-background-contrast);
 			z-index: 2;
 			@media (prefers-color-scheme: dark) {
-				background: $color-border-dark;
+				background: var(--color-background-contrast-dark);
 			}
 		}
 	}
@@ -2687,9 +2583,9 @@ textarea {
 	line-height: 4rem;
 	text-align: center;
 	transition: all ease-out 0.2s;
-	color: $color-border;
+	color: var(--color-background-contrast);
 	@media (prefers-color-scheme: dark) {
-		color: $color-border-dark;
+		color: var(--color-background-contrast-dark);
 	}
 
 	&:before {
@@ -2719,9 +2615,9 @@ textarea {
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	color: #000;
+	color: var(--color-content-lead);
 	@media (prefers-color-scheme: dark) {
-		color: #FFF;
+		color: var(--color-content-lead-dark);
 	}
 }
 
@@ -2742,9 +2638,9 @@ textarea {
 	margin: 0;
 	font-size: 1.6em;
 	line-height: 2rem;
-	color: $color-text-secondary;
+	color: var(--color-content-secondary);
 	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
+		color: var(--color-content-secondary-dark);
 	}
 }
 
@@ -2774,25 +2670,25 @@ textarea {
 	margin: -1px 0;
 	padding: 0 2rem;
 	z-index: 100;
-	border: 1px solid $color-neutral-80;
+	border: 1px solid var(--color-background-contrast);
 	font-size: 1.6em;
 	line-height: 4rem;
 	font-weight: 500;
 	text-align: center;
 	text-decoration: none;
-	color: $color-text-secondary;
+	color: var(--color-content-secondary);
 	transition: all ease 0.2s;
 	border-radius: 4rem;
 	box-sizing: border-box;
 	@media (prefers-color-scheme: dark) {
-		border-color: $color-neutral-60;
-		color: $color-neutral-80;
+		border-color: var(--color-background-contrast-dark);
+		color: var(--color-content-secondary-dark);
 	}
 
 	&:focus,
 	&:hover {
-		color: $color-primary-active;
-		border-color: $color-primary-active;
+		color: var(--color-primary-active);
+		border-color: var(--color-primary-active);
 	}
 }
 
@@ -2841,9 +2737,9 @@ textarea {
 	z-index: 50;
 	display: block;
 	text-align: center;
-	color: $color-text-secondary;
+	color: var(--color-content-secondary);
 	@media (prefers-color-scheme: dark) {
-		color: $color-text-secondary-dark;
+		color: var(--color-content-secondary-dark);
 	}
 }
 
@@ -2855,9 +2751,9 @@ textarea {
 	display: block;
 
 	.pagination-box {
-		border-bottom: 1px solid $color-border;
+		border-bottom: 1px solid var(--color-background-contrast);
 		@media (prefers-color-scheme: dark) {
-			border-color: $color-border-dark;
+			border-color: var(--color-background-contrast-dark);
 		}
 	}
 }
