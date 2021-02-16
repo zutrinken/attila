@@ -1067,10 +1067,7 @@ textarea {
 	opacity: 0;
 	transition: opacity ease-out 0.2s;
 	pointer-events: none;
-	background: rgba(37,40,43,0.9);
-	@media (prefers-color-scheme: dark) {
-		background: rgba(9,10,13,0.9);
-	}
+	background: var(--color-background-overlay);
 
 	.search-wrapper-close {
 		position: absolute;
@@ -1320,10 +1317,7 @@ textarea {
 	width: 100%;
 	height: 100%;
 	display: none;
-	background: rgba(37,40,43,0.9);
-	@media (prefers-color-scheme: dark) {
-		background: rgba(9,10,13,0.9);
-	}
+	background: var(--color-background-overlay);
 }
 
 .menu-active .nav-close {
