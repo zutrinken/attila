@@ -39,10 +39,6 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	overflow-x: hidden;
 	background: var(--color-background-main);
-	@media (prefers-color-scheme: dark) {
-		background: var(--color-background-main-dark);
-		color: var(--color-content-main-dark);
-	}
 }
 
 button,
@@ -79,9 +75,6 @@ textarea {
 		margin: 0 0 4rem;
 		text-rendering: optimizeLegibility;
 		color: var(--color-content-lead);
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-lead-dark);
-		}
 	}
 
 	h1 {
@@ -181,9 +174,6 @@ textarea {
 		padding: 0;
 		background: var(--color-background-contrast);
 		border: 0;
-		@media (prefers-color-scheme: dark) {
-			background: var(--color-background-contrast-dark);
-		}
 	}
 
 	blockquote {
@@ -220,10 +210,6 @@ textarea {
 	strong {
 		font-weight: 700;
 		color: var(--color-content-lead);
-
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-lead-dark);
-		}
 	}
 
 	small {
@@ -275,10 +261,6 @@ textarea {
 		border: 1px solid var(--color-background-contrast);
 		top: -2px;
 		white-space: pre-wrap;
-		@media (prefers-color-scheme: dark) {
-			background: var(--color-background-secondary-dark);
-			border-color: var(--color-background-contrast-dark);
-		}
 	}
 
 	pre {
@@ -291,10 +273,6 @@ textarea {
 		background: var(--color-background-secondary);
 		border: 1px solid var(--color-background-contrast);
 		box-sizing: border-box;
-		@media (prefers-color-scheme: dark) {
-			background: var(--color-background-secondary-dark);
-			border-color: var(--color-background-contrast-dark);
-		}
 	}
 
 	pre .lines {
@@ -313,10 +291,6 @@ textarea {
 		background: var(--color-background-secondary);
 		user-select: none;
 		-webkit-user-select: none;
-		@media (prefers-color-scheme: dark) {
-			background: var(--color-background-secondary-dark);
-			border-color: var(--color-background-contrast-dark);
-		}
 	}
 
 	pre .lines .line {
@@ -355,10 +329,6 @@ textarea {
 		background: var(--color-background-secondary);
 		border-radius: 4px;
 		box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 white inset;
-		@media (prefers-color-scheme: dark) {
-			background: var(--color-background-secondary-dark);
-			border-color: var(--color-background-contrast-dark);
-		}
 	}
 
 	table {
@@ -368,10 +338,6 @@ textarea {
 		margin: 0 0 4rem;
 		border: 1px solid var(--color-background-contrast);
 		background: var(--color-background-secondary);
-		@media (prefers-color-scheme: dark) {
-			border-color: var(--color-background-contrast-dark);
-			background: var(--color-background-secondary-dark);
-		}
 
 		td,
 		th {
@@ -380,9 +346,6 @@ textarea {
 			font-size: 0.75em;
 			line-height: 1.33334em;
 			border: 1px solid var(--color-background-contrast);
-			@media (prefers-color-scheme: dark) {
-				border-color: var(--color-background-contrast-dark);
-			}
 		}
 
 		th {
@@ -392,9 +355,6 @@ textarea {
 			font-size: 0.75em;
 			line-height: 1.33334em;
 			color: var(--color-content-secondary);
-			@media (prefers-color-scheme: dark) {
-				color: var(--color-content-secondary-dark);
-			}
 		}
 	}
 
@@ -428,9 +388,6 @@ textarea {
 		font-family: var(--font-primary);
 		font-weight: 500;
 		color: var(--color-content-main);
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-main-dark);
-		}
 	}
 
 	select,
@@ -456,10 +413,6 @@ textarea {
 		color: var(--color-content-main);
 		border: 1px solid var(--color-content-secondary);
 		background: transparent;
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-main-dark);
-			border-color: var(--color-content-secondary-dark);
-		}
 	}
 
 	select:hover,
@@ -473,9 +426,6 @@ textarea {
 	input[type="search"]:hover,
 	input[type="password"]:hover {
 		border-color: var(--color-content-main);
-		@media (prefers-color-scheme: dark) {
-			border-color: var(--color-content-main-dark);
-		}
 	}
 
 	select:focus,
@@ -489,9 +439,6 @@ textarea {
 	input[type="search"]:focus,
 	input[type="password"]:focus {
 		border-color: var(--color-primary);
-		@media (prefers-color-scheme: dark) {
-			border-color: var(--color-primary);
-		}
 	}
 
 	input[type="reset"],
@@ -544,9 +491,6 @@ textarea {
 		font-size: 0.75em;
 		line-height: 2em;
 		padding: 2rem 0;
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-secondary-dark);
-		}
 
 		&:after {
 			content: '';
@@ -556,23 +500,14 @@ textarea {
 			width: 8rem;
 			height: 1px;
 			background: var(--color-background-contrast);
-			@media (prefers-color-scheme: dark) {
-				background: var(--color-background-contrast-dark);
-			}
 		}
 
 		a {
 			box-shadow: inset 0 -1px 0 var(--color-background-contrast);
-			@media (prefers-color-scheme: dark) {
-				box-shadow: inset 0 -1px 0 var(--color-background-contrast-dark);
-			}
 
 			&:focus,
 			&:hover {
 				box-shadow: inset 0 -2px 0 var(--color-background-contrast);
-				@media (prefers-color-scheme: dark) {
-					box-shadow: inset 0 -2px 0 var(--color-background-contrast-dark);
-				}
 			}
 		}
 	}
@@ -714,10 +649,6 @@ textarea {
 		border: 1px solid var(--color-background-contrast);
 		box-shadow: none !important;
 		overflow: hidden;
-		@media (prefers-color-scheme: dark) {
-			background: var(--color-background-secondary-dark);
-			border-color: var(--color-background-contrast-dark);
-		}
 	}
 
 	.kg-bookmark-content {
@@ -729,9 +660,6 @@ textarea {
 		justify-content: start;
 		padding: 1.5em;
 		color: var(--color-content-secondary);
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-secondary-dark);
-		}
 	}
 
 	.kg-bookmark-title {
@@ -740,9 +668,6 @@ textarea {
 		line-height: 1.66667em;
 		font-weight: 700;
 		letter-spacing: 0.5px;
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-main-dark);
-		}
 	}
 
 	.kg-bookmark-description {
@@ -782,9 +707,6 @@ textarea {
 		font-weight: 400;
 		margin-top: 1em;
 		flex-wrap: wrap;
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-main-dark);
-		}
 	}
 
 	.kg-bookmark-icon {
@@ -847,10 +769,6 @@ textarea {
 	border: 2px solid var(--color-background-contrast);
 	background: var(--color-background-contrast);
 	box-sizing: border-box;
-	@media (prefers-color-scheme: dark) {
-		border-color: var(--color-background-contrast-dark);
-		background: var(--color-background-contrast-dark);
-	}
 
 	&:after,
 	&:before {
@@ -864,9 +782,6 @@ textarea {
 		border-radius: 100%;
 		background: var(--color-background-secondary);
 		box-sizing: border-box;
-		@media (prefers-color-scheme: dark) {
-			background: var(--color-background-secondary-dark);
-		}
 	}
 
 	&:after {
@@ -909,9 +824,6 @@ textarea {
 		padding-bottom: calc(4rem + 2vw);
 		text-align: center;
 		border-bottom: 1px solid var(--color-background-contrast);
-		@media (prefers-color-scheme: dark) {
-			border-color: var(--color-background-contrast-dark);
-		}
 	}
 
 	&.has-cover .blog-box {
@@ -964,9 +876,6 @@ textarea {
 	line-height: 1em;
 	text-decoration: none;
 	color: var(--color-content-lead);
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-content-lead-dark);
-	}
 }
 
 .has-cover .blog-name {
@@ -981,9 +890,6 @@ textarea {
 	font-size: 3em;
 	line-height: 1.33334em;
 	color: var(--color-content-secondary);
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-content-secondary-dark);
-	}
 }
 
 .has-cover .blog-description {
@@ -997,9 +903,6 @@ textarea {
 	&.archive-box {
 		padding-bottom: calc(4rem + 2vw);
 		border-bottom: 1px solid var(--color-background-contrast);
-		@media (prefers-color-scheme: dark) {
-			border-color: var(--color-background-contrast-dark);
-		}
 	}
 
 	.archive-info {
@@ -1025,9 +928,6 @@ textarea {
 				width: 1.5rem;
 				height: 2px;
 				background: var(--color-background-contrast);
-				@media (prefers-color-scheme: dark) {
-					background: var(--color-background-contrast-dark);
-				}
 			}
 		}
 	}
@@ -1037,9 +937,6 @@ textarea {
 		line-height: 1em;
 		margin: 1rem 0;
 		color: var(--color-content-lead);
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-lead-dark);
-		}
 	}
 
 	.archive-description {
@@ -1049,9 +946,6 @@ textarea {
 		margin: 1rem 0;
 		font-family: var(--font-secondary);
 		color: var(--color-content-secondary);
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-secondary-dark);
-		}
 	}
 
 	.archive-links {
@@ -1238,9 +1132,6 @@ textarea {
 	border-radius: 4px;
 	box-shadow: 0 8px 24px -2px rgba(0,0,0,0.4);
 	overflow: hidden;
-	@media (prefers-color-scheme: dark) {
-		background: var(--color-background-main-dark);
-	}
 	@media only screen and (max-width: $breakpoint-large) {
 		top: 6rem;
 	}
@@ -1250,9 +1141,6 @@ textarea {
 	position: relative;
 	padding: 1rem 0;
 	border-bottom: 1px solid var(--color-background-contrast);
-	@media (prefers-color-scheme: dark) {
-		border-color: var(--color-background-contrast-dark);
-	}
 
 	.search-field {
 		font-size: 2em;
@@ -1301,17 +1189,10 @@ textarea {
 			padding: 0;
 			border-radius: 4rem;
 			background: var(--color-content-secondary);
-			@media (prefers-color-scheme: dark) {
-				background: var(--color-content-secondary-dark);
-			}
 
 			&:focus,
 			&:hover {
 				background: var(--color-content-main);
-
-				@media (prefers-color-scheme: dark) {
-					background: var(--color-content-main-dark);
-				}
 			}
 
 			i {
@@ -1329,10 +1210,6 @@ textarea {
 				margin-top: -1px;
 				border-radius: 1px;
 				background: var(--color-background-main);
-
-				@media (prefers-color-scheme: dark) {
-					background: var(--color-background-main-dark);
-				}
 			}
 
 			&:before {
@@ -1357,9 +1234,6 @@ textarea {
 
 	.search-result-row {
 		border-bottom: 1px solid var(--color-background-contrast);
-		@media (prefers-color-scheme: dark) {
-			border-color: var(--color-background-contrast-dark);
-		}
 
 		&:last-child {
 			border: 0;
@@ -1375,9 +1249,6 @@ textarea {
 			&:hover,
 			&:focus {
 				background: var(--color-background-secondary);
-				@media (prefers-color-scheme: dark) {
-					background: rgba(0,0,0,0.2);
-				}
 			}
 
 			.search-result-row-title {
@@ -1386,9 +1257,6 @@ textarea {
 				font-weight: 700;
 				text-indent: -1px;
 				color: var(--color-content-lead);
-				@media (prefers-color-scheme: dark) {
-					color: var(--color-content-lead-dark);
-				}
 			}
 
 			.search-result-row-excerpt {
@@ -1417,9 +1285,6 @@ textarea {
 	text-indent: -1px;
 	color: var(--color-content-lead);
 	margin-top: 0;
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-content-lead-dark);
-	}
 }
 
 .popular-wrapper .popular-tags {
@@ -1479,9 +1344,7 @@ textarea {
 	border-top: 1px solid transparent;
 	box-sizing: border-box;
 	transition: all linear 0.1s;
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-content-secondary-dark);
-	}
+
 	@media only screen and (max-width: $breakpoint-medium) {
 		display: block;
 	}
@@ -1514,9 +1377,6 @@ textarea {
 		&:focus,
 		&:hover {
 			color: var(--color-content-main);
-			@media (prefers-color-scheme: dark) {
-				color: var(--color-content-main-dark);
-			}
 		}
 	}
 }
@@ -1528,7 +1388,7 @@ textarea {
 .menu-active .nav-header .nav-wrapper-control {
 	background: #222426;
 	color: var(--color-content-secondary);
-	border-color: var(--color-background-contrast-dark);
+	border-color: #3B3D40;
 	@supports (-webkit-backdrop-filter: blur(2rem)) {
 		background: rgba(34,36,38,0.9);
 		-webkit-backdrop-filter: blur(2rem);
@@ -1632,9 +1492,7 @@ textarea {
 		a {
 			color: var(--color-content-main);
 			font-weight: 500;
-			@media (prefers-color-scheme: dark) {
-				color: var(--color-content-main-dark);
-			}
+
 			@media only screen and (max-width: $breakpoint-medium) {
 				color: white;
 			}
@@ -1686,9 +1544,7 @@ textarea {
 		font-weight: 400;
 		cursor: pointer;
 		transition: color linear 0.1s;
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-secondary-dark);
-		}
+
 		@media only screen and (max-width: $breakpoint-medium) {
 			font-size: 2em;
 			padding-left: 4rem;
@@ -1710,9 +1566,7 @@ textarea {
 		&:focus,
 		&:hover {
 			color: var(--color-content-main);
-			@media (prefers-color-scheme: dark) {
-				color: var(--color-content-main-dark);
-			}
+
 			@media only screen and (max-width: $breakpoint-medium) {
 				color: #C4C7CC;
 			}
@@ -1796,7 +1650,7 @@ textarea {
 
 		button.cta {
 			@media only screen and (min-width: $breakpoint-medium) {
-				color: var(--color-primary);
+				color: #222426;
 				background-color: rgba(255,255,255,0.8);
 			}
 
@@ -1860,15 +1714,10 @@ textarea {
 		text-decoration: none;
 		font-weight: 400;
 		cursor: pointer;
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-secondary-dark);
-		}
+
 		&:focus,
 		&:hover {
 			color: var(--color-content-main);
-			@media (prefers-color-scheme: dark) {
-				color: var(--color-content-main-dark);
-			}
 		}
 	}
 }
@@ -1906,9 +1755,6 @@ textarea {
 	&.active a {
 		color: var(--color-content-main);
 		font-weight: 500;
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-main-dark);
-		}
 	}
 
 	a {
@@ -1934,9 +1780,7 @@ textarea {
 	line-height: 2rem;
 	color: var(--color-content-secondary);
 	white-space: nowrap;
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-content-secondary-dark);
-	}
+
 	@media only screen and (max-width: $breakpoint-medium) {
 		margin-bottom: 3rem;
 	}
@@ -1957,9 +1801,6 @@ textarea {
 	font-size: 1.6em;
 	line-height: 2rem;
 	color: var(--color-content-secondary);
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-content-secondary-dark);
-	}
 
 	@media only screen and (max-width: $breakpoint-medium) {
 		margin-right: auto;
@@ -1981,16 +1822,10 @@ textarea {
 		padding-top: calc(4rem + 2vw);
 		padding-bottom: calc(4rem + 2vw);
 		border-bottom: 1px solid var(--color-background-contrast);
-		@media (prefers-color-scheme: dark) {
-			border-color: var(--color-background-contrast-dark);
-		}
 	}
 
 	#results .post:first-child .post-box {
 		border-top: 1px solid var(--color-background-contrast);
-		@media (prefers-color-scheme: dark) {
-			border-color: var(--color-background-contrast-dark);
-		}
 	}
 }
 
@@ -2089,9 +1924,6 @@ textarea {
 			width: 1.5rem;
 			height: 2px;
 			background: var(--color-background-contrast);
-			@media (prefers-color-scheme: dark) {
-				background: var(--color-background-contrast-dark);
-			}
 		}
 	}
 }
@@ -2119,9 +1951,6 @@ textarea {
 	font-weight: 700;
 	text-indent: -1px;
 	color: var(--color-content-lead);
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-content-lead-dark);
-	}
 
 	@media only screen and (max-width: $breakpoint-small) {
 		-webkit-hyphens: auto;
@@ -2150,9 +1979,6 @@ textarea {
 	font-size: 1.6em;
 	line-height: 2rem;
 	color: var(--color-content-secondary);
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-content-secondary-dark);
-	}
 
 	a {
 		display: inline-block;
@@ -2185,9 +2011,6 @@ textarea {
 		width: 8rem;
 		height: 1px;
 		background: var(--color-background-contrast);
-		@media (prefers-color-scheme: dark) {
-			background: var(--color-background-contrast-dark);
-		}
 	}
 
 	.post-meta-avatars {
@@ -2223,9 +2046,6 @@ textarea {
 		color: var(--color-content-main);
 		font-weight: 500;
 		margin: 0;
-		@media (prefers-color-scheme: dark) {
-			color: var(--color-content-main-dark);
-		}
 	}
 }
 
@@ -2291,9 +2111,6 @@ textarea {
 	line-height: 3rem;
 	font-weight: 400;
 	color: var(--color-content-secondary);
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-content-secondary-dark);
-	}
 }
 
 .post-share {
@@ -2406,17 +2223,10 @@ textarea {
 	border-top: 1px solid var(--color-background-contrast);
 	border-bottom: 1px solid var(--color-background-contrast);
 	box-sizing: border-box;
-	@media (prefers-color-scheme: dark) {
-		border-color: var(--color-background-contrast-dark);
-	}
 
 	&.activated {
 		background: var(--color-background-secondary);
 		border: 1px solid var(--color-background-contrast);
-		@media (prefers-color-scheme: dark) {
-			background: var(--color-background-secondary-dark);
-			border-color: var(--color-background-contrast-dark);
-		}
 	}
 }
 
@@ -2434,10 +2244,6 @@ textarea {
 	cursor: pointer;
 	transition: all ease 0.2s;
 	border-radius: 2em;
-	@media (prefers-color-scheme: dark) {
-		border-color: var(--color-background-contrast-dark);
-		color: var(--color-content-secondary-dark);
-	}
 
 	&:focus,
 	&:hover {
@@ -2483,9 +2289,6 @@ textarea {
 	margin-top: -1px;
 	border-top: 1px solid var(--color-background-contrast);
 	border-bottom: 1px solid var(--color-background-contrast);
-	@media (prefers-color-scheme: dark) {
-		border-color: var(--color-background-contrast-dark);
-	}
 }
 
 .post-nav:after {
@@ -2497,9 +2300,7 @@ textarea {
 	top: 0;
 	background: var(--color-background-contrast);
 	z-index: 2;
-	@media (prefers-color-scheme: dark) {
-		background: var(--color-background-contrast-dark);
-	}
+
 	@media only screen and (max-width: $breakpoint-medium) {
 		display: none;
 	}
@@ -2566,9 +2367,6 @@ textarea {
 			margin-bottom: -1px;
 			background: var(--color-background-contrast);
 			z-index: 2;
-			@media (prefers-color-scheme: dark) {
-				background: var(--color-background-contrast-dark);
-			}
 		}
 	}
 }
@@ -2584,9 +2382,6 @@ textarea {
 	text-align: center;
 	transition: all ease-out 0.2s;
 	color: var(--color-background-contrast);
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-background-contrast-dark);
-	}
 
 	&:before {
 		margin: 0;
@@ -2616,9 +2411,6 @@ textarea {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	color: var(--color-content-lead);
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-content-lead-dark);
-	}
 }
 
 .post-nav-excerpt {
@@ -2639,9 +2431,6 @@ textarea {
 	font-size: 1.6em;
 	line-height: 2rem;
 	color: var(--color-content-secondary);
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-content-secondary-dark);
-	}
 }
 
 /* ==========================================================================
@@ -2680,10 +2469,6 @@ textarea {
 	transition: all ease 0.2s;
 	border-radius: 4rem;
 	box-sizing: border-box;
-	@media (prefers-color-scheme: dark) {
-		border-color: var(--color-background-contrast-dark);
-		color: var(--color-content-secondary-dark);
-	}
 
 	&:focus,
 	&:hover {
@@ -2738,9 +2523,6 @@ textarea {
 	display: block;
 	text-align: center;
 	color: var(--color-content-secondary);
-	@media (prefers-color-scheme: dark) {
-		color: var(--color-content-secondary-dark);
-	}
 }
 
 .extra-pagination {
@@ -2752,8 +2534,5 @@ textarea {
 
 	.pagination-box {
 		border-bottom: 1px solid var(--color-background-contrast);
-		@media (prefers-color-scheme: dark) {
-			border-color: var(--color-background-contrast-dark);
-		}
 	}
 }

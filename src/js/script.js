@@ -265,4 +265,58 @@ jQuery(function($) {
     });
   }
   gallery();
+
+
+/* ==========================================================================
+   Theme
+   ========================================================================== */
+
+  function theme() {
+    'use strict';
+    var toggle = $('.js-theme');
+    var toggleText = toggle.find('.theme-text');
+
+    function system() {
+      html.removeClass(['theme-dark', 'theme-light']);
+      localStorage.removeItem('attila_theme');
+      toggleText.text(toggle.attr('data-system'));
+    }
+
+    function dark() {
+      html.removeClass('theme-light').addClass('theme-dark');
+      localStorage.setItem('attila_theme', 'dark');
+      toggleText.text(toggle.attr('data-dark'));
+    }
+
+    function light() {
+      html.removeClass('theme-dark').addClass('theme-light');
+      localStorage.setItem('attila_theme', 'light');
+      toggleText.text(toggle.attr('data-light'));
+    }
+
+    switch (localStorage.getItem('attila_theme')) {
+      case 'dark':
+        dark();
+      break;
+      case 'light':
+        light();
+      break;
+      default:
+        system();
+      break;
+    }
+
+    toggle.on('click', function (e) {
+      e.preventDefault();
+
+      if (!html.hasClass('theme-dark') && !html.hasClass('theme-light')) {
+        dark();
+      } else if (html.hasClass('theme-dark')) {
+        light();
+      } else {
+        system();
+      }
+    });
+  }
+  theme();
 });
