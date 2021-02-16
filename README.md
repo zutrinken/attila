@@ -11,7 +11,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 ## ⭐️ Features
 
 * Responsive layout
-* Dark Mode
+* Dark Mode & Theme Switch
 * Search & Popular Tags
 * Post reading progress
 * Code highlight including line numbers
