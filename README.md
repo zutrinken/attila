@@ -20,29 +20,33 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 
 ## 🌍 Localization
 
-* __English__
-* __German__
-* __Spanish__
-* __French__ by [robink](https://github.com/robink)
-* __Italian__ by [fmaida](https://github.com/fmaida)
-* __Norwegian__ by [arthurnoerve](https://github.com/arthurnoerve), [oisann](https://github.com/oisann)
-* __Chinese__ by [hao-lee](https://github.com/hao-lee)
-* __Indonesian__ by [simplyeazy](https://github.com/simplyeazy)
-* __Romanian__ by [cdorin93](https://github.com/cdorin93)
-* __Russian__ by [schamberg97](https://github.com/schamberg97)
-* __Turkish__ by [cgrgrbz](https://github.com/cgrgrbz)
-* __Swedish__ by [martenj77](https://github.com/martenj77)
-* __Czech__ by [lunakv](https://github.com/lunakv)
-* __Portuguese__ by [matheusvanzan](https://github.com/matheusvanzan)
-* __Vietnamese__ by [JustHmmmm](https://github.com/justhmmmm)
-* __Greek__ by [thiodordelis](https://github.com/thiodordelis)
-* __Danish__ by [jmayntzhusen](https://github.com/jmayntzhusen)
-* __Arabic__ by [pop-eax](https://github.com/pop-eax)
-* __Catalan__ by [arthurnoerve](https://github.com/arthurnoerve)
-* __Lithuanian__ by [arthurnoerve](https://github.com/arthurnoerve)
-* __Dutch__ by [gkdp](https://github.com/gkdp)
-* __Polish__ by [filipolszewski](https://github.com/filipolszewski)
-* __Esperanto__ by [ebanDev](https://github.com/ebanDev)
+🟩 Up to date  🟧 Missing strings
+
+| Code | Flag | Language | Status | Translator |
+| :--: | :--: | :------: | :----: | :--------: |
+| `en` | 🇬🇧 | English | 🟩 | |
+| `de` | 🇩🇪 | German | 🟩 | |
+| `es` | 🇪🇸 | Spanish | 🟧 | |
+| `fr` | 🇫🇷 | French | 🟧 | [robink](https://github.com/robink) |
+| `it` | 🇮🇹 | Italian | 🟧 | [fmaida](https://github.com/fmaida) |
+| `no` | 🇳🇴 | Norwegian | 🟧 | [arthurnoerve](https://github.com/arthurnoerve), [oisann](https://github.com/oisann) |
+| `zh` | 🇨🇳 | Chinese | 🟧 | [hao-lee](https://github.com/hao-lee) |
+| `id` | 🇮🇩 | Indonesian | 🟧 | [simplyeazy](https://github.com/simplyeazy) |
+| `ro` | 🇷🇴 | Romanian | 🟧 | [cdorin93](https://github.com/cdorin93) |
+| `ru` | 🇷🇺 | Russian | 🟧 | [schamberg97](https://github.com/schamberg97) |
+| `tr` | 🇹🇷 | Turkish | 🟧 | [cgrgrbz](https://github.com/cgrgrbz) |
+| `sv` | 🇸🇪 | Swedish | 🟧 | [martenj77](https://github.com/martenj77) |
+| `cs` | 🇨🇿 | Czech | 🟧 | [lunakv](https://github.com/lunakv) |
+| `pt` | 🇵🇹 | Portuguese | 🟧 | [matheusvanzan](https://github.com/matheusvanzan) |
+| `vi` | 🇻🇳 | Vietnamese | 🟧 | [JustHmmmm](https://github.com/justhmmmm) |
+| `el` | 🇬🇷 | Greek | 🟧 | [thiodordelis](https://github.com/thiodordelis) |
+| `dk` | 🇩🇰 | Danish | 🟧 | [jmayntzhusen](https://github.com/jmayntzhusen) |
+| `ar` | | Arabic | 🟧 | [pop-eax](https://github.com/pop-eax) |
+| `ca` | | Catalan | 🟧 | [arthurnoerve](https://github.com/arthurnoerve) |
+| `lt` | 🇱🇹 | Lithuanian | 🟧 | [arthurnoerve](https://github.com/arthurnoerve) |
+| `nl` | 🇳🇱 | Dutch | 🟧 | [gkdp](https://github.com/gkdp) |
+| `pl` | 🇵🇱 | Polish | 🟧 | [filipolszewski](https://github.com/filipolszewski) |
+| `eo` | | Esperanto | 🟧 | [ebanDev](https://github.com/ebanDev) |
 
 ## 🎨 Setup custom color
 
