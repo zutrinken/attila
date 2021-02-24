@@ -47,6 +47,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 | `nl` | 🇳🇱 | Dutch | 🟧 | [gkdp](https://github.com/gkdp) |
 | `pl` | 🇵🇱 | Polish | 🟧 | [filipolszewski](https://github.com/filipolszewski) |
 | `eo` | | Esperanto | 🟧 | [ebanDev](https://github.com/ebanDev) |
+| `ga` | | Galego | 🟧 | |
 
 ## 🎨 Setup custom color
 
