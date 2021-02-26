@@ -26,7 +26,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 | :--: | :--: | :------: | :----: | :--------: |
 | `en` | 🇬🇧 | English | 🟩 | |
 | `de` | 🇩🇪 | German | 🟩 | |
-| `es` | 🇪🇸 | Spanish | 🟧 | |
+| `es` | 🇪🇸 | Spanish | 🟩 | [r1p](https://github.com/r1p) |
 | `fr` | 🇫🇷 | French | 🟧 | [robink](https://github.com/robink) |
 | `it` | 🇮🇹 | Italian | 🟧 | [fmaida](https://github.com/fmaida) |
 | `no` | 🇳🇴 | Norwegian | 🟧 | [arthurnoerve](https://github.com/arthurnoerve), [oisann](https://github.com/oisann) |
@@ -47,7 +47,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 | `nl` | 🇳🇱 | Dutch | 🟧 | [gkdp](https://github.com/gkdp) |
 | `pl` | 🇵🇱 | Polish | 🟧 | [filipolszewski](https://github.com/filipolszewski) |
 | `eo` | | Esperanto | 🟧 | [ebanDev](https://github.com/ebanDev) |
-| `ga` | | Galego | 🟧 | |
+| `ga` | | Galego | 🟩 | [r1p](https://github.com/r1p) |
 
 ## 🎨 Setup custom color
 
