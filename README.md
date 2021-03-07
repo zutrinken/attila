@@ -30,7 +30,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 | `fr` | 🇫🇷 | French | 🟧 | [robink](https://github.com/robink) |
 | `it` | 🇮🇹 | Italian | 🟧 | [fmaida](https://github.com/fmaida) |
 | `no` | 🇳🇴 | Norwegian | 🟧 | [arthurnoerve](https://github.com/arthurnoerve), [oisann](https://github.com/oisann) |
-| `zh` | 🇨🇳 | Chinese | 🟧 | [hao-lee](https://github.com/hao-lee) |
+| `zh` | 🇨🇳 | Chinese | 🟩 | [hao-lee](https://github.com/hao-lee), [izumiko](https://github.com/izumiko) |
 | `id` | 🇮🇩 | Indonesian | 🟧 | [simplyeazy](https://github.com/simplyeazy) |
 | `ro` | 🇷🇴 | Romanian | 🟧 | [cdorin93](https://github.com/cdorin93) |
 | `ru` | 🇷🇺 | Russian | 🟧 | [schamberg97](https://github.com/schamberg97) |
