@@ -21,8 +21,14 @@
       <span>{{t "Search"}}</span>
     </a>
   </li>
-  {{#if @labs.members}}
-    {{#if @member}}
+    {{#unless @member}}
+      <li class="nav-login">
+        <button class="members-login" data-portal="signin">{{t "Sign in"}}</button>
+      </li>
+      <li class="nav-subscribe">
+        <button class="members-subscribe cta" data-portal="signup">{{t "Sign up"}}</button>
+      </li>
+    {{else}}
       <li class="nav-account">
         <button class="members-account" data-portal="account">{{t "Account"}}</button>
       </li>
@@ -31,13 +37,5 @@
           <button class="members-upgrade cta" data-portal="account/plans">{{t "Upgrade"}}</button>
         </li>
       {{/unless}}
-    {{else}}
-      <li class="nav-login">
-        <button class="members-login" data-portal="signin">{{t "Sign in"}}</button>
-      </li>
-      <li class="nav-subscribe">
-        <button class="members-subscribe cta" data-portal="signup">{{t "Sign up"}}</button>
-      </li>
-    {{/if}}
-  {{/if}}
+    {{/unless}}
 </ul>
