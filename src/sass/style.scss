@@ -56,12 +56,12 @@ textarea {
 		color: inherit;
 		text-decoration: none;
 		font-weight: 400;
-		box-shadow: inset 0 -2px 0 var(--color-primary);
+		box-shadow: inset 0 -2px 0 var(--ghost-accent-color);
 		transition: all ease-out 0.1s;
 
 		&:focus,
 		&:hover {
-			box-shadow: inset 0 -3px 0 var(--color-primary-active);
+			box-shadow: inset 0 -3px 0 var(--ghost-accent-color);
 		}
 	}
 
@@ -140,7 +140,7 @@ textarea {
 		font-weight: 500;
 		line-height: 2em;
 		text-align: right;
-		color: var(--color-primary);
+		color: var(--ghost-accent-color);
 		font-family: var(--font-primary);
 	}
 
@@ -182,7 +182,7 @@ textarea {
 		padding: 0.25em 1em;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-		border-left: 0.25em solid var(--color-primary);
+		border-left: 0.25em solid var(--ghost-accent-color);
 		font-style: italic;
 		font-weight: 400;
 	}
@@ -238,7 +238,7 @@ textarea {
 		height: 2px;
 		margin-left: -30px;
 		margin-top: 0.5em;
-		background: var(--color-primary);
+		background: var(--ghost-accent-color);
 	}
 
 	dl dd {
@@ -425,7 +425,7 @@ textarea {
 	input[type="number"]:hover,
 	input[type="search"]:hover,
 	input[type="password"]:hover {
-		border-color: var(--color-content-main);
+		border-color: var(--ghost-accent-color);
 	}
 
 	select:focus,
@@ -438,7 +438,8 @@ textarea {
 	input[type="number"]:focus,
 	input[type="search"]:focus,
 	input[type="password"]:focus {
-		border-color: var(--color-primary);
+		box-shadow: inset 0 0 0 1px var(--ghost-accent-color);
+		border-color: var(--ghost-accent-color);
 	}
 
 	input[type="reset"],
@@ -455,7 +456,7 @@ textarea {
 		-webkit-appearance: normal;
 		appearance: normal;
 		transition: all ease-out 0.1s;
-		background: var(--color-primary);
+		background: var(--ghost-accent-color);
 		font-weight: 600;
 		color: white;
 		text-decoration: none;
@@ -468,7 +469,7 @@ textarea {
 	input[type="button"]:hover,
 	button:hover,
 	.button:hover {
-		background: var(--color-primary-active);
+
 	}
 
 	input[type="reset"]:focus,
@@ -476,7 +477,7 @@ textarea {
 	input[type="button"]:focus,
 	button:focus,
 	.button:focus {
-		background: var(--color-primary-active);
+
 	}
 }
 /* ==========================================================================
@@ -720,7 +721,7 @@ textarea {
 	}
 
 	.kg-bookmark-publisher {
-		color: var(--color-primary);
+		color: var(--ghost-accent-color);
 	}
 	@media (max-width: $breakpoint-medium) {
 		.kg-bookmark-container {
@@ -912,7 +913,7 @@ textarea {
 		line-height: 1em;
 
 		.archive-type {
-			color: var(--color-primary);
+			color: var(--ghost-accent-color);
 		}
 
 		.archive-count {
@@ -955,7 +956,7 @@ textarea {
 		margin-top: 1rem;
 
 		a {
-			color: var(--color-primary);
+			color: var(--ghost-accent-color);
 			transition: color linear 0.1s;
 
 			span {
@@ -964,7 +965,7 @@ textarea {
 
 			&:focus,
 			&:hover {
-				color: var(--color-primary-active);
+				opacity: 0.92;
 			}
 		}
 	}
@@ -1150,11 +1151,6 @@ textarea {
 		box-sizing: border-box;
 		box-shadow: none !important;
 		outline: 0 !important;
-
-		&:focus,
-		&:hover {
-			border-color: var(--color-primary-active);
-		}
 	}
 
 	.search-button {
@@ -1170,13 +1166,8 @@ textarea {
 		border: 0;
 		border-radius: 4px;
 		color: white;
-		background: var(--color-primary);
+		background: var(--ghost-accent-color);
 		transition: background ease-out 0.2s;
-
-		&:focus,
-		&:hover {
-			background-color: var(--color-primary-active);
-		}
 
 		&.search-button-clear {
 			display: block;
@@ -1470,7 +1461,7 @@ textarea {
 			padding: 0 1rem;
 			margin-left: -1rem;
 			margin-top: -2rem;
-			background: var(--color-primary);
+			background: var(--ghost-accent-color);
 			@media only screen and (max-width: $breakpoint-medium) {
 				left: 0;
 				top: 50%;
@@ -1500,28 +1491,39 @@ textarea {
 		border-radius: 2rem;
 		margin: 0.125rem 0;
 		padding: 0.75rem 1.5rem;
-		border: 1px solid var(--color-primary);
+		border: 1px solid var(--color-background-contrast);
 		background: transparent;
 		white-space: nowrap;
 		font-size: 1.5em;
 		line-height: 2rem;
-		color: var(--color-primary);
+		color: var(--color-content-secondary);
 		font-weight: 500;
 
 		&:focus,
 		&:hover {
-			color: var(--color-primary-active);
+			color: var(--color-content-main);
+			border-color: var(--ghost-accent-color);
+		}
+
+
+		@media only screen and (max-width: $breakpoint-medium) {
+			border-color: #3B3D40;
+
+			&:focus,
+			&:hover {
+				color: #E1E3E6;
+			}
 		}
 
 		&.cta {
 			font-weight: 700;
 			color: white;
-			background: var(--color-primary);
+			background: var(--ghost-accent-color);
 			border: 0;
 
 			&:focus,
 			&:hover {
-				background: var(--color-primary-active);
+				opacity: 0.92;
 			}
 		}
 	}
@@ -1685,7 +1687,7 @@ textarea {
 	display: block;
 	width: 0;
 	height: 3px;
-	background: var(--color-primary);
+	background: var(--ghost-accent-color);
 }
 /* ==========================================================================
    Footer
@@ -1959,7 +1961,7 @@ textarea {
 	line-height: 1em;
 
 	.post-type {
-		color: var(--color-primary);
+		color: var(--ghost-accent-color);
 	}
 
 	.post-count {
@@ -2196,7 +2198,7 @@ textarea {
 
 	&:focus,
 	&:hover {
-		background-color: var(--color-primary-active);
+		opacity: 0.92;
 	}
 }
 
@@ -2247,7 +2249,7 @@ textarea {
 	margin-right: 0.5em;
 	margin-bottom: 0.5em;
 	padding: 0 1.5rem;
-	background: var(--color-primary);
+	background: var(--ghost-accent-color);
 	font-size: 1.6em;
 	font-weight: 500;
 	line-height: 3rem;
@@ -2261,7 +2263,7 @@ textarea {
 
 	&:focus,
 	&:hover {
-		background: var(--color-primary-active);
+		opacity: 0.92;
 	}
 }
 /* ==========================================================================
@@ -2298,8 +2300,8 @@ textarea {
 
 	&:focus,
 	&:hover {
-		color: var(--color-primary-active);
-		border-color: var(--color-primary-active);
+		color: var(--color-content-main);
+		border-color: var(--ghost-accent-color);
 	}
 }
 
@@ -2313,7 +2315,6 @@ textarea {
 .gh-post-upgrade-cta {
 
 	.gh-post-upgrade-cta-content {
-		background: var(--color-primary) !important;
 
 		.gh-btn {
 			padding: 1rem 2rem;
@@ -2333,7 +2334,7 @@ textarea {
 }
 
 /* ==========================================================================
-   Post Comments
+   Post Nav
    ========================================================================== */
 .post-nav {
 	position: relative;
@@ -2373,7 +2374,7 @@ textarea {
 		color: inherit;
 
 		i {
-			color: var(--color-primary-active);
+			color: var(--ghost-accent-color);
 		}
 	}
 }
@@ -2523,8 +2524,8 @@ textarea {
 
 	&:focus,
 	&:hover {
-		color: var(--color-primary-active);
-		border-color: var(--color-primary-active);
+		color: var(--color-content-main);
+		border-color: var(--ghost-accent-color);
 	}
 }
 

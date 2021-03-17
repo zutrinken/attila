@@ -17,6 +17,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 * Code highlight including line numbers
 * Disqus support
 * Member menu buttons
+* Ghost accent color
 
 ## 🌍 Localization
 
@@ -48,19 +49,6 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 | `pl` | 🇵🇱 | Polish | 🟧 | [filipolszewski](https://github.com/filipolszewski) |
 | `eo` | | Esperanto | 🟧 | [ebanDev](https://github.com/ebanDev) |
 | `ga` | | Galego | 🟩 | [r1p](https://github.com/r1p) |
-
-## 🎨 Setup custom color
-
-1. Go to __Code injection__.  
-2. Add this to __Blog Header__:  
-````
-<style>
-  :root {
-    --color-primary: #D95736;
-    --color-primary-active: #BF4526;
-  }
-</style>
-````
 
 ## 🔠 Setup custom google fonts
 
