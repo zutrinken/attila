@@ -46,7 +46,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 | `ca` | | Catalan | 🟧 | [arthurnoerve](https://github.com/arthurnoerve) |
 | `lt` | 🇱🇹 | Lithuanian | 🟧 | [arthurnoerve](https://github.com/arthurnoerve) |
 | `nl` | 🇳🇱 | Dutch | 🟧 | [gkdp](https://github.com/gkdp) |
-| `pl` | 🇵🇱 | Polish | 🟧 | [filipolszewski](https://github.com/filipolszewski) |
+| `pl` | 🇵🇱 | Polish | 🟩 | [filipolszewski](https://github.com/filipolszewski), [MrBoombastic](https://github.com/mrboombastic) |
 | `eo` | | Esperanto | 🟧 | [ebanDev](https://github.com/ebanDev) |
 | `ga` | | Galego | 🟩 | [r1p](https://github.com/r1p) |
 
