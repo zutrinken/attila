@@ -35,7 +35,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 | `id` | 🇮🇩 | Indonesian | 🟧 | [simplyeazy](https://github.com/simplyeazy) |
 | `ro` | 🇷🇴 | Romanian | 🟧 | [cdorin93](https://github.com/cdorin93) |
 | `ru` | 🇷🇺 | Russian | 🟧 | [schamberg97](https://github.com/schamberg97) |
-| `tr` | 🇹🇷 | Turkish | 🟧 | [cgrgrbz](https://github.com/cgrgrbz) |
+| `tr` | 🇹🇷 | Turkish | 🟩 | [cgrgrbz](https://github.com/cgrgrbz), [electricalgorithm](https://github.com/electricalgorithm) |
 | `sv` | 🇸🇪 | Swedish | 🟧 | [martenj77](https://github.com/martenj77) |
 | `cs` | 🇨🇿 | Czech | 🟧 | [lunakv](https://github.com/lunakv) |
 | `pt` | 🇵🇹 | Portuguese | 🟧 | [matheusvanzan](https://github.com/matheusvanzan) |
