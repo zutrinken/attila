@@ -61,7 +61,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 2. Choose __Embed__ and copy the `<link>` code.
 3. Go to __Code injection__.  
 4. Add this to __Blog Header__:  
-````
+````html
 <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
 <style>
@@ -76,7 +76,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 
 1. Go to __Code injection__.  
 2. Add this to __Blog Header__:  
-````
+````html
 <script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>
 ````
 
@@ -86,7 +86,7 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 2. Choose __Add custom integration__, name it `Search` and choose __Create__. Copy the generated Content API Key.  
 3. Go to __Code injection__.  
 4. Add this to __Site Header__:  
-````
+````html
 <script>
   var gh_search_key = 'API_KEY';
   var gh_search_migration = 'v2';
@@ -95,21 +95,21 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 ## ⚙️ Development
 
 Install [Grunt](https://gruntjs.com/getting-started/):
-
-	npm install -g grunt-cli
-
+````bash
+npm install -g grunt-cli
+````
 Install Grunt dependencies:
-
-	npm install
-
+````bash
+npm install
+````
 Build Grunt project:
-
-	grunt build
-
+````bash
+grunt build
+````
 The compress Grunt task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
-
-	grunt compress
-
+````bash
+grunt compress
+````
 ## ⚖️ Copyright & License
 
 Copyright (C) 2015-2021 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).
