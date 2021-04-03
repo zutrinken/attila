@@ -123,12 +123,17 @@ textarea {
 		box-sizing: border-box;
 	}
 
-	ul {
-		list-style: none;
+	ol {
+		list-style-type: none;
+		counter-reset: item;
 	}
 
 	li {
 		position: relative;
+
+		&::marker {
+			color: transparent;
+		}
 	}
 
 	ol > li:before,
@@ -146,12 +151,7 @@ textarea {
 
 	ul > li:before {
 		margin-top: -1px;
-		content: '—';
-	}
-
-	ol {
-		list-style-type: none;
-		counter-reset: item;
+		content: '—' !important;
 	}
 
 	ol > li:before {
