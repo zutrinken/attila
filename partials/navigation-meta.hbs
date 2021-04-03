@@ -21,21 +21,15 @@
       <span>{{t "Search"}}</span>
     </a>
   </li>
-    {{#unless @member}}
-      <li class="nav-login">
-        <button class="members-login" data-portal="signin">{{t "Sign in"}}</button>
-      </li>
-      <li class="nav-subscribe">
-        <button class="members-subscribe cta" data-portal="signup">{{t "Sign up"}}</button>
-      </li>
-    {{else}}
-      <li class="nav-account">
-        <button class="members-account" data-portal="account">{{t "Account"}}</button>
-      </li>
-      {{#unless @member.paid}}
-        <li class="nav-upgrade">
-          <button class="members-upgrade cta" data-portal="account/plans">{{t "Upgrade"}}</button>
-        </li>
-      {{/unless}}
-    {{/unless}}
+  <!--
+  {{#unless @member}}
+    <li class="nav-subscribe">
+      <a href="#/portal">Subscribe</a>
+    </li>
+  {{else}}
+    <li class="nav-account">
+      <a href="#/portal/account">Account</a>
+    </li>
+  {{/unless}}
+  -->
 </ul>

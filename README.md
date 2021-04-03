@@ -50,6 +50,11 @@ If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zut
 | `eo` | | Esperanto | 🟧 | [ebanDev](https://github.com/ebanDev) |
 | `ga` | | Galego | 🟩 | [r1p](https://github.com/r1p) |
 
+## Show subscribe / account button in navigation
+
+1. Go to `partials/navigation-meta.hbs`.
+2. Remove comments on line `24`and `34`.
+
 ## 🔠 Setup custom google fonts
 
 1. Go to [fonts.google.com](https://fonts.google.com/) and choose a font.

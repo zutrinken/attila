@@ -1485,45 +1485,40 @@ textarea {
 	}
 
 
-	button {
-		display: block;
-		width: 100%;
-		border-radius: 2rem;
-		margin: 0.125rem 0;
-		padding: 0.75rem 1.5rem;
-		border: 1px solid var(--color-background-contrast);
-		background: transparent;
-		white-space: nowrap;
-		font-size: 1.5em;
-		line-height: 2rem;
-		color: var(--color-content-secondary);
-		font-weight: 500;
+	&.nav-subscribe,
+	&.nac-account {
 
-		&:focus,
-		&:hover {
-			color: var(--color-content-main);
-			border-color: var(--ghost-accent-color);
-		}
-
-
-		@media only screen and (max-width: $breakpoint-medium) {
-			border-color: #3B3D40;
+		a {
+			display: block;
+			border-radius: 2rem;
+			margin: 0.125rem 0;
+			padding: 0.75rem 1.5rem;
+			border: 1px solid var(--color-background-contrast);
+			background: transparent;
+			white-space: nowrap;
+			font-size: 1.5em;
+			line-height: 2rem;
+			color: var(--color-content-secondary);
+			font-weight: 500;
+			text-align: center;
 
 			&:focus,
 			&:hover {
-				color: #E1E3E6;
+				color: var(--color-content-main);
+				border-color: var(--ghost-accent-color);
 			}
-		}
 
-		&.cta {
-			font-weight: 700;
-			color: white;
-			background: var(--ghost-accent-color);
-			border: 0;
+			@media only screen and (max-width: $breakpoint-medium) {
+				border-color: #3B3D40;
 
-			&:focus,
-			&:hover {
-				opacity: 0.92;
+				&:focus,
+				&:hover {
+					color: #E1E3E6;
+				}
+			}
+
+			&:before {
+				display: none !important;
 			}
 		}
 	}
@@ -1628,8 +1623,7 @@ textarea {
 	}
 
 	.nav-header li {
-		a,
-		button:not(.cta) {
+		a {
 			@media only screen and (min-width: $breakpoint-medium) {
 				color: rgba(255,255,255,0.8);
 				border-color: rgba(255,255,255,0.8);
@@ -1644,16 +1638,20 @@ textarea {
 			}
 		}
 
-		button.cta {
-			@media only screen and (min-width: $breakpoint-medium) {
-				color: #222426;
-				background-color: rgba(255,255,255,0.8);
-			}
+		&.nav-subscribe,
+		&.nac-account {
 
-			&:focus,
-			&:hover {
+			a{
 				@media only screen and (min-width: $breakpoint-medium) {
-					background-color: white;
+					color: #222426;
+					background-color: rgba(255,255,255,0.8);
+				}
+
+				&:focus,
+				&:hover {
+					@media only screen and (min-width: $breakpoint-medium) {
+						background-color: white;
+					}
 				}
 			}
 		}
