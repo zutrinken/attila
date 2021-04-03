@@ -1,7 +1,7 @@
 {{!< default}}
 
 
-<header class="blog-header{{#if tag.feature_image}} has-cover{{else}}{{#if @site.cover_image}} has-cover{{/if}}{{/if}}">
+<header class="blog-header{{#if tag.feature_image}} has-cover{{/if}}">
 	<div class="inner">
 		<div class="archive archive-tag box archive-box">
 			<span class="archive-info">
@@ -24,18 +24,6 @@
       src="{{img_url tag.feature_image size="xl"}}"
 			alt="{{@site.title}}" />
 		</div>
-		{{else}}
-		{{#if @site.cover_image}}
-		<div class="blog-cover cover">
-			<img
-			srcset="{{img_url @site.cover_image size="s"}} 320w,
-              {{img_url @site.cover_image size="m"}} 640w,
-              {{img_url @site.cover_image size="l"}} 960w,
-              {{img_url @site.cover_image size="xl"}} 1920w"
-      src="{{img_url @site.cover_image size="xl"}}"
-			alt="{{@site.title}}" />
-		</div>
-		{{/if}}
 		{{/if}}
 	</div>
 </header>
