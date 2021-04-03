@@ -2,7 +2,9 @@
 
 A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost/). See a demo at: [attila.peteramende.de](https://attila.peteramende.de/)
 
-If you like this theme, you can buy me a ~~coffee~~ [beer](https://paypal.me/zutrinken).
+## ♥️ Support
+
+Maintaining this project takes a lot of time. You can buy [me a drink](https://paypal.me/zutrinken) if you enjoy using Attila. Cheers 🍻
 
 ## 📷 Screenshots
 
