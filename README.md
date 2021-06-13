@@ -6,7 +6,7 @@ A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost
 
 Maintaining this project takes a lot of time. You can [buy me a drink](https://paypal.me/zutrinken) if you enjoy using Attila. Cheers 🍻
 
-## 📷 Screenshots
+## 📷 Screenshot
 
 <img src="https://raw.githubusercontent.com/zutrinken/attila/master/src/screenshot.png" />
 
@@ -72,6 +72,16 @@ Maintaining this project takes a lot of time. You can [buy me a drink](https://p
     --font-secondary: 'Crimson Text', serif;
   }
 </style>
+````
+## 🌓 Force Light/Dark Mode
+
+1. Go to __Code injection__.  
+2. Decide for `light` or `dark`.
+3. Add this to __Blog Header__:
+
+````html
+<script>localStorage.setItem('attila_theme', 'dark');</script>
+<style>.js-theme {display:none!important;}</style>
 ````
 
 ## 💬 Setup [Disqus](https://disqus.com/)
