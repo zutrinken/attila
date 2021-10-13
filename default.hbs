@@ -87,7 +87,7 @@
 
 		<div class="nav-footer">
 			<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
-				<span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}}  <a class="nav-rss" title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></span>
+				<span class="nav-copy"><a title="Home" href="{{@site.url}}">{{@site.title}} &copy; {{date format='YYYY'}}</a>  <a class="nav-rss" title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></span>
 				{{#if @site.secondary_navigation}}
 				{{navigation type="secondary"}}
 				{{/if}}
