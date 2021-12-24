@@ -1,8 +1,8 @@
   
 {
-    "Logo": "Логотим",
+    "Logo": "Логотип",
     "Close": "Закрити",
-    "Get the latest posts delivered right to your inbox.": "Отримуйте останні публікації, прямо у вашу поштову скриньку.",
+    "Get the latest posts delivered right to your inbox.": "Отримуйте останні публікації прямо у вашу поштову скриньку.",
     "Home": "Стартова сторінка",
     "Menu": "Меню",
     "Newer Posts": "Новіші публікації",
@@ -14,7 +14,7 @@
     "Subscribe": "Підписатися",
     "Theme": "Тема",
     "Website": "Веб-сайт",
-    "Your email address": "Адреса вашої електроної пошти",
+    "Your email address": "Адреса вашої електронної пошти",
     "By": "Від",
     "on": "у розділі",
     "in": "у",
@@ -23,7 +23,7 @@
     "% Posts": "% Публікації",
     "This post was a collaboration between:": "Ця публікація була сумісною роботою:",
     "youremail@example.com": "вашаскринька@example.com",
-    "1 min read": "Час читання 1 хв ",
+    "1 min read": "Час читання 1 хв",
     "% min read": "Час читання % хв",
     "Article": "Стаття",
     "Archive": "Архів",
@@ -38,6 +38,6 @@
     "Pagination": "Нумерування сторінок",
     "Next post": "Наступна публікація",
     "Previous post": "Попередня публікація",
-    "Sign in": "Ввійти",
+    "Sign in": "Увійти",
     "Sign up": "Зарееструватися"
 }
