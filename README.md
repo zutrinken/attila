@@ -53,6 +53,7 @@ Maintaining this project takes a lot of time. You can [buy me a drink](https://p
 | `ga` | | Galego | 🟩 | [r1p](https://github.com/r1p) |
 | `uk` | 🇺🇦 | Ukrainian | 🟩 | [Rakanskiy](https://github.com/rakanskiy), [krupenik](https://github.com/krupenik) |
 | `ja` | 🇯🇵 | Japanese | 🟩 | [emperorjoker](https://github.com/emperorjoker) |
+| `fa` | | Farsi | 🟩 | [ItsAminZamani](https://github.com/ItsAminZamani) |
 
 ## Show subscribe / account button in navigation
 
