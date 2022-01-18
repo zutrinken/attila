@@ -25,8 +25,18 @@
     "1 min read": "1 minuto di lettura",
     "% min read": "% minuti di lettura",
     "Article": "Articolo",
+    "Archive": "Archivio",
     "Author": "Autore",
     "Topic": "Argomento",
+    "Topics": "Argomenti",
     "Share": "Condividi",
-    "Search": "Ricerca"
+    "Search": "Ricerca",
+    "Search all posts": "Cerca in tutti gli articoli",
+    "Main": "Principale",
+    "Footer": "Footer",
+    "Pagination": "Paginazione",
+    "Next post": "Prossimo articolo",
+    "Previous post": "Articolo precedente",
+    "Sign in": "Accedi",
+    "Sign up": "Iscriviti"
 }
