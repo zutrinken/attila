@@ -30,7 +30,7 @@ Maintaining this project takes a lot of time. You can [buy me a drink](https://p
 | `en` | 🇬🇧 | English | 🟩 | |
 | `de` | 🇩🇪 | German | 🟩 | |
 | `es` | 🇪🇸 | Spanish | 🟩 | [r1p](https://github.com/r1p) |
-| `fr` | 🇫🇷 | French | 🟧 | [robink](https://github.com/robink) |
+| `fr` | 🇫🇷 | French | 🟩 | [robink](https://github.com/robink), [alsyia](https://github.com/alsyia) |
 | `it` | 🇮🇹 | Italian | 🟩 | [fmaida](https://github.com/fmaida), [undrivendev](https://github.com/undrivendev) |
 | `no` | 🇳🇴 | Norwegian | 🟧 | [arthurnoerve](https://github.com/arthurnoerve), [oisann](https://github.com/oisann), [Givemeurcookies](https://github.com/givemeurcookies) |
 | `zh` | 🇨🇳 | Chinese | 🟩 | [hao-lee](https://github.com/hao-lee), [izumiko](https://github.com/izumiko), [emperorjoker](https://github.com/emperorjoker) |
