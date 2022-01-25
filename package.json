@@ -61,6 +61,17 @@
       "xl": {
         "width": 1920
       }
+    },
+    "custom": {
+      "color_scheme": {
+          "type": "select",
+          "options": [
+              "Light",
+              "Dark",
+              "System"
+          ],
+          "default": "System"
+      }
     }
   },
   "browserslist": [
