@@ -52,7 +52,7 @@ textarea {
 	font-size: 1.75em;
 	line-height: 2em;
 
-	a {
+	a:not([class]) {
 		color: inherit;
 		text-decoration: none;
 		font-weight: 400;
@@ -512,9 +512,13 @@ textarea {
 			}
 		}
 	}
+
+	.kg-card {
+		margin: 0 0 4rem;
+	}
+
 	// KG Image
 	.kg-image-card {
-		margin: 0 0 4rem;
 		max-width: none !important;
 
 		&.kg-width-wide {
@@ -571,7 +575,6 @@ textarea {
 	}
 	// KG Gallery
 	.kg-gallery-card {
-		margin: 0 0 4rem;
 		max-width: calc(72rem + 24vw) !important;
 		min-width: 100%;
 		width: calc(100vw - 4rem);
@@ -630,7 +633,6 @@ textarea {
 	// KG Code
 	.kg-code-card {
 		min-width: 100%;
-		margin: 0 0 4rem;
 	}
 
 	.kg-code-card pre {
@@ -639,7 +641,6 @@ textarea {
 	// KG Bookmark
 	.kg-bookmark-card {
 		width: 100%;
-		margin: 0 0 4rem;
 	}
 
 	.kg-bookmark-container {
