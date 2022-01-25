@@ -517,6 +517,50 @@ textarea {
 		margin: 0 0 4rem;
 	}
 
+	.kg-file-card {
+
+		.kg-file-card-container {
+			padding: 1.5rem;
+
+			.kg-file-card-icon {
+
+			}
+
+			.kg-file-card-contents {
+				margin: 0;
+
+				.kg-file-card-title {
+					font-size: 2rem;
+					line-height: 1.25em;
+				}
+
+				.kg-file-card-caption {
+					margin: 0.25rem 0 0;
+					font-size: 0.9em;
+					line-height: 1.25em;
+					opacity: inherit;
+					color: var(--color-content-secondary);
+				}
+
+				.kg-file-card-metadata {
+					margin: 1.5rem 0 0;
+
+					.kg-file-card-filename {
+						display: inline-block;
+						line-height: inherit;
+					}
+					.kg-file-card-filesize {
+						display: inline-block;
+						font-size: 0.9em;
+						line-height: inherit;
+						opacity: inherit;
+						color: var(--color-content-secondary);
+					}
+				}
+			}
+		}
+	}
+
 	// KG Image
 	.kg-image-card {
 		max-width: none !important;
