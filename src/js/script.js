@@ -46,8 +46,7 @@ jQuery(function($) {
       'use strict';
       if (
           typeof gh_search_key == 'undefined' ||
-          gh_search_key == '' ||
-          typeof gh_search_migration == 'undefined'
+          gh_search_key == ''
       )
       return;
 
@@ -78,16 +77,15 @@ jQuery(function($) {
           });
 
           try {
-              localStorage.setItem('dawn_search_index', JSON.stringify(index));
-              localStorage.setItem('dawn_search_last', data.posts[0].updated_at);
+              localStorage.setItem('ease_search_index', JSON.stringify(index));
+              localStorage.setItem('ease_search_last', data.posts[0].updated_at);
           } catch (e) {
               console.error('Your browser local storage is full. Update your search settings following the instruction at https://github.com/TryGhost/Dawn#disable-content-search');
           }
       }
 
       if (
-          !indexDump ||
-          gh_search_migration != localStorage.getItem('ease_search_migration')
+          !indexDump
       ) {
           $.get(url, function (data) {
               if (data.posts.length > 0) {
@@ -98,11 +96,6 @@ jQuery(function($) {
                   });
 
                   update(data);
-
-                  localStorage.setItem(
-                      'ease_search_migration',
-                      gh_search_migration
-                  );
               }
           });
       } else {
@@ -140,6 +133,7 @@ jQuery(function($) {
                   post.doc.excerpt +
                   '</div></a>' +
                   '</div>';
+              console.log(post);
           });
 
           searchResult.html(output);
