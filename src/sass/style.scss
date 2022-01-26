@@ -339,6 +339,13 @@ textarea {
 		border: 1px solid var(--color-background-contrast);
 		background: var(--color-background-secondary);
 
+		@media (max-width: $breakpoint-medium) {
+			display: block;
+			border: none;
+			overflow-x: auto;
+			box-shadow: inset 0 0 0 1px var(--color-background-contrast);
+		}
+
 		td,
 		th {
 			position: relative;
