@@ -179,13 +179,12 @@
 	      readingProgress();
 	    }
 	  });
-		// Check if disqus is defined by code injection
-		if (typeof disqus === 'undefined') {
-			// hide comment section
-	    $('.post-comments').css({
-	      'display': 'none'
-	    });
-	  } else {
+
+		{{#if @custom.disqus_username}}
+			$('.post-comments').css({
+				'display': 'block'
+			});
+			var disqus = '{{@custom.disqus_username}}';
 	    $('#show-disqus').on('click', function() {
 	      $.ajax({
 	        type: "GET",
@@ -195,7 +194,7 @@
 	      });
 	      $(this).parent().addClass('activated');
 	    });
-	  }
+		{{/if}}
   });
 </script>
 {{/contentFor}}

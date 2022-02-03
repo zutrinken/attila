@@ -12,6 +12,7 @@ Maintaining this project takes a lot of time. You can [buy me a drink](https://p
 
 ## ⭐️ Features
 
+* Theme options
 * Responsive layout
 * Light and Dark Mode
 * Search & Popular Tags
@@ -75,14 +76,6 @@ Maintaining this project takes a lot of time. You can [buy me a drink](https://p
     --font-secondary: 'Crimson Text', serif;
   }
 </style>
-````
-
-## 💬 Setup [Disqus](https://disqus.com/)
-
-1. Go to __Code injection__.  
-2. Add this to __Blog Header__:  
-````html
-<script>var disqus = 'YOUR_DISQUS_SHORTNAME';</script>
 ````
 
 ## 🔍 Setup search
