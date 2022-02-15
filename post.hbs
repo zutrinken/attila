@@ -180,11 +180,11 @@
 	    }
 	  });
 
-		{{#if @custom.disqus_username}}
+		{{#if @custom.disqus_shortname}}
 			$('.post-comments').css({
 				'display': 'block'
 			});
-			var disqus = '{{@custom.disqus_username}}';
+			var disqus = '{{@custom.disqus_shortname}}';
 	    $('#show-disqus').on('click', function() {
 	      $.ajax({
 	        type: "GET",
