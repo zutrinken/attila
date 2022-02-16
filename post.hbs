@@ -22,7 +22,7 @@
 					<figure class="post-meta-avatar avatar">
 						{{#if profile_image}}
 						<a href="{{url}}" class="author-avatar">
-								<img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+							<img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
 						</a>
 						{{/if}}
 					</figure>
@@ -34,12 +34,13 @@
 		{{#if feature_image}}
 		<div class="post-cover cover">
 			<img
-			srcset="{{img_url feature_image size="s"}} 320w,
-              {{img_url feature_image size="m"}} 640w,
-              {{img_url feature_image size="l"}} 960w,
-              {{img_url feature_image size="xl"}} 1920w"
-      src="{{img_url feature_image size="xl"}}"
-			alt="{{title}}" />
+				srcset="{{img_url feature_image size="s"}} 320w,
+						{{img_url feature_image size="m"}} 640w,
+						{{img_url feature_image size="l"}} 960w,
+						{{img_url feature_image size="xl"}} 1920w"
+				src="{{img_url feature_image size="xl"}}"
+				alt="{{title}}" 
+			/>
 		</div>
 		{{/if}}
 	</div>
@@ -83,41 +84,41 @@
 
 			<section class="post-comments">
 				<a id="show-disqus" class="post-comments-activate">{{t "Show Comments"}}</a>
-			   <div id="disqus_thread"></div>
+				<div id="disqus_thread"></div>
 			</section>
 
-      {{#if @labs.subscribers}}
-      <section class="post-subscribe">
+			{{#if @labs.subscribers}}
+			<section class="post-subscribe">
 				<p>{{t "Get the latest posts delivered right to your inbox."}}</p>
-        {{subscribe_form placeholder=(t "Your email address") form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
-      </section>
-      {{/if}}
+				{{subscribe_form placeholder=(t "Your email address") form_class="post-subscribe-form" input_class="post-subscribe-input" button_class="post-subscribe-button"}}
+			</section>
+			{{/if}}
 
 			{{!-- Links to Previous/Next posts --}}
 			<aside class="post-nav">
 
 				{{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
 				{{#next_post}}
-					<a class="post-nav-next" href="{{url}}">
-						<section class="post-nav-teaser">
-							<i class="icon icon-arrow-left" aria-label="{{t "Next post"}}"></i>
-							<h2 class="post-nav-title">{{title}}</h2>
-							<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
-							<p class="post-nav-meta"><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></p>
-						</section>
-					</a>
+				<a class="post-nav-next" href="{{url}}">
+					<section class="post-nav-teaser">
+						<i class="icon icon-arrow-left" aria-label="{{t "Next post"}}"></i>
+						<h2 class="post-nav-title">{{title}}</h2>
+						<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
+						<p class="post-nav-meta"><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></p>
+					</section>
+				</a>
 				{{/next_post}}
 
 				{{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
 				{{#prev_post}}
-					<a class="post-nav-prev" href="{{url}}">
-						<section class="post-nav-teaser">
-							<i class="icon icon-arrow-right" aria-label="{{t "Previous post"}}"></i>
-							<h2 class="post-nav-title">{{title}}</h2>
-							<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
-							<p class="post-nav-meta"><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></p>
-						</section>
-					</a>
+				<a class="post-nav-prev" href="{{url}}">
+					<section class="post-nav-teaser">
+						<i class="icon icon-arrow-right" aria-label="{{t "Previous post"}}"></i>
+						<h2 class="post-nav-title">{{title}}</h2>
+						<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
+						<p class="post-nav-meta"><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></p>
+					</section>
+				</a>
 				{{/prev_post}}
 				<div class="clear"></div>
 			</aside>
@@ -131,70 +132,70 @@
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
 <script>
-  $(document).ready(function () {
+	$(document).ready(function () {
 		var viewport = $(window);
 		var post = $('.post-content');
 		// Responsive videos with fitVids
-    post.fitVids();
+		post.fitVids();
 		// Format code blocks and add line numbers
 		function codestyling() {
-	    $('pre code').each(function(i, e) {
+			$('pre code').each(function (i, e) {
 				// Code highlight
-	      hljs.highlightBlock(e);
-	      // No lines for plain text blocks
-	      if (!$(this).hasClass('language-text')) {
-	        var code = $(this);
+				hljs.highlightBlock(e);
+				// No lines for plain text blocks
+				if (!$(this).hasClass('language-text')) {
+					var code = $(this);
 					// Calculate amount of lines
-	        var lines = code.html().split(/\n(?!$)/g).length;
-	        var numbers = [];
-	        if (lines > 1) {
-	          lines++;
-	        }
-	        for (i = 1; i < lines; i++) {
-	          numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
-	        }
-	        code.parent().append('<div class="lines">' + numbers + '</div>');
-	      }
-	    });
-	  }
-	  codestyling();
+					var lines = code.html().split(/\n(?!$)/g).length;
+					var numbers = [];
+					if (lines > 1) {
+						lines++;
+					}
+					for (i = 1; i < lines; i++) {
+						numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+					}
+					code.parent().append('<div class="lines">' + numbers + '</div>');
+				}
+			});
+		}
+		codestyling();
 		// Reading progress bar on window top
-	  function readingProgress() {
+		function readingProgress() {
 			var postBottom = post.offset().top + post.height();
 			var viewportHeight = viewport.height();
-      var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
-      $('.progress-bar').css('width', progress + '%');
-      (progress > 100) ? $('.progress-container').addClass('complete'): $('.progress-container').removeClass('complete');
-	  }
-	  readingProgress();
+			var progress = 100 - (((postBottom - (viewport.scrollTop() + viewportHeight) + viewportHeight / 3) / (postBottom - viewportHeight + viewportHeight / 3)) * 100);
+			$('.progress-bar').css('width', progress + '%');
+			(progress > 100) ? $('.progress-container').addClass('complete') : $('.progress-container').removeClass('complete');
+		}
+		readingProgress();
 		// Trigger reading progress
-	  viewport.on({
-	    'scroll': function() {
-	      readingProgress();
-	    },
-	    'resize': function() {
-	      readingProgress();
-	    },
-	    'orientationchange': function() {
-	      readingProgress();
-	    }
-	  });
+		viewport.on({
+			'scroll': function () {
+				readingProgress();
+			},
+			'resize': function () {
+				readingProgress();
+			},
+			'orientationchange': function () {
+				readingProgress();
+			}
+		});
 
-		{{#if @custom.disqus_username}}
+		{{#if @custom.disqus_username }}
 			$('.post-comments').css({
 				'display': 'block'
 			});
 			var disqus = '{{@custom.disqus_username}}';
-	    $('#show-disqus').on('click', function() {
-	      $.ajax({
-	        type: "GET",
-	        url: "//" + disqus + ".disqus.com/embed.js",
-	        dataType: "script",
-	        cache: true
-	      });
-	      $(this).parent().addClass('activated');
-	    });
+			$('#show-disqus').on('click', function () {
+				$.ajax({
+					type: "GET",
+					url: "//" + disqus + ".disqus.com/embed.js",
+					dataType: "script",
+					cache: true
+				});
+				$(this).parent().addClass('activated');
+			});
 		{{/if}}
-  });
+	});
 </script>
 {{/contentFor}}
