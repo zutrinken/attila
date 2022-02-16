@@ -76,7 +76,12 @@
         ],
         "default": "System"
       },
-      "disqus_username": {
+      "disqus_shortname": {
+        "type": "text",
+        "default": "",
+        "group": "post"
+      },
+      "hyvor_talk_website_id": {
         "type": "text",
         "default": "",
         "group": "post"

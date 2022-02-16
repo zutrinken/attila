@@ -80,12 +80,39 @@
 				{{/if}}
 
 			</section>
-
-
+			{{#if @custom.disqus_shortname }}
 			<section class="post-comments">
 				<a id="show-disqus" class="post-comments-activate">{{t "Show Comments"}}</a>
 				<div id="disqus_thread"></div>
 			</section>
+			{{else}}{{#if @custom.hyvor_talk_website_id }}
+			<section class="post-comments">
+				<div id="hyvor-talk-view"></div>
+				<script type="text/javascript">
+					var palette = null;
+					// Sets comment section color theme to dark if OS is set to dark theme
+					if (("{{@custom.color_scheme}}" == "System" && (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) || "{{@custom.color_scheme}}" == "Dark") {
+						palette = {
+							accent: "{{@custom.darkmode_accent_color}}",
+							accentText: "#000000",
+							footerHeader: "#1b1818",
+							footerHeaderText: "#cac7c7",
+							box: "#232121",
+							boxText: "#ffffff",
+							boxLightText: "#aaaaaa",
+							backgroundText: "#ffffff"
+						}
+					}
+					var HYVOR_TALK_WEBSITE = "{{@custom.hyvor_talk_website_id}}";
+					var HYVOR_TALK_CONFIG = {
+						url: false,
+						id: '{{id}}', // Pass post ID to Hyvor talk
+						palette: palette
+					};
+				</script>
+				<script async type="text/javascript" src="//talk.hyvor.com/web-api/embed.js"></script>
+			</section>
+			{{/if}}{{/if}}
 
 			{{#if @labs.subscribers}}
 			<section class="post-subscribe">
@@ -181,11 +208,8 @@
 			}
 		});
 
-		{{#if @custom.disqus_username }}
-			$('.post-comments').css({
-				'display': 'block'
-			});
-			var disqus = '{{@custom.disqus_username}}';
+		{{#if @custom.disqus_shortname }}
+			var disqus = '{{@custom.disqus_shortname}}';
 			$('#show-disqus').on('click', function () {
 				$.ajax({
 					type: "GET",
@@ -196,6 +220,8 @@
 				$(this).parent().addClass('activated');
 			});
 		{{/if}}
+		
+		
 	});
 </script>
 {{/contentFor}}
