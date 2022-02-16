@@ -91,22 +91,18 @@ Maintaining this project takes a lot of time. You can [buy me a drink](https://p
 </script>
 ````
 ## ⚙️ Development
-
-Install [Grunt](https://gruntjs.com/getting-started/):
-````bash
-npm install -g grunt-cli
-````
-Install Grunt dependencies:
+This project uses grunt for building and packaging.
+Install dependencies:
 ````bash
 npm install
 ````
-Build Grunt project:
+Build project:
 ````bash
-grunt build
+npm run build
 ````
-The compress Grunt task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
+The compress task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
 ````bash
-grunt compress
+npm run compress
 ````
 ## ⚖️ Copyright & License
 
