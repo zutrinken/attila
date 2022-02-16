@@ -7,6 +7,10 @@
     "ghost": ">=4.0.0",
     "ghost-api": "v4"
   },
+  "scripts": {
+    "build": "grunt build",
+    "compress": "grunt compress"
+  },
   "license": "MIT",
   "screenshots": {
     "desktop": "src/screenshot-desktop.jpg",
@@ -73,9 +77,9 @@
         "default": "System"
       },
       "disqus_username": {
-          "type": "text",
-          "default": "",
-          "group": "post"
+        "type": "text",
+        "default": "",
+        "group": "post"
       },
       "darkmode_accent_color": {
         "type": "color",
