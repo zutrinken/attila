@@ -18,7 +18,7 @@ Maintaining this project takes a lot of time. You can [buy me a drink](https://p
 * Search & Popular Tags
 * Post reading progress
 * Code highlight including line numbers
-* Disqus support
+* Disqus and Hyvor talk support
 * Member menu buttons
 * Ghost accent color
 
