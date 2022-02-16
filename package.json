@@ -2,10 +2,14 @@
   "name": "attila",
   "description": "Ghost Theme",
   "demo": "https://attila.peteramende.de",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "engines": {
     "ghost": ">=4.0.0",
     "ghost-api": "v4"
+  },
+  "scripts": {
+    "build": "grunt build",
+    "compress": "grunt compress"
   },
   "license": "MIT",
   "screenshots": {
@@ -73,9 +77,14 @@
         "default": "System"
       },
       "disqus_shortname": {
-          "type": "text",
-          "default": "",
-          "group": "post"
+        "type": "text",
+        "default": "",
+        "group": "post"
+      },
+      "hyvor_talk_website_id": {
+        "type": "text",
+        "default": "",
+        "group": "post"
       },
       "darkmode_accent_color": {
         "type": "color",
