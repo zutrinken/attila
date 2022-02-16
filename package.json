@@ -72,7 +72,7 @@
         ],
         "default": "System"
       },
-      "disqus_shortname": {
+      "disqus_username": {
           "type": "text",
           "default": "",
           "group": "post"
