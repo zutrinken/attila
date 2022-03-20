@@ -46,14 +46,16 @@
 </header>
 
 <main class="content" role="main">
+	<aside class="toc-container">
+		<div class="toc"></div>
+	</aside>
 	<article class="{{post_class}}">
 		<div class="inner">
-			<aside class="toc-container">
-        <div class="toc"></div>
-   	 </aside>
-			<section class="post-content">
-				{{content}}
-			</section>
+			<div class="post-full-content"/>
+				<section class="post-content">
+					{{content}}
+				</section>
+			</div>
 
 			<section class="post-footer">
 

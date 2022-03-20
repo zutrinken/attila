@@ -6,6 +6,7 @@
 @import "icons";
 @import "fonts";
 @import "highlight";
+$breakpoint-xlarge: 1300px;
 $breakpoint-large: 960px;
 $breakpoint-medium: 640px;
 $breakpoint-small: 480px;
@@ -1100,7 +1101,7 @@ textarea {
 .inner {
 	max-width: $inner;
 	margin: 0 auto;
-	padding: 0 8rem;
+	padding: 0 3rem;
 	@media only screen and (max-width: $breakpoint-medium) {
 		padding: 0 4rem;
 	}
@@ -2646,35 +2647,44 @@ textarea {
 
 // For the table of contents
 // https://ghost.org/docs/tutorials/adding-a-table-of-contents/
-.post-content h2,
-.post-content h3 {
-    outline: none;
-}
-body {
-    overflow: visible;
-}
-.post-full-content {
-    display: grid;
-    grid-template-columns: 1fr 0.2fr;
-    padding: 0 0 6vw;
-    margin: 0;
-}
 .toc-container {
-    order: 1;
+	display: none;
 }
-.toc-container .toc {
-    position: sticky;
-    top: 70px;
-    min-width: 260px;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.6em;
-    padding: 0 0.8em;
-}
-.is-active-link::before {
-    background-color: #3eb0ef;
-}
-ol.toc-list {
-    margin: 0;
+@media only screen and (min-width: $breakpoint-xlarge) {
+	.content {
+		display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+	}
+
+	.post {
+		grid-area: 1 / 2 / 2 / 3;
+	}
+	.post-content h2,
+	.post-content h3 {
+		outline: none;
+	}
+	body {
+		overflow: visible;
+	}
+	.toc-container {
+		grid-area: 1 / 3 / 2 / 4;
+		order: 1;
+		display: block;
+	}
+	.toc-container .toc {
+		position: sticky;
+		top: 70px;
+		min-width: 260px;
+		font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+		font-size: 1.6rem;
+		line-height: 1.6em;
+		padding: 0 0.8em;
+	}
+	.is-active-link::before {
+		background-color: #3eb0ef;
+	}
+	ol.toc-list {
+		margin: 0;
+	}
 }
