@@ -1542,7 +1542,7 @@ textarea {
 
 
 	&.nav-subscribe,
-	&.nac-account {
+	&.nav-account {
 
 		a {
 			display: block;
@@ -1695,7 +1695,7 @@ textarea {
 		}
 
 		&.nav-subscribe,
-		&.nac-account {
+		&.nav-account {
 
 			a{
 				@media only screen and (min-width: $breakpoint-medium) {
