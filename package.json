@@ -4,8 +4,7 @@
   "demo": "https://attila.peteramende.de",
   "version": "3.4.0",
   "engines": {
-    "ghost": ">=4.0.0",
-    "ghost-api": "v4"
+    "ghost": ">=4.0.0"
   },
   "license": "MIT",
   "screenshots": {
