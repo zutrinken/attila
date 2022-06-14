@@ -61,6 +61,7 @@
         "width": 1920
       }
     },
+    "card_assets": true,
     "custom": {
       "color_scheme": {
         "type": "select",
