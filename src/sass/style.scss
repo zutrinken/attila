@@ -522,11 +522,15 @@ textarea {
 	.kg-card {
 		margin: 0 0 4rem;
 	}
-
+	
+	// KG File
+	
 	.kg-file-card {
 
 		.kg-file-card-container {
-			padding: 1.5rem;
+			padding: 2.5rem;
+			background: var(--color-background-secondary);
+			border: 1px solid var(--color-background-contrast);
 
 			.kg-file-card-icon {
 
@@ -568,6 +572,7 @@ textarea {
 	}
 
 	// KG Image
+	
 	.kg-image-card {
 		max-width: none !important;
 
@@ -623,7 +628,9 @@ textarea {
 			margin-bottom: 1.33334em;
 		}
 	}
+	
 	// KG Gallery
+	
 	.kg-gallery-card {
 		max-width: calc(72rem + 24vw) !important;
 		min-width: 100%;
@@ -671,7 +678,9 @@ textarea {
 	.kg-gallery-image:not(:first-of-type) {
 		margin: 0 0 0 0.75em;
 	}
+	
 	// KG Embed
+	
 	.kg-embed-card {
 		margin: 0 0 4rem;
 
@@ -680,7 +689,9 @@ textarea {
 			margin-right: auto;
 		}
 	}
+	
 	// KG Code
+	
 	.kg-code-card {
 		min-width: 100%;
 	}
@@ -688,7 +699,9 @@ textarea {
 	.kg-code-card pre {
 		margin: 0;
 	}
+	
 	// KG Bookmark
+	
 	.kg-bookmark-card {
 		width: 100%;
 	}
@@ -793,7 +806,9 @@ textarea {
 			order: 2;
 		}
 	}
+	
 	// KG Toggle
+	
 	.kg-toggle-card {
 		background: var(--color-background-secondary);
 		box-shadow: inset 0 0 0 1px var(--color-background-contrast);
