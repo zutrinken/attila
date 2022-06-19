@@ -815,8 +815,19 @@ textarea {
 		border-radius: 3px;
 		padding: 2.5rem;
 	}
-	.kg-toggle-card+.kg-toggle-card {
+	.kg-toggle-card +.kg-toggle-card {
 		margin-top: calc(-4rem - 1px);
+	}
+	.kg-toggle-card {
+		
+		.kg-toggle-content {
+		
+			p, ol, ul {
+				font-size: inherit;
+				line-height: inherit;
+				margin-top: 1rem;
+			}
+		}
 	}
 }
 /* ==========================================================================
