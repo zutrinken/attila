@@ -7,14 +7,9 @@
 	<span class="progress-bar"></span>
 </div>
 
-<header class="post-header {{#if feature_image}} has-cover {{/if}}">
+<header class="post-header">
 	<div class="inner">
-		<span class="post-info">
-			<span class="post-type">{{t "Article"}}</span>
-			{{#if tags}}
-			<span class="post-count">{{primary_tag.name}}</span>
-			{{/if}}
-		</span>
+
 		<h1 class="post-title">{{{title}}}</h1>
 		<div class="post-meta">
 			<div class="post-meta-avatars">
@@ -29,20 +24,8 @@
 				{{/foreach}}
 			</div>
 			<h4 class="post-meta-author">{{authors separator=", "}}</h4>
-			<time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time> &bull; {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+			<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY-MM-DD"}}</time> &bull; {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}&bull; <span id="twikoo_visitors">0</span>°
 		</div>
-		{{#if feature_image}}
-		<div class="post-cover cover">
-			<img
-			srcset="{{img_url feature_image size="s"}} 320w,
-              {{img_url feature_image size="m"}} 640w,
-              {{img_url feature_image size="l"}} 960w,
-              {{img_url feature_image size="xl"}} 1920w"
-      src="{{img_url feature_image size="xl"}}"
-			alt="{{title}}" />
-		</div>
-		{{/if}}
-	</div>
 </header>
 
 <main class="content" role="main">
@@ -81,10 +64,7 @@
 			</section>
 
 
-			<section class="post-comments">
-				<a id="show-disqus" class="post-comments-activate">{{t "Show Comments"}}</a>
-			   <div id="disqus_thread"></div>
-			</section>
+
 
       {{#if @labs.subscribers}}
       <section class="post-subscribe">
@@ -103,7 +83,7 @@
 							<i class="icon icon-arrow-left" aria-label="{{t "Next post"}}"></i>
 							<h2 class="post-nav-title">{{title}}</h2>
 							<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
-							<p class="post-nav-meta"><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></p>
+							<p class="post-nav-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY-MM-DD"}}</time></p>
 						</section>
 					</a>
 				{{/next_post}}
@@ -115,12 +95,18 @@
 							<i class="icon icon-arrow-right" aria-label="{{t "Previous post"}}"></i>
 							<h2 class="post-nav-title">{{title}}</h2>
 							<p class="post-nav-excerpt">{{excerpt words="12"}}&hellip;</p>
-							<p class="post-nav-meta"><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></p>
+							<p class="post-nav-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY-MM-DD"}}</time></p>
 						</section>
 					</a>
 				{{/prev_post}}
 				<div class="clear"></div>
 			</aside>
+
+
+		<section class="post-comments">
+         	<div id="tcomment"></div>
+        	<script>twikoo.init({ envId: '{{@custom.disqus_shortname}}', el: '#tcomment' })</script>
+			</section>
 
 		</div>
 	</article>
@@ -132,6 +118,12 @@
 {{#contentFor "scripts"}}
 <script>
   $(document).ready(function () {
+	$('.kg-card img').simplebox({
+    fadeSpeed: 300, // default is 400ms, applied to all fade animations in the plugin
+    darkMode: true, // default is false
+    postfix: "_full", // default is ""
+    hqClass: "highres" // default is "hq"
+	});
 		var viewport = $(window);
 		var post = $('.post-content');
 		// Responsive videos with fitVids

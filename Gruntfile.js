@@ -14,8 +14,11 @@ module.exports = function(grunt) {
       'jsTargetDir': 'assets/js',
       'jsDependencies': [
         '<%= config.jsSrcDir %>/libs/jquery.min.js',
+        '<%= config.jsSrcDir %>/libs/simplebox.min.js',
         '<%= config.jsSrcDir %>/libs/elasticlunr.min.js',
         '<%= config.jsSrcDir %>/libs/jquery.fitvids.js',
+        '<%= config.jsSrcDir %>/libs/pangu.min.js',
+        '<%= config.jsSrcDir %>/libs/fuse.min.js',
         '<%= config.jsSrcDir %>/libs/highlight.pack.js'
       ]
     },
@@ -75,6 +78,13 @@ module.exports = function(grunt) {
       }
     },
     uglify: {
+      options: {
+        mangle: false, //不混淆变量名
+        sourceMap: true,
+        beautify: true,
+        preserveComments: 'all', //不删除注释，还可以为 false（删除全部注释），some（保留@preserve @license @cc_on等注释）
+        footer:'\n/*! <%= pkg.name %> 最后修改于： <%= grunt.template.today("yyyy-mm-dd") %> */'//添加footer
+      },
       js: {
         files: {
           '<%= config.jsTargetDir %>/script.js': [

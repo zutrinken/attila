@@ -6,16 +6,18 @@
 @import "icons";
 @import "fonts";
 @import "highlight";
+@import "simplebox";
+
 $breakpoint-large: 960px;
 $breakpoint-medium: 640px;
 $breakpoint-small: 480px;
-$inner: calc(64rem + 8vw);
+$inner: calc(50rem + 8vw);
 /* ==========================================================================
    Basics
    ========================================================================== */
 :root {
-	--font-primary: 'Fira Sans', sans-serif;
-	--font-secondary: 'Libre Baskerville', serif;
+--font-primary: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+--font-secondary: system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 
 html {
@@ -522,6 +524,11 @@ textarea {
 	.kg-card {
 		margin: 0 0 4rem;
 	}
+
+	.kg-header-card,.kg-video-card.kg-width-full {
+		max-width: calc(72rem + 100vw) !important; 
+		width: calc(100vw - 4rem); 
+	}
 	
 	// KG File
 	
@@ -830,6 +837,41 @@ textarea {
 		}
 	}
 }
+
+/* ==========================================================================
+    links
+    ========================================================================== */
+
+.links{
+    display: grid !important;
+    grid-template-columns: repeat(4,1fr);
+    padding-top: 50px !important;
+    grid-column-gap: 20px;
+    -moz-column-gap: 20px !important;
+    column-gap: 20px;
+
+	.kg-card{
+		margin-bottom: 40px;
+		padding: 10px 0;
+		min-width:10em;
+
+		figcaption,.kg-bookmark-thumbnail,.kg-bookmark-metadata{
+			display:none;
+		}
+		.kg-bookmark-title{
+			white-space:nowrap;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			width:100%;
+		}
+	}
+	@media (max-width: 900px){
+			grid-template-columns: repeat(2,1fr);
+			padding-top: 30px;
+	}
+}
+
+
 /* ==========================================================================
     Misc
     ========================================================================== */
@@ -1950,6 +1992,22 @@ textarea {
 		border-radius: 2rem;
 		background: #FF3;
 	}
+
+	.post-content{
+		
+		a:not([class]) {
+			color: inherit;
+			text-decoration: none;
+			font-weight: 400;
+			box-shadow: inset 0 -2px 0 var(--ghost-accent-color);
+			transition: all ease-out 0.1s;
+
+			&:focus,
+			&:hover {
+				box-shadow: inset 0 -3px 0 var(--ghost-accent-color);
+			}
+		}
+	}
 }
 
 .theme-text {}
@@ -2359,13 +2417,10 @@ textarea {
    Post Comments
    ========================================================================== */
 .post-comments {
-	display: none;
-	position: relative;
-	padding: 4rem;
-	text-align: center;
-	border-top: 1px solid var(--color-background-contrast);
-	border-bottom: 1px solid var(--color-background-contrast);
-	box-sizing: border-box;
+	display: block;
+    position: relative;
+    box-sizing: border-box;
+    font-size: 1.6em;
 
 	&.activated {
 		background: var(--color-background-secondary);
@@ -2678,3 +2733,5 @@ textarea {
 		border-bottom: 1px solid var(--color-background-contrast);
 	}
 }
+
+

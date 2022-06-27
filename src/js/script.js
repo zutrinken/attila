@@ -1,5 +1,17 @@
 jQuery(function($) {
-
+  var posts,url;
+  /* Custom settings for Fuse.js */
+  var options = {
+    shouldSort: false,
+    tokenize: true,
+    matchAllTokens: true,
+    threshold: 0,
+    maxPatternLength: 32,
+    ignoreLocation:true,
+    minMatchCharLength: 1,
+    keys: [{ name: 'title' }, { name: 'excerpt' }]
+  };
+  pangu.autoSpacingPage();
   var html = $('html');
   var viewport = $(window);
 
@@ -44,93 +56,103 @@ jQuery(function($) {
 
   function search() {
       'use strict';
+      //检查是否设置了搜索key
       if (
           typeof gh_search_key == 'undefined' ||
           gh_search_key == ''
       )
       return;
-
+      
+      //显示搜索按钮
       html.addClass('has-search');
 
+      //设置输入、搜索、容器控件
       var searchInput = $('.search-field');
       var searchButton = $('.search-button');
       var searchResult = $('.search-result');
       var popular = $('.popular-wrapper');
       var includeContent = typeof gh_search_content == 'undefined' || gh_search_content == true ? true : false;
 
-      var url =
+      //拼接请求字符串
+      url =
           siteUrl +
-          '/ghost/api/v3/content/posts/?key=' +
-          gh_search_key +
-          '&limit=all&fields=id,title,excerpt,url,updated_at,visibility&order=updated_at%20desc&formats=plaintext';
-      var indexDump = JSON.parse(localStorage.getItem('ease_search_index'));
-      var index;
+          '/ghost/api/v3/content/posts/?key=' + gh_search_key + '&limit=all&fields=id,title,excerpt,url,updated_at,visibility&order=updated_at%20desc&formats=plaintext';
+      
+      //初始化本地缓存
+      //var indexDump = JSON.parse(localStorage.getItem('ease_search_index'));
+      // console.log(indexDump);
+      // var index;
 
-      elasticlunr.clearStopWords();
+      // elasticlunr.clearStopWords();
 
-      localStorage.removeItem('ease_index');
-      localStorage.removeItem('ease_last');
+      // localStorage.removeItem('ease_index');
+      // localStorage.removeItem('ease_last');
 
-      function update(data) {
-          data.posts.forEach(function (post) {
-              index.addDoc(post);
-          });
+      // function update(data) {
+      //     data.posts.forEach(function (post) {
+      //         index.addDoc(post);
+      //     });
 
-          try {
-              localStorage.setItem('ease_search_index', JSON.stringify(index));
-              localStorage.setItem('ease_search_last', data.posts[0].updated_at);
-          } catch (e) {
-              console.error('Your browser local storage is full. Update your search settings following the instruction at https://github.com/TryGhost/Dawn#disable-content-search');
-          }
-      }
+      //     try {
+      //         localStorage.setItem('ease_search_index', JSON.stringify(index));
+      //         localStorage.setItem('ease_search_last', data.posts[0].updated_at);
+      //     } catch (e) {
+      //         console.error('Your browser local storage is full. Update your search settings following the instruction at https://github.com/TryGhost/Dawn#disable-content-search');
+      //     }
+      // }
 
-      if (
-          !indexDump
-      ) {
-          $.get(url, function (data) {
-              if (data.posts.length > 0) {
-                  index = elasticlunr(function () {
-                      this.addField('title');
-                      this.addField('plaintext');
-                      this.setRef('id');
-                  });
+      // if (
+      //     !indexDump
+      // ) {
+      //     console.log(indexDump)
+      //     $.get(url, function (data) {
+      //         if (data.posts.length > 0) {
+      //             index = elasticlunr(function () {
+      //                 this.addField('title');
+      //                 this.addField('plaintext');
+      //                 this.setRef('id');
+      //             });
 
-                  update(data);
-              }
-          });
-      } else {
-          index = elasticlunr.Index.load(indexDump);
-
-          $.get(
-              url +
-                  "&filter=updated_at:>'" +
-                  localStorage
-                      .getItem('ease_search_last')
-                      .replace(/\..*/, '')
-                      .replace(/T/, ' ') +
-                  "'",
-              function (data) {
-                  if (data.posts.length > 0) {
-                      update(data);
-                  }
-              }
-          );
-      }
-
+      //             //update(data);
+      //         }
+      //     });
+      // } else {
+      //   console.log(indexDump)
+      //     //index = elasticlunr.Index.load(indexDump);
+      //     console.log(localStorage);
+      //     $.get(
+      //         url +
+      //             "&filter=updated_at:>'" +
+      //             localStorage
+      //                 .getItem('ease_search_last')
+      //                 .replace(/\..*/, '')
+      //                 .replace(/T/, ' ') +
+      //             "'",
+      //         function (data) {
+      //             if (data.posts.length > 0) {
+      //                 //update(data);
+      //             }
+      //         }
+      //     );
+      // }
+      
       searchInput.on('keyup', function (e) {
-          var result = index.search(e.target.value, { expand: true });
+          //index.search(e.target.value, { expand: true });
           var output = '';
+          
+          fuse = new Fuse(posts, options);
+          result = fuse.search(e.target.value)
 
           result.forEach(function (post) {
               output +=
                   '<div class="search-result-row">' +
                   '<a class="search-result-row-link" href="' +
-                  post.doc.url +
+                  post.item.url +
                   '">' +
                   '<div class="search-result-row-title">' +
-                  post.doc.title +
+                  post.item.title +
                   '</div><div class="search-result-row-excerpt">' +
-                  post.doc.excerpt +
+                  post.item.excerpt +
                   '</div></a>' +
                   '</div>';
               console.log(post);
@@ -178,6 +200,12 @@ jQuery(function($) {
           modalOverlay.show().outerWidth();
           html.addClass('search-active');
           modalInput.focus();
+          $.get(url,function (data) {
+            console.log('')
+            if (data.posts.length > 0) {
+              posts = data.posts
+                  }
+            })
 
           if(html.hasClass('menu-active')) {
             html.removeClass('menu-active');
