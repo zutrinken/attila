@@ -2,7 +2,7 @@
   "name": "attila",
   "description": "Ghost Theme",
   "demo": "https://attila.peteramende.de",
-  "version": "3.5.0",
+  "version": "3.5.1",
   "engines": {
     "ghost": ">=4.0.0"
   },
