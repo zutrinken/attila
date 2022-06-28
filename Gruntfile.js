@@ -18,6 +18,7 @@ module.exports = function(grunt) {
         '<%= config.jsSrcDir %>/libs/jquery.fitvids.js',
         '<%= config.jsSrcDir %>/libs/pangu.min.js',
         '<%= config.jsSrcDir %>/libs/fuse.min.js',
+        '<%= config.jsSrcDir %>/libs/tocbot.min.js',
         '<%= config.jsSrcDir %>/libs/highlight.pack.js'
       ]
     },

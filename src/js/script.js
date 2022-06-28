@@ -11,7 +11,32 @@ jQuery(function($) {
     minMatchCharLength: 1,
     keys: [{ name: 'title' }, { name: 'excerpt' }]
   };
+  //自动空格
   pangu.autoSpacingPage();
+
+  //如果开启toc则渲染
+  if($('.post-toc').length != 0){
+    //处理中文head，否则无法跳转
+    var id = 1;
+    $(".post-content").children("h1,h2,h3,h4,h5").each(function () {
+        var hyphenated = "toc-title-" + id;
+        $(this).attr('id', hyphenated);
+        id++;
+    });
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.post-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: '.post-content',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h1, h2, h3',
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true,
+        orderedList:false,
+        collapseDepth: 0
+    });
+  }
+
   var html = $('html');
   var viewport = $(window);
 

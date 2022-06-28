@@ -31,8 +31,11 @@
 <main class="content" role="main">
 	<article class="{{post_class}}">
 		<div class="inner">
-
+			
 			<section class="post-content">
+				{{#if @custom.post_toc}}
+				<div id="post-toc" class="post-toc"></div>
+				{{/if}}
 				{{content}}
 			</section>
 

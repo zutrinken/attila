@@ -7,6 +7,8 @@
 @import "fonts";
 @import "highlight";
 @import "simplebox";
+@import "tocbot";
+
 
 $breakpoint-large: 960px;
 $breakpoint-medium: 640px;
@@ -187,6 +189,7 @@ textarea {
 		border-left: 0.25em solid var(--ghost-accent-color);
 		font-style: italic;
 		font-weight: 400;
+		word-break: break-all;
 	}
 
 	blockquote * {
@@ -520,6 +523,38 @@ textarea {
 			}
 		}
 	}
+
+	/*-------main---------*/
+	.post-toc{
+		position: fixed;
+		right: calc((100% - 128rem - 4rem) / 2);
+		top: 30%;
+		-webkit-transform: translateY(30%);
+		transform: translateY(30%);
+		z-index: 90;
+		padding: 10px 0;
+		width: 280px;
+		padding-left: 40px;
+		max-height: 400px;
+		overflow: hidden;
+		margin-top: -10px;
+		min-width: auto;
+		.toc-link::before {
+			content: none;
+		}
+		.is-active-link{
+			color:  var(--ghost-accent-color);
+		}
+		ul{
+			margin: auto;
+		}
+		a{
+			text-decoration: auto;
+		}
+
+	}
+	
+
 
 	.kg-callout-card {
 		.kg-callout-text{

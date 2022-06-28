@@ -20,6 +20,8 @@
 
 *   适配了友链界面，请在友链文章中插入 `<hr class="links" />` 标签，然后把友链以 bookmark 形式插入文章即可。
 
+*   使用[pangu.simple.js](https://github.com/backrunner/pangu.simple.js)优化中文空格&#x20;
+
 ### TODO
 
 *   类似少数派的 TOC 功能实现

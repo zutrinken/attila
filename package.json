@@ -72,6 +72,10 @@
         ],
         "default": "System"
       },
+      "post_toc": {
+        "type": "boolean",
+        "default": true
+      },
       "disqus_shortname": {
           "type": "text",
           "default": "",
