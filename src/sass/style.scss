@@ -521,6 +521,14 @@ textarea {
 		}
 	}
 
+	.kg-callout-card {
+		.kg-callout-text{
+			overflow: hidden;
+			text-overflow: ellipsis;
+			word-wrap: break-word;
+		}
+	}
+
 	.kg-card {
 		margin: 0 0 4rem;
 	}
