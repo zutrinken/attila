@@ -26,14 +26,12 @@ jQuery(function($) {
     tocbot.init({
       // Where to render the table of contents.
       tocSelector: '.post-toc',
-      // Where to grab the headings to build the table of contents.
+      ignoreSelector: '.footer_history',
       contentSelector: '.post-content',
-      // Which headings to grab inside of the contentSelector element.
       headingSelector: 'h1, h2, h3',
-      // For headings inside relative or absolute positioned containers within content.
       hasInnerContainers: true,
-        orderedList:false,
-        collapseDepth: 0
+      orderedList:false,
+      collapseDepth: 0
     });
   }
 

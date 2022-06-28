@@ -33,10 +33,16 @@
 		<div class="inner">
 			
 			<section class="post-content">
-				{{#if @custom.post_toc}}
+				{{#has tag="#post-toc"}}
 				<div id="post-toc" class="post-toc"></div>
-				{{/if}}
+				{{/has}}
 				{{content}}
+				<h3 fr-fix-stroke="true" data-koenig-dnd-droppable="true" class="footer_history">{{t "History"}}</h3>
+				<ul data-koenig-dnd-droppable="true">
+					<li>{{t "Created"}} {{date created_at format="YYYY-MM-DD  hh:mm"}} </li>
+					<li>{{t "Published"}} {{date published_at format="YYYY-MM-DD  hh:mm"}} </li>
+					{{#match published_at "!=" updated_at}}<li>{{t "Updated"}} {{date updated_at format="YYYY-MM-DD  hh:mm"}} </li>{{/match}}
+				</ul>
 			</section>
 
 			<section class="post-footer">

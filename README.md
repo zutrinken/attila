@@ -22,6 +22,9 @@
 
 *   使用[pangu.simple.js](https://github.com/backrunner/pangu.simple.js)优化中文空格&#x20;
 
+*   实现TOC功能，期初是实现少数派那样的...留下没技术的眼泪。\
+    给想要开启TOC的文章添加一个 `#post-toc` 的标签即可。
+
 ### TODO
 
 *   类似少数派的 TOC 功能实现

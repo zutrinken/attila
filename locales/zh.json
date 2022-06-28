@@ -39,5 +39,10 @@
     "Previous post": "上一篇博文",
     "Sign in": "登录",
     "Sign up": "注册",
-    "heat":"温度"
+    "heat":"温度",
+    "History":"本文历史",
+    "Created":"创建时间",
+    "Published":"发布时间",
+    "Updated":"最后更新"
+
 }

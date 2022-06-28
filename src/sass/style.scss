@@ -516,7 +516,7 @@ textarea {
 
 		a {
 			box-shadow: inset 0 -1px 0 var(--color-background-contrast);
-
+			
 			&:focus,
 			&:hover {
 				box-shadow: inset 0 -2px 0 var(--color-background-contrast);
@@ -1224,6 +1224,7 @@ textarea {
 	@media only screen and (max-width: $breakpoint-medium) {
 		padding: 0 4rem;
 	}
+	
 }
 
 /* ==========================================================================
@@ -2464,6 +2465,10 @@ textarea {
     position: relative;
     box-sizing: border-box;
     font-size: 1.6em;
+
+	.tk-content a{
+		color:var(--ghost-accent-color);
+	}
 
 	&.activated {
 		background: var(--color-background-secondary);
