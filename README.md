@@ -12,7 +12,7 @@
 
 *   文章简介自动截取文章前 50 个字符
 
-*   评论适配 [Twikoo](http://1900.live/attila-optimization/twikoo.js.org/)，请在后台主题页面设置 Twikoo 腾讯云 id，参数名还是 Disqus 没改。
+*   评论适配 [Twikoo](https://twikoo.js.org)，请在后台主题页面设置 Twikoo 腾讯云 id，参数名还是 Disqus 没改。
 
 *   增加了 Lightbox 插件，使用的开源库 [Simplebox](https://github.com/libhide/simplebox.js)
 
