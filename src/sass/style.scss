@@ -524,7 +524,8 @@ textarea {
 		}
 	}
 
-	/*-------main---------*/
+	/*-------toc---------*/
+	.is-position-fixed{position:fixed !important;top:0}
 	.post-toc{
 		position: fixed;
 		right: calc((100% - 128rem - 4rem) / 2);
@@ -535,7 +536,6 @@ textarea {
 		padding: 10px 0;
 		width: 280px;
 		padding-left: 40px;
-		max-height: 400px;
 		overflow: hidden;
 		margin-top: -10px;
 		min-width: auto;
@@ -550,8 +550,12 @@ textarea {
 		}
 		a{
 			text-decoration: auto;
+			width: 100%;
+			display: inline-block;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
 		}
-
 	}
 	
 
