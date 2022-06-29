@@ -28,7 +28,7 @@ jQuery(function($) {
       tocSelector: '.post-toc',
       ignoreSelector: '.footer_history',
       contentSelector: '.post-content',
-      headingSelector: 'h1, h2, h3',
+      headingSelector: 'h1, h2, h3 ,h4, h5',
       hasInnerContainers: true,
       orderedList:false,
       collapseDepth: 0
