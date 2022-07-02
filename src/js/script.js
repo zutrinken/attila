@@ -163,7 +163,7 @@ jQuery(function($) {
           //index.search(e.target.value, { expand: true });
           var output = '';
           
-          fuse = new Fuse(posts, options);
+         
           result = fuse.search(e.target.value)
 
           result.forEach(function (post) {
@@ -228,8 +228,8 @@ jQuery(function($) {
             if (data.posts.length > 0) {
               posts = data.posts
                   }
-            })
-
+          })
+          fuse = new Fuse(posts, options);
           if(html.hasClass('menu-active')) {
             html.removeClass('menu-active');
           }
