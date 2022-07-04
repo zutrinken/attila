@@ -11,8 +11,7 @@ $().ready(function(){
     minMatchCharLength: 1,
     keys: [{ name: 'title' }, { name: 'excerpt' }]
   };
-  //自动空格
-  pangu.autoSpacingPage();
+  
 
   //如果开启toc则渲染
   if($('.post-toc').length != 0){
