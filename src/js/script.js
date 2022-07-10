@@ -216,19 +216,20 @@ $().ready(function(){
       var modalOverlay = $('.search-wrapper');
       var modal = $('.search');
       var modalInput = $('.search-field');
+      $.get(url,function (data) {
+        console.log('')
+        if (data.posts.length > 0) {
+          posts = data.posts
+          fuse = new Fuse(posts, options);
+        }
+      })
+      
 
       $('.nav-search').on('click', function (e) {
           e.preventDefault();
           modalOverlay.show().outerWidth();
           html.addClass('search-active');
           modalInput.focus();
-          $.get(url,function (data) {
-            console.log('')
-            if (data.posts.length > 0) {
-              posts = data.posts
-                  }
-          })
-          fuse = new Fuse(posts, options);
           if(html.hasClass('menu-active')) {
             html.removeClass('menu-active');
           }
