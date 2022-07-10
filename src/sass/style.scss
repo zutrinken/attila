@@ -1573,9 +1573,16 @@ textarea {
 	max-height: calc(100vh - 6rem);
 	padding: 2rem 4rem;
 	overflow-y: auto;
+	position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--color-background-main);
+
 	@media only screen and (max-width: $breakpoint-medium) {
 		background: #222426;
 		flex-direction: column;
+		display: flex;
+    	position: relative;
 		@supports (-webkit-backdrop-filter: blur(2rem)) {
 			background: rgba(34,36,38,0.9);
 			-webkit-backdrop-filter: blur(2rem);
