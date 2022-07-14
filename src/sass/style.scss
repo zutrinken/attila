@@ -522,9 +522,9 @@ textarea {
 	.kg-card {
 		margin: 0 0 4rem;
 	}
-	
+
 	// KG File
-	
+
 	.kg-file-card {
 
 		.kg-file-card-container {
@@ -572,7 +572,7 @@ textarea {
 	}
 
 	// KG Image
-	
+
 	.kg-image-card {
 		max-width: none !important;
 
@@ -628,9 +628,9 @@ textarea {
 			margin-bottom: 1.33334em;
 		}
 	}
-	
+
 	// KG Gallery
-	
+
 	.kg-gallery-card {
 		max-width: calc(72rem + 24vw) !important;
 		min-width: 100%;
@@ -678,9 +678,9 @@ textarea {
 	.kg-gallery-image:not(:first-of-type) {
 		margin: 0 0 0 0.75em;
 	}
-	
+
 	// KG Embed
-	
+
 	.kg-embed-card {
 		margin: 0 0 4rem;
 
@@ -689,9 +689,9 @@ textarea {
 			margin-right: auto;
 		}
 	}
-	
+
 	// KG Code
-	
+
 	.kg-code-card {
 		min-width: 100%;
 	}
@@ -699,9 +699,9 @@ textarea {
 	.kg-code-card pre {
 		margin: 0;
 	}
-	
+
 	// KG Bookmark
-	
+
 	.kg-bookmark-card {
 		width: 100%;
 	}
@@ -806,9 +806,9 @@ textarea {
 			order: 2;
 		}
 	}
-	
+
 	// KG Toggle
-	
+
 	.kg-toggle-card {
 		background: var(--color-background-secondary);
 		box-shadow: inset 0 0 0 1px var(--color-background-contrast);
@@ -819,9 +819,9 @@ textarea {
 		margin-top: calc(-4rem - 1px);
 	}
 	.kg-toggle-card {
-		
+
 		.kg-toggle-content {
-		
+
 			p, ol, ul {
 				font-size: inherit;
 				line-height: inherit;
@@ -1142,237 +1142,6 @@ textarea {
 }
 
 /* ==========================================================================
-   Search
-   ========================================================================== */
-
-.search-wrapper {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 500;
-	box-sizing: border-box;
-	padding: 2rem;
-	display: none;
-	opacity: 0;
-	transition: opacity ease-out 0.2s;
-	pointer-events: none;
-	background: var(--color-background-overlay);
-
-	.search-wrapper-close {
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 4rem;
-		height: 4rem;
-		margin: 2rem;
-		background: transparent;
-		border: 0;
-		opacity: 0.5;
-		transition: opacity ease-out 0.2s;
-
-		&:focus,
-		&:hover {
-			opacity: 1;
-		}
-
-		&:before,
-		&:after {
-			content: '';
-			position: absolute;
-			left: 20%;
-			top: 50%;
-			width: 60%;
-			height: 2px;
-			margin-top: -1px;
-			border-radius: 1px;
-			background: white;
-		}
-
-		&:before {
-			transform: rotate(-45deg);
-		}
-
-		&:after {
-			transform: rotate(45deg);
-		}
-	}
-}
-
-.search-active {
-	overflow-y: hidden;
-
-	.search-wrapper {
-		opacity: 1;
-		pointer-events: unset;
-	}
-}
-
-.search {
-	position: relative;
-	top: calc(12rem + 4vw);
-	max-height: 80vh;
-	width: 100%;
-	max-width: $inner;
-	margin: auto;
-	background: var(--color-background-main);
-	border-radius: 4px;
-	box-shadow: 0 8px 24px -2px rgba(0,0,0,0.4);
-	overflow: hidden;
-	@media only screen and (max-width: $breakpoint-large) {
-		top: 6rem;
-	}
-}
-
-.search-form {
-	position: relative;
-	padding: 1rem 0;
-	border-bottom: 1px solid var(--color-background-contrast);
-
-	.search-field {
-		font-size: 2em;
-		width: 100%;
-		height: 5rem;
-		margin: 0;
-		padding: 0 2rem;
-		border: 0;
-		background: transparent;
-		box-sizing: border-box;
-		box-shadow: none !important;
-		outline: 0 !important;
-	}
-
-	.search-button {
-		display: none;
-		position: relative;
-		font-size: 1.6em;
-		position: absolute;
-		right: 0;
-		top: 0;
-		height: 4rem;
-		margin: 1.5rem;
-		padding: 0 1.5rem;
-		border: 0;
-		border-radius: 4px;
-		color: white;
-		background: var(--ghost-accent-color);
-		transition: background ease-out 0.2s;
-
-		&.search-button-clear {
-			display: block;
-			width: 2rem;
-			height: 2rem;
-			margin: 2.5rem;
-			padding: 0;
-			border-radius: 4rem;
-			background: var(--color-content-secondary);
-
-			&:focus,
-			&:hover {
-				background: var(--color-content-main);
-			}
-
-			i {
-				display: none;
-			}
-
-			&:before,
-			&:after {
-				content: '';
-				position: absolute;
-				left: 20%;
-				top: 50%;
-				width: 60%;
-				height: 2px;
-				margin-top: -1px;
-				border-radius: 1px;
-				background: var(--color-background-main);
-			}
-
-			&:before {
-				transform: rotate(-45deg);
-			}
-
-			&:after {
-				transform: rotate(45deg);
-			}
-		}
-	}
-}
-
-.search-result {
-	overflow-y: scroll;
-	max-height: 50vh;
-	-webkit-overflow-scrolling: touch;
-
-	@media only screen and (max-width: $breakpoint-medium) {
-		max-height: 75vh;
-	}
-
-	.search-result-row {
-		border-bottom: 1px solid var(--color-background-contrast);
-
-		&:last-child {
-			border: 0;
-		}
-
-		.search-result-row-link {
-			display: block;
-			padding: 2rem;
-			color: inherit;
-			text-decoration: none;
-			transition: all ease-out 0.05s;
-
-			&:hover,
-			&:focus {
-				background: var(--color-background-secondary);
-			}
-
-			.search-result-row-title {
-				font-size: 2em;
-				line-height: 1.25em;
-				font-weight: 700;
-				text-indent: -1px;
-				color: var(--color-content-lead);
-			}
-
-			.search-result-row-excerpt {
-				margin: 0.5rem 0 0;
-				font-family: var(--font-secondary);
-				font-size: 1.25em;
-				line-height: 2em;
-				display: -webkit-box;
-				-webkit-line-clamp: 2;
-				-webkit-box-orient: vertical;
-				overflow: hidden;
-				text-overflow: ellipsis;
-				display: none; //Temporary until fixed
-			}
-		}
-	}
-}
-
-.popular-wrapper {
-	padding: 2rem;
-}
-
-.popular-wrapper .popular-title {
-	font-size: 2em;
-	line-height: 1.25em;
-	font-weight: 700;
-	text-indent: -1px;
-	color: var(--color-content-lead);
-	margin-top: 0;
-}
-
-.popular-wrapper .popular-tags {
-	float: none;
-	max-width: none;
-	margin-bottom: 0;
-}
-
-/* ==========================================================================
    Navigation
    ========================================================================== */
 .nav-header {
@@ -1661,19 +1430,12 @@ textarea {
 }
 
 .nav-meta {
+	@media only screen and (max-width: $breakpoint-medium) {
+		display: none !important;
+	}
 
 	li {
 		margin-right: 1rem;
-		@media only screen and (max-width: $breakpoint-medium) {
-			flex-grow: 1;
-		}
-
-		&.nav-twitter,
-		&.nav-facebook {
-			@media only screen and (max-width: $breakpoint-medium) {
-				display: none;
-			}
-		}
 
 		a {
 			font-size: 1.75em;
@@ -1682,23 +1444,6 @@ textarea {
 		span {
 			display: none;
 		}
-	}
-}
-
-.has-search {
-
-	.nav-meta {
-
-		li.nav-search {
-			display: block !important;
-
-			@media only screen and (max-width: $breakpoint-medium) {
-				display: none !important;
-			}
-		}
-	}
-	.nav-wrapper-control .nav-search {
-		display: block !important;
 	}
 }
 

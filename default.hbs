@@ -76,7 +76,7 @@
 		<div class="nav-wrapper-control">
 			<div class="inner">
 				<a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>{{t "Menu"}}</a>
-				<a class="nav-search" style="display: none;" title="{{t "Search"}}" role="button"><i class="icon icon-search" aria-hidden="true"></i></a>
+				<a class="nav-search" title="{{t "Search"}}" role="button" data-ghost-search><i class="icon icon-search" aria-hidden="true"></i></a>
 			</div>
 		</div>
 	</div>
@@ -85,30 +85,6 @@
 	<section class="page-wrapper">
 
 		{{{body}}}
-
-
-		<div class="search-wrapper">
-			<div class="search">
-		    <form class="search-form">
-          <input class="search-field" type="text" placeholder="{{t "Search"}} …">
-          <button class="search-button" type="submit">
-						<i class="icon icon-search" aria-hidden="true"></i>
-					</button>
-		    </form>
-				<div class="popular-wrapper">
-					<h4 class="popular-title">{{t "Topics"}}</h4>
-					<span class="popular-tags post-tags">
-						{{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
-							{{#foreach tags}}
-								<a href='{{ url }}'>{{ name }}: {{ count.posts }}</a>
-							{{/foreach}}
-						{{/get}}
-					</span>
-				</div>
-				<div class="search-result"></div>
-			</div>
-			<button class="search-wrapper-close" aria-label="{{t "Close"}}"></button>
-		</div>
 
 		<div class="nav-footer">
 			<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
