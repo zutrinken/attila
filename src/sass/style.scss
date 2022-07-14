@@ -525,20 +525,17 @@ textarea {
 	}
 
 	/*-------toc---------*/
-	.is-position-fixed{position:fixed !important;top:0}
+	.is-position-fixed{position:fixed !important;top:80px !important;}
 	.post-toc{
-		position: fixed;
 		right: calc((100% - 128rem - 4rem) / 2);
-		top: 30%;
-		-webkit-transform: translateY(30%);
-		transform: translateY(30%);
+		top: 0;
 		z-index: 90;
-		padding: 10px 0;
 		width: 280px;
 		padding-left: 40px;
 		overflow: hidden;
-		margin-top: -10px;
 		min-width: auto;
+		height: 100%;
+		position: absolute;
 		.toc-link::before {
 			content: none;
 		}
@@ -1220,6 +1217,12 @@ textarea {
 	position: relative;
 	padding-right: 0;
 }
+.page-links{
+	.inner{
+		max-width: 100%;
+	}
+}
+
 
 .inner {
 	max-width: $inner;
