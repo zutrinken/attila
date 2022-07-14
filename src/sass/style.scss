@@ -1344,45 +1344,6 @@ textarea {
 		}
 	}
 
-
-	&.nav-subscribe,
-	&.nav-account {
-
-		a {
-			display: block;
-			border-radius: 2rem;
-			margin: 0.125rem 0;
-			padding: 0.75rem 1.5rem;
-			border: 1px solid var(--color-background-contrast);
-			background: transparent;
-			white-space: nowrap;
-			font-size: 1.5em;
-			line-height: 2rem;
-			color: var(--color-content-secondary);
-			font-weight: 500;
-			text-align: center;
-
-			&:focus,
-			&:hover {
-				color: var(--color-content-main);
-				border-color: var(--ghost-accent-color);
-			}
-
-			@media only screen and (max-width: $breakpoint-medium) {
-				border-color: #3B3D40;
-
-				&:focus,
-				&:hover {
-					color: #E1E3E6;
-				}
-			}
-
-			&:before {
-				display: none !important;
-			}
-		}
-	}
-
 	a {
 		display: block;
 		padding: 1rem 0;
@@ -1470,24 +1431,6 @@ textarea {
 				@media only screen and (min-width: $breakpoint-medium) {
 					color: white;
 					border-color: white;
-				}
-			}
-		}
-
-		&.nav-subscribe,
-		&.nav-account {
-
-			a{
-				@media only screen and (min-width: $breakpoint-medium) {
-					color: #222426;
-					background-color: rgba(255,255,255,0.8);
-				}
-
-				&:focus,
-				&:hover {
-					@media only screen and (min-width: $breakpoint-medium) {
-						background-color: white;
-					}
 				}
 			}
 		}
