@@ -28,7 +28,10 @@ $().ready(function(){
       ignoreSelector: '.footer_history',
       contentSelector: '.post-content',
       headingSelector: 'h1, h2, h3, h4, h5',
-      hasInnerContainers: true,
+      hasInnerContainers: false,
+      positionFixedClass: 'is-position-fixed',
+      positionFixedSelector: '.post-toc',
+      fixedSidebarOffset: $(".post-header").outerHeight() - 85,
       orderedList:false,
       collapseDepth: 0
     });
