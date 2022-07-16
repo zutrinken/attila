@@ -184,7 +184,7 @@ $().ready(function(){
           result.forEach(function (post) {
               output +=
                   '<div class="search-result-row">' +
-                  '<a class="search-result-row-link" href="' +
+                  '<a class="search-result-row-link umami--click--Read" href="' +
                   post.item.url +
                   '">' +
                   '<div class="search-result-row-title">' +
