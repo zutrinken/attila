@@ -8,6 +8,7 @@
 @import "highlight";
 @import "simplebox";
 @import "tocbot";
+@import "_hint";
 
 
 $breakpoint-large: 960px;
@@ -534,8 +535,10 @@ textarea {
 		padding-left: 40px;
 		overflow: hidden;
 		min-width: auto;
-		height: 100%;
 		position: absolute;
+		color: var(--color-content-secondary);
+		font-size: 0.8em;
+    	line-height: 2em;
 		.toc-link::before {
 			content: none;
 		}
@@ -1216,6 +1219,34 @@ textarea {
 	min-height: 100vh;
 	position: relative;
 	padding-right: 0;
+
+	.app_toolbar{
+		z-index: 99;
+		display: block;
+		position: fixed;
+		bottom: 5px;
+		right: 15px;
+		
+		.app_btn-wrap{
+			margin: 10px 0;
+			.app_top{
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				border: none;
+				transition: .2s;
+				display: none;
+				background-color: transparent;
+				.icon{
+					font-size: 2em;
+					color: var(--color-content-secondary);
+					&:hover{
+						color: var(--ghost-accent-color);					
+					}
+				}
+			}
+		}
+	}
 }
 .page-links{
 	.inner{
@@ -1575,11 +1606,11 @@ textarea {
 	display: flex;
 	max-height: calc(100vh - 6rem);
 	padding: 2rem 4rem;
-	overflow-y: auto;
 	position: fixed;
     width: 100%;
     box-sizing: border-box;
     background: var(--color-background-main);
+	
 
 	@media only screen and (max-width: $breakpoint-medium) {
 		background: #222426;
@@ -1910,6 +1941,7 @@ textarea {
 .nav-footer .nav-wrapper {
 	display: flex;
 	padding: 0 4rem;
+	justify-content: center;
 	@media only screen and (max-width: $breakpoint-medium) {
 		flex-direction: column;
 		text-align: center;
@@ -1982,7 +2014,6 @@ textarea {
 .nav-credits {
 	flex-shrink: 0;
 	display: block;
-	margin-left: auto;
 	font-size: 1.6em;
 	line-height: 2rem;
 	color: var(--color-content-secondary);

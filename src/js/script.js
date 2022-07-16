@@ -11,6 +11,19 @@ $().ready(function(){
     minMatchCharLength: 1,
     keys: [{ name: 'title' }, { name: 'excerpt' }]
   };
+
+  //回到顶部
+  $(window).scroll(function () {
+    if ($(window).scrollTop() >= 50) {
+        $('.app_top').fadeIn();
+    }
+    else {
+        $('.app_top').fadeOut();
+    }
+  });
+  $('.app_top').click(function () {
+    $('html,body').animate({ scrollTop: 0 }, 300);
+  });
   
 
   //如果开启toc则渲染

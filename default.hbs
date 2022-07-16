@@ -76,7 +76,7 @@
 		<div class="nav-wrapper-control">
 			<div class="inner">
 				<a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>{{t "Menu"}}</a>
-				<a class="nav-search" style="display: none;" title="{{t "Search"}}" role="button"><i class="icon icon-search" aria-hidden="true"></i></a>
+				<a class="nav-search" aria-label="{{t "Search"}}" style="display: none;" title="{{t "Search"}}" role="button"><i class="icon icon-search" aria-hidden="true"></i></a>
 			</div>
 		</div>
 	</div>
@@ -86,12 +86,18 @@
 
 		{{{body}}}
 
-
+		<div  class="app_toolbar">
+			<div  class="app_btn-wrap">
+				<button  class="app_top hint--left" aria-label="{{t "Gotop"}}">
+				<i class="icon icon-vertical_align_top"></i>
+				</button>
+			</div>
+		</div>
 		<div class="search-wrapper">
 			<div class="search">
 		    <form class="search-form">
           <input class="search-field" type="text" placeholder="{{t "Search"}} …">
-          <button class="search-button" type="submit">
+          <button class="search-button" aria-label="{{t "Search"}}" type="submit">
 						<i class="icon icon-search" aria-hidden="true"></i>
 					</button>
 		    </form>
