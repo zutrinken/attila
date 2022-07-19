@@ -1309,146 +1309,98 @@ textarea {
 /*============================
 	archives
 ==============================*/
-.archives .archive-group-month-1 + .archive-group-month-1,
-.archives .archive-group-month-10 + .archive-group-month-10,
-.archives .archive-group-month-11 + .archive-group-month-11,
-.archives .archive-group-month-12 + .archive-group-month-12,
-.archives .archive-group-month-2 + .archive-group-month-2,
-.archives .archive-group-month-3 + .archive-group-month-3,
-.archives .archive-group-month-4 + .archive-group-month-4,
-.archives .archive-group-month-5 + .archive-group-month-5,
-.archives .archive-group-month-6 + .archive-group-month-6,
-.archives .archive-group-month-7 + .archive-group-month-7,
-.archives .archive-group-month-8 + .archive-group-month-8,
-.archives .archive-group-month-9 + .archive-group-month-9,
-.archives .archive-group-month-١ + .archive-group-month-١,
-.archives .archive-group-month-١٠ + .archive-group-month-١٠,
-.archives .archive-group-month-١١ + .archive-group-month-١١,
-.archives .archive-group-month-١٢ + .archive-group-month-١٢,
-.archives .archive-group-month-٢ + .archive-group-month-٢,
-.archives .archive-group-month-٣ + .archive-group-month-٣,
-.archives .archive-group-month-٤ + .archive-group-month-٤,
-.archives .archive-group-month-٥ + .archive-group-month-٥,
-.archives .archive-group-month-٦ + .archive-group-month-٦,
-.archives .archive-group-month-٧ + .archive-group-month-٧,
-.archives .archive-group-month-٨ + .archive-group-month-٨,
-.archives .archive-group-month-٩ + .archive-group-month-٩ {
+.archives {
+  border-bottom: 1px solid var(--ghost-accent-color); }
+  .archives .popular-wrapper {
+    padding: 2rem 0; }
+  .archives .post-tags a {
+    font-size: 1em;
+    color: white !important; }
+
+.c-card-archive--date-1 + .c-card-archive--date-1, .c-card-archive--date-10 + .c-card-archive--date-10, .c-card-archive--date-11 + .c-card-archive--date-11, .c-card-archive--date-12 + .c-card-archive--date-12, .c-card-archive--date-2 + .c-card-archive--date-2, .c-card-archive--date-3 + .c-card-archive--date-3, .c-card-archive--date-4 + .c-card-archive--date-4, .c-card-archive--date-5 + .c-card-archive--date-5, .c-card-archive--date-6 + .c-card-archive--date-6, .c-card-archive--date-7 + .c-card-archive--date-7, .c-card-archive--date-8 + .c-card-archive--date-8, .c-card-archive--date-9 + .c-card-archive--date-9, .c-card-archive--date-١ + .c-card-archive--date-١, .c-card-archive--date-١٠ + .c-card-archive--date-١٠, .c-card-archive--date-١١ + .c-card-archive--date-١١, .c-card-archive--date-١٢ + .c-card-archive--date-١٢, .c-card-archive--date-٢ + .c-card-archive--date-٢, .c-card-archive--date-٣ + .c-card-archive--date-٣, .c-card-archive--date-٤ + .c-card-archive--date-٤, .c-card-archive--date-٥ + .c-card-archive--date-٥, .c-card-archive--date-٦ + .c-card-archive--date-٦, .c-card-archive--date-٧ + .c-card-archive--date-٧, .c-card-archive--date-٨ + .c-card-archive--date-٨, .c-card-archive--date-٩ + .c-card-archive--date-٩ {
   padding-top: 0;
   margin-top: 0; }
 
-.archives .archive-group-month-1 + .archive-group-month-1 .archive-post,
-.archives .archive-group-month-10 + .archive-group-month-10 .archive-post,
-.archives .archive-group-month-11 + .archive-group-month-11 .archive-post,
-.archives .archive-group-month-12 + .archive-group-month-12 .archive-post,
-.archives .archive-group-month-2 + .archive-group-month-2 .archive-post,
-.archives .archive-group-month-3 + .archive-group-month-3 .archive-post,
-.archives .archive-group-month-4 + .archive-group-month-4 .archive-post,
-.archives .archive-group-month-5 + .archive-group-month-5 .archive-post,
-.archives .archive-group-month-6 + .archive-group-month-6 .archive-post,
-.archives .archive-group-month-7 + .archive-group-month-7 .archive-post,
-.archives .archive-group-month-8 + .archive-group-month-8 .archive-post,
-.archives .archive-group-month-9 + .archive-group-month-9 .archive-post,
-.archives .archive-group-month-١ + .archive-group-month-١ .archive-post,
-.archives .archive-group-month-١٠ + .archive-group-month-١٠ .archive-post,
-.archives .archive-group-month-١١ + .archive-group-month-١١ .archive-post,
-.archives .archive-group-month-١٢ + .archive-group-month-١٢ .archive-post,
-.archives .archive-group-month-٢ + .archive-group-month-٢ .archive-post,
-.archives .archive-group-month-٣ + .archive-group-month-٣ .archive-post,
-.archives .archive-group-month-٤ + .archive-group-month-٤ .archive-post,
-.archives .archive-group-month-٥ + .archive-group-month-٥ .archive-post,
-.archives .archive-group-month-٦ + .archive-group-month-٦ .archive-post,
-.archives .archive-group-month-٧ + .archive-group-month-٧ .archive-post,
-.archives .archive-group-month-٨ + .archive-group-month-٨ .archive-post,
-.archives .archive-group-month-٩ + .archive-group-month-٩ .archive-post {
+.c-card-archive--date-1 + .c-card-archive--date-1:before, .c-card-archive--date-10 + .c-card-archive--date-10:before, .c-card-archive--date-11 + .c-card-archive--date-11:before, .c-card-archive--date-12 + .c-card-archive--date-12:before, .c-card-archive--date-2 + .c-card-archive--date-2:before, .c-card-archive--date-3 + .c-card-archive--date-3:before, .c-card-archive--date-4 + .c-card-archive--date-4:before, .c-card-archive--date-5 + .c-card-archive--date-5:before, .c-card-archive--date-6 + .c-card-archive--date-6:before, .c-card-archive--date-7 + .c-card-archive--date-7:before, .c-card-archive--date-8 + .c-card-archive--date-8:before, .c-card-archive--date-9 + .c-card-archive--date-9:before, .c-card-archive--date-١ + .c-card-archive--date-١:before, .c-card-archive--date-١٠ + .c-card-archive--date-١٠:before, .c-card-archive--date-١١ + .c-card-archive--date-١١:before, .c-card-archive--date-١٢ + .c-card-archive--date-١٢:before, .c-card-archive--date-٢ + .c-card-archive--date-٢:before, .c-card-archive--date-٣ + .c-card-archive--date-٣:before, .c-card-archive--date-٤ + .c-card-archive--date-٤:before, .c-card-archive--date-٥ + .c-card-archive--date-٥:before, .c-card-archive--date-٦ + .c-card-archive--date-٦:before, .c-card-archive--date-٧ + .c-card-archive--date-٧:before, .c-card-archive--date-٨ + .c-card-archive--date-٨:before, .c-card-archive--date-٩ + .c-card-archive--date-٩:before {
+  background-color: transparent; }
+
+.c-card-archive--date-1 + .c-card-archive--date-1 .c-card-archive__meta, .c-card-archive--date-10 + .c-card-archive--date-10 .c-card-archive__meta, .c-card-archive--date-11 + .c-card-archive--date-11 .c-card-archive__meta, .c-card-archive--date-12 + .c-card-archive--date-12 .c-card-archive__meta, .c-card-archive--date-2 + .c-card-archive--date-2 .c-card-archive__meta, .c-card-archive--date-3 + .c-card-archive--date-3 .c-card-archive__meta, .c-card-archive--date-4 + .c-card-archive--date-4 .c-card-archive__meta, .c-card-archive--date-5 + .c-card-archive--date-5 .c-card-archive__meta, .c-card-archive--date-6 + .c-card-archive--date-6 .c-card-archive__meta, .c-card-archive--date-7 + .c-card-archive--date-7 .c-card-archive__meta, .c-card-archive--date-8 + .c-card-archive--date-8 .c-card-archive__meta, .c-card-archive--date-9 + .c-card-archive--date-9 .c-card-archive__meta, .c-card-archive--date-١ + .c-card-archive--date-١ .c-card-archive__meta, .c-card-archive--date-١٠ + .c-card-archive--date-١٠ .c-card-archive__meta, .c-card-archive--date-١١ + .c-card-archive--date-١١ .c-card-archive__meta, .c-card-archive--date-١٢ + .c-card-archive--date-١٢ .c-card-archive__meta, .c-card-archive--date-٢ + .c-card-archive--date-٢ .c-card-archive__meta, .c-card-archive--date-٣ + .c-card-archive--date-٣ .c-card-archive__meta, .c-card-archive--date-٤ + .c-card-archive--date-٤ .c-card-archive__meta, .c-card-archive--date-٥ + .c-card-archive--date-٥ .c-card-archive__meta, .c-card-archive--date-٦ + .c-card-archive--date-٦ .c-card-archive__meta, .c-card-archive--date-٧ + .c-card-archive--date-٧ .c-card-archive__meta, .c-card-archive--date-٨ + .c-card-archive--date-٨ .c-card-archive__meta, .c-card-archive--date-٩ + .c-card-archive--date-٩ .c-card-archive__meta {
+  display: none; }
+
+.c-card-archive--date-1 + .c-card-archive--date-1 .c-card-archive__content, .c-card-archive--date-10 + .c-card-archive--date-10 .c-card-archive__content, .c-card-archive--date-11 + .c-card-archive--date-11 .c-card-archive__content, .c-card-archive--date-12 + .c-card-archive--date-12 .c-card-archive__content, .c-card-archive--date-2 + .c-card-archive--date-2 .c-card-archive__content, .c-card-archive--date-3 + .c-card-archive--date-3 .c-card-archive__content, .c-card-archive--date-4 + .c-card-archive--date-4 .c-card-archive__content, .c-card-archive--date-5 + .c-card-archive--date-5 .c-card-archive__content, .c-card-archive--date-6 + .c-card-archive--date-6 .c-card-archive__content, .c-card-archive--date-7 + .c-card-archive--date-7 .c-card-archive__content, .c-card-archive--date-8 + .c-card-archive--date-8 .c-card-archive__content, .c-card-archive--date-9 + .c-card-archive--date-9 .c-card-archive__content, .c-card-archive--date-١ + .c-card-archive--date-١ .c-card-archive__content, .c-card-archive--date-١٠ + .c-card-archive--date-١٠ .c-card-archive__content, .c-card-archive--date-١١ + .c-card-archive--date-١١ .c-card-archive__content, .c-card-archive--date-١٢ + .c-card-archive--date-١٢ .c-card-archive__content, .c-card-archive--date-٢ + .c-card-archive--date-٢ .c-card-archive__content, .c-card-archive--date-٣ + .c-card-archive--date-٣ .c-card-archive__content, .c-card-archive--date-٤ + .c-card-archive--date-٤ .c-card-archive__content, .c-card-archive--date-٥ + .c-card-archive--date-٥ .c-card-archive__content, .c-card-archive--date-٦ + .c-card-archive--date-٦ .c-card-archive__content, .c-card-archive--date-٧ + .c-card-archive--date-٧ .c-card-archive__content, .c-card-archive--date-٨ + .c-card-archive--date-٨ .c-card-archive__content, .c-card-archive--date-٩ + .c-card-archive--date-٩ .c-card-archive__content {
   position: relative;
   padding-top: var(--space-16);
   margin-top: var(--space-16); }
 
-.archives .archive-group-month-1 + .archive-group-month-1 .archive-header,
-.archives .archive-group-month-10 + .archive-group-month-10 .archive-header,
-.archives .archive-group-month-11 + .archive-group-month-11 .archive-header,
-.archives .archive-group-month-12 + .archive-group-month-12 .archive-header,
-.archives .archive-group-month-2 + .archive-group-month-2 .archive-header,
-.archives .archive-group-month-3 + .archive-group-month-3 .archive-header,
-.archives .archive-group-month-4 + .archive-group-month-4 .archive-header,
-.archives .archive-group-month-5 + .archive-group-month-5 .archive-header,
-.archives .archive-group-month-6 + .archive-group-month-6 .archive-header,
-.archives .archive-group-month-7 + .archive-group-month-7 .archive-header,
-.archives .archive-group-month-8 + .archive-group-month-8 .archive-header,
-.archives .archive-group-month-9 + .archive-group-month-9 .archive-header,
-.archives .archive-group-month-١ + .archive-group-month-١ .archive-header,
-.archives .archive-group-month-١٠ + .archive-group-month-١٠ .archive-header,
-.archives .archive-group-month-١١ + .archive-group-month-١١ .archive-header,
-.archives .archive-group-month-١٢ + .archive-group-month-١٢ .archive-header,
-.archives .archive-group-month-٢ + .archive-group-month-٢ .archive-header,
-.archives .archive-group-month-٣ + .archive-group-month-٣ .archive-header,
-.archives .archive-group-month-٤ + .archive-group-month-٤ .archive-header,
-.archives .archive-group-month-٥ + .archive-group-month-٥ .archive-header,
-.archives .archive-group-month-٦ + .archive-group-month-٦ .archive-header,
-.archives .archive-group-month-٧ + .archive-group-month-٧ .archive-header,
-.archives .archive-group-month-٨ + .archive-group-month-٨ .archive-header,
-.archives .archive-group-month-٩ + .archive-group-month-٩ .archive-header {
-  display: none; }
+.c-card-archive--date-1 + .c-card-archive--date-1 .c-card-archive__content:before, .c-card-archive--date-10 + .c-card-archive--date-10 .c-card-archive__content:before, .c-card-archive--date-11 + .c-card-archive--date-11 .c-card-archive__content:before, .c-card-archive--date-12 + .c-card-archive--date-12 .c-card-archive__content:before, .c-card-archive--date-2 + .c-card-archive--date-2 .c-card-archive__content:before, .c-card-archive--date-3 + .c-card-archive--date-3 .c-card-archive__content:before, .c-card-archive--date-4 + .c-card-archive--date-4 .c-card-archive__content:before, .c-card-archive--date-5 + .c-card-archive--date-5 .c-card-archive__content:before, .c-card-archive--date-6 + .c-card-archive--date-6 .c-card-archive__content:before, .c-card-archive--date-7 + .c-card-archive--date-7 .c-card-archive__content:before, .c-card-archive--date-8 + .c-card-archive--date-8 .c-card-archive__content:before, .c-card-archive--date-9 + .c-card-archive--date-9 .c-card-archive__content:before, .c-card-archive--date-١ + .c-card-archive--date-١ .c-card-archive__content:before, .c-card-archive--date-١٠ + .c-card-archive--date-١٠ .c-card-archive__content:before, .c-card-archive--date-١١ + .c-card-archive--date-١١ .c-card-archive__content:before, .c-card-archive--date-١٢ + .c-card-archive--date-١٢ .c-card-archive__content:before, .c-card-archive--date-٢ + .c-card-archive--date-٢ .c-card-archive__content:before, .c-card-archive--date-٣ + .c-card-archive--date-٣ .c-card-archive__content:before, .c-card-archive--date-٤ + .c-card-archive--date-٤ .c-card-archive__content:before, .c-card-archive--date-٥ + .c-card-archive--date-٥ .c-card-archive__content:before, .c-card-archive--date-٦ + .c-card-archive--date-٦ .c-card-archive__content:before, .c-card-archive--date-٧ + .c-card-archive--date-٧ .c-card-archive__content:before, .c-card-archive--date-٨ + .c-card-archive--date-٨ .c-card-archive__content:before, .c-card-archive--date-٩ + .c-card-archive--date-٩ .c-card-archive__content:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  top: 0;
+  background-color: var(--ghost-accent-color); }
 
-.archives .archive-group-month-1 + .archive-group-month-1:before,
-.archives .archive-group-month-10 + .archive-group-month-10:before,
-.archives .archive-group-month-11 + .archive-group-month-11:before,
-.archives .archive-group-month-12 + .archive-group-month-12:before,
-.archives .archive-group-month-2 + .archive-group-month-2:before,
-.archives .archive-group-month-3 + .archive-group-month-3:before,
-.archives .archive-group-month-4 + .archive-group-month-4:before,
-.archives .archive-group-month-5 + .archive-group-month-5:before,
-.archives .archive-group-month-6 + .archive-group-month-6:before,
-.archives .archive-group-month-7 + .archive-group-month-7:before,
-.archives .archive-group-month-8 + .archive-group-month-8:before,
-.archives .archive-group-month-9 + .archive-group-month-9:before,
-.archives .archive-group-month-١ + .archive-group-month-١:before,
-.archives .archive-group-month-١٠ + .archive-group-month-١٠:before,
-.archives .archive-group-month-١١ + .archive-group-month-١١:before,
-.archives .archive-group-month-١٢ + .archive-group-month-١٢:before,
-.archives .archive-group-month-٢ + .archive-group-month-٢:before,
-.archives .archive-group-month-٣ + .archive-group-month-٣:before,
-.archives .archive-group-month-٤ + .archive-group-month-٤:before,
-.archives .archive-group-month-٥ + .archive-group-month-٥:before,
-.archives .archive-group-month-٦ + .archive-group-month-٦:before,
-.archives .archive-group-month-٧ + .archive-group-month-٧:before,
-.archives .archive-group-month-٨ + .archive-group-month-٨:before,
-.archives .archive-group-month-٩ + .archive-group-month-٩:before {
-  background-color: transparent; }
-
-.archives .archive-group-month {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: var(--space-40);
-  grid-template-areas: "meta meta content content content content content content"; }
-  .archives .archive-group-month:before {
+.c-card-archive {
+  position: relative;
+  padding-top: var(--space-24);
+  margin-top: var(--space-24); }
+  .c-card-archive .u-type-uppercase {
+    text-transform: uppercase;
+    line-height: 3em;
+    color: var(--color-content-secondary); }
+  .c-card-archive:first-child {
+    margin-top: 0;
+    padding-top: 0; }
+  @media (min-width: 40em) {
+    .c-card-archive {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: var(--space-40);
+      grid-template-areas: "meta meta content content content content content content"; } }
+  .c-card-archive:first-child:before {
+    background-color: transparent; }
+  .c-card-archive:before {
     content: "";
     display: block;
     width: 100%;
     height: 1px;
     position: absolute;
     top: 0;
-    background-color: red; }
-  .archives .archive-group-month:not(:last-of-type) {
-    width: 100%;
-    border-bottom: 1px solid #dcdcdc;
-    border-bottom: 1px solid var(--light-border-color); }
-  .archives .archive-group-month .archive-header {
-    grid-area: meta;
-    margin: 0 0 15px;
-    overflow: hidden; }
-  .archives .archive-group-month .archive-post {
-    grid-area: content; }
-    .archives .archive-group-month .archive-post .archive-post-title {
-      margin: 0 0 15px;
-      overflow: hidden; }
-      .archives .archive-group-month .archive-post .archive-post-title a {
-        display: block; }
-      .archives .archive-group-month .archive-post .archive-post-title span {
-        font-size: 15px;
-        float: right;
-        opacity: .8; }
+    background-color: var(--ghost-accent-color); }
+  @media (min-width: 40em) {
+    .c-card-archive .c-card-archive__meta {
+      grid-area: meta; } }
+  @media (min-width: 40em) {
+    .c-card-archive .c-card-archive__content {
+      grid-area: content; } }
+  .c-card-archive .c-card-archive__title {
+    line-height: 3em;
+    padding: 0 0.5em; }
+    .c-card-archive .c-card-archive__title:hover {
+      background-color: var(--ghost-accent-color);
+      transition: background-color 0.1s; }
+      .c-card-archive .c-card-archive__title:hover * {
+        color: white !important; }
+    .c-card-archive .c-card-archive__title .c-card-archive__date-mini {
+      font-size: var(--font-size-xsmall);
+      line-height: var(--line-height-xsmall);
+      color: var(--color-content-secondary);
+      font-weight: var(--font-weight-normal); }
+    .c-card-archive .c-card-archive__title .c-card-archive__url {
+      color: var(--color-content-main);
+      text-decoration: none; }
+      .c-card-archive .c-card-archive__title .c-card-archive__url:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1; }
+      .c-card-archive .c-card-archive__title .c-card-archive__url:hover {
+        text-decoration: revert; }
 
 /* ==========================================================================
    KG Cards
