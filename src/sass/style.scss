@@ -492,6 +492,169 @@ textarea {
 
 	}
 }
+
+/*============================
+	archives
+==============================*/
+.archives {
+	.archive-group-month-1+.archive-group-month-1,
+	.archive-group-month-10+.archive-group-month-10,
+	.archive-group-month-11+.archive-group-month-11,
+	.archive-group-month-12+.archive-group-month-12,
+	.archive-group-month-2+.archive-group-month-2,
+	.archive-group-month-3+.archive-group-month-3,
+	.archive-group-month-4+.archive-group-month-4,
+	.archive-group-month-5+.archive-group-month-5,
+	.archive-group-month-6+.archive-group-month-6,
+	.archive-group-month-7+.archive-group-month-7,
+	.archive-group-month-8+.archive-group-month-8,
+	.archive-group-month-9+.archive-group-month-9,
+	.archive-group-month-١+.archive-group-month-١,
+	.archive-group-month-١٠+.archive-group-month-١٠,
+	.archive-group-month-١١+.archive-group-month-١١,
+	.archive-group-month-١٢+.archive-group-month-١٢,
+	.archive-group-month-٢+.archive-group-month-٢,
+	.archive-group-month-٣+.archive-group-month-٣,
+	.archive-group-month-٤+.archive-group-month-٤,
+	.archive-group-month-٥+.archive-group-month-٥,
+	.archive-group-month-٦+.archive-group-month-٦,
+	.archive-group-month-٧+.archive-group-month-٧,
+	.archive-group-month-٨+.archive-group-month-٨,
+	.archive-group-month-٩+.archive-group-month-٩ {
+		padding-top: 0;
+		margin-top: 0;
+	}
+
+
+
+	.archive-group-month-1+.archive-group-month-1 .archive-post,
+	.archive-group-month-10+.archive-group-month-10 .archive-post,
+	.archive-group-month-11+.archive-group-month-11 .archive-post,
+	.archive-group-month-12+.archive-group-month-12 .archive-post,
+	.archive-group-month-2+.archive-group-month-2 .archive-post,
+	.archive-group-month-3+.archive-group-month-3 .archive-post,
+	.archive-group-month-4+.archive-group-month-4 .archive-post,
+	.archive-group-month-5+.archive-group-month-5 .archive-post,
+	.archive-group-month-6+.archive-group-month-6 .archive-post,
+	.archive-group-month-7+.archive-group-month-7 .archive-post,
+	.archive-group-month-8+.archive-group-month-8 .archive-post,
+	.archive-group-month-9+.archive-group-month-9 .archive-post,
+	.archive-group-month-١+.archive-group-month-١ .archive-post,
+	.archive-group-month-١٠+.archive-group-month-١٠ .archive-post,
+	.archive-group-month-١١+.archive-group-month-١١ .archive-post,
+	.archive-group-month-١٢+.archive-group-month-١٢ .archive-post,
+	.archive-group-month-٢+.archive-group-month-٢ .archive-post,
+	.archive-group-month-٣+.archive-group-month-٣ .archive-post,
+	.archive-group-month-٤+.archive-group-month-٤ .archive-post,
+	.archive-group-month-٥+.archive-group-month-٥ .archive-post,
+	.archive-group-month-٦+.archive-group-month-٦ .archive-post,
+	.archive-group-month-٧+.archive-group-month-٧ .archive-post,
+	.archive-group-month-٨+.archive-group-month-٨ .archive-post,
+	.archive-group-month-٩+.archive-group-month-٩ .archive-post {
+		position: relative;
+		padding-top: var(--space-16);
+		margin-top: var(--space-16);
+	}
+
+
+	.archive-group-month-1+.archive-group-month-1 .archive-header,
+	.archive-group-month-10+.archive-group-month-10 .archive-header,
+	.archive-group-month-11+.archive-group-month-11 .archive-header,
+	.archive-group-month-12+.archive-group-month-12 .archive-header,
+	.archive-group-month-2+.archive-group-month-2 .archive-header,
+	.archive-group-month-3+.archive-group-month-3 .archive-header,
+	.archive-group-month-4+.archive-group-month-4 .archive-header,
+	.archive-group-month-5+.archive-group-month-5 .archive-header,
+	.archive-group-month-6+.archive-group-month-6 .archive-header,
+	.archive-group-month-7+.archive-group-month-7 .archive-header,
+	.archive-group-month-8+.archive-group-month-8 .archive-header,
+	.archive-group-month-9+.archive-group-month-9 .archive-header,
+	.archive-group-month-١+.archive-group-month-١ .archive-header,
+	.archive-group-month-١٠+.archive-group-month-١٠ .archive-header,
+	.archive-group-month-١١+.archive-group-month-١١ .archive-header,
+	.archive-group-month-١٢+.archive-group-month-١٢ .archive-header,
+	.archive-group-month-٢+.archive-group-month-٢ .archive-header,
+	.archive-group-month-٣+.archive-group-month-٣ .archive-header,
+	.archive-group-month-٤+.archive-group-month-٤ .archive-header,
+	.archive-group-month-٥+.archive-group-month-٥ .archive-header,
+	.archive-group-month-٦+.archive-group-month-٦ .archive-header,
+	.archive-group-month-٧+.archive-group-month-٧ .archive-header,
+	.archive-group-month-٨+.archive-group-month-٨ .archive-header,
+	.archive-group-month-٩+.archive-group-month-٩ .archive-header {
+		display: none;
+	}
+
+	.archive-group-month-1+.archive-group-month-1:before,
+	.archive-group-month-10+.archive-group-month-10:before,
+	.archive-group-month-11+.archive-group-month-11:before,
+	.archive-group-month-12+.archive-group-month-12:before,
+	.archive-group-month-2+.archive-group-month-2:before,
+	.archive-group-month-3+.archive-group-month-3:before,
+	.archive-group-month-4+.archive-group-month-4:before,
+	.archive-group-month-5+.archive-group-month-5:before,
+	.archive-group-month-6+.archive-group-month-6:before,
+	.archive-group-month-7+.archive-group-month-7:before,
+	.archive-group-month-8+.archive-group-month-8:before,
+	.archive-group-month-9+.archive-group-month-9:before,
+	.archive-group-month-١+.archive-group-month-١:before,
+	.archive-group-month-١٠+.archive-group-month-١٠:before,
+	.archive-group-month-١١+.archive-group-month-١١:before,
+	.archive-group-month-١٢+.archive-group-month-١٢:before,
+	.archive-group-month-٢+.archive-group-month-٢:before,
+	.archive-group-month-٣+.archive-group-month-٣:before,
+	.archive-group-month-٤+.archive-group-month-٤:before,
+	.archive-group-month-٥+.archive-group-month-٥:before,
+	.archive-group-month-٦+.archive-group-month-٦:before,
+	.archive-group-month-٧+.archive-group-month-٧:before,
+	.archive-group-month-٨+.archive-group-month-٨:before,
+	.archive-group-month-٩+.archive-group-month-٩:before {
+		background-color: transparent;
+	}
+
+	.archive-group-month{
+		display: grid;
+		grid-template-columns: repeat(8,1fr);
+		grid-template-rows: 1fr;
+		grid-column-gap: var(--space-40);
+		grid-template-areas: "meta meta content content content content content content";
+		&:before {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 1px;
+			position: absolute;
+			top: 0;
+			background-color: red;
+		}
+		&:not(:last-of-type){
+			width: 100%;
+			border-bottom: 1px solid #dcdcdc;
+			border-bottom: 1px solid var(--light-border-color);
+		}
+		.archive-header{
+			grid-area: meta;
+			margin: 0 0 15px;
+			overflow: hidden;
+		}
+		.archive-post{
+			grid-area: content;
+			.archive-post-title{
+				margin: 0 0 15px;
+				overflow: hidden;
+				a{
+					display: block;
+				}
+				span{
+					font-size: 15px;
+					float: right;
+					opacity: .8;
+				}
+			}
+		}
+	}
+}
+
+
 /* ==========================================================================
    KG Cards
    ========================================================================== */
@@ -524,6 +687,8 @@ textarea {
 			}
 		}
 	}
+
+	
 
 	/*-------toc---------*/
 	.is-position-fixed{position:fixed !important;top:80px !important;}

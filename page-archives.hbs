@@ -1,0 +1,69 @@
+{{!< default}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+
+<header class="post-header">
+	<div class="inner">
+		<h1 class="post-title">{{{title}}}</h1>
+	</div>
+</header>
+
+<main class="content" role="main">
+	<article class="{{post_class}}">
+		<div class="inner">
+
+			<section class="post-content archives">
+			{{#get "posts" limit='all'}}
+				{{#foreach posts}}
+
+				<div class="archive-group-month archive-group-month-{{date format="M"}} ">
+					<h3 class="archive-header post-label">{{date format="YYYY/MM"}}</h3>
+					<div class="archive-post">
+						<div class="archive-post-title">
+						<a href="{{url}}">{{title}}<span class="post-date" title="2022/07/18 12:18:38">{{date published_at timeago="true"}}</span></a>
+						</div>
+					</div>
+				</div>
+				{{/foreach}}
+			{{/get}}
+			</section>
+
+		</div>
+	</article>
+</main>
+
+{{/post}}
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+  $(document).ready(function () {
+		var post = $('.post-content');
+		// Responsive videos with fitVids
+    post.fitVids();
+		// Format code blocks and add line numbers
+		function codestyling() {
+	    $('pre code').each(function(i, e) {
+				// Code highlight
+	      hljs.highlightBlock(e);
+	      // No lines for plain text blocks
+	      if (!$(this).hasClass('language-text')) {
+	        var code = $(this);
+					// Calculate amount of lines
+	        var lines = code.html().split(/\n(?!$)/g).length;
+	        var numbers = [];
+	        if (lines > 1) {
+	          lines++;
+	        }
+	        for (i = 1; i < lines; i++) {
+	          numbers += '<span class="line" aria-hidden="true">' + i + '</span>';
+	        }
+	        code.parent().append('<div class="lines">' + numbers + '</div>');
+	      }
+	    });
+	  }
+	  codestyling();
+  });
+</script>
+{{/contentFor}}
