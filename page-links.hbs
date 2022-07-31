@@ -12,8 +12,9 @@
 <main class="content" role="main">
 	<article class="{{post_class}}">
 		<div class="inner">
-
+			
 			<section class="post-content">
+				<hr class="links" />
 				{{content}}
 			</section>
 
@@ -23,15 +24,14 @@
 
 {{/post}}
 
-{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+
 {{#contentFor "scripts"}}
 <script>
   $(document).ready(function () {
-		var post = $('.post-content');
-		// Responsive videos with fitVids
-    	post.fitVids();
-		// Format code blocks and add line numbers
-	  	codestyling();
+	if($('.links').length != 0 ){
+    $('.kg-bookmark-card').wrapAll("<div class='links kg-width-full kg-header-card kg-card'></div>")
+	$('.kg-bookmark-card a').attr('target','_blank')
+	$('hr.links').remove()}
   });
 </script>
 {{/contentFor}}

@@ -1,15 +1,14 @@
+var fuse,result,posts,myIndex;
 $().ready(function(){
   var posts,url;
   /* Custom settings for Fuse.js */
   var options = {
-    shouldSort: false,
-    tokenize: true,
-    matchAllTokens: true,
+    shouldSort: true,
     threshold: 0,
-    maxPatternLength: 32,
     ignoreLocation:true,
-    minMatchCharLength: 1,
-    keys: [{ name: 'title' }, { name: 'excerpt' }]
+    includeScore: true,
+    useExtendedSearch: true,
+    keys: [{ name: 'title',weight: 0.7 }, { name: 'excerpt',weight: 0.3 }]
   };
 
   //回到顶部
@@ -179,7 +178,7 @@ $().ready(function(){
           var output = '';
           
          
-          result = fuse.search(e.target.value)
+          result = fuse.search(e.target.value.trim().replace(' ',' | '));
 
           result.forEach(function (post) {
               output +=
@@ -193,7 +192,6 @@ $().ready(function(){
                   post.item.excerpt +
                   '</div></a>' +
                   '</div>';
-              console.log(post);
           });
 
           searchResult.html(output);
@@ -233,10 +231,10 @@ $().ready(function(){
       var modal = $('.search');
       var modalInput = $('.search-field');
       $.get(url,function (data) {
-        console.log('')
         if (data.posts.length > 0) {
           posts = data.posts
-          fuse = new Fuse(posts, options);
+          myIndex = Fuse.createIndex(options.keys, posts)
+          fuse = new Fuse(posts, options, myIndex);
         }
       })
       

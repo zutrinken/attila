@@ -14,7 +14,8 @@ module.exports = function(grunt) {
       'jsTargetDir': 'assets/js',
       'jsDependencies': [
         '<%= config.jsSrcDir %>/libs/jquery.min.js',
-        '<%= config.jsSrcDir %>/libs/simplebox.min.js',
+        '<%= config.jsSrcDir %>/libs/view-image.min.js',
+        '<%= config.jsSrcDir %>/libs/tmpl.min.js',
         '<%= config.jsSrcDir %>/libs/jquery.fitvids.js',
         '<%= config.jsSrcDir %>/libs/pangu.min.js',
         '<%= config.jsSrcDir %>/libs/fuse.min.js',

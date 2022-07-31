@@ -77,6 +77,12 @@
           "default": "",
           "group": "post"
       },
+      "memos_url":{
+        "type":"text",
+        "default": "",
+        "group": "post"
+
+      },
       "darkmode_accent_color": {
         "type": "color",
         "default": "#ff6633"

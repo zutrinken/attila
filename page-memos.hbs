@@ -1,0 +1,50 @@
+{{!< default}} {{! Everything inside the #post tags pulls data from the post }} {{#post}} <header class="post-header">
+	<div class="inner">
+		<h1 class="post-title">{{{title}}}</h1>
+	</div>
+	</header>
+
+	<main class="content" role="main">
+		<article class="{{post_class}}">
+			<div class="inner">
+				<section class="post-content">
+					{{content}}
+					<ul class="talks">
+					</ul>
+
+				</section>
+
+			</div>
+		</article>
+	</main>
+
+	{{/post}}
+
+	<script type="text/x-tmpl" id="tmpl-memos">
+		{% for (var i=0; i<o.data.length; i++) { %}
+		<li class="timeline page-1">
+			<div class="talks__avatar"><img src="//www.gravatar.com/avatar/2536ab18e7654229cb2fb11ecf787ad6?s=250&d=mm&r=x" alt="" /></div>
+			<div class="talks__content">
+				<div class="talks__text">
+					<p>{%= o.data[i].content %}
+					</p>
+				</div>
+				<div class="talks__meta"><small class="talks__date">{%= new Date(o.data[i].createdTs * 1000).toLocaleString() %}</small></div>
+			</div>
+		</li>
+		{% } %}
+
+	</script>
+
+
+	{{#contentFor "scripts"}}
+	{{#if @custom.memos_url}}
+		<script>
+		$(document).ready(function () {
+			$.getJSON("{{{ @custom.memos_url }}}", function(data,status){
+				$('.talks').html(tmpl('tmpl-memos', data))
+			});
+		});
+		</script>
+	{{/if}}
+	{{/contentFor}}
