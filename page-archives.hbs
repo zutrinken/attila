@@ -14,17 +14,43 @@
 		<div class="inner">
 
 			<section class="post-content archives">
-			{{#get "posts" limit='all'}}
+				<div class="popular-wrapper">
+					<h4 class="popular-title">{{t "Topics"}}</h4>
+					<span class="popular-tags post-tags">
+						{{#get 'tags' limit='all' include='count.posts' order='count.posts desc'}}
+							{{#foreach tags}}
+								<a href='{{ url }}'>#{{ name }}: {{ count.posts }}</a>
+							{{/foreach}}
+						{{/get}}
+					</span>
+				</div>
+			{{#get "posts" limit="all" filter="visibility:public" }}
 				{{#foreach posts}}
 
-				<div class="archive-group-month archive-group-month-{{date format="M"}} ">
-					<h3 class="archive-header post-label">{{date format="YYYY/MM"}}</h3>
+				{{!-- <div class="archive-group-month archive-group-month-{{date format="M"}} ">
+					<div class="archive-header post-label">{{date format="YYYY/MM"}}</div>
 					<div class="archive-post">
 						<div class="archive-post-title">
 						<a href="{{url}}">{{title}}<span class="post-date" title="2022/07/18 12:18:38">{{date published_at timeago="true"}}</span></a>
 						</div>
 					</div>
+				</div> --}}
+
+
+				<div class="c-card-archive c-card-archive--date-{{date format="M"}}">
+					<div class="c-card-archive__meta">
+					<div class="c-card-archive__date u-type-uppercase">{{date format="YYYY-MM "}}</div>
+					</div>
+
+					<div class="c-card-archive__content">
+					<div class="c-card-archive__title">
+						<time class="c-card-archive__date-mini" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD"}}：</time>
+						<a href="{{url}}" class="c-card-archive__url">{{title}}</a>
+					</div>
+					</div>
 				</div>
+
+
 				{{/foreach}}
 			{{/get}}
 			</section>
