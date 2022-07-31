@@ -1367,28 +1367,6 @@ textarea {
     width: 100%;
     height: 1px;
     position: absolute;
-<<<<<<< HEAD
-    top: 0; }
-  .archives .archive-group-month:not(:last-of-type) {
-    width: 100%;
-    border-bottom: 1px solid #dcdcdc;
-    border-bottom: 1px solid var(--light-border-color); }
-  .archives .archive-group-month .archive-header {
-    grid-area: meta;
-    margin: 0 0 15px;
-    overflow: hidden; }
-  .archives .archive-group-month .archive-post {
-    grid-area: content; }
-    .archives .archive-group-month .archive-post .archive-post-title {
-      margin: 0 0 15px;
-      overflow: hidden; }
-      .archives .archive-group-month .archive-post .archive-post-title a {
-        display: block; }
-      .archives .archive-group-month .archive-post .archive-post-title span {
-        font-size: 15px;
-        float: right;
-        opacity: .8; }
-=======
     top: 0;
     background-color: var(--ghost-accent-color); }
   @media (min-width: 40em) {
@@ -1423,7 +1401,6 @@ textarea {
         z-index: 1; }
       .c-card-archive .c-card-archive__title .c-card-archive__url:hover {
         text-decoration: revert; }
->>>>>>> a4237f3725782eea59cd6dd23e7f892fd94c2d63
 
 /* ==========================================================================
    KG Cards
@@ -1484,9 +1461,34 @@ textarea {
         border-radius: 8px;
         font-size: 1em;
         padding: 12px 16px;
-        position: relative; }
+        position: relative;
+        word-break: break-all;
+        margin-top: 0.5rem;
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding-bottom: 0.25rem;
+        scrollbar-width: none;
+        flex-wrap: wrap; }
+        .post-content .talks .talks__content .talks__text .talks__img {
+          margin-right: 0.5rem;
+          height: auto;
+          width: auto;
+          flex-shrink: 0;
+          flex-grow: 0;
+          overflow-y: hidden; }
+          .post-content .talks .talks__content .talks__text .talks__img img {
+            max-height: 10rem;
+            width: auto;
+            border-radius: 0.5rem;
+            margin: 0 0 1rem; }
         .post-content .talks .talks__content .talks__text p {
-          margin: 0; }
+          margin: 0;
+          width: 100%; }
         .post-content .talks .talks__content .talks__text .talks__userinfo {
           -webkit-box-align: center;
           -ms-flex-align: center;

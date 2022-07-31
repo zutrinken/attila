@@ -1,6 +1,9 @@
 var fuse,result,posts,myIndex;
 $().ready(function(){
   var posts,url;
+
+  window.ViewImage && ViewImage.init('.kg-card img,.talks__img img');
+
   /* Custom settings for Fuse.js */
   var options = {
     shouldSort: true,

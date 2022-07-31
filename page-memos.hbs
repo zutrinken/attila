@@ -26,7 +26,7 @@
 			<div class="talks__avatar"><img src="//www.gravatar.com/avatar/2536ab18e7654229cb2fb11ecf787ad6?s=250&d=mm&r=x" alt="" /></div>
 			<div class="talks__content">
 				<div class="talks__text">
-					<p>{%= o.data[i].content %}
+					<p>{%# o.data[i].content.replace(/!\[(.*?)\]\((.*?)\)/mg, "<div class='talks__img'><img src=\"//" + o.url + "$2" + "\" /></div>") %}
 					</p>
 				</div>
 				<div class="talks__meta"><small class="talks__date">{%= new Date(o.data[i].createdTs * 1000).toLocaleString() %}</small></div>
@@ -41,7 +41,9 @@
 	{{#if @custom.memos_url}}
 		<script>
 		$(document).ready(function () {
-			$.getJSON("{{{ @custom.memos_url }}}", function(data,status){
+			var url = "{{{ @custom.memos_url }}}";
+			$.getJSON(url, function(data,status,xhr){
+				data['url'] = this.url.match(/http:\/\/([^\/]+)\//i)[1];
 				$('.talks').html(tmpl('tmpl-memos', data))
 			});
 		});
