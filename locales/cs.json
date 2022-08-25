@@ -25,8 +25,18 @@
     "1 min read": "1 minuta",
     "% min read": "% minut",
     "Article": "Článek",
+    "Archive": "Archív",
     "Author": "Autor",
     "Topic": "Téma",
+    "Topics": "Témata",
     "Share": "Sdílet",
-    "Search": "Hledat"
+    "Search": "Hledat",
+    "Search all posts": "Hledat ve všech příspěvcích",
+    "Main": "Hlavní",
+    "Footer": "Patička",
+    "Pagination": "Stránkování",
+    "Next post": "Následující příspěvek",
+    "Previous post": "Předchozí příspěvek",
+    "Sign in": "Přihlásit se",
+    "Sign up": "Zaregistrovat se"
 }
