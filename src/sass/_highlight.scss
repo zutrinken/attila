@@ -1,29 +1,54 @@
-@mixin hljs-light-mode {
-	.theme-light:root {
-		@content;
-	}
-	@media (prefers-color-scheme: light) {
-		html:not(.theme-dark):root {
-			@content;
-		}
-	}
+.hljs {
+    color: var(--color-content-main);
+    background: var(--color-background-main);
 }
 
-@mixin hljs-dark-mode {
-	.theme-dark:root {
-		@content;
-	}
-	@media (prefers-color-scheme: dark) {
-		html:not(.theme-light):root {
-			@content;
-		}
-	}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-section,
+.hljs-link {
+    color: var(--color-content-lead);
 }
 
-@include hljs-light-mode {
-    @import './hljs-themes/github.min';
+.hljs-subst {
+    /* default */
 }
 
-@include hljs-dark-mode {
-    @import './hljs-themes/github-dark.min';
+.hljs-string,
+.hljs-title,
+.hljs-name,
+.hljs-type,
+.hljs-attribute,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-built_in,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+    color: var(--ghost-accent-color);
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+    color: var(--color-content-secondary);
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-title,
+.hljs-section,
+.hljs-doctag,
+.hljs-type,
+.hljs-name,
+.hljs-strong {
+    font-weight: bold;
+}
+
+.hljs-emphasis {
+    font-style: italic;
 }
