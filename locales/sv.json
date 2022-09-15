@@ -25,8 +25,18 @@
     "1 min read": "1 minuts läsning",
     "% min read": "% minuters läsning",
     "Article": "Artikel",
+    "Archive": "Arkiv",
     "Author": "Författare",
     "Topic": "Ämne",
+    "Topics": "Ämnen",
     "Share": "Dela",
-    "Search": "Sök"
+    "Search": "Sök",
+    "Search all posts": "Sök i alla inlägg",
+    "Main": "Huvud",
+    "Footer": "Sidfot",
+    "Pagination": "Paginering",
+    "Next post": "Nästa inlägg",
+    "Previous post": "Föregående inlägg",
+    "Sign in": "Logga in",
+    "Sign up": "Skapa konto"
 }
