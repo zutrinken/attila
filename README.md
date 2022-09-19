@@ -15,11 +15,10 @@ Maintaining this project takes a lot of time. You can [buy me a drink](https://p
 * Theme options
 * Responsive layout
 * Light and Dark Mode
-* Search & Popular Tags
+* Search support
 * Post reading progress
 * Code highlight including line numbers
-* Disqus support
-* Member menu buttons
+* Comments and Disqus (Theme option)
 * Ghost accent color
 
 ## 🌍 Localization
@@ -56,11 +55,6 @@ Maintaining this project takes a lot of time. You can [buy me a drink](https://p
 | `ja` | 🇯🇵 | Japanese | 🟩 | [emperorjoker](https://github.com/emperorjoker) |
 | `fa` | | Farsi | 🟩 | [ItsAminZamani](https://github.com/ItsAminZamani) |
 
-## Show subscribe / account button in navigation
-
-1. Go to `partials/navigation-meta.hbs`.
-2. Remove comments on line `24`and `34`.
-
 ## 🔠 Setup custom google fonts
 
 1. Go to [fonts.google.com](https://fonts.google.com/) and choose a font.
@@ -78,18 +72,6 @@ Maintaining this project takes a lot of time. You can [buy me a drink](https://p
 </style>
 ````
 
-## 🔍 Setup search
-
-1. Go to __Integrations__.  
-2. Choose __Add custom integration__, name it `Search` and choose __Create__. Copy the generated Content API Key.  
-3. Go to __Code injection__.  
-4. Add this to __Site Header__:  
-````html
-<script>
-  var gh_search_key = 'API_KEY';
-  var gh_search_migration = 'v2';
-</script>
-````
 ## ⚙️ Development
 
 Install [Grunt](https://gruntjs.com/getting-started/):

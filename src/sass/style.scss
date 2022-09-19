@@ -2047,45 +2047,24 @@ textarea {
    Post Comments
    ========================================================================== */
 .post-comments {
-	display: none;
 	position: relative;
 	padding: 4rem;
 	text-align: center;
+	background: var(--color-background-secondary);
+	border: 1px solid var(--color-background-contrast);
 	border-top: 1px solid var(--color-background-contrast);
 	border-bottom: 1px solid var(--color-background-contrast);
 	box-sizing: border-box;
 
-	&.activated {
-		background: var(--color-background-secondary);
-		border: 1px solid var(--color-background-contrast);
+	@media only screen and (max-width: $breakpoint-medium) {
+		padding-left: 0;
+		padding-right: 0;
+		background: transparent;
+		border-left: 0;
+		border-right: 0;
 	}
 }
 
-.post-comments-activate {
-	display: inline-block;
-	height: 4rem;
-	margin: 2rem 0;
-	padding: 0 2rem;
-	border: 1px solid var(--color-background-contrast);
-	font-weight: 500;
-	font-size: 1.6em;
-	line-height: 4rem;
-	color: var(--color-content-secondary);
-	text-align: center;
-	cursor: pointer;
-	transition: all ease 0.2s;
-	border-radius: 2em;
-
-	&:focus,
-	&:hover {
-		color: var(--color-content-main);
-		border-color: var(--ghost-accent-color);
-	}
-}
-
-.activated .post-comments-activate {
-	display: none;
-}
 /* ==========================================================================
    Post Subscribe
    ========================================================================== */
