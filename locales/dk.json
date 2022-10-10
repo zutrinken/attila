@@ -24,9 +24,19 @@
     "youremail@example.com": "dinemail@eksempel.com",
     "1 min read": "1 min læsetid",
     "% min read": "% min læsetid",
-    "Article": "Artikkel",
+    "Article": "Artikel",
+    "Archive": "Arkiv",
     "Author": "Forfatter",
     "Topic": "Emne",
+    "Topics": "Emner",
     "Share": "Del",
-    "Search": "Søg"
+    "Search": "Søg",
+    "Search all posts": "Søg i alle indlæg",
+    "Main": "Hoved",
+    "Footer": "Sidefod",
+    "Pagination": "Pagination",
+    "Next post": "Næste indlæg",
+    "Previous post": "Forrige indlæg",
+    "Sign in": "Log på",
+    "Sign up": "Tilmeld dig"
 }
