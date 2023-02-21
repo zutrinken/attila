@@ -57,6 +57,16 @@
 		{{/if}}
 	{{/match}}
 
+	<!-- Tweak avatar -->  
+	<style>
+		.avatar {
+			border-radius: 50%;
+  			display: block;
+  			margin: 0 auto;
+  			max-width: 100%;
+		}
+	</style>
+
 	{{ghost_head}}
 </head>
 
@@ -92,7 +102,7 @@
 				{{#if @site.secondary_navigation}}
 				{{navigation type="secondary"}}
 				{{/if}}
-				<span class="nav-credits">{{t "Published with"}} <a href="https://ghost.org">Ghost</a> &bull; {{t "Theme" }} <a href="https://github.com/zutrinken/attila">Attila</a> &bull; <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme"><span class="theme-icon"></span><span class="theme-text">System theme</span> </a> </span>
+				<span class="nav-credits"> <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme"><span class="theme-icon"></span><span class="theme-text">System theme</span> </a> </span>
 			</nav>
 		</div>
 

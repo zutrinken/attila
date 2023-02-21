@@ -1206,7 +1206,7 @@ textarea {
 		padding: 2rem 0;
 		font-size: 2em;
 		line-height: 2rem;
-		color: inherit;
+		color: var(--color-normal-text-menu);
 		transition: all ease-out 0.1s;
 
 		i {
@@ -1221,7 +1221,7 @@ textarea {
 
 		&:focus,
 		&:hover {
-			color: var(--color-content-main);
+			color: var(--color-hover-text-menu);
 		}
 	}
 }
@@ -1231,18 +1231,18 @@ textarea {
 }
 
 .menu-active .nav-header .nav-wrapper-control {
-	background: #222426;
+	background: var(--color-background-menu);
 	color: var(--color-content-secondary);
-	border-color: #3B3D40;
+	border-color: var(--color-border-menu);
 	@supports (-webkit-backdrop-filter: blur(2rem)) {
-		background: rgba(34,36,38,0.9);
+		background: var(--color-background-menu);
 		-webkit-backdrop-filter: blur(2rem);
 	}
 
 	a {
 		&:focus,
 		&:hover {
-			color: var(--color-content-main-dark);
+			color: var(--color-normal-text-menu);
 		}
 	}
 }
@@ -1253,7 +1253,7 @@ textarea {
 	padding: 2rem 4rem;
 	overflow-y: auto;
 	@media only screen and (max-width: $breakpoint-medium) {
-		background: #222426;
+		background: var(--color-background-menu);
 		flex-direction: column;
 		@supports (-webkit-backdrop-filter: blur(2rem)) {
 			background: rgba(34,36,38,0.9);
@@ -1335,11 +1335,11 @@ textarea {
 		}
 
 		a {
-			color: var(--color-content-main);
+			color: var(--color-highlight-text-menu);
 			font-weight: 500;
 
 			@media only screen and (max-width: $breakpoint-medium) {
-				color: white;
+				color: var(--color-highlight-text-menu);
 			}
 		}
 	}
@@ -1349,7 +1349,7 @@ textarea {
 		padding: 1rem 0;
 		font-size: 1.6em;
 		line-height: 2rem;
-		color: var(--color-content-secondary);
+		color: var(--color-normal-text-menu);
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		text-decoration: none;
@@ -1377,10 +1377,10 @@ textarea {
 
 		&:focus,
 		&:hover {
-			color: var(--color-content-main);
+			color: var(---color-hover-text-menu);
 
 			@media only screen and (max-width: $breakpoint-medium) {
-				color: #C4C7CC;
+				color: var(--color-hover-text-menu);
 			}
 		}
 	}

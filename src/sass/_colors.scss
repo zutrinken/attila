@@ -6,6 +6,11 @@
   --color-content-lead: #000;
   --color-content-main: #222426;
   --color-content-secondary: #73777D;
+  --color-background-menu: #FFF;
+  --color-normal-text-menu: #909499;
+  --color-highlight-text-menu: #3b3d40;
+  --color-hover-text-menu: #C4C7CC;
+  --color-border-menu: #e4e4e4;
 }
 
 .theme-dark:root {
@@ -16,6 +21,11 @@
   --color-content-lead: #FFF;
   --color-content-main: #E1E3E6;
   --color-content-secondary: #909499;
+  --color-background-menu: #222426;
+  --color-normal-text-menu: #909499;
+  --color-highlight-text-menu: #ffffff;
+  --color-hover-text-menu: #555555;
+  --color-border-menu: #3d3d3d;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,5 +37,10 @@
     --color-content-lead: #FFF;
     --color-content-main: #E1E3E6;
     --color-content-secondary: #909499;
+    --color-background-menu: #222426;
+    --color-normal-text-menu: #909499;
+    --color-highlight-text-menu: #ffffff;
+    --color-hover-text-menu: #555555;
+    --color-border-menu: #3d3d3d;
   }
 }
