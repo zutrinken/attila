@@ -2651,7 +2651,7 @@ textarea {
 	display: none;
 }
 @media only screen and (min-width: $breakpoint-xlarge) {
-	.content {
+	.postcontent {
 		display: grid;
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
 	}
