@@ -1,25 +1,38 @@
 <div class="extra-pagination">
-	{{pagination}}
+  {{pagination}}
 </div>
 
 {{#foreach posts}}
 
-<article class="{{post_class}}">
-	<div class="inner">
-		<div class="box post-box">
-			<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-			<span class="post-meta">
-				{{t "By"}}
-				{{authors separator=", "}}
-				{{#primary_tag}}{{t "in"}} <a class="post-meta-tag" href="{{url}}">{{name}}</a>{{/primary_tag}}
-				{{t "on "}}
-				<time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time>
-			</span>
-			<p class="post-excerpt">{{excerpt}}&hellip;</p>
-		</div>
-	</div>
-</article>
+  <article class="{{post_class}}">
+    <div class="inner">
+      <div
+        data-link="{{url}}"
+        style="cursor:pointer"
+        class="box post-box post-view"
+      >
+        <h2 class="post-title">{{{title}}}</h2>
+        <span class="post-meta">
+          {{t "By"}}
+          {{authors separator=", "}}
+          {{#primary_tag}}{{t "in"}}
+            <a class="post-meta-tag" href="{{url}}">{{name}}</a>{{/primary_tag}}
+          {{t "on "}}
+          <time datetime="{{date format="DD-MM-YYYY"}}">{{date
+              format="DD MMM YYYY"
+            }}</time>
+        </span>
+        <p class="post-excerpt">{{excerpt}}&hellip;</p>
+      </div>
+    </div>
+  </article>
 
 {{/foreach}}
 
 {{pagination}}
+
+<script type="text/javascript">
+  const view=document.getElementsByClassName('post-view')[0];
+  view.addEventListener('click',function(e){
+  window.location.href=view.dataset.link })
+</script>

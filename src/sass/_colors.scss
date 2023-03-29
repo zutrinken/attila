@@ -13,13 +13,13 @@ $color-neutral-80: hsb(215, 4, 80); // nav, menu, pagination - button border
 $color-neutral-60: hsb(215, 6, 60); // nav, menu, pagination - button font
 $color-neutral-25: hsb(215, 8, 25);
 $color-neutral-15: hsb(215, 10, 15);
-$color-yellow-100: #ffc336;
+$color-yellow-100: hsl(41, 76%, 54%);
 $color-social-twitter: #3ea9dd;
 $color-social-facebook: #3c5a98;
 $color-social-linkedin: #0e76a8;
 $color-social-mail: #2997ee;
-$color-primary: hsl(47, 100%, 50%);
-$color-primary-active: hsl(47, 74%, 49%);
+$color-primary: hsl(41, 76%, 54%);
+$color-primary-active: hsl(41, 76%, 40%);
 $color-text-primary: $color-neutral-15;
 $color-text-primary-dark: $color-neutral-90;
 $color-text-secondary: $color-neutral-60;
@@ -27,4 +27,4 @@ $color-text-secondary-dark: $color-neutral-60;
 $color-border: $color-neutral-90;
 $color-background: $color-neutral-98;
 $color-border-dark: $color-neutral-25;
-$color-background-dark: $color-neutral-15;
+$color-background-dark: #00253f;
