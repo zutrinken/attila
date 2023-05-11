@@ -1,4 +1,4 @@
-# Attilaa
+# Attila
 
 A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost/).
 
