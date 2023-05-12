@@ -43,7 +43,7 @@
     "grunt-postcss": "^0.9.0",
     "grunt-sass": "^3.1.0",
     "load-grunt-tasks": "^5.1.0",
-    "node-sass": "^7.0.3"
+    "node-sass": "^8.0.0"
   },
   "config": {
     "posts_per_page": 8,
@@ -73,9 +73,9 @@
         "default": "System"
       },
       "disqus_shortname": {
-          "type": "text",
-          "default": "",
-          "group": "post"
+        "type": "text",
+        "default": "",
+        "group": "post"
       },
       "darkmode_accent_color": {
         "type": "color",
