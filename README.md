@@ -55,8 +55,10 @@ You can [buy me a drink](https://paypal.me/zutrinken) if you enjoy using Attila.
 | `uk` | 🇺🇦 | Ukrainian | 🟩 | [Rakanskiy](https://github.com/rakanskiy), [krupenik](https://github.com/krupenik), [vadimkin](https://github.com/vadimkin) |
 | `ja` | 🇯🇵 | Japanese | 🟩 | [emperorjoker](https://github.com/emperorjoker) |
 | `fa` | | Farsi | 🟩 | [ItsAminZamani](https://github.com/ItsAminZamani) |
-| `fi` | 🇫🇮 | Finnish | 🟩 | Nalice, [murtoM](https://github.com/murtoM) |
-| `th` | 🇹🇭 | Thai | 🟩 | Nalice, [GmBeHappy](https://github.com/GmBeHappy) |
+| `fi` | 🇫🇮 | Finnish | 🟩 | [murtoM](https://github.com/murtoM) |
+| `th` | 🇹🇭 | Thai | 🟩 | [GmBeHappy](https://github.com/GmBeHappy) |
+| `hu` | 🇭🇺 | Hungarian | 🟩 | [ferivoq](https://github.com/ferivoq) |
+
 
 ## 🔠 Setup custom google fonts
 
