@@ -56,6 +56,7 @@ You can [buy me a drink](https://paypal.me/zutrinken) if you enjoy using Attila.
 | `ja` | 🇯🇵 | Japanese | 🟩 | [emperorjoker](https://github.com/emperorjoker) |
 | `fa` | | Farsi | 🟩 | [ItsAminZamani](https://github.com/ItsAminZamani) |
 | `fi` | 🇫🇮 | Finnish | 🟩 | Nalice, [murtoM](https://github.com/murtoM) |
+| `th` | 🇹🇭 | Thai | 🟩 | Nalice, [GmBeHappy](https://github.com/GmBeHappy) |
 
 ## 🔠 Setup custom google fonts
 
