@@ -77,6 +77,11 @@
         "default": "",
         "group": "post"
       },
+       "postsharefoot": {
+        "type": "text",
+        "default": "",
+        "group": "post"
+      },
       "darkmode_accent_color": {
         "type": "color",
         "default": "#ff6633"
