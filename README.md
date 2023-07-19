@@ -58,6 +58,7 @@ You can [buy me a drink](https://paypal.me/zutrinken) if you enjoy using Attila.
 | `fi` | 🇫🇮 | Finnish | 🟩 | [murtoM](https://github.com/murtoM) |
 | `th` | 🇹🇭 | Thai | 🟩 | [GmBeHappy](https://github.com/GmBeHappy) |
 | `hu` | 🇭🇺 | Hungarian | 🟩 | [ferivoq](https://github.com/ferivoq) |
+| `ge` | 🇬🇪 | Georgian | 🟩 | [kiknaio](https://github.com/kiknaio) |
 
 
 ## 🔠 Setup custom google fonts
