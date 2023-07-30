@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{@site.locale}}">
+
 <head>
 
 	{{!-- Document Settings --}}
@@ -11,50 +12,124 @@
 	<meta name="HandheldFriendly" content="True" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+	<link id="for-prism" />
+	{{#match @custom.color_scheme "Dark"}}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-nord.min.css"
+		integrity="sha512-/1nWQ0aAin0IGM5zDndLyY+6xUSiqA1ILh4Mm0XjSqqj4cXOH36rB/2Ep96sT4FOxvNEnUxyPNwqPlEmuImAFw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	{{/match}}
+	{{#match @custom.color_scheme "Light"}}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coldark-cold.min.css"
+		integrity="sha512-SObDdizQ8YqdOMSl9kyFO0+4eIkQdjx7Na4Jb1Kh7fFqUlNlGyNJfDBK8ZGbD3SN3U7A7hsdJ8vEtakIja4ZSg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	{{/match}}
+
 	{{!-- Styles'n'Scripts --}}
-	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset " css/style.css"}}" />
 
 	<script>
-			var siteUrl = '{{@site.url}}';
+		var siteUrl = '{{@site.url}}';
 	</script>
 
 	<script>
-			var localTheme = localStorage.getItem('attila_theme');
-			switch (localTheme) {
-					case 'dark':
-							document.documentElement.classList.add('theme-dark');
-							break;
-					case 'light':
-							document.documentElement.classList.add('theme-light');
-							break;
-					default:
-							break;
+		function setAttilaDarkSyntaxHighlight() {
+			var forPrismLink = document.getElementById('for-prism');
+			if (forPrismLink) {
+				var newLink = document.createElement('link');
+				newLink.rel = 'stylesheet';
+				newLink.kind = 'dark';
+				newLink.id = 'for-prism';
+				newLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-nord.min.css';
+				newLink.integrity = 'sha512-/1nWQ0aAin0IGM5zDndLyY+6xUSiqA1ILh4Mm0XjSqqj4cXOH36rB/2Ep96sT4FOxvNEnUxyPNwqPlEmuImAFw==';
+				newLink.crossOrigin = 'anonymous';
+				newLink.referrerPolicy = 'no-referrer';
+				forPrismLink.parentNode.replaceChild(newLink, forPrismLink);
 			}
+		}
+
+		function setAttiaLightSyntaxHighlight() {
+			var forPrismLink = document.getElementById('for-prism');
+			if (forPrismLink) {
+				var newLink = document.createElement('link');
+				newLink.rel = 'stylesheet';
+				newLink.kind = 'light';
+				newLink.id = 'for-prism';
+				newLink.href = 'https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coldark-cold.min.css';
+				newLink.integrity = 'sha512-SObDdizQ8YqdOMSl9kyFO0+4eIkQdjx7Na4Jb1Kh7fFqUlNlGyNJfDBK8ZGbD3SN3U7A7hsdJ8vEtakIja4ZSg==';
+				newLink.crossOrigin = 'anonymous';
+				newLink.referrerPolicy = 'no-referrer';
+				forPrismLink.parentNode.replaceChild(newLink, forPrismLink);
+			}
+		}
+
+	</script>
+
+	<script>
+		var localTheme = localStorage.getItem('attila_theme');
+		switch (localTheme) {
+			case 'dark':
+				document.documentElement.classList.add('theme-dark');
+				setAttilaDarkSyntaxHighlight();
+				break;
+			case 'light':
+				document.documentElement.classList.add('theme-light');
+				setAttiaLightSyntaxHighlight()
+				break;
+			default:
+				break;
+		}
 	</script>
 
 	{{#match @custom.color_scheme "Dark"}}
-		<script>localStorage.setItem('attila_theme', 'dark');</script>
-		<style>.js-theme {display:none!important;}</style>
+	<script>localStorage.setItem('attila_theme', 'dark');</script>
+	<style>
+		.js-theme {
+			display: none !important;
+		}
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-nord.min.css"
+		integrity="sha512-/1nWQ0aAin0IGM5zDndLyY+6xUSiqA1ILh4Mm0XjSqqj4cXOH36rB/2Ep96sT4FOxvNEnUxyPNwqPlEmuImAFw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	{{/match}}
 
 	{{#match @custom.color_scheme "Light"}}
-		<script>localStorage.setItem('attila_theme', 'light');</script>
-		<style>.js-theme {display:none!important;}</style>
+	<script>localStorage.setItem('attila_theme', 'light');</script>
+	<style>
+		.js-theme {
+			display: none !important;
+		}
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-coldark-cold.min.css"
+		integrity="sha512-SObDdizQ8YqdOMSl9kyFO0+4eIkQdjx7Na4Jb1Kh7fFqUlNlGyNJfDBK8ZGbD3SN3U7A7hsdJ8vEtakIja4ZSg=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	{{/match}}
 
 	{{#match @custom.color_scheme "!=" "Light"}}
-		{{#if @custom.darkmode_accent_color}}
-			<style>
-				.theme-dark:root {
-				  --ghost-accent-color: {{@custom.darkmode_accent_color}};
+	{{#if @custom.darkmode_accent_color}}
+	<style>
+		.theme-dark:root {
+			--ghost-accent-color: {
+					{
+					@custom.darkmode_accent_color
 				}
-				@media (prefers-color-scheme: dark) {
-				  html:not(.theme-light):root {
-				    --ghost-accent-color: {{@custom.darkmode_accent_color}};
-				  }
+			}
+
+			;
+		}
+
+		@media (prefers-color-scheme: dark) {
+			html:not(.theme-light):root {
+				--ghost-accent-color: {
+						{
+						@custom.darkmode_accent_color
+					}
 				}
-			</style>
-		{{/if}}
+
+				;
+			}
+		}
+	</style>
+	{{/if}}
 	{{/match}}
 
 	{{ghost_head}}
@@ -63,49 +138,55 @@
 <body class="{{body_class}}">
 
 	<div class="nav-header">
-		<nav class="nav-wrapper" aria-label="{{t "Main"}}">
-				{{#if @site.logo}}
-				<span class="logo">
-					<a href="{{@site.url}}" title="{{t "Home"}}"><img src="{{@site.logo}}" alt="{{t "Logo"}}" /></a>
-				</span>
-				{{/if}}
-				{{navigation}}
-				{{> "navigation-meta"}}
+		<nav class="nav-wrapper" aria-label="{{t " Main"}}">
+			{{#if @site.logo}}
+			<span class="logo">
+				<a href="{{@site.url}}" title="{{t " Home"}}"><img src="{{@site.logo}}" alt="{{t " Logo"}}" /></a>
+			</span>
+			{{/if}}
+			{{navigation}}
+			{{> "navigation-meta"}}
 		</nav>
 
 		<div class="nav-wrapper-control">
 			<div class="inner">
 				<a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>{{t "Menu"}}</a>
-				<a class="nav-search" title="{{t "Search"}}" role="button" data-ghost-search><i class="icon icon-search" aria-hidden="true"></i></a>
+				<a class="nav-search" title="{{t " Search"}}" role="button" data-ghost-search><i class="icon icon-search"
+						aria-hidden="true"></i></a>
 			</div>
 		</div>
 	</div>
-	<div class="nav-close" role="button" aria-label="{{t "Close"}}"></div>
+	<div class="nav-close" role="button" aria-label="{{t " Close"}}"></div>
 
 	<section class="page-wrapper">
 
 		{{{body}}}
 
 		<div class="nav-footer">
-			<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
-				<span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}}  <a class="nav-rss" title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></span>
-				{{#if @site.secondary_navigation}}
-				{{navigation type="secondary"}}
-				{{/if}}
-				<span class="nav-credits">{{t "Published with"}} <a href="https://ghost.org">Ghost</a> &bull; {{t "Theme" }} <a href="https://github.com/zutrinken/attila">Attila</a> &bull; <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme"><span class="theme-icon"></span><span class="theme-text">System theme</span> </a> </span>
+			<nav class="nav-wrapper" aria-label="{{t " Footer"}}">
+				<span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}} <a class="nav-rss" title="RSS"
+						href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></span>
+				<span class="nav-credits">{{t "Published with"}} <a href="https://ghost.org">Ghost</a> &bull; {{t "Theme" }} <a
+						href="https://github.com/zutrinken/attila">Attila</a> &bull; <a class="menu-item js-theme" href="#"
+						data-system="System theme" data-dark="Dark theme" data-light="Light theme"><span
+							class="theme-icon"></span><span class="theme-text">System theme</span> </a> </span>
 			</nav>
 		</div>
 
 	</section>
 
 	{{!-- Load basic scripts --}}
-	<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
+	<script type="text/javascript" src="{{asset " js/script.js"}}"></script>
 
-	{{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+	{{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some
+	JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already
+	loaded. --}}
 	{{{block "scripts"}}}
 
-	{{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+	{{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the
+	closing body tag --}}
 	{{ghost_foot}}
 
 </body>
+
 </html>
