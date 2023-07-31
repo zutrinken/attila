@@ -63,6 +63,12 @@
     },
     "card_assets": true,
     "custom": {
+      "contact_email": {
+        "type": "text"
+      },
+      "github_link": {
+        "type": "text"
+      },
       "color_scheme": {
         "type": "select",
         "options": [

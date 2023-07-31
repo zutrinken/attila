@@ -25,7 +25,7 @@
 	{{/match}}
 
 	{{!-- Styles'n'Scripts --}}
-	<link rel="stylesheet" type="text/css" href="{{asset " css/style.css"}}" />
+	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}" />
 
 	<script>
 		var siteUrl = '{{@site.url}}';
@@ -164,8 +164,25 @@
 
 		<div class="nav-footer">
 			<nav class="nav-wrapper" aria-label="{{t " Footer"}}">
-				<span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}} <a class="nav-rss" title="RSS"
-						href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></span>
+				<span class="nav-copy">
+				    <span>{{@site.title}} &copy; {{date format='YYYY'}}</span>
+						<span class="nav-dot">&bull;</span>
+            {{#if @custom.contact_email}}
+              <a class="nav-link" href="mailto:{{@custom.contact_email}}">
+                <i aria-hidden="true" class="icon icon-mail"></i>
+                {{@custom.contact_email}}
+              </a>
+  						<span class="nav-dot">&bull;</span>
+            {{/if}}
+            {{#if @custom.github_link}}
+              <a class="nav-link" href="https://{{@custom.github_link}}">
+                <i aria-hidden="true" class="icon icon-github-circled"></i>
+                {{@custom.github_link}}
+              </a>
+  						<span class="nav-dot">&bull;</span>
+            {{/if}}
+				    <a class="nav-link" title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a>
+				</span>
 				<span class="nav-credits">{{t "Published with"}} <a href="https://ghost.org">Ghost</a> &bull; {{t "Theme" }} <a
 						href="https://github.com/zutrinken/attila">Attila</a> &bull; <a class="menu-item js-theme" href="#"
 						data-system="System theme" data-dark="Dark theme" data-light="Light theme"><span
@@ -176,7 +193,7 @@
 	</section>
 
 	{{!-- Load basic scripts --}}
-	<script type="text/javascript" src="{{asset " js/script.js"}}"></script>
+	<script type="text/javascript" src="{{asset "js/script.js"}}"></script>
 
 	{{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some
 	JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already
