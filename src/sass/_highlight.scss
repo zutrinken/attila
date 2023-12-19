@@ -1,58 +1,188 @@
-/*
-Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+:root {
+    --color-background-code: #0d1117;
+    --color-content-code: #c9d1d9;
+}
+
+.post-content {
+	pre {
+		position: relative;
+		margin: 0 0 4rem;
+		padding: 1em;
+		overflow: hidden;
+		font-family: monospace, sans-serif;
+		white-space: pre;
+		background: var(--color-background-code);
+		box-sizing: border-box;
+        border-radius: 1.5rem;
+	}
+
+	pre .lines {
+	    position: absolute;
+	    width: 2.66667em;
+	    height: 100%;
+	    left: 0;
+	    top: 0;
+	    padding: 1.33334em 0;
+	    color: var(--color-content-code);
+	    font-size: 0.75em;
+	    line-height: 2em;
+	    text-align: right;
+	    box-sizing: border-box;
+	    background: var(--color-background-code);
+	    user-select: none;
+	    -webkit-user-select: none;
+			opacity: 0.5;
+	}
+
+	pre .lines .line {
+	    display: block;
+	    padding-right: 0.33334em;
+	}
+
+	pre code,
+	pre tt {
+	    display: block;
+	    position: static;
+	    top: auto;
+	    margin: -1.33334em -1.33334em -1.33334em 1.33334em;
+	    padding: 1.33334em;
+	    overflow-x: auto;
+	    font-size: 0.75em;
+	    line-height: 2em;
+	    white-space: pre;
+	    background: transparent;
+	    border: none;
+	    vertical-align: inherit;
+	}
+
+	pre code.language-text {
+	    margin-left: -1.33334em;
+	}
+}
+
+
+/*!
+  Theme: GitHub Dark
+  Description: Dark theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-dark
+  Current colors taken from GitHub's CSS
 */
 
 .hljs {
-    color: var(--color-content-main);
-    background: var(--color-background-main);
+    color: var(--color-content-code);
+    background: var(--color-background-code);
 }
 
+.hljs-doctag,
 .hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-section,
-.hljs-link {
-    color: var(--color-content-lead);
-}
-
-.hljs-subst {
-    /* default */
-}
-
-.hljs-string,
-.hljs-title,
-.hljs-name,
-.hljs-type,
-.hljs-attribute,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-built_in,
-.hljs-addition,
-.hljs-variable,
+.hljs-meta .hljs-keyword,
 .hljs-template-tag,
-.hljs-template-variable {
-    color: var(--ghost-accent-color);
+.hljs-template-variable,
+.hljs-type,
+.hljs-variable.language_ {
+    /* prettylights-syntax-keyword */
+    color: #ff7b72;
+}
+
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+    /* prettylights-syntax-entity */
+    color: #d2a8ff;
+}
+
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-operator,
+.hljs-variable,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+    /* prettylights-syntax-constant */
+    color: #79c0ff;
+}
+
+.hljs-regexp,
+.hljs-string,
+.hljs-meta .hljs-string {
+    /* prettylights-syntax-string */
+    color: #a5d6ff;
+}
+
+.hljs-built_in,
+.hljs-symbol {
+    /* prettylights-syntax-variable */
+    color: #ffa657;
 }
 
 .hljs-comment,
-.hljs-quote,
-.hljs-deletion,
-.hljs-meta {
-    color: var(--color-content-secondary);
+.hljs-code,
+.hljs-formula {
+    /* prettylights-syntax-comment */
+    color: #8b949e;
 }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-literal,
-.hljs-title,
-.hljs-section,
-.hljs-doctag,
-.hljs-type,
 .hljs-name,
-.hljs-strong {
+.hljs-quote,
+.hljs-selector-tag,
+.hljs-selector-pseudo {
+    /* prettylights-syntax-entity-tag */
+    color: #7ee787;
+}
+
+.hljs-subst {
+    /* prettylights-syntax-storage-modifier-import */
+    color: #c9d1d9;
+}
+
+.hljs-section {
+    /* prettylights-syntax-markup-heading */
+    color: #1f6feb;
     font-weight: bold;
 }
 
+.hljs-bullet {
+    /* prettylights-syntax-markup-list */
+    color: #f2cc60;
+}
+
 .hljs-emphasis {
+    /* prettylights-syntax-markup-italic */
+    color: #c9d1d9;
     font-style: italic;
+}
+
+.hljs-strong {
+    /* prettylights-syntax-markup-bold */
+    color: #c9d1d9;
+    font-weight: bold;
+}
+
+.hljs-addition {
+    /* prettylights-syntax-markup-inserted */
+    color: #aff5b4;
+    background-color: #033a16;
+}
+
+.hljs-deletion {
+    /* prettylights-syntax-markup-deleted */
+    color: #ffdcd7;
+    background-color: #67060c;
+}
+
+.hljs-char.escape_,
+.hljs-link,
+.hljs-params,
+.hljs-property,
+.hljs-punctuation,
+.hljs-tag {
+    /* purposely ignored */
 }
