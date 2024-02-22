@@ -90,7 +90,7 @@
 			<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
 				<span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}}  <a class="nav-rss" title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></span>
 				{{#if @site.secondary_navigation}}
-				{{navigation type="secondary"}}
+					{{navigation type="secondary"}}
 				{{/if}}
 				<span class="nav-credits">{{t "Made with"}} &hearts; {{t "using"}} <a href="https://ghost.org">Ghost</a> &bull; {{t "Theme" }} <a href="https://github.com/jvmonjo/attila">Attila fork</a> &bull; <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme"><span class="theme-icon"></span><span class="theme-text">System theme</span> </a> </span>
 			</nav>
