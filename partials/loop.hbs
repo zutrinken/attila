@@ -7,15 +7,32 @@
 <article class="{{post_class}}">
 	<div class="inner">
 		<div class="box post-box">
-			<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-			<span class="post-meta">
-				{{t "By"}}
-				{{authors separator=", "}}
-				{{#primary_tag}}{{t "in"}} <a class="post-meta-tag" href="{{url}}">{{name}}</a>{{/primary_tag}}
-				{{t "on"}}
-				<time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time>
-			</span>
-			<p class="post-excerpt">{{excerpt}}&hellip;</p>
+			<div class="article-card">
+				{{#if feature_image}}
+					<div class="image-column">
+						
+							<div class="post-card-image">
+								<a href="{{url}}">
+									<img src="{{img_url feature_image size="s" format="webp"}}">
+								</a>
+							</div>
+						
+					</div>
+				{{/if}}
+				<div {{#if feature_image}}class="content-column" {{/if}}>
+					<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+					<span class="post-meta">
+						{{t "By"}}
+						{{authors separator=", "}}
+						{{#primary_tag}}{{t "in"}} <a class="post-meta-tag" href="{{url}}">{{name}}</a>{{/primary_tag}}
+						{{t "on"}}
+						<time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time>
+					</span>
+					<p class="post-excerpt">{{excerpt}}&hellip;</p>
+				</div>
+
+			</div>
+			
 		</div>
 	</div>
 </article>
