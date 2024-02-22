@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "grunt build",
+    "dev": "grunt watch",
     "deploy": "grunt compress"
   },
   "license": "MIT",

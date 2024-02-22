@@ -411,18 +411,26 @@ html {
   font-size: 62.5%;
   overflow-x: hidden; }
 
-.article-card {
-  display: flex;
-  flex-direction: row;
-  gap: 20px; }
-  .article-card .image-column {
-    width: 30%; }
-  .article-card .content-column {
-    width: 70%; }
+@media (min-width: 780px) {
+  .article-card {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; }
+    .article-card .image-column {
+      width: 30%; }
+    .article-card .content-column {
+      width: 70%; }
+  .post-card-image {
+    width: 200px;
+    height: 200px; }
+    .post-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; } }
 
 .post-card-image {
-  width: 200px;
-  height: 200px; }
+  max-width: 800px;
+  height: 150px; }
   .post-card-image img {
     width: 100%;
     height: 100%;
