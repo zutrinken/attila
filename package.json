@@ -6,6 +6,10 @@
   "engines": {
     "ghost": ">=5.0.0"
   },
+  "scripts": {
+    "build": "grunt build",
+    "deploy": "grunt compress"
+  },
   "license": "MIT",
   "screenshots": {
     "desktop": "src/screenshot-desktop.jpg",
