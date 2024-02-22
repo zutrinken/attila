@@ -26,7 +26,7 @@ jobs:
           allowUpdates: true
           draft: false
           makeLatest: true
-          skipInvalidTags: true
+          tag: release
           name: ${{ steps.semver.outputs.next }}
           body: Changelog Contents
           token: ${{ github.token }}
