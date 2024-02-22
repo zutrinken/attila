@@ -10,9 +10,7 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
       - name: Use Node.js
@@ -28,6 +26,7 @@ jobs:
           allowUpdates: true
           draft: false
           makeLatest: true
+          skipInvalidTags: true
           name: ${{ steps.semver.outputs.next }}
           body: Changelog Contents
           token: ${{ github.token }}
