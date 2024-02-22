@@ -11,6 +11,10 @@ jQuery(function($) {
     html.toggleClass('menu-active');
   };
 
+  var social = {
+    mastodon: 'https://mas.to/@monjo',
+  }
+
   $('#menu').on({
     'click': function() {
       menu();

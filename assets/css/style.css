@@ -3,6 +3,7 @@
    Includes
    ========================================================================== */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css";
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -2209,3 +2210,95 @@ textarea {
   display: block; }
   .paged .extra-pagination .pagination-box {
     border-bottom: 1px solid var(--color-background-contrast); }
+
+/* ==========================================================================
+   Social Icons
+   ========================================================================== */
+.nav-meta li {
+  margin-left: 2rem; }
+
+.nav-behance a,
+.nav-discord a,
+.nav-facebook a,
+.nav-github a,
+.nav-instagram a,
+.nav-linkedin a,
+.nav-mastodon a,
+.nav-pinterest a,
+.nav-threads a,
+.nav-tiktok a,
+.nav-twitch a,
+.nav-twitter a,
+.nav-x a,
+.nav-vimeo a,
+.nav-youtube a {
+  font-size: 0 !important; }
+
+.nav-behance a::before,
+.nav-discord a::before,
+.nav-facebook a::before,
+.nav-github a::before,
+.nav-instagram a::before,
+.nav-linkedin a::before,
+.nav-mastodon a::before,
+.nav-pinterest a::before,
+.nav-threads a::before,
+.nav-tiktok a::before,
+.nav-twitch a::before,
+.nav-twitter a::before,
+.nav-x a::before,
+.nav-vimeo a::before,
+.nav-youtube a::before {
+  font-family: "Font Awesome 6 Brands";
+  display: inline-block;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased; }
+
+.nav-behance a::before {
+  content: "\f1b4"; }
+
+.nav-discord a::before {
+  content: "\f392"; }
+
+.nav-facebook a::before {
+  content: "\f09a"; }
+
+.nav-github a::before {
+  content: "\f09b"; }
+
+.nav-instagram a::before {
+  content: "\f16d"; }
+
+.nav-linkedin a::before {
+  content: "\f08c"; }
+
+.nav-mastodon a::before {
+  content: "\f4f6"; }
+
+.nav-pinterest a::before {
+  content: "\f0d2"; }
+
+.nav-threads a::before {
+  content: "\e618"; }
+
+.nav-tiktok a::before {
+  content: "\e07b"; }
+
+.nav-twitch a::before {
+  content: "\f1e8"; }
+
+.nav-twitter a::before {
+  content: "\f099"; }
+
+.nav-x a::before {
+  content: "\e61b"; }
+
+.nav-vimeo a::before {
+  content: "\f40a"; }
+
+.nav-youtube a::before {
+  content: "\f167"; }
