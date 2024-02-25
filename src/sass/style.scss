@@ -69,9 +69,21 @@ html {
 	}
 }
 
+span.card-tag, span.article-tag {
+    margin: 1rem;
+    background-color: var(--ghost-accent-color);
+    padding: 0 0.5rem;
+    border-radius: 20% 0;
+}
+
+span.card-tag {
+	position: absolute;
+}
+
 .post-card-image {
 	max-width: 800px;
 	height: 150px;
+	margin-bottom: 1rem;
 	img {
 		width: 100%;
 		height: 100%;
@@ -1798,31 +1810,9 @@ textarea {
 		color: var(--ghost-accent-color);
 	}
 
-	.post-count {
-		position: relative;
-		margin-left: 3.5rem;
-		color: var(--color-content-secondary);
-
-		&:after {
-			content: '';
-			position: absolute;
-			left: -2.5rem;
-			top: 50%;
-			width: 1.5rem;
-			height: 2px;
-			background: var(--color-background-contrast);
-		}
-	}
 }
 
 .has-cover .post-info {
-	.post-count {
-		color: white;
-
-		&:after {
-			background: white;
-		}
-	}
 
 	.post-type {
 		color: white;
