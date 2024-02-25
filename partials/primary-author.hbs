@@ -2,9 +2,11 @@
     {{! Loop through authors }}
     <div class="authors-container">
         {{#foreach authors}}
-        <div class="author-image-container">
-            <img class="author-profile-image" src='{{ profile_image }}' alt='{{ name }}'>
-        </div>
+            {{#if profile_image}}
+                <div class="author-image-container">
+                    <img class="author-profile-image" src='{{ profile_image }}' alt='{{ name }}'>
+                </div>
+            {{/if}}
         {{/foreach}}
     </div>
 {{/get}}
