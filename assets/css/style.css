@@ -1733,18 +1733,7 @@ textarea {
   line-height: 1em; }
   .post-info .post-type {
     color: var(--ghost-accent-color); }
-  .post-info .post-count {
-    position: relative;
-    margin-left: 3.5rem;
-    color: var(--color-content-secondary); }
-    .post-info .post-count:after {
-      content: '';
-      position: absolute;
-      left: -2.5rem;
-      top: 50%;
-      width: 1.5rem;
-      height: 2px;
-      background: var(--color-background-contrast); }
+
 
 .has-cover .post-info .post-count {
   color: white; }
