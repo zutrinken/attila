@@ -23,12 +23,16 @@
 				
 				{{/if}}
 				<div {{#if feature_image}}class="content-column" {{/if}}>
-				{{#unless feature_image}}<span class="article-tag">{{primary_tag.name}}</span>{{/unless}}
+					{{#unless feature_image}}
+						{{#if primary_tag}}
+							<span class="article-tag">{{primary_tag.name}}</span>
+						{{/if}}
+					{{/unless}}
 					<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
 					<span class="post-meta">
 						{{t "By"}}
 						{{authors separator=", "}}
-						{{#primary_tag}}{{t "in"}} <a class="post-meta-tag" href="{{url}}">{{name}}</a>{{/primary_tag}}
+						
 						{{t "on"}}
 						<time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time>
 					</span>
