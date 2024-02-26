@@ -72,6 +72,7 @@ html {
 span.card-tag, span.article-tag {
     margin: 1rem;
     background-color: var(--ghost-accent-color);
+	color: invert(var(--ghost-accent-color), $weight: 100%);
     padding: 0 0.5rem;
     border-radius: 20% 0;
 }
