@@ -22,14 +22,17 @@ jobs:
       - run: npm i
       - run: npm run build
       - run: npm run deploy
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@v1.3.1
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: V. ${{ github.ref }}
+          tag_name: ${{ steps.package-version.outputs.current-version}}
+          release_name: V. ${{ steps.package-version.outputs.current-version}}
           draft: false
           prerelease: false
       - name: Upload Release Asset
