@@ -2,7 +2,7 @@
   "name": "attila",
   "description": "Ghost Theme",
   "demo": "https://monjo.dev",
-  "version": "3.6.5",
+  "version": "3.7.0",
   "engines": {
     "ghost": ">=5.0.0"
   },
