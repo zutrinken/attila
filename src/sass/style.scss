@@ -78,6 +78,19 @@ html {
   border-radius: 0 25%;
 }
 
+.post-cover-caption {
+	position: absolute;
+	z-index: 99;
+	bottom: 0;
+	right: 0;
+	font-size: 1em;
+}
+
+figcaption a {
+	color: var(--ghost-accent-color);
+	text-decoration: none;
+}
+
 span.card-tag, span.article-tag {
     margin: 1rem;
     background-color: var(--ghost-accent-color);
