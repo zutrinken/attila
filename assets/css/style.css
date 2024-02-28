@@ -457,7 +457,11 @@ html {
   z-index: 99;
   bottom: 0;
   right: 0.8em;
-  font-size: 1em; }
+  font-size: 1em;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.5em 0.5em 0 0.5em;
+  color: #333;
+  border-radius: 10px 10px 0 0; }
 
 figcaption a {
   color: var(--ghost-accent-color);
