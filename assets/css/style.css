@@ -265,6 +265,9 @@ td, th {
 .icon-linkedin:before {
   content: '\f0e1'; }
 
+.icon-mastodon:before {
+  content: '\f2f6'; }
+
 /* '' */
 /* '' */
 /* latin-ext */
@@ -1943,6 +1946,9 @@ textarea {
 
 .post-share .linkedin {
   background-color: #0E76A8; }
+
+.post-share .mastodon {
+  background-color: #b48400; }
 
 .post-share .email {
   background-color: #2997EE; }
