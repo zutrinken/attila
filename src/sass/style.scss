@@ -71,6 +71,13 @@ html {
 	}
 }
 
+.post-count {
+  background: var(--ghost-accent-color);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0 25%;
+}
+
 span.card-tag, span.article-tag {
     margin: 1rem;
     background-color: var(--ghost-accent-color);
