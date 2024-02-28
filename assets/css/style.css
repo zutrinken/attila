@@ -472,7 +472,7 @@ span.card-tag, span.article-tag {
   background-color: var(--ghost-accent-color);
   color: white;
   padding: 0 0.5rem;
-  border-radius: 20% 0; }
+  border-radius: 0 25%; }
 
 span.card-tag {
   position: absolute; }
