@@ -456,7 +456,7 @@ html {
   position: absolute;
   z-index: 99;
   bottom: 0;
-  right: 0;
+  right: 0.8em;
   font-size: 1em; }
 
 figcaption a {
