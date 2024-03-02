@@ -2029,6 +2029,10 @@ textarea {
 	}
 }
 
+.post-share div, .post-share a {
+	margin-right: 1rem;
+}
+
 .post-share a {
 	display: block;
 	width: 3rem;
@@ -2040,7 +2044,7 @@ textarea {
 	text-align: center;
 	text-decoration: none;
 	color: white;
-	border-radius: 2em;
+	border-radius: 50%;
 	transition: all ease 0.2s;
 	@media only screen and (max-width: $breakpoint-medium) {
 		margin-left: 0;

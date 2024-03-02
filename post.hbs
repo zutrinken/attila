@@ -60,21 +60,26 @@
 
 				<div class="post-share">
 					<span class="post-info-label">{{t "Share"}}</span>
-					<a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-						<i class="icon icon-twitter" aria-hidden="true"></i>
-					</a>
-					<a title="Mastodon" aria-label="Mastodon" class="mastodon" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-						<i class="icon icon-mastodon" aria-hidden="true"></i>
-					</a>
-					<a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-						<i class="icon icon-facebook" aria-hidden="true"></i>
-					</a>
-					<a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}/&amp;title={{title}}" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
-						<i class="icon icon-linkedin" aria-hidden="true"></i>
-					</a>
-					<a title="Email" aria-label="Email" class="email" href="mailto:?subject={{title}}&amp;body={{url absolute="true"}}">
-						<i class="icon icon-mail" aria-hidden="true"></i>
-					</a>
+					<div class="nav-twitter">
+						<a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}{{#if tags}}&hashtags={{tags separator="," autolink="false"}}{{/if}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">						</a>
+					</div>
+					<div class="nav-mastodon">
+						<a title="Mastodon" id="mastodon-share" aria-label="Mastodon" class="mastodon" style="cursor: pointer;" data-title="{{title}} {{#if tags}}#{{tags separator=" #" autolink="false"}}{{/if}}" data-href="{{url absolute="true"}}"></a>
+					</div>
+					<div class="nav-facebook">
+						<a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}{{#if tags}}&hashtag={{tags separator="," autolink="false" limit=1}}{{/if}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+						</a>
+					</div>
+					<div class="nav-linkedin">
+						<a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}/&amp;title={{title}}" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+						</a>				
+					</div>
+					<div class="nav-mail">
+						<a title="Email" aria-label="Email" class="email" href="mailto:?subject={{title}}&amp;body={{url absolute="true"}}">
+							<i class="icon icon-mail" aria-hidden="true"></i>
+						</a>
+					</div>
+		
 				</div>
 
 				{{#if tags}}
@@ -192,6 +197,8 @@
 	    }
 	  });
 
+	  
+
 		{{#if @custom.disqus_shortname}}
 			var disqus = '{{@custom.disqus_shortname}}';
 	    function launchDisqus() {
@@ -205,6 +212,29 @@
 	    }
 			launchDisqus();
 		{{/if}}
+
+		// share to Mastodon
+		window.onload = function() {
+			document.getElementById('mastodon-share').onclick = function(e) {
+				const btn = e.target;
+				let href = document.URL;
+				let title = document.title;
+				if ('data-title' in btn.attributes && 'data-href' in btn.attributes) {
+					href = btn.attributes['data-href'].value;
+					title = btn.attributes['data-title'].value;
+				}
+				const mastodonInstance = prompt(`Sharing "${href}"\nPlease enter your Mastodon instance (e.g. mastodon.social) for sharing`);
+				if (mastodonInstance == null) {
+					return;
+				}
+				if (mastodonInstance.indexOf('/') === -1) {
+					window.open('https://' + mastodonInstance + '/share?text=' + encodeURIComponent(title) + ' ' + encodeURIComponent(href), "_blank");
+				} else {
+					alert("Please enter your instance without https:// or other paths!");
+				}
+			}
+		};
+		
   });
 </script>
 {{/contentFor}}
