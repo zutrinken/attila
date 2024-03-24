@@ -19,13 +19,15 @@
 		<div class="post-meta">
 			<div class="post-meta-avatars">
 				{{#foreach authors}}
-					<figure class="post-meta-avatar avatar">
-						{{#if profile_image}}
-						<a href="{{url}}" class="author-avatar">
+					{{#if profile_image}}
+						<figure class="post-meta-avatar">
+							<a href="{{url}}" class="author-avatar">
 								<img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
-						</a>
-						{{/if}}
-					</figure>
+							</a>
+						</figure>
+					{{else}}
+						<figure class="post-meta-avatar avatar"></figure>
+					{{/if}}
 				{{/foreach}}
 			</div>
 			<h4 class="post-meta-author">{{authors separator=", "}}</h4>
