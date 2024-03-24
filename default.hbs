@@ -42,6 +42,10 @@
 		<style>.js-theme {display:none!important;}</style>
 	{{/match}}
 
+	{{#match @custom.color_scheme "System"}}
+		<script>localStorage.setItem('attila_theme', 'system');</script>
+	{{/match}}
+
 	{{#match @custom.color_scheme "!=" "Light"}}
 		{{#if @custom.darkmode_accent_color}}
 			<style>
