@@ -1203,7 +1203,6 @@ textarea {
 	a {
 		position: relative;
 		display: block;
-		width: 100%;
 		padding: 2rem 0;
 		font-size: 2em;
 		line-height: 2rem;
@@ -1213,11 +1212,6 @@ textarea {
 		i {
 			display: inline-block;
 			width: 4rem;
-		}
-
-		&.nav-search {
-			width: auto;
-			text-align: right;
 		}
 
 		&:focus,
@@ -1253,12 +1247,18 @@ textarea {
 	max-height: calc(100vh - 6rem);
 	padding: 2rem 4rem;
 	overflow-y: auto;
+
 	@media only screen and (max-width: $breakpoint-medium) {
 		background: #222426;
 		flex-direction: column;
+
 		@supports (-webkit-backdrop-filter: blur(2rem)) {
 			background: rgba(34,36,38,0.9);
 			-webkit-backdrop-filter: blur(2rem);
+		}
+
+		.nav-search {
+			display: none;
 		}
 	}
 }
@@ -1282,65 +1282,76 @@ textarea {
 	}
 }
 
-.nav-header ul {
-	position: relative;
-	display: flex;
-	width: 100%;
-	margin: 0 auto;
-	padding: 0;
-	list-style: none;
-	@media only screen and (max-width: $breakpoint-medium) {
-		flex-direction: column;
-		flex-shrink: 0;
-		padding: 2rem 0;
-	}
+.nav-header {
 
-	&.nav-meta {
-		width: auto;
-		justify-content: flex-end;
-
+	ul {
+		position: relative;
+		display: flex;
+		width: 100%;
+		margin: 0 auto;
+		padding: 0;
+		list-style: none;
 		@media only screen and (max-width: $breakpoint-medium) {
-			width: 100%;
-			flex-direction: row !important;
-			padding: 0;
+			flex-direction: column;
+			flex-shrink: 0;
+			padding: 2rem 0;
 		}
 	}
-}
+	
+	li {
+		position: relative;
+		margin-right: 3rem;
 
-.nav-header li {
-	position: relative;
-	margin-right: 3rem;
-
-	&.active {
-		a:before {
-			position: absolute;
-			content: '';
-			width: 100%;
-			height: 3px;
-			left: 0;
-			top: 0;
-			padding: 0 1rem;
-			margin-left: -1rem;
-			margin-top: -2rem;
-			background: var(--ghost-accent-color);
-			@media only screen and (max-width: $breakpoint-medium) {
+		&.active {
+			a:before {
+				position: absolute;
+				content: '';
+				width: 100%;
+				height: 3px;
 				left: 0;
-				top: 50%;
-				width: 1.5rem;
-				height: 2px;
-				margin-left: 6px;
-				margin-top: -1px;
-				border-radius: 2px;
-				padding: 0;
+				top: 0;
+				padding: 0 1rem;
+				margin-left: -1rem;
+				margin-top: -2rem;
+				background: var(--ghost-accent-color);
+				@media only screen and (max-width: $breakpoint-medium) {
+					left: 0;
+					top: 50%;
+					width: 1.5rem;
+					height: 2px;
+					margin-left: 6px;
+					margin-top: -1px;
+					border-radius: 2px;
+					padding: 0;
+				}
 			}
 		}
 
 		a {
+			cursor: pointer;
 			color: var(--color-content-main);
 			font-weight: 500;
 
 			@media only screen and (max-width: $breakpoint-medium) {
 				color: white;
+			}
+
+			@media only screen and (max-width: $breakpoint-medium) {
+				font-size: 2em;
+				padding-left: 4rem;
+	
+				&:before {
+					content: '';
+					position: absolute;
+					left: 0;
+					top: 50%;
+					width: 1.5rem;
+					height: 2px;
+					margin-left: 6px;
+					margin-top: -1px;
+					border-radius: 2px;
+					background: #3B3D40;
+				}
 			}
 		}
 	}
@@ -1358,24 +1369,6 @@ textarea {
 		cursor: pointer;
 		transition: color linear 0.1s;
 
-		@media only screen and (max-width: $breakpoint-medium) {
-			font-size: 2em;
-			padding-left: 4rem;
-
-			&:before {
-				content: '';
-				position: absolute;
-				left: 0;
-				top: 50%;
-				width: 1.5rem;
-				height: 2px;
-				margin-left: 6px;
-				margin-top: -1px;
-				border-radius: 2px;
-				background: #3B3D40;
-			}
-		}
-
 		&:focus,
 		&:hover {
 			color: var(--color-content-main);
@@ -1391,21 +1384,14 @@ textarea {
 	}
 }
 
-.nav-meta {
-	@media only screen and (max-width: $breakpoint-medium) {
-		display: none !important;
+.nav-search {
+
+	a {
+		font-size: 1.75em;
 	}
 
-	li {
-		margin-right: 1rem;
-
-		a {
-			font-size: 1.75em;
-		}
-
-		span {
-			display: none;
-		}
+	span {
+		display: none;
 	}
 }
 
@@ -1420,26 +1406,24 @@ textarea {
 		}
 	}
 
-	.nav-header li {
-		a {
-			@media only screen and (min-width: $breakpoint-medium) {
-				color: rgba(255,255,255,0.8);
-				border-color: rgba(255,255,255,0.8);
-			}
-
-			&:focus,
-			&:hover {
-				@media only screen and (min-width: $breakpoint-medium) {
-					color: white;
-					border-color: white;
-				}
-			}
+	.nav-header a {
+		@media only screen and (min-width: $breakpoint-medium) {
+			color: rgba(255,255,255,0.8);
+			border-color: rgba(255,255,255,0.8);
 		}
 
-		&.active a {
+		&:focus,
+		&:hover {
 			@media only screen and (min-width: $breakpoint-medium) {
 				color: white;
+				border-color: white;
 			}
+		}
+	}
+
+	&.active a {
+		@media only screen and (min-width: $breakpoint-medium) {
+			color: white;
 		}
 	}
 }
@@ -1559,11 +1543,11 @@ textarea {
 		margin-bottom: 3rem;
 	}
 
-	.nav-rss {
-		margin: 0 3rem;
+	> * {
+		margin-right: 1rem;
 
 		@media only screen and (max-width: $breakpoint-medium) {
-			margin: 0 0 0 1rem;
+			margin-right: 0 1rem;
 		}
 	}
 }

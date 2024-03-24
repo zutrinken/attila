@@ -68,19 +68,19 @@
 
 	<div class="nav-header">
 		<nav class="nav-wrapper" aria-label="{{t "Main"}}">
-				{{#if @site.logo}}
+			{{#if @site.logo}}
 				<span class="logo">
 					<a href="{{@site.url}}" title="{{t "Home"}}"><img src="{{@site.logo}}" alt="{{t "Logo"}}" /></a>
 				</span>
-				{{/if}}
-				{{navigation}}
-				{{> "navigation-meta"}}
+			{{/if}}
+			{{navigation}}
+			<a class="nav-search" title="{{t "Search"}}" aria-label="{{t "Search"}}" data-ghost-search><i class="icon icon-search" aria-hidden="true"></i></a>
 		</nav>
 
 		<div class="nav-wrapper-control">
 			<div class="inner">
 				<a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>{{t "Menu"}}</a>
-				<a class="nav-search" title="{{t "Search"}}" role="button" data-ghost-search><i class="icon icon-search" aria-hidden="true"></i></a>
+				<a class="nav-search" title="{{t "Search"}}" aria-label="{{t "Search"}}" role="button" data-ghost-search><i class="icon icon-search" aria-hidden="true"></i></a>
 			</div>
 		</div>
 	</div>
@@ -92,7 +92,12 @@
 
 		<div class="nav-footer">
 			<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
-				<span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}}  <a class="nav-rss" title="RSS" href="{{@site.url}}/rss/" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a></span>
+				<span class="nav-copy">
+					<span class="nav-title">{{@site.title}} &copy; {{date format='YYYY'}}</span>
+					<a aria-label="RSS" href="{{@site.url}}/rss/" title="RSS" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a>
+					{{#if @site.twitter}}<a aria-label="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i class="icon icon-twitter" aria-hidden="true"></i></a>{{/if}}
+					{{#if @site.facebook}}<a aria-label="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank"><i class="icon icon-facebook" aria-hidden="true"></i></a>{{/if}}
+				</span>
 				{{#if @site.secondary_navigation}}
 				{{navigation type="secondary"}}
 				{{/if}}
