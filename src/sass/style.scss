@@ -877,9 +877,20 @@ textarea {
 		left: 10%;
 	}
 }
+
+#announcement-bar-root {
+	position: relative;
+	z-index: 9999;
+}
+
+.viewport {
+	position: relative;
+}
+
 /* ==========================================================================
    Header
    ========================================================================== */
+
 .blog-header {
 	position: relative;
 	padding-top: calc(16rem + 4vw);
