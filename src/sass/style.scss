@@ -1850,6 +1850,8 @@ textarea {
 		}
 
 		.post-meta-avatar {
+			position: relative;
+			z-index: 1;
 			float: left;
 			display: block;
 			vertical-align: top;
