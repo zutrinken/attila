@@ -3,7 +3,6 @@
    ========================================================================== */
 @import "normalize";
 @import "colors";
-@import "icons";
 @import "fonts";
 @import "highlight";
 $breakpoint-large: 960px;
@@ -840,6 +839,18 @@ textarea {
 .hidden {
 	display: none;
 }
+
+.icon {
+	display: flex;
+
+	svg {
+		display: block;
+		width: 1em;
+		height: 1em;
+		margin: auto;
+	}
+}
+
 @keyframes fadein {
 	0% {
 		opacity: 0.2;
@@ -1038,7 +1049,8 @@ textarea {
 	}
 
 	.archive-links {
-		display: block;
+		display: flex;
+		gap: 1.5rem;
 		font-size: 2em;
 		line-height: 1.5em;
 		margin-top: 1rem;
@@ -1213,17 +1225,13 @@ textarea {
 
 	a {
 		position: relative;
-		display: block;
+		display: flex;
 		padding: 2rem 0;
 		font-size: 2em;
 		line-height: 2rem;
 		color: inherit;
 		transition: all ease-out 0.1s;
-
-		i {
-			display: inline-block;
-			width: 4rem;
-		}
+		gap: 1em;
 
 		&:focus,
 		&:hover {
@@ -1643,19 +1651,41 @@ textarea {
 	}
 }
 
-.container .post.featured .post-title:after {
+.post-feature {
+	display: flex;
 	position: absolute;
-	width: 4rem;
-	height: 4rem;
-	left: -4rem;
+	justify-content: center;
+	width: 2em;
+	margin-left: -2em;
+	font-size: 2em;
+	height: 2.4em;
+	line-height: 2.4em;
+	color: var(--ghost-accent-color);
+}
+
+.container .post.featured .inner {
+	position: relative;
+}
+
+.container .post.featured .inner:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
 	top: 0;
-	font-family: 'icon';
-	font-size: 0.5em;
-	font-style: normal;
-	font-weight: normal;
-	content: '\e800';
-	color: #FFC336;
-	text-align: center;
+	width: calc(100% - 4rem);
+	@media only screen and (max-width: $breakpoint-medium) {
+		width: 100%;
+	}
+	height: calc(100% - 2rem);
+	background: var(--ghost-accent-color);
+	opacity: 0.1;
+	border-radius: 8px;
+
+	margin-left: -6rem;
+	margin-top: 1rem;
+	@media only screen and (max-width: $breakpoint-medium) {
+		margin-left: -4rem;
+	}
 }
 /* ==========================================================================
    Post
@@ -1949,6 +1979,8 @@ textarea {
 	max-width: 33.33333%;
 	float: right;
 	display: flex;
+	gap: 1rem;
+
 	@media only screen and (max-width: $breakpoint-medium) {
 		max-width: none;
 		float: none;
@@ -1957,14 +1989,13 @@ textarea {
 }
 
 .post-share a {
-	display: block;
+	display: flex;
 	width: 3rem;
 	height: 3rem;
-	margin-right: 0.5em;
 	padding: 0;
 	font-size: 1.6em;
 	line-height: 3rem;
-	text-align: center;
+	justify-content: center;
 	text-decoration: none;
 	color: white;
 	border-radius: 2em;
@@ -1977,19 +2008,6 @@ textarea {
 	&:focus,
 	&:hover {
 		opacity: 0.92;
-	}
-}
-
-.post-share a:last-child {
-	margin-right: 0;
-}
-
-.post-share a i {
-	color: inherit;
-
-	&:before {
-		width: auto;
-		height: auto;
 	}
 }
 
@@ -2150,6 +2168,7 @@ textarea {
 
 .post-nav-prev {
 	float: right;
+	text-align: right;
 
 	.post-nav-teaser {
 		padding-left: 3rem;
@@ -2183,20 +2202,13 @@ textarea {
 
 .post-nav i {
 	position: absolute;
-	top: 50%;
-	width: 4rem;
-	height: 4rem;
-	margin-top: -2rem;
-	font-size: 4rem;
-	line-height: 4rem;
+	width: 3rem;
+	height: 3rem;
+	font-size: 3rem;
+	line-height: 3rem;
 	text-align: center;
 	transition: all ease-out 0.2s;
 	color: var(--color-background-contrast);
-
-	&:before {
-		margin: 0;
-		width: auto;
-	}
 }
 
 .post-nav-next i {
@@ -2264,7 +2276,8 @@ textarea {
 
 .pagination a {
 	position: relative;
-	display: block;
+	display: flex;
+	gap: 1rem;
 	height: 4rem;
 	margin: -1px 0;
 	padding: 0 2rem;
@@ -2289,37 +2302,24 @@ textarea {
 
 .pagination .pagination-prev {
 	float: right;
-	padding-right: 1.5rem;
+	padding-right: 1.75rem;
 }
 
 .pagination .pagination-next {
 	float: left;
-	padding-left: 1.5rem;
+	padding-left: 1.75rem;
 }
 
 .pagination .pagination-label {
-	position: relative;
-	top: -1px;
-	display: inline-block;
+	
 	@media only screen and (max-width: $breakpoint-small) {
 		display: none;
 	}
 }
 
 .pagination a i {
-	position: relative;
-	top: 1px;
-	width: auto;
-	margin: auto 4px;
-	color: inherit;
 	font-size: 1.33334em;
 	line-height: 0.75em;
-
-	&:before {
-		position: relative;
-		width: auto;
-		margin: auto;
-	}
 }
 
 .pagination .pagination-info {

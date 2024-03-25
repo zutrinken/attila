@@ -75,13 +75,13 @@
 					</span>
 				{{/if}}
 				{{navigation}}
-				<a class="nav-search" title="{{t "Search"}}" aria-label="{{t "Search"}}" data-ghost-search><i class="icon icon-search" aria-hidden="true"></i></a>
+				<a class="nav-search" title="{{t "Search"}}" aria-label="{{t "Search"}}" data-ghost-search><i class="icon icon-search" aria-hidden="true">{{> "icons/icon-search"}}</i></a>
 			</nav>
 
 			<div class="nav-wrapper-control">
 				<div class="inner">
-					<a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true"></i>{{t "Menu"}}</a>
-					<a class="nav-search" title="{{t "Search"}}" aria-label="{{t "Search"}}" role="button" data-ghost-search><i class="icon icon-search" aria-hidden="true"></i></a>
+					<a class="nav-menu" role="button"><i class="icon icon-menu" aria-hidden="true">{{> "icons/icon-menu"}}</i> {{t "Menu"}}</a>
+					<a class="nav-search" title="{{t "Search"}}" aria-label="{{t "Search"}}" role="button" data-ghost-search><i class="icon icon-search" aria-hidden="true">{{> "icons/icon-search"}}</i></a>
 				</div>
 			</div>
 		</div>
@@ -94,10 +94,11 @@
 			<div class="nav-footer">
 				<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
 					<span class="nav-copy">
+						
 						<span class="nav-title">{{@site.title}} &copy; {{date format='YYYY'}}</span>
-						<a aria-label="RSS" href="{{@site.url}}/rss/" title="RSS"><i class="icon icon-rss" aria-hidden="true"></i></a>
-						{{#if @site.twitter}}<a aria-label="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}"><i class="icon icon-twitter" aria-hidden="true"></i></a>{{/if}}
-						{{#if @site.facebook}}<a aria-label="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}"><i class="icon icon-facebook" aria-hidden="true"></i></a>{{/if}}
+						<a aria-label="RSS" href="{{@site.url}}/rss/" title="RSS"><i class="icon icon-rss" aria-hidden="true">{{> "icons/icon-rss"}}</i></a>
+						{{#if @site.twitter}}<a aria-label="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}"><i class="icon icon-twitter" aria-hidden="true">{{> "icons/icon-twitter"}}</i></a>{{/if}}
+						{{#if @site.facebook}}<a aria-label="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}"><i class="icon icon-facebook" aria-hidden="true">{{> "icons/icon-facebook"}}</i></a>{{/if}}
 					</span>
 					{{#if @site.secondary_navigation}}
 					{{navigation type="secondary"}}
