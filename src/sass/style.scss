@@ -1471,6 +1471,9 @@ textarea {
 	padding-top: calc(12rem + 8vw);
 	padding-bottom: 12rem;
 	margin-top: auto;
+	font-size: 1.6em;
+	line-height: 2rem;
+	color: var(--color-content-secondary);
 
 	.inner {
 		max-width: none;
@@ -1493,7 +1496,10 @@ textarea {
 
 .nav-footer .nav-wrapper {
 	display: flex;
+	flex-wrap: wrap;
 	padding: 0 4rem;
+	gap: 3rem;
+
 	@media only screen and (max-width: $breakpoint-medium) {
 		flex-direction: column;
 		text-align: center;
@@ -1503,23 +1509,27 @@ textarea {
 .nav-footer ul {
 	position: relative;
 	display: flex;
-	width: 100%;
 	margin: 0;
 	padding: 0;
 	list-style: none;
+	gap: 3rem;
+
 	@media only screen and (max-width: $breakpoint-medium) {
-		margin-bottom: 3rem;
 		justify-content: center;
 	}
 
 	&:last-child {
 		justify-content: flex-end;
 	}
+	@media only screen and (min-width: $breakpoint-medium) {
+		&:before {
+			content: '•';
+		}
+	}
 }
 
 .nav-footer li {
 	position: relative;
-	margin-right: 3rem;
 
 	&.active a {
 		color: var(--color-content-main);
@@ -1529,47 +1539,25 @@ textarea {
 	a {
 		display: block;
 		margin: 0;
-		font-size: 1.6em;
-		line-height: 2rem;
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		text-decoration: none;
 		font-weight: 400;
 		cursor: pointer;
 	}
-
-	&:last-child {
-		margin-right: 0;
-	}
 }
 
 .nav-copy {
-	display: block;
-	font-size: 1.6em;
-	line-height: 2rem;
-	color: var(--color-content-secondary);
+	display: flex;
+	justify-content: center;
 	white-space: nowrap;
-
-	@media only screen and (max-width: $breakpoint-medium) {
-		margin-bottom: 3rem;
-	}
-
-	> * {
-		margin-right: 1rem;
-
-		@media only screen and (max-width: $breakpoint-medium) {
-			margin-right: 0 1rem;
-		}
-	}
+	gap: 1rem;
 }
 
 .nav-credits {
 	flex-shrink: 0;
 	display: block;
 	margin-left: auto;
-	font-size: 1.6em;
-	line-height: 2rem;
-	color: var(--color-content-secondary);
 
 	@media only screen and (max-width: $breakpoint-medium) {
 		margin-right: auto;

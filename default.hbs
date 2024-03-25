@@ -95,9 +95,9 @@
 				<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
 					<span class="nav-copy">
 						<span class="nav-title">{{@site.title}} &copy; {{date format='YYYY'}}</span>
-						<a aria-label="RSS" href="{{@site.url}}/rss/" title="RSS" target="_blank"><i class="icon icon-rss" aria-hidden="true"></i></a>
-						{{#if @site.twitter}}<a aria-label="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}" target="_blank"><i class="icon icon-twitter" aria-hidden="true"></i></a>{{/if}}
-						{{#if @site.facebook}}<a aria-label="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}" target="_blank"><i class="icon icon-facebook" aria-hidden="true"></i></a>{{/if}}
+						<a aria-label="RSS" href="{{@site.url}}/rss/" title="RSS"><i class="icon icon-rss" aria-hidden="true"></i></a>
+						{{#if @site.twitter}}<a aria-label="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}"><i class="icon icon-twitter" aria-hidden="true"></i></a>{{/if}}
+						{{#if @site.facebook}}<a aria-label="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}"><i class="icon icon-facebook" aria-hidden="true"></i></a>{{/if}}
 					</span>
 					{{#if @site.secondary_navigation}}
 					{{navigation type="secondary"}}
