@@ -57,24 +57,30 @@
 
 			<section class="post-footer">
 
-				<div class="post-share">
-					<span class="post-info-label">{{t "Share"}}</span>
-					{{!--
-					<button class="post-share-button" id="share-button">{{> "icons/icon-share"}}</button>
-					--}}
-					<a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-						<i class="icon icon-twitter" aria-hidden="true">{{> "icons/icon-twitter"}}</i>
-					</a>
-					<a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-						<i class="icon icon-facebook" aria-hidden="true">{{> "icons/icon-facebook"}}</i>
-					</a>
-					<a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}/&amp;title={{title}}" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
-						<i class="icon icon-linkedin" aria-hidden="true">{{> "icons/icon-linkedin"}}</i>
-					</a>
-					<a title="Email" aria-label="Email" class="email" href="mailto:?subject={{title}}&amp;body={{url absolute="true"}}">
-						<i class="icon icon-mail" aria-hidden="true">{{> "icons/icon-mail"}}</i>
-					</a>
-				</div>
+				{{#match @custom.post_share "Native"}}
+					<div class="post-share">
+						<span class="post-info-label">{{t "Share"}}</span>
+						<button aria-label="{{t "Share"}} {{t "Article"}}" class="post-share-button" id="share-button"><i class="icon icon-share" aria-hidden="true">{{> "icons/icon-share"}}</i></button>
+					</div>
+				{{/match}}
+
+				{{#match @custom.post_share "Default"}}
+					<div class="post-share">
+						<span class="post-info-label">{{t "Share"}}</span>
+						<a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+							<i class="icon icon-twitter" aria-hidden="true">{{> "icons/icon-twitter"}}</i>
+						</a>
+						<a title="Facebook" aria-label="Facebook" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+							<i class="icon icon-facebook" aria-hidden="true">{{> "icons/icon-facebook"}}</i>
+						</a>
+						<a title="LinkedIn" aria-label="LinkedIn" class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute="true"}}/&amp;title={{title}}" onclick="window.open(this.href, 'linkedin-share', 'width=930,height=720');return false;">
+							<i class="icon icon-linkedin" aria-hidden="true">{{> "icons/icon-linkedin"}}</i>
+						</a>
+						<a title="Email" aria-label="Email" class="email" href="mailto:?subject={{title}}&amp;body={{url absolute="true"}}">
+							<i class="icon icon-mail" aria-hidden="true">{{> "icons/icon-mail"}}</i>
+						</a>
+					</div>
+				{{/match}}
 
 				{{#if tags}}
 				<aside class="post-tags">
@@ -205,7 +211,7 @@
 			launchDisqus();
 		{{/if}}
 
-		{{!--
+		{{#match @custom.post_share "Native"}}
 		document.getElementById('share-button').addEventListener('click', async () => {
 			try {
 				await navigator.share({
@@ -218,7 +224,7 @@
 				console.error('error:', err.message);
 			}
 		});
-		--}}
+		{{/match}}
   });
 </script>
 {{/contentFor}}

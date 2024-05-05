@@ -1991,12 +1991,14 @@ textarea {
 	}
 }
 
+.post-share-button,
 .post-share a {
 	display: flex;
 	width: 3rem;
 	height: 3rem;
 	padding: 0;
 	background: var(--color-background-contrast);
+	border: 0;
 	color: var(--color-content-main);
 	font-size: 1.6em;
 	line-height: 3rem;
@@ -2037,6 +2039,7 @@ textarea {
 	padding: 0 1.5rem;
 	background: var(--color-background-contrast);
 	color: var(--color-content-main);
+	border: 0;
 	font-size: 1.6em;
 	font-weight: 500;
 	line-height: 3rem;
