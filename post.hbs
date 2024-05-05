@@ -59,6 +59,9 @@
 
 				<div class="post-share">
 					<span class="post-info-label">{{t "Share"}}</span>
+					{{!--
+					<button class="post-share-button" id="share-button">{{> "icons/icon-share"}}</button>
+					--}}
 					<a title="Twitter" aria-label="Twitter" class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
 						<i class="icon icon-twitter" aria-hidden="true">{{> "icons/icon-twitter"}}</i>
 					</a>
@@ -201,6 +204,21 @@
 	    }
 			launchDisqus();
 		{{/if}}
+
+		{{!--
+		document.getElementById('share-button').addEventListener('click', async () => {
+			try {
+				await navigator.share({
+					//title: 'Title',
+					//text: 'Text',
+					url: '{{url absolute="true"}}',
+				});
+				console.log('Data was shared successfully');
+			} catch (err) {
+				console.error('error:', err.message);
+			}
+		});
+		--}}
   });
 </script>
 {{/contentFor}}
