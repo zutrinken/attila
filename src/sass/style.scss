@@ -842,6 +842,8 @@ textarea {
 
 .icon {
 	display: flex;
+	width: 1em;
+	height: 1em;
 
 	svg {
 		display: block;
@@ -1993,11 +1995,13 @@ textarea {
 	width: 3rem;
 	height: 3rem;
 	padding: 0;
+	background: var(--color-background-contrast);
+	color: var(--color-content-main);
 	font-size: 1.6em;
 	line-height: 3rem;
 	justify-content: center;
+	align-items: center;
 	text-decoration: none;
-	color: white;
 	border-radius: 2em;
 	transition: all ease 0.2s;
 	@media only screen and (max-width: $breakpoint-medium) {
@@ -2007,24 +2011,9 @@ textarea {
 
 	&:focus,
 	&:hover {
-		opacity: 0.92;
+		background: var(--ghost-accent-color);
+		color: var(--color-background-main);
 	}
-}
-
-.post-share .twitter {
-	background-color: #3EA9DD;
-}
-
-.post-share .facebook {
-	background-color: #3C5A98;
-}
-
-.post-share .linkedin {
-	background-color: #0E76A8;
-}
-
-.post-share .email {
-	background-color: #2997EE;
 }
 
 .post-tags {
@@ -2045,13 +2034,13 @@ textarea {
 	margin-right: 0.5em;
 	margin-bottom: 0.5em;
 	padding: 0 1.5rem;
-	background: var(--ghost-accent-color);
+	background: var(--color-background-contrast);
+	color: var(--color-content-main);
 	font-size: 1.6em;
 	font-weight: 500;
 	line-height: 3rem;
 	text-align: center;
 	text-decoration: none;
-	color: white;
 	border-radius: 2em;
 	transition: all ease 0.2s;
 	box-sizing: border-box;
@@ -2059,7 +2048,8 @@ textarea {
 
 	&:focus,
 	&:hover {
-		opacity: 0.92;
+		background: var(--ghost-accent-color);
+		color: var(--color-background-main);
 	}
 }
 /* ==========================================================================
