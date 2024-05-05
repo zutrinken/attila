@@ -2268,6 +2268,7 @@ textarea {
 .pagination a {
 	position: relative;
 	display: flex;
+	align-items: center;
 	gap: 1rem;
 	height: 4rem;
 	margin: -1px 0;
@@ -2283,7 +2284,6 @@ textarea {
 	transition: all ease 0.2s;
 	border-radius: 4rem;
 	box-sizing: border-box;
-
 	&:focus,
 	&:hover {
 		color: var(--color-content-main);
