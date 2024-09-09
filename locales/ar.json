@@ -26,7 +26,7 @@
     "% min read": "قراءة لمدة % دقائق",
     "Article": "مقالة",
     "Archive": "الأرشيف",
-    "Author": "المؤلف",
+    "Author": "الكاتب",
     "Topic": "موضوع",
     "Topics": "مواضيع",
     "Share": "شارك",
@@ -36,5 +36,7 @@
     "Footer": "ذيل",
     "Pagination": "الترقيم",
     "Next post": "المنشور التالي",
-    "Previous post": "المنشور السابق"
+    "Previous post": "المنشور السابق",
+    "Sign in": "تسجيل الدخول",
+    "Sign up": "تسجيل اشتراك"
 }
