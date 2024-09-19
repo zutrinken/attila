@@ -703,16 +703,18 @@ textarea {
 
 	.kg-bookmark-card {
 		width: 100%;
-	}
 
-	.kg-bookmark-container {
-		display: flex;
-		text-decoration: none;
-		min-height: 8em;
-		background: var(--color-background-secondary);
-		border: 1px solid var(--color-background-contrast);
-		box-shadow: none !important;
-		overflow: hidden;
+		a.kg-bookmark-container,
+		a.kg-bookmark-container:hover {
+			display: flex;
+			text-decoration: none;
+			min-height: 8em;
+			background: var(--color-background-secondary);
+			border: 1px solid var(--color-background-contrast);
+			border-radius: 0;
+			box-shadow: none !important;
+			overflow: hidden;
+		}
 	}
 
 	.kg-bookmark-content {
