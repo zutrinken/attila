@@ -37,7 +37,7 @@ You can [buy me a drink](https://paypal.me/zutrinken) if you enjoy using Attila.
 | `zh_tw` | 🇨🇳 | Chinese Traditional | 🟩 | [Petingo](https://github.com/Petingo)
 | `id` | 🇮🇩 | Indonesian | 🟧 | [simplyeazy](https://github.com/simplyeazy) |
 | `ro` | 🇷🇴 | Romanian | 🟧 | [cdorin93](https://github.com/cdorin93) |
-| `ru` | 🇷🇺 | Russian | 🟩 | [schamberg97](https://github.com/schamberg97), [atjanov](https://github.com/atjanov) |
+| `ru` | 🇷🇺 | Russian | 🟩 | [schamberg97](https://github.com/schamberg97), [atjanov](https://github.com/atjanov), [exeteres](https://github.com/exeteres) |
 | `tr` | 🇹🇷 | Turkish | 🟩 | [cgrgrbz](https://github.com/cgrgrbz), [electricalgorithm](https://github.com/electricalgorithm) |
 | `sv` | 🇸🇪 | Swedish | 🟩 | [martenj77](https://github.com/martenj77), [LarssonOliver](https://github.com/LarssonOliver) |
 | `cs` | 🇨🇿 | Czech | 🟩 | [lunakv](https://github.com/lunakv), [rdolezel](https://github.com/rdolezel) |
@@ -45,7 +45,7 @@ You can [buy me a drink](https://paypal.me/zutrinken) if you enjoy using Attila.
 | `vi` | 🇻🇳 | Vietnamese | 🟩 | [JustHmmmm](https://github.com/justhmmmm), [mastoduy](https://github.com/mastoduy) |
 | `el` | 🇬🇷 | Greek | 🟧 | [thiodordelis](https://github.com/thiodordelis) |
 | `dk` | 🇩🇰 | Danish | 🟩 | [jmayntzhusen](https://github.com/jmayntzhusen), [tmlmt](https://github.com/tmlmt) |
-| `ar` | | Arabic | 🟧 | [pop-eax](https://github.com/pop-eax) |
+| `ar` | | Arabic | 🟩 | [pop-eax](https://github.com/pop-eax), [tayeh](https://github.com/tayeh)|
 | `ca` | | Catalan | 🟧 | [arthurnoerve](https://github.com/arthurnoerve) |
 | `lt` | 🇱🇹 | Lithuanian | 🟧 | [arthurnoerve](https://github.com/arthurnoerve) |
 | `nl` | 🇳🇱 | Dutch | 🟧 | [gkdp](https://github.com/gkdp) |
