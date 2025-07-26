@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   'use strict';
-  const sass = require('node-sass');
+  const sass = require('sass');
   require('load-grunt-tasks')(grunt, {
     pattern: ['grunt-*']
   });
@@ -62,17 +62,6 @@ module.exports = function(grunt) {
         }
       }
     },
-    postcss: {
-      options: {
-        map: false
-      },
-      dev: {
-        src: '<%=  config.cssTargetDir %>/*.css'
-      },
-      dist: {
-        src: '<%=  config.cssTargetDir %>/*.css'
-      }
-    },
     uglify: {
       js: {
         files: {
@@ -121,13 +110,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'sass:dist',
-    'postcss:dist',
     'copy:dist',
     'uglify'
   ]);
   grunt.registerTask('default', [
     'sass:dev',
-    'postcss:dev',
     'copy:dev',
     'uglify',
     'watch'
