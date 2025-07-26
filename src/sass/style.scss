@@ -3,7 +3,6 @@
    ========================================================================== */
 @use "normalize";
 @use "colors";
-@use "fonts";
 @use "highlight";
 $breakpoint-large: 960px;
 $breakpoint-medium: 640px;
@@ -13,8 +12,8 @@ $inner: calc(64rem + 8vw);
    Basics
    ========================================================================== */
 :root {
-	--font-primary: 'Fira Sans', sans-serif;
-	--font-secondary: 'Libre Baskerville', serif;
+	--font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	--font-secondary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 html {

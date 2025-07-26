@@ -18,24 +18,6 @@ module.exports = function(grunt) {
         '<%= config.jsSrcDir %>/libs/highlight.pack.js'
       ]
     },
-    copy: {
-      dev: {
-        files: [{
-          dest: 'assets/font/',
-          src: '*',
-          cwd: 'src/font/',
-          expand: true
-        }]
-      },
-      dist: {
-        files: [{
-          dest: 'assets/font/',
-          src: '*',
-          cwd: 'src/font/',
-          expand: true
-        }]
-      }
-    },
     clean: {
       dev: ['dev'],
       dist: ['dist'],
@@ -110,12 +92,10 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'sass:dist',
-    'copy:dist',
     'uglify'
   ]);
   grunt.registerTask('default', [
     'sass:dev',
-    'copy:dev',
     'uglify',
     'watch'
   ]);
