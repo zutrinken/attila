@@ -59,6 +59,7 @@ You can [buy me a drink](https://paypal.me/zutrinken) if you enjoy using Attila.
 | `th` | 🇹🇭 | Thai | 🟩 | [GmBeHappy](https://github.com/GmBeHappy) |
 | `hu` | 🇭🇺 | Hungarian | 🟩 | [ferivoq](https://github.com/ferivoq) |
 | `ge` | 🇬🇪 | Georgian | 🟩 | [kiknaio](https://github.com/kiknaio) |
+| `gd  ` | 🏴󠁧󠁢󠁳󠁣󠁴󠁿 | Scottish Gaelic | 🟩 | [angeidheal](https://github.com/angeidheal) |
 
 
 ## 🔠 Setup custom google fonts
