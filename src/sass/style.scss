@@ -1,10 +1,10 @@
 /* ==========================================================================
    Includes
    ========================================================================== */
-@import "normalize";
-@import "colors";
-@import "fonts";
-@import "highlight";
+@use "normalize";
+@use "colors";
+@use "fonts";
+@use "highlight";
 $breakpoint-large: 960px;
 $breakpoint-medium: 640px;
 $breakpoint-small: 480px;
@@ -1678,9 +1678,6 @@ textarea {
 	z-index: -1;
 	top: 0;
 	width: calc(100% - 4rem);
-	@media only screen and (max-width: $breakpoint-medium) {
-		width: 100%;
-	}
 	height: calc(100% - 2rem);
 	background: var(--ghost-accent-color);
 	opacity: 0.1;
@@ -1689,6 +1686,7 @@ textarea {
 	margin-left: -6rem;
 	margin-top: 1rem;
 	@media only screen and (max-width: $breakpoint-medium) {
+		width: 100%;
 		margin-left: -4rem;
 	}
 }
