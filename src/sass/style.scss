@@ -11,10 +11,6 @@ $inner: calc(64rem + 8vw);
 /* ==========================================================================
    Basics
    ========================================================================== */
-:root {
-	--font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-	--font-secondary: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-}
 
 html {
 	font-size: 62.5%;
@@ -27,7 +23,7 @@ html.menu-active {
 }
 
 body {
-	font-family: var(--font-primary);
+	font-family: var(--gh-font-body);
 	font-size: 1em;
 	line-height: 1.75em;
 	font-weight: 400;
@@ -69,8 +65,9 @@ textarea {
 	h4,
 	h5,
 	h6 {
-		line-height: 1.25em;
 		margin: 0 0 4rem;
+		line-height: 1.25em;
+		font-family: var(--gh-font-heading);
 		text-rendering: optimizeLegibility;
 		color: var(--color-content-lead);
 	}
@@ -109,13 +106,11 @@ textarea {
 	}
 
 	p {
-		font-family: var(--font-secondary);
 		margin: 0 0 4rem;
 	}
 
 	ol,
 	ul {
-		font-family: var(--font-secondary);
 		margin: 0 0 4rem;
 		padding-left: 2em;
 		box-sizing: border-box;
@@ -144,7 +139,6 @@ textarea {
 		line-height: 2em;
 		text-align: right;
 		color: var(--ghost-accent-color);
-		font-family: var(--font-primary);
 	}
 
 	ul > li:before {
@@ -175,7 +169,6 @@ textarea {
 	}
 
 	blockquote {
-		font-family: var(--font-secondary);
 		margin: 0 0 4rem;
 		padding: 0.25em 1em;
 		-moz-box-sizing: border-box;
@@ -215,7 +208,6 @@ textarea {
 	}
 
 	dl {
-		font-family: var(--font-secondary);
 		margin: 0 0 4rem;
 		padding-left: 30px;
 	}
@@ -226,7 +218,6 @@ textarea {
 		line-height: 1.25em;
 		font-weight: 700;
 		margin-bottom: 0.33334em;
-		font-family: var(--font-primary);
 	}
 
 	dl dt:before {
@@ -390,7 +381,7 @@ textarea {
 	label {
 		display: block;
 		margin-bottom: 0.5rem;
-		font-family: var(--font-primary);
+		font-family: var(--gh-font-heading);
 		font-weight: 500;
 		color: var(--color-content-main);
 	}
@@ -975,6 +966,7 @@ textarea {
 	display: block;
 	margin: 0;
 	padding: 0;
+	font-family: var(--gh-font-heading);
 	font-weight: 700;
 	font-size: 6em;
 	line-height: 1em;
@@ -987,7 +979,6 @@ textarea {
 }
 
 .blog-description {
-	font-family: var(--font-secondary);
 	display: block;
 	margin-top: 1rem;
 	padding: 0;
@@ -1048,7 +1039,6 @@ textarea {
 		font-size: 2em;
 		line-height: 1.5em;
 		margin: 1rem 0;
-		font-family: var(--font-secondary);
 		color: var(--color-content-secondary);
 	}
 
@@ -1792,6 +1782,7 @@ textarea {
 	position: relative;
 	z-index: 10;
 	margin: 0 0 2rem;
+	font-family: var(--gh-font-heading);
 	font-size: 4em;
 	line-height: 1.25em;
 	font-weight: 700;
@@ -1931,7 +1922,6 @@ textarea {
 
 .post-excerpt {
 	margin: 1em 0 0;
-	font-family: var(--font-secondary);
 	font-size: 1.75em;
 	line-height: 2em;
 }
@@ -2217,6 +2207,7 @@ textarea {
 .post-nav-title {
 	margin: 0 0 0.5rem;
 	padding: 0;
+	font-family: var(--gh-font-heading);
 	font-size: 2em;
 	line-height: 3rem;
 	color: inherit;
@@ -2231,7 +2222,6 @@ textarea {
 .post-nav-excerpt {
 	height: 5rem;
 	margin: 0 0 1rem;
-	font-family: var(--font-secondary);
 	font-size: 1.5em;
 	line-height: 2.5rem;
 	display: -webkit-box;
