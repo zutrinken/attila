@@ -1314,8 +1314,10 @@ textarea {
 	li {
 		position: relative;
 		margin-right: 3rem;
+		font-weight: 500;
 
 		&.active {
+			font-weight: 600;
 			a:before {
 				position: absolute;
 				content: '';
@@ -1343,7 +1345,6 @@ textarea {
 		a {
 			cursor: pointer;
 			color: var(--color-content-main);
-			font-weight: 500;
 
 			@media only screen and (max-width: $breakpoint-medium) {
 				color: white;
@@ -1378,7 +1379,6 @@ textarea {
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		text-decoration: none;
-		font-weight: 400;
 		cursor: pointer;
 		transition: color linear 0.1s;
 
@@ -1486,7 +1486,6 @@ textarea {
 		display: inline-block;
 		color: var(--color-content-secondary);
 		text-decoration: none;
-		font-weight: 400;
 		cursor: pointer;
 
 		&:focus,
@@ -1537,9 +1536,12 @@ textarea {
 .nav-footer li {
 	position: relative;
 
-	&.active a {
-		color: var(--color-content-main);
-		font-weight: 500;
+	&.active {
+		font-weight: 600;
+
+		a {
+			color: var(--color-content-main);
+		}
 	}
 
 	a {
@@ -1548,7 +1550,6 @@ textarea {
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		text-decoration: none;
-		font-weight: 400;
 		cursor: pointer;
 	}
 }
