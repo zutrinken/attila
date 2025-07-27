@@ -31,6 +31,12 @@
 				{{#if facebook}}
 					<a target="_blank" href="{{facebook_url}}" title="{{t "Facebook"}}"><i class="icon icon-facebook">{{> "icons/icon-facebook"}}</i><span>{{t "Facebook"}}</span></a>
 				{{/if}}
+				{{#if bluesky}}
+					<a target="_blank" href="{{social_url type="bluesky"}}" title="{{t "BlueSky"}}"><i class="icon icon-bluesky">{{> "icons/icon-bluesky"}}</i><span>{{t "BlueSky"}}</span></a>
+				{{/if}}
+				{{#if mastodon}}
+					<a target="_blank" href="{{social_url type="mastodon"}}" title="{{t "Mastodon"}}"><i class="icon icon-mastodon">{{> "icons/icon-mastodon"}}</i><span>{{t "Mastodon"}}</span></a>
+				{{/if}}
 			</span>
 		</div>
 
