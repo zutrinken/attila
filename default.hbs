@@ -19,17 +19,18 @@
 	</script>
 
 	<script>
-			var localTheme = localStorage.getItem('attila_theme');
-			switch (localTheme) {
-					case 'dark':
-							document.documentElement.classList.add('theme-dark');
-							break;
-					case 'light':
-							document.documentElement.classList.add('theme-light');
-							break;
-					default:
-							break;
-			}
+		var localTheme = localStorage.getItem('attila_theme');
+		switch (localTheme) {
+			case 'dark':
+				document.documentElement.classList.add('theme-dark');
+				break;
+			case 'light':
+				document.documentElement.classList.add('theme-light');
+				break;
+			default:
+				document.documentElement.classList.remove('theme-dark', 'theme-light');
+				break;
+		}
 	</script>
 
 	{{#match @custom.color_scheme "Dark"}}
@@ -42,20 +43,16 @@
 		<style>.js-theme {display:none!important;}</style>
 	{{/match}}
 
-	{{#match @custom.color_scheme "System"}}
-		<script>localStorage.setItem('attila_theme', 'system');</script>
-	{{/match}}
-
 	{{#match @custom.color_scheme "!=" "Light"}}
 		{{#if @custom.darkmode_accent_color}}
 			<style>
 				.theme-dark:root {
-				  --ghost-accent-color: {{@custom.darkmode_accent_color}};
+					--ghost-accent-color: {{@custom.darkmode_accent_color}};
 				}
 				@media (prefers-color-scheme: dark) {
-				  html:not(.theme-light):root {
-				    --ghost-accent-color: {{@custom.darkmode_accent_color}};
-				  }
+					html:not(.theme-light):root {
+						--ghost-accent-color: {{@custom.darkmode_accent_color}};
+					}
 				}
 			</style>
 		{{/if}}
