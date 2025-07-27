@@ -93,17 +93,16 @@
 
 			<div class="nav-footer">
 				<nav class="nav-wrapper" aria-label="{{t "Footer"}}">
-					<span class="nav-copy">
-						
-						<span class="nav-title">{{@site.title}} &copy; {{date format='YYYY'}}</span>
-						<a aria-label="RSS" href="{{@site.url}}/rss/" title="RSS"><i class="icon icon-rss" aria-hidden="true">{{> "icons/icon-rss"}}</i></a>
-						{{#if @site.twitter}}<a aria-label="Twitter" href="{{twitter_url}}" title="{{@site.twitter}}"><i class="icon icon-twitter" aria-hidden="true">{{> "icons/icon-twitter"}}</i></a>{{/if}}
-						{{#if @site.facebook}}<a aria-label="Facebook" href="{{facebook_url}}" title="{{@site.facebook}}"><i class="icon icon-facebook" aria-hidden="true">{{> "icons/icon-facebook"}}</i></a>{{/if}}
+					<span class="nav-copy">{{@site.title}} &copy; {{date format='YYYY'}}</span>
+					<span class="nav-menu">
+						<span class="nav-mode">
+							<a class="js-theme" href="#" data-system="System" data-dark="Dark" data-light="Light"><span class="theme-icon"></span><span class="theme-text">System</span> </a>
+						</span>
+						{{#if @site.secondary_navigation}}
+							{{navigation type="secondary"}}
+						{{/if}}
 					</span>
-					{{#if @site.secondary_navigation}}
-					{{navigation type="secondary"}}
-					{{/if}}
-					<span class="nav-credits">{{t "Published with"}} <a href="https://ghost.org">Ghost</a> &bull; {{t "Theme" }} <a href="https://github.com/zutrinken/attila">Attila</a> &bull; <a class="menu-item js-theme" href="#" data-system="System theme" data-dark="Dark theme" data-light="Light theme"><span class="theme-icon"></span><span class="theme-text">System theme</span> </a> </span>
+					<span class="nav-publish">{{t "Published with"}} <a href="https://ghost.org">Ghost</a> {{t "and" }} <a href="https://github.com/zutrinken/attila">Attila</a></span>
 				</nav>
 			</div>
 
