@@ -44,7 +44,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    uglify: {
+    terser: {
       js: {
         files: {
           '<%= config.jsTargetDir %>/script.js': [
@@ -92,11 +92,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', [
     'sass:dist',
-    'uglify'
+    'terser'
   ]);
   grunt.registerTask('default', [
     'sass:dev',
-    'uglify',
+    'terser',
     'watch'
   ]);
 };

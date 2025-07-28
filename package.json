@@ -38,9 +38,9 @@
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-compress": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-uglify": "^5.0.1",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.1.0",
+    "grunt-terser": "^2.0.0",
     "load-grunt-tasks": "^5.1.0"
   },
   "config": {
