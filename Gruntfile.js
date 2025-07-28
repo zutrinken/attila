@@ -61,7 +61,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: '<%=  config.jsSrcDir %>/**/*.js',
-        tasks: ['uglify']
+        tasks: ['terser']
       }
     },
     compress: {
