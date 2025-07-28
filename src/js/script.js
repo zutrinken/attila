@@ -1,42 +1,37 @@
-jQuery(function($) {
-
-  var html = $('html');
-  var viewport = $(window);
-
 /* ==========================================================================
    Menu
    ========================================================================== */
 
-  function menu() {
-    html.toggleClass('menu-active');
-  };
-
-  $('#menu').on({
-    'click': function() {
-      menu();
+   document.addEventListener("DOMContentLoaded", function () {
+    var html = document.documentElement;
+    var menu = document.getElementById("menu");
+    var navMenu = document.querySelector(".nav-menu");
+    var navClose = document.querySelector(".nav-close");
+  
+    // Function to toggle the menu
+    function toggleMenu() {
+      html.classList.toggle("menu-active");
     }
+  
+    // Event listeners for menu toggle
+    if (menu) menu.addEventListener("click", toggleMenu);
+    if (navMenu) navMenu.addEventListener("click", toggleMenu);
+    if (navClose) navClose.addEventListener("click", toggleMenu);
+  
+    // Remove menu-active class on window resize or orientation change
+    window.addEventListener("resize", function () {
+      html.classList.remove("menu-active");
+    });
+  
+    window.addEventListener("orientationchange", function () {
+      html.classList.remove("menu-active");
+    });
   });
 
-  $('.nav-menu').on({
-    'click': function() {
-      menu();
-    }
-  });
+jQuery(function($) {
 
-  $('.nav-close').on({
-    'click': function() {
-      menu();
-    }
-  });
-
-  viewport.on({
-    'resize': function() {
-      html.removeClass('menu-active');
-    },
-    'orientationchange': function() {
-      html.removeClass('menu-active');
-    }
-  });
+  var html = $('html');
+  var viewport = $(window);
 
 /* ==========================================================================
    Parallax cover
