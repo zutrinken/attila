@@ -148,28 +148,41 @@
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
 <script>
-  $(document).ready(function () {
-		var viewport = $(window);
-		var post = $('.post-content');
+	$(document).ready(function () {
 		// Responsive videos with fitVids
-    post.fitVids();
+		$('.post-content').fitVids();
+	});
 
+	{{#if @custom.disqus_shortname}}
+		var disqus = '{{@custom.disqus_shortname}}';
 
-		{{#if @custom.disqus_shortname}}
-			var disqus = '{{@custom.disqus_shortname}}';
-	    function launchDisqus() {
-	      $.ajax({
-	        type: "GET",
-	        url: "//" + disqus + ".disqus.com/embed.js",
-	        dataType: "script",
-	        cache: true
-	      });
-	      $(this).parent().addClass('activated');
-	    }
-			launchDisqus();
-		{{/if}}
+		function launchDisqus() {
+			// Dynamically load the Disqus embed script
+			var script = document.createElement('script');
+			script.type = 'text/javascript';
+			script.src = '//' + disqus + '.disqus.com/embed.js';
+			script.async = true;
+			script.setAttribute('data-timestamp', +new Date());
+			script.onload = function() {
+				console.log('Disqus script loaded successfully.');
+			};
 
-		{{#match @custom.post_share "Native"}}
+			// Append the script to the document head
+			document.head.appendChild(script);
+
+			// Add the 'activated' class to the parent of the triggering element
+			var parent = document.querySelector('.disqus-button'); // Replace with the correct triggering element
+			if (parent) {
+				parent.classList.add('activated');
+			}
+		}
+
+		// Execute the function
+		launchDisqus();
+
+	{{/if}}
+
+	{{#match @custom.post_share "Native"}}
 		document.getElementById('share-button').addEventListener('click', async () => {
 			try {
 				await navigator.share({
@@ -182,8 +195,8 @@
 				console.error('error:', err.message);
 			}
 		});
-		{{/match}}
-  });
+	{{/match}}
+
 
 	document.addEventListener("DOMContentLoaded", function () {
 		// Format code blocks and add line numbers
