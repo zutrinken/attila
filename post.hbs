@@ -204,7 +204,7 @@
 		});
 		{{/match}}
   });
-  
+
 	document.addEventListener("DOMContentLoaded", function () {
 		// Format code blocks and add line numbers
 		function codestyling() {
@@ -234,5 +234,56 @@
 		}
 		codestyling();
 	});
+
+	document.addEventListener("DOMContentLoaded", function () {
+		var post = document.querySelector('.post-content');
+		var progressBar = document.querySelector('.progress-bar');
+		var progressContainer = document.querySelector('.progress-container');
+
+		// Reading progress bar on window top
+		function readingProgress() {
+			if (!post || !progressBar || !progressContainer) return;
+
+			var postBottom = post.offsetTop + post.offsetHeight;
+			var viewportHeight = window.innerHeight;
+			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+			// Calculate progress
+			var progress = 100 - (((postBottom - (scrollTop + viewportHeight) + viewportHeight / 3) / 
+								(postBottom - viewportHeight + viewportHeight / 3)) * 100);
+
+			// Update progress bar width
+			progressBar.style.width = Math.min(progress, 100) + '%';
+
+			// Add or remove the 'complete' class
+			if (progress > 100) {
+			progressContainer.classList.add('complete');
+			} else {
+			progressContainer.classList.remove('complete');
+			}
+		}
+
+		// Initial call
+		readingProgress();
+
+		// Throttle function to optimize scroll and resize events
+		function throttle(callback, delay) {
+			var lastCall = 0;
+			return function () {
+			var now = Date.now();
+			if (now - lastCall >= delay) {
+				lastCall = now;
+				callback();
+			}
+			};
+		}
+
+		// Attach scroll, resize, and orientationchange events
+		var optimizedReadingProgress = throttle(readingProgress, 50);
+		window.addEventListener('scroll', optimizedReadingProgress);
+		window.addEventListener('resize', optimizedReadingProgress);
+		window.addEventListener('orientationchange', optimizedReadingProgress);
+	});
+
 </script>
 {{/contentFor}}
