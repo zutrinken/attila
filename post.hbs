@@ -148,9 +148,17 @@
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
 <script>
-	$(document).ready(function () {
-		// Responsive videos with fitVids
-		$('.post-content').fitVids();
+	document.addEventListener("DOMContentLoaded", function () {
+		//responsive videos
+		const sources = [
+			'.post-content iframe[src*="youtube.com"]',
+			'.post-content iframe[src*="youtube-nocookie.com"]',
+			'.post-content iframe[src*="player.vimeo.com"]',
+			'.post-content iframe[src*="kickstarter.com"][src*="video.html"]',
+			'.post-content object',
+			'.post-content embed',
+		];
+		reframe(document.querySelectorAll(sources.join(',')));
 	});
 
 	{{#if @custom.disqus_shortname}}

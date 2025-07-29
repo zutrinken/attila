@@ -13,8 +13,7 @@ module.exports = function(grunt) {
       'jsSrcDir': 'src/js',
       'jsTargetDir': 'assets/js',
       'jsDependencies': [
-        '<%= config.jsSrcDir %>/libs/jquery.min.js',
-        '<%= config.jsSrcDir %>/libs/jquery.fitvids.js',
+        '<%= config.jsSrcDir %>/libs/reframe.min.js',
         '<%= config.jsSrcDir %>/libs/highlight.pack.js'
       ]
     },
