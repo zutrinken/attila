@@ -8,7 +8,7 @@ You can [buy me a drink](https://paypal.me/zutrinken) if you enjoy using Attila.
 
 ## 📷 Screenshot
 
-<img src="https://raw.githubusercontent.com/zutrinken/attila/master/src/screenshot.png" />
+<img src="https://raw.githubusercontent.com/zutrinken/attila/master/src/screenshot.webp" />
 
 ## ⭐️ Features
 
