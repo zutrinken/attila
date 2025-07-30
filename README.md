@@ -1,12 +1,6 @@
 # Attila
 
-A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost/). See a demo at: [attila.peteramende.de](https://attila.peteramende.de/)
-
-## ♥️ Support
-
-You can [buy me a drink](https://paypal.me/zutrinken) if you enjoy using Attila. Cheers 🍻
-
-## 📷 Screenshot
+A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost/). Check it out at [attila.peteramende.de](https://attila.peteramende.de/). If you enjoy using Attila you can [support](https://paypal.me/zutrinken) it here.
 
 <img src="https://raw.githubusercontent.com/zutrinken/attila/master/src/screenshot.webp" />
 
@@ -19,7 +13,7 @@ You can [buy me a drink](https://paypal.me/zutrinken) if you enjoy using Attila.
 * Post reading progress
 * Code highlight including line numbers
 * Comments and Disqus (Theme option)
-* Ghost accent color
+* Ghost accent color and custom fonts
 
 ## 🌍 Localization
 
@@ -62,23 +56,6 @@ You can [buy me a drink](https://paypal.me/zutrinken) if you enjoy using Attila.
 | `gd` | 🏴󠁧󠁢󠁳󠁣󠁴󠁿 | Scottish Gaelic | 🟩 | [angeidheal](https://github.com/angeidheal) |
 | `pt_br` | 🇧🇷 | Portuguese (Brazilian) | 🟩 | [jobdiogenes](https://github.com/jobdiogenes) |
 
-## 🔠 Setup custom google fonts
-
-1. Go to [fonts.google.com](https://fonts.google.com/) and choose a font.
-2. Choose __Embed__ and copy the `<link>` code.
-3. Go to __Code injection__.  
-4. Add this to __Blog Header__:  
-````html
-<link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --font-primary: 'Mukta', sans-serif;
-    --font-secondary: 'Crimson Text', serif;
-  }
-</style>
-````
-
 ## ⚙️ Development
 
 Install [Grunt](https://gruntjs.com/getting-started/):
@@ -99,4 +76,4 @@ grunt compress
 ````
 ## ⚖️ Copyright & License
 
-Copyright (C) 2015-2024 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).
+Copyright (C) 2015-2025 Peter Amende - Released under the [MIT License](https://github.com/zutrinken/attila/blob/master/LICENSE).
