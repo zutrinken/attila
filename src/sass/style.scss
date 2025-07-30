@@ -1358,7 +1358,6 @@ textarea {
 		}
 
 		a {
-			cursor: pointer;
 			color: var(--color-content-main);
 
 			@media only screen and (max-width: $breakpoint-medium) {
@@ -1386,6 +1385,7 @@ textarea {
 	}
 
 	a {
+		cursor: pointer;
 		display: block;
 		padding: 1rem 0;
 		font-size: 1.6em;
@@ -1394,8 +1394,7 @@ textarea {
 		white-space: nowrap;
 		text-overflow: ellipsis;
 		text-decoration: none;
-		cursor: pointer;
-		transition: color linear 0.1s;
+		transition: all linear 0.1s;
 
 		&:focus,
 		&:hover {
@@ -1405,6 +1404,61 @@ textarea {
 				color: #C4C7CC;
 			}
 		}
+
+		&.nav-button-primary {
+			position: relative;
+			height: 4rem;
+			margin: 0 0.5rem;
+			padding: 0 2rem;
+			color: white;
+			background: var(--ghost-accent-color);
+			border-radius: 4rem;
+			line-height: 4rem;
+			text-align: center;
+			box-shadow: rgba(0, 0, 0, 0.16) 0px 6px 12px -2px;
+
+			&:focus,
+			&:hover {
+				opacity: 0.92;
+			}
+		}
+		
+		&.nav-button-secondary {
+			height: 4rem;
+			margin: 0 0.5rem;
+			padding: 0 2rem;
+			border: 1px solid var(--color-background-contrast);
+			font-size: 1.6em;
+			line-height: 4rem;
+			font-weight: 500;
+			color: var(--color-content-secondary);
+			border-radius: 4rem;
+			box-sizing: border-box;
+			text-align: center;
+
+			@media only screen and (max-width: $breakpoint-medium) {
+				color: white;
+				border: 1px solid #3B3D40;
+			}
+		
+			&:focus,
+			&:hover {
+				color: var(--color-content-main);
+				border-color: var(--ghost-accent-color);
+
+				@media only screen and (max-width: $breakpoint-medium) {
+					color: #C4C7CC;
+				}
+			}
+		}
+		
+
+		&.nav-search {
+			height: 4rem;
+			margin: 0 0.5rem;
+			padding: 1rem;
+			font-size: 2em;
+		}
 	}
 
 	&:last-child {
@@ -1412,14 +1466,15 @@ textarea {
 	}
 }
 
-.nav-search {
+.nav-members {
+	display: flex;
 
-	a {
-		font-size: 1.75em;
-	}
+	@media only screen and (max-width: $breakpoint-medium) {
+		width: 100%;
 
-	span {
-		display: none;
+		> * {
+			width: 100%;
+		}
 	}
 }
 
