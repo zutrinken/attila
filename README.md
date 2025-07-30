@@ -1,6 +1,6 @@
 # Attila
 
-A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost/). You can see it live [here](https://attila.peteramende.de/). If you enjoy using Attila you can support it by [buying me a coffee](https://paypal.me/zutrinken).
+Attila is a clean, content-focused responsive theme for [Ghost](https://github.com/tryghost/ghost/). You can see it live [here](https://attila.peteramende.de/). If you find it useful and want to support its development, feel free to [tip](https://paypal.me/zutrinken) or contribute. Thank you for your support!
 
 <img src="https://raw.githubusercontent.com/zutrinken/attila/master/src/screenshot.webp" />
 
