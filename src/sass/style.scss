@@ -1237,7 +1237,7 @@ textarea {
 		display: flex;
 		padding: 2rem 0;
 		font-size: 2em;
-		line-height: 2rem;
+		line-height: 4rem;
 		color: inherit;
 		transition: all ease-out 0.1s;
 		gap: 1em;
@@ -1245,6 +1245,14 @@ textarea {
 		&:focus,
 		&:hover {
 			color: var(--color-content-main);
+		}
+
+		&.nav-search {
+			padding: 2rem 0;
+		}
+
+		.icon {
+			margin: auto;
 		}
 	}
 }
