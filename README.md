@@ -28,7 +28,7 @@ Attila is a clean, content-focused responsive theme for [Ghost](https://github.c
 | `it` | 🇮🇹 | Italian | 🟢 | [fmaida](https://github.com/fmaida), [undrivendev](https://github.com/undrivendev) |
 | `no` | 🇳🇴 | Norwegian | 🟡 | [arthurnoerve](https://github.com/arthurnoerve), [oisann](https://github.com/oisann), [Givemeurcookies](https://github.com/givemeurcookies) |
 | `zh` | 🇨🇳 | Chinese | 🟢 | [hao-lee](https://github.com/hao-lee), [izumiko](https://github.com/izumiko), [emperorjoker](https://github.com/emperorjoker) |
-| `zh_tw` | 🇨🇳 | Chinese (Traditional) | 🟢 | [Petingo](https://github.com/Petingo)
+| `zh_tw` | 🇹🇼 | Chinese (Traditional) | 🟢 | [Petingo](https://github.com/Petingo)
 | `id` | 🇮🇩 | Indonesian | 🟡 | [simplyeazy](https://github.com/simplyeazy), [ilhamfauzan](https://github.com/ilhamfauzan) |
 | `ro` | 🇷🇴 | Romanian | 🟡 | [cdorin93](https://github.com/cdorin93) |
 | `ru` | 🇷🇺 | Russian | 🟢 | [schamberg97](https://github.com/schamberg97), [atjanov](https://github.com/atjanov), [exeteres](https://github.com/exeteres) |
